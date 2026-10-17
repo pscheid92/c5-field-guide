@@ -8,6 +8,17 @@ npm run dev      # regenerates the data, then starts http://localhost:4321
 npm run build    # static site in dist/
 ```
 
+## Deploy
+
+`.github/workflows/deploy.yml` builds the site and publishes it to GitHub Pages on every push to `main` (or by hand via "Run workflow"). One-time setup in the repository: Settings → Pages → Source: **GitHub Actions**.
+
+On a project site the pages live under `/<repo>/`. The workflow passes that path as `BASE_PATH`; `scripts/lib/base.mjs` hands it to both Astro and the generator, so every internal link carries it. Locally `BASE_PATH` is unset and the site runs at the root. To try the GitHub Pages variant locally:
+
+```
+BASE_PATH=/c5catalogue npm run build
+BASE_PATH=/c5catalogue npx astro preview   # http://localhost:4321/c5catalogue/
+```
+
 ## Addresses
 
 | Page | German | English |

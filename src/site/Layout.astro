@@ -10,7 +10,7 @@ import { ClientRouter } from 'astro:transitions';
 import '@fontsource-variable/ibm-plex-sans';
 import './site.css';
 import Search from './Search.astro';
-import { GC, type Lang, groupByTheme, site, switchLang } from './data';
+import { GC, type Lang, base, groupByTheme, site, switchLang } from './data';
 
 interface Props {
 	lang: Lang;
@@ -19,12 +19,15 @@ interface Props {
 	view: 'home' | 'domain' | 'page' | 'item';
 	domain?: string;
 	current?: string;
+	/** Target of the language switch, for pages without a counterpart (404). */
+	otherLangUrl?: string;
 }
 
-const { lang, title, description, view, domain, current } = Astro.props;
+const { lang, title, description, view, domain, current, otherLangUrl } = Astro.props;
 const s = site(lang);
 const { t } = s;
 const other: Lang = lang === 'de' ? 'en' : 'de';
+const otherUrl = otherLangUrl ?? switchLang(Astro.url.pathname, other);
 const entry = domain ? s.domain(domain) : undefined;
 
 // Criteria of the domain, for the list next to the text.
@@ -43,10 +46,10 @@ const entries = groupByTheme(raw);
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="color-scheme" content="light dark" />
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
 		<title>{title} · C5 Field Guide</title>
 		{description && <meta name="description" content={description} />}
-		<link rel="alternate" hreflang={other} href={switchLang(Astro.url.pathname, other)} />
+		<link rel="alternate" hreflang={other} href={otherUrl} />
 		<ClientRouter />
 	</head>
 	<body data-view={view}>
@@ -59,7 +62,7 @@ const entries = groupByTheme(raw);
 			{view === 'home' ? <span /> : <Search lang={lang} />}
 			<nav class="bar-links">
 				<a href={s.info} aria-current={Astro.url.pathname === s.info ? 'page' : undefined}>{t.info}</a>
-				<a href={switchLang(Astro.url.pathname, other)} hreflang={other} lang={other}>{t.otherLang}</a>
+				<a href={otherUrl} hreflang={other} lang={other}>{t.otherLang}</a>
 			</nav>
 		</header>
 

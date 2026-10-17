@@ -16,6 +16,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { basePath } from './lib/base.mjs';
 import { loadCatalog, loadDomains, findReferences } from './lib/catalog.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -26,7 +27,7 @@ const codes = Object.keys(domains).sort((a, b) => b.length - a.length);
 
 const LOCALES = {
 	de: {
-		prefix: '',
+		prefix: basePath,
 		bsiDir: r('vendor/bsi/de/C5_2026_Machine-Readable_de'),
 		domainTitle: (d) => d.title_de,
 		sourceUrl:
@@ -43,7 +44,7 @@ const LOCALES = {
 			`<a href="${url}">Offizielle Quelle</a>.`,
 	},
 	en: {
-		prefix: '/en',
+		prefix: `${basePath}/en`,
 		bsiDir: r('vendor/bsi/en/C5_2026_Machine-Readable_en'),
 		domainTitle: (d) => d.title,
 		sourceUrl:

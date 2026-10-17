@@ -5,12 +5,12 @@ import { site } from '../site/data';
 const { t } = site('de');
 ---
 
-<Layout lang="de" view="page" title={t.notFound}>
+<Layout lang="de" view="page" title={t.notFound} otherLangUrl={site('en').home}>
 	<div class="page">
 		<article class="doc prose">
 			<h1>{t.notFound}</h1>
 			<p>{t.notFoundText}</p>
-			<p lang="en">Page not found. <a href="/en/">Go to the English start page</a>.</p>
+			<p lang="en">Page not found. <a href={site('en').home}>Go to the English start page</a>.</p>
 		</article>
 	</div>
 </Layout>

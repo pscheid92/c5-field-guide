@@ -14,13 +14,17 @@ export const GC = 'GC';
 
 const catalogs: Record<Lang, Catalog> = { de, en };
 
-/** URL prefix of a language: '' for German, '/en' for English. */
-export const prefix = (lang: Lang) => (lang === 'en' ? '/en' : '');
+/** Path the site is served under: '' locally, '/c5catalogue' on GitHub Pages. */
+export const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+
+/** URL prefix of a language: base for German, base + '/en' for English. */
+export const prefix = (lang: Lang) => base + (lang === 'en' ? '/en' : '');
 
 /** The same page in the other language: /iam-06/ ↔ /en/iam-06/. */
 export const switchLang = (path: string, to: Lang) => {
-	const bare = path.replace(/^\/en(?=\/|$)/, '') || '/';
-	return to === 'en' ? `/en${bare === '/' ? '/' : bare}` : bare;
+	const local = path.startsWith(base) ? path.slice(base.length) : path;
+	const bare = local.replace(/^\/en(?=\/|$)/, '') || '/';
+	return base + (to === 'en' ? `/en${bare === '/' ? '/' : bare}` : bare);
 };
 
 export function site(lang: Lang) {
