@@ -1,0 +1,102 @@
+---
+// What changed between C5:2020 and C5:2026, from BSI's change log: every
+// criterion by domain with its status, then every C5:2020 ID and where it
+// went. The details (BSI's notes, old wording) are on the criterion pages.
+import Layout from './Layout.astro';
+import { GC, type Lang, predecessors, site } from './data';
+
+interface Props {
+	lang: Lang;
+}
+
+const s = site(Astro.props.lang);
+const { t } = s;
+const other = site(s.lang === 'de' ? 'en' : 'de');
+const all = s.data.criteria;
+const count = (status: string) => all.filter((c) => c.changes.status === status).length;
+
+// C5:2020 ID → C5:2026 criteria, in C5:2020 order (domain, then number).
+const byOld = new Map<string, typeof all>();
+for (const c of all) for (const id of c.changes.old) byOld.set(id, [...(byOld.get(id) ?? []), c]);
+const domainOrder = [...new Set([...byOld.keys()].map((id) => id.split('-')[0]))];
+const oldIds = [...byOld.keys()].sort((a, b) => {
+	const [da, na] = a.split('-');
+	const [db, nb] = b.split('-');
+	return domainOrder.indexOf(da) - domainOrder.indexOf(db) || Number(na) - Number(nb);
+});
+---
+
+<Layout lang={s.lang} view="page" title={t.changesTitle} otherLangUrl={other.changes}>
+	<div class="page">
+		<article class="doc">
+			<h1>{t.changesTitle}</h1>
+			<p class="doc-meta">{t.changesSummary(count('new'), count('changed'), count('unchanged'))}</p>
+			<p class="changes-intro">
+				{t.changesIntro}
+				{s.data.changelog.lang !== s.lang && <> {t.changelogLangNote}</>}
+			</p>
+			<p class="changes-jump">
+				<a href={`#${t.byOldIdAnchor}`}>{t.byOldId}</a>
+			</p>
+
+			{
+				s.domains
+					.filter((d) => d.code !== GC)
+					.map((d) => (
+						<section class="overview-theme">
+							<h2>
+								<a href={s.domainUrl(d.code)}>{d.code}</a> · {d.title}
+							</h2>
+							<ul class="overview">
+								{s.criteriaIn(d.code).map((c) => {
+									const before = predecessors(c);
+									return (
+										<li>
+											<a href={c.changes.status === 'changed' ? `${c.url}#${t.changesAnchor}` : c.url}>
+												<span class="overview-id">{c.id}</span>
+												<span>
+													<span class="overview-title">{c.name}</span>
+													<span class={`overview-meta status-${c.changes.status}`}>
+														{t.changesStatusShort[c.changes.status as 'new' | 'changed' | 'unchanged']}
+														{before.length > 0 && `, ${t.formerly(before)}`}
+													</span>
+												</span>
+											</a>
+										</li>
+									);
+								})}
+							</ul>
+						</section>
+					))
+			}
+
+			<section>
+				<h2 id={t.byOldIdAnchor}>{t.byOldId}</h2>
+				<p class="customer-note">{t.byOldIdIntro}</p>
+				<dl class="id-map">
+					{
+						oldIds.map((id) => {
+							const now = byOld.get(id)!;
+							return (
+								<div class={now.length > 1 ? 'id-map-wide' : undefined}>
+									<dt>{id}</dt>
+									<dd>
+										{now.map((c, i) => (
+											<>
+												{i > 0 && ', '}
+												<a href={c.url}>{c.id}</a>
+											</>
+										))}
+									</dd>
+								</div>
+							);
+						})
+					}
+				</dl>
+			</section>
+
+			<p class="attribution" set:html={s.data.changelog.attribution} />
+			<p class="attribution attribution-more" set:html={s.data.attribution} />
+		</article>
+	</div>
+</Layout>

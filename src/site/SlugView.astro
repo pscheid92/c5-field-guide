@@ -23,7 +23,10 @@ const { t } = s;
 				? s.data.conditions.items.map((g) => ({ id: g.id, name: g.name, href: g.url, meta: '' }))
 				: criteria.map((c) => {
 						const basic = c.subs.filter((x) => x.kind === 'basic').length;
-						const meta = t.subMeta(c.subs.length, basic, c.subs.length - basic) + (c.customerHtml ? `, ${t.withCustomer}` : '');
+						const meta =
+							t.subMeta(c.subs.length, basic, c.subs.length - basic) +
+							(c.customerHtml ? `, ${t.withCustomer}` : '') +
+							(c.changes.status === 'new' ? `, ${t.newInC5}` : '');
 						return { id: c.id, name: c.name, href: c.url, meta };
 					});
 			// Themed criteria under their theme; runs of other criteria in one list.

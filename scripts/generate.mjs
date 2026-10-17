@@ -4,6 +4,7 @@
 // Inputs (per language <lang> = de | en):
 //   vendor/bsi/<lang>/C5_2026_Machine-Readable_<lang>/*.yml   BSI catalogue (unchanged)
 //   data/domains.yml                                          domain titles + order
+//   vendor/bsi/C5_2026_changelog.xlsx                         changes since C5:2020 (English only so far)
 // Outputs (generated, not committed):
 //   src/generated/catalog.<lang>.json   criteria with rendered BSI text, references
 //   src/generated/search.<lang>.json    plain-text search index
@@ -18,6 +19,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { basePath } from './lib/base.mjs';
 import { loadCatalog, loadDomains, findReferences } from './lib/catalog.mjs';
+import { loadChangelog } from './lib/changelog.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const r = (...p) => path.join(root, ...p);
@@ -42,6 +44,18 @@ const LOCALES = {
 			`<a href="https://creativecommons.org/licenses/by-nd/4.0/deed.de">CC BY-ND 4.0</a>. ` +
 			`Formatierung und Querverweis-Links ergänzt. Diese Website steht in keiner Verbindung zum BSI und wird nicht vom BSI unterstützt. ` +
 			`<a href="${url}">Offizielle Quelle</a>.`,
+		// BSI publishes the change log in English only so far; a German edition
+		// is announced. Point this at it (lang: 'de') once it exists.
+		changelog: {
+			file: r('vendor/bsi/C5_2026_changelog.xlsx'),
+			lang: 'en',
+			attribution: (basis) =>
+				`Änderungen gegenüber C5:2020 und Wortlaut aus C5:2020: BSI C5:2026 Änderungshistorie (engl.), ` +
+				`© Bundesamt für Sicherheit in der Informationstechnik (BSI) 2026, unverändert wiedergegeben unter ` +
+				`<a href="https://creativecommons.org/licenses/by-nd/4.0/deed.de">CC BY-ND 4.0</a>. ` +
+				`Grundlage laut BSI: <span lang="en">„${basis}“</span> ` +
+				`<a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/CloudComputing/Anforderungskatalog/2026/C5_2026_Aenderungshistorie.html">Offizielle Quelle</a>.`,
+		},
 	},
 	en: {
 		prefix: `${basePath}/en`,
@@ -59,6 +73,16 @@ const LOCALES = {
 			`<a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>. ` +
 			`Formatting and cross-reference links added. This site is not affiliated with or endorsed by BSI. ` +
 			`<a href="${url}">Official source</a>.`,
+		changelog: {
+			file: r('vendor/bsi/C5_2026_changelog.xlsx'),
+			lang: 'en',
+			attribution: (basis) =>
+				`Changes since C5:2020 and C5:2020 wording: BSI C5:2026 Changelog, ` +
+				`© Federal Office for Information Security (BSI) 2026, reproduced unchanged under ` +
+				`<a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>. ` +
+				`Basis according to BSI: “${basis}” ` +
+				`<a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/CloudComputing/ComplianceControlsCatalogue/2026/C5_2026_changelog.html">Official source</a>.`,
+		},
 	},
 };
 
@@ -106,12 +130,21 @@ for (const other of rest) {
 	}
 }
 
+// Change logs, read once per file (both languages share the English one).
+const changelogs = new Map();
+for (const loc of Object.values(LOCALES)) {
+	if (!changelogs.has(loc.changelog.file)) {
+		changelogs.set(loc.changelog.file, loadChangelog(loc.changelog.file, first.criteria.map((c) => c.id)));
+	}
+}
+
 // ---------------------------------------------------------------- per language
 
 function generate(lang) {
 	const loc = LOCALES[lang];
 	const { meta, criteria, conditions, byId } = catalogs[lang];
 	const urlFor = (id) => `${loc.prefix}/${slug(id)}/`;
+	const changelog = changelogs.get(loc.changelog.file);
 
 	const linkRefs = (html) => {
 		const re = new RegExp(`\\b(${codes.join('|')})-(\\d{2})\\b`, 'g');
@@ -121,9 +154,11 @@ function generate(lang) {
 	// BSI text arrives as paragraphs separated by newlines, with enumerations as
 	// lines starting "1.", "2.", ... (and, rarely, "- "). We only change the
 	// presentation: paragraphs become <p>, consecutive numbered lines one <ol>,
-	// consecutive dash lines one <ul>. Wording is untouched.
-	const bsiHtml = (text) => {
-		const lines = text.split(/\n+/).map((l) => l.trim()).filter(Boolean);
+	// consecutive dash lines one <ul>. Wording is untouched. Text from C5:2020
+	// is rendered without links, because its IDs refer to C5:2020 criteria.
+	const bsiHtml = (text, { links = true } = {}) => {
+		const inline = (s) => (links ? linkRefs(esc(s)) : esc(s));
+		const lines = text.split(/\r?\n+/).map((l) => l.trim()).filter(Boolean);
 		let out = '';
 		let list = null;
 		const flush = () => {
@@ -139,16 +174,16 @@ function generate(lang) {
 					flush();
 					list = { type: 'ol', start: Number(numbered[1]), items: [] };
 				}
-				list.items.push(linkRefs(esc(numbered[2])));
+				list.items.push(inline(numbered[2]));
 			} else if (dashed) {
 				if (list?.type !== 'ul') {
 					flush();
 					list = { type: 'ul', items: [] };
 				}
-				list.items.push(linkRefs(esc(dashed[1])));
+				list.items.push(inline(dashed[1]));
 			} else {
 				flush();
-				out += `<p>${linkRefs(esc(line))}</p>`;
+				out += `<p>${inline(line)}</p>`;
 			}
 		}
 		flush();
@@ -173,6 +208,10 @@ function generate(lang) {
 			lang,
 			version: meta.version,
 			attribution: loc.attribution(esc(String(meta.version)), loc.sourceUrl),
+			changelog: {
+				lang: loc.changelog.lang,
+				attribution: loc.changelog.attribution(esc(changelog.basis)),
+			},
 			domains: Object.values(domains).map((d) => ({
 				code: d.code,
 				title: loc.domainTitle(d),
@@ -212,6 +251,16 @@ function generate(lang) {
 					})),
 					customerHtml: c.corresponding ? bsiHtml(c.corresponding) : '',
 					related: { out: sortIds(outgoing.get(c.id)), in: sortIds(incoming.get(c.id)) },
+					changes: (() => {
+						const ch = changelog.byId.get(c.id);
+						const html = (text) => (text ? bsiHtml(text, { links: false }) : '');
+						return {
+							status: ch.status,
+							old: ch.old,
+							notes: { basic: html(ch.notes.basic), additional: html(ch.notes.additional) },
+							previous: { basic: html(ch.previous.basic), additional: html(ch.previous.additional) },
+						};
+					})(),
 				};
 			}),
 		}),
@@ -225,6 +274,8 @@ function generate(lang) {
 				name: c.name,
 				domain: c.domain,
 				url: urlFor(c.id),
+				// C5:2020 IDs this criterion replaces, so "IDM-06" finds IAM-06.
+				old: changelog.byId.get(c.id).old,
 				subs: c.subs.map((s) => ({
 					id: s.id,
 					kind: s.kind,
@@ -240,6 +291,7 @@ function generate(lang) {
 					name: g.name,
 					domain: 'GC',
 					url: urlFor(g.id),
+					old: [],
 					subs: [{ id: '', kind: 'condition', anchor: '', text: plain([g.condition, g.hint].join(' ')) }],
 					customer: '',
 				})),
@@ -247,7 +299,11 @@ function generate(lang) {
 		),
 	);
 
-	console.log(`[${lang}] ${criteria.length} criteria, ${conditions.length} general conditions (BSI catalogue v${meta.version})`);
+	const statuses = [...changelog.byId.values()].reduce((n, ch) => ({ ...n, [ch.status]: (n[ch.status] ?? 0) + 1 }), {});
+	console.log(
+		`[${lang}] ${criteria.length} criteria, ${conditions.length} general conditions (BSI catalogue v${meta.version}); ` +
+			`since C5:2020: ${statuses.new} new, ${statuses.changed} changed, ${statuses.unchanged} unchanged`,
+	);
 }
 
 for (const lang of Object.keys(LOCALES)) generate(lang);

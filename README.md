@@ -28,6 +28,7 @@ BASE_PATH=/c5catalogue npx astro preview   # http://localhost:4321/c5catalogue/
 | Criterion | `/iam-06/` | `/en/iam-06/` |
 | Sub-criterion | `/iam-06/#iam-06-02b` | `/en/iam-06/#iam-06-02b` |
 | General condition | `/gc-01/` | `/en/gc-01/` |
+| Changes since C5:2020 | `/aenderungen/` | `/en/changes/` |
 | About | `/info/` | `/en/info/` |
 
 ## How it fits together
@@ -50,5 +51,6 @@ While `commentary/` is empty, the build prints one warning that the commentary c
 ## Known data quirks
 
 - `AM.yml` (EN) repeats the `information:` key for AM-07. Loaded leniently (last key wins) and asserted.
+- The change log (`C5_2026_changelog.xlsx`) is English only so far and, according to BSI, compares C5:2020 with C5:2026 v1.0.0. German pages show its notes in English with a note saying so. The generator reads it with a small built-in xlsx reader (`scripts/lib/xlsx.mjs`) and fails if its IDs stop matching the catalogue. Status comes from BSI's exact wording: no C5:2020 ID → new, "No change." for basic and additional → unchanged, anything else → changed.
 - `GC.yml` uses a different schema (`id`/`condition`/`hint`), rendered as "General Conditions".
 - DE is v1.1.0 ("Korrekturen und redaktionelle Anpassung") and EN is v1.0.1, so the English text may lag the German corrections. Sub-criterion IDs of AM-01 and AM-02 differ between the two; each language is generated from its own YAML.

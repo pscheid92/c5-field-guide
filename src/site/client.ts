@@ -8,6 +8,8 @@ type Entry = {
 	name: string;
 	domain: string;
 	url: string;
+	/** C5:2020 IDs this criterion replaces. */
+	old: string[];
 	subs: { id: string; kind: string; anchor: string; text: string }[];
 	customer: string;
 };
@@ -75,7 +77,11 @@ function search(query: string, entries: Entry[], labels: Labels): { ids: Hit[]; 
 	const text: (Hit & { score: number })[] = [];
 	if (!q) return { ids, text, terms };
 
-	// 1. An ID ("iam-06", "iam6.2b") or a bare domain code ("cry").
+	// 1. An ID ("iam-06", "iam6.2b") or a bare domain code ("cry"). C5:2020 IDs
+	//    and codes find the criteria that replace them ("IDM-06" → IAM-06), after
+	//    a C5:2026 criterion with the same ID ("OIS-05" → OIS-05, then OIS-06).
+	const formerly = (e: Entry, old: string[]) => ({ href: e.url, id: e.id, name: esc(e.name), snippet: esc(`C5:2020: ${old.join(', ')}`) });
+	const listed = (e: Entry) => ids.some((h) => h.id.split('.')[0] === e.id);
 	const parsed = parseId(q);
 	if (parsed) {
 		const c = entries.find((e) => e.id === parsed.criterion);
@@ -87,8 +93,17 @@ function search(query: string, entries: Entry[], labels: Labels): { ids: Hit[]; 
 					: { href: c.url, id: c.id, name: esc(c.name) },
 			);
 		}
+		for (const e of entries.filter((e) => e.old.includes(parsed.criterion) && !listed(e))) ids.push(formerly(e, [parsed.criterion]));
 	} else if (/^[a-z]{2,4}$/i.test(q)) {
-		for (const c of entries.filter((e) => e.domain === q.toUpperCase())) ids.push({ href: c.url, id: c.id, name: esc(c.name) });
+		const code = q.toUpperCase();
+		const inDomain = entries.filter((e) => e.domain === code);
+		for (const c of inDomain) ids.push({ href: c.url, id: c.id, name: esc(c.name) });
+		if (!inDomain.length) {
+			for (const e of entries) {
+				const old = e.old.filter((id) => id.startsWith(`${code}-`));
+				if (old.length) ids.push(formerly(e, old));
+			}
+		}
 	}
 
 	if (!terms.length) return { ids, text, terms };
@@ -281,6 +296,19 @@ document.addEventListener('click', async (e) => {
 	}, 1600);
 });
 
+/* ------------------------------------------------------------ open a collapsed section the address points to */
+
+// /iam-06/#c5-2020 opens the "changed since C5:2020" panel. That panel sits
+// right under the title, so the page stays at the top with the title in view.
+function openTarget() {
+	const id = decodeURIComponent(location.hash.slice(1));
+	const target = id ? document.getElementById(id) : null;
+	if (!(target instanceof HTMLDetailsElement)) return;
+	target.open = true;
+	if (target.classList.contains('changes')) window.scrollTo({ top: 0 });
+}
+window.addEventListener('hashchange', openTarget);
+
 /* ------------------------------------------------------------ outline: mark the sub-criterion being read */
 
 function updateOutline() {
@@ -351,4 +379,5 @@ document.addEventListener('astro:page-load', () => {
 	initSearch();
 	revealCurrent();
 	updateOutline();
+	openTarget();
 });

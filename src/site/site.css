@@ -458,6 +458,8 @@ body:not([data-view='item']) .bar {
 	font-size: 1.125rem;
 	line-height: 1.65;
 	color: var(--body);
+	/* A word longer than the line breaks instead of widening the page. */
+	overflow-wrap: break-word;
 }
 .doc p,
 .doc ol,
@@ -666,7 +668,8 @@ body:not([data-view='item']) .bar {
 .info summary svg {
 	transition: transform 0.15s ease;
 }
-.info[open] summary svg {
+.info[open] > summary svg,
+.changes-previous[open] > summary svg {
 	transform: rotate(90deg);
 }
 .info-body {
@@ -686,6 +689,41 @@ body:not([data-view='item']) .bar {
 }
 .info.general {
 	margin-top: 1.75rem;
+}
+
+/* What changed since C5:2020 (BSI change log), right under the title. */
+p.changes {
+	margin-top: 1rem !important;
+	font-size: 0.9375rem;
+	color: var(--muted);
+}
+.changes-formerly {
+	font-weight: 400;
+	color: var(--muted);
+}
+.changes-lang {
+	font-size: 0.9375rem;
+	color: var(--muted);
+}
+.changes-group + .changes-group {
+	margin-top: 1rem;
+}
+.changes-group > * + * {
+	margin-top: 0.4rem !important;
+}
+.changes-head {
+	font-weight: 600;
+	color: var(--text);
+}
+.changes-previous {
+	padding-top: 0.9rem;
+	border-top: 1px solid var(--line);
+}
+.changes-previous > div {
+	margin-top: 0.9rem;
+}
+.changes-all {
+	font-size: 0.9375rem;
 }
 
 .customer-note {
@@ -793,6 +831,9 @@ body:not([data-view='item']) .bar {
 .attribution a {
 	color: inherit;
 }
+.attribution-more {
+	margin-top: 0.75rem !important;
+}
 
 /* Domain overview page. */
 .doc .domain-code {
@@ -839,12 +880,68 @@ body:not([data-view='item']) .bar {
 }
 .overview-title {
 	font-size: 1.0625rem;
+	/* Long German compounds ("Informationssicherheitsmanagementsystem") would
+	   otherwise push the page wider than a phone screen. */
+	hyphens: auto;
+	hyphenate-limit-chars: 14 6 6;
 }
 .overview-meta {
 	display: block;
 	margin-top: 0.15rem;
 	font-size: 0.9375rem;
 	color: var(--muted);
+}
+
+/* Changes since C5:2020. */
+.changes-intro {
+	margin-top: 1rem !important;
+	color: var(--body);
+}
+.changes-jump {
+	margin-top: 0.75rem !important;
+	font-size: 0.9375rem;
+}
+.overview-meta.status-new {
+	color: var(--accent);
+}
+.overview-theme h2 a {
+	color: inherit;
+	text-decoration: none;
+}
+.overview-theme h2 a:hover {
+	color: var(--accent);
+}
+.id-map {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+	gap: 0.35rem 1.5rem;
+	margin-top: 1.25rem !important;
+	font-size: 1rem;
+	font-variant-numeric: tabular-nums;
+}
+.id-map > div {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 0.5rem;
+}
+.id-map > div.id-map-wide {
+	grid-column: 1 / -1;
+}
+.id-map dt {
+	color: var(--muted);
+}
+.id-map dt::after {
+	content: ' →';
+}
+.id-map dd {
+	margin: 0;
+	font-weight: 600;
+}
+.id-map a {
+	text-decoration: none;
+}
+.id-map a:hover {
+	text-decoration: underline;
 }
 
 /* ------------------------------------------------------------ outline (wide windows) */
@@ -1127,6 +1224,28 @@ body:not([data-view='item']) .bar {
 	}
 	html {
 		scroll-padding-top: 8rem;
+	}
+}
+
+/* Phones: the brand stacks its "unofficial" tag so the three header links
+   fit next to it down to 360px. */
+@media (max-width: 479px) {
+	.bar {
+		column-gap: 0.75rem;
+	}
+	.brand {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0;
+		line-height: 1.2;
+	}
+	.bar-links {
+		gap: 0.9rem;
+	}
+	/* Long German compounds split at syllables, as in the criteria list. */
+	.doc {
+		hyphens: auto;
+		hyphenate-limit-chars: 14 6 6;
 	}
 }
 

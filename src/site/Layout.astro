@@ -61,6 +61,7 @@ const entries = groupByTheme(raw);
 			</a>
 			{view === 'home' ? <span /> : <Search lang={lang} />}
 			<nav class="bar-links">
+				<a href={s.changes} aria-current={Astro.url.pathname === s.changes ? 'page' : undefined}>{t.changes}</a>
 				<a href={s.info} aria-current={Astro.url.pathname === s.info ? 'page' : undefined}>{t.info}</a>
 				<a href={otherUrl} hreflang={other} lang={other}>{t.otherLang}</a>
 			</nav>

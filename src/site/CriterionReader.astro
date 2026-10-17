@@ -2,9 +2,10 @@
 // Reading pane for one criterion: BSI text grouped into basic and additional
 // sub-criteria, supplementary information under the sub-criterion it belongs
 // to, customer criteria, our commentary (if any), related criteria and
-// previous/next within the domain.
+// previous/next within the domain. Under the title: what changed since
+// C5:2020, from BSI's change log.
 import { getCollection, render } from 'astro:content';
-import type { Criterion, Site, Sub } from './data';
+import { type Criterion, type Site, type Sub, predecessors } from './data';
 
 interface Props {
 	site: Site;
@@ -39,6 +40,15 @@ const relatedGroups = [
 	},
 ].filter((g) => g.list.length);
 
+const ch = c.changes;
+const changelog = s.data.changelog;
+const formerly = predecessors(c).length ? t.formerly(predecessors(c)) : '';
+const changeGroups = (texts: { basic: string; additional: string }) =>
+	[
+		{ label: t.groupBasic, html: texts.basic },
+		{ label: t.groupAdditional, html: texts.additional },
+	].filter((g) => g.html);
+
 const chevron = '<svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 ---
 
@@ -49,6 +59,55 @@ const chevron = '<svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="
 		{t.subMeta(c.subs.length, basic.length, additional.length)}{c.customerHtml && <>, <a href={`#${t.customerAnchor}`}>{t.withCustomer}</a></>}
 	</p>
 	{commentary?.data.summary && <p class="doc-summary">{commentary.data.summary}</p>}
+
+	{
+		ch.status === 'changed' ? (
+			<details class="info changes" id={t.changesAnchor}>
+				<summary>
+					<Fragment set:html={chevron} />
+					<span>
+						{t.changesStatus.changed}
+						{formerly && <span class="changes-formerly"> · {formerly}</span>}
+					</span>
+				</summary>
+				<div class="info-body">
+					{changelog.lang !== s.lang && <p class="changes-lang">{t.changelogLangNote}</p>}
+					<div lang={changelog.lang}>
+						{changeGroups(ch.notes).map((g) => (
+							<div class="changes-group">
+								<p class="changes-head">{g.label}</p>
+								<Fragment set:html={g.html} />
+							</div>
+						))}
+					</div>
+					{changeGroups(ch.previous).length > 0 && (
+						<details class="changes-previous">
+							<summary>
+								<Fragment set:html={chevron} />
+								{t.previousWording}
+							</summary>
+							<div lang={changelog.lang}>
+								{changeGroups(ch.previous).map((g) => (
+									<div class="changes-group">
+										<p class="changes-head">{g.label}</p>
+										<Fragment set:html={g.html} />
+									</div>
+								))}
+							</div>
+						</details>
+					)}
+					<p class="changes-all">
+						<a href={s.changes}>{t.allChanges}</a>
+					</p>
+				</div>
+			</details>
+		) : (
+			<p class="changes" id={t.changesAnchor}>
+				{t.changesStatus[ch.status as 'new' | 'unchanged']}
+				{formerly && <span class="changes-formerly"> · {formerly}</span>}
+			</p>
+		)
+	}
 
 	{
 		c.subs.length > 1 && (
@@ -214,6 +273,7 @@ const chevron = '<svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="
 	</nav>
 
 	<p class="attribution" set:html={s.data.attribution} />
+	<p class="attribution attribution-more" set:html={changelog.attribution} />
 </article>
 
 <!-- Wide windows: sub-criteria outline next to the text, marks the current one. -->

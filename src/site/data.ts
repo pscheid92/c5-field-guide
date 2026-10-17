@@ -45,11 +45,18 @@ export function site(lang: Lang) {
 		domain: (code: string) => domains.find((d) => d.code === code),
 		home: `${p}/`,
 		info: `${p}/info/`,
+		changes: `${p}/${strings[lang].changesPath}/`,
 		domainUrl: (code: string) => `${p}/${code.toLowerCase()}/`,
 		searchIndex: `${p}/search.json`,
 	};
 }
 export type Site = ReturnType<typeof site>;
+
+/** C5:2020 IDs a criterion replaces, unless it simply kept its own ID. */
+export const predecessors = (c: Criterion) =>
+	c.changes.old.length === 1 && c.changes.old[0] === c.id ? [] : c.changes.old;
+
+const joinIds = (ids: string[], and: string) => (ids.length > 1 ? `${ids.slice(0, -1).join(', ')} ${and} ${ids.at(-1)}` : ids[0]);
 
 const strings = {
 	de: {
@@ -110,6 +117,25 @@ const strings = {
 		subCounts: (basic: number, additional: number) => `${basic} Basis- und ${additional} Zusatz-Unterkriterien`,
 		notFound: 'Seite nicht gefunden',
 		notFoundText: 'Diese Adresse gibt es nicht. Suche oben nach einer ID oder geh zur Startseite.',
+		changes: 'Änderungen',
+		changesPath: 'aenderungen',
+		changesAnchor: 'c5-2020',
+		changesTitle: 'Änderungen gegenüber C5:2020',
+		changesStatus: { new: 'Neu in C5:2026', changed: 'Geändert gegenüber C5:2020', unchanged: 'Unverändert gegenüber C5:2020' },
+		changesStatusShort: { new: 'Neu', changed: 'Geändert', unchanged: 'Unverändert' },
+		formerly: (ids: string[]) => `vorher ${joinIds(ids, 'und')}`,
+		newInC5: 'neu in C5:2026',
+		changesNotes: 'Änderungen laut BSI',
+		previousWording: 'Wortlaut in C5:2020',
+		changelogLangNote: 'Das BSI veröffentlicht die Änderungshistorie bisher nur auf Englisch, eine deutsche Fassung ist angekündigt.',
+		allChanges: 'Alle Änderungen gegenüber C5:2020',
+		changesSummary: (n: number, c: number, u: number) => `${n} neue, ${c} geänderte und ${u} unveränderte Kriterien`,
+		changesIntro:
+			'Grundlage ist die Änderungshistorie des BSI. Bei jedem Kriterium stehen die Änderungen laut BSI und der Wortlaut aus C5:2020.',
+		byDomain: 'Nach Bereich',
+		byOldId: 'Von C5:2020 nach C5:2026',
+		byOldIdAnchor: 'c5-2020-ids',
+		byOldIdIntro: 'Jede ID aus C5:2020 und das Kriterium, in dem sie in C5:2026 aufgegangen ist.',
 	},
 	en: {
 		langName: 'English',
@@ -169,6 +195,24 @@ const strings = {
 		subCounts: (basic: number, additional: number) => `${basic} basic and ${additional} additional sub-criteria`,
 		notFound: 'Page not found',
 		notFoundText: 'This address does not exist. Search for an ID above or go to the start page.',
+		changes: 'Changes',
+		changesPath: 'changes',
+		changesAnchor: 'c5-2020',
+		changesTitle: 'Changes since C5:2020',
+		changesStatus: { new: 'New in C5:2026', changed: 'Changed since C5:2020', unchanged: 'Unchanged since C5:2020' },
+		changesStatusShort: { new: 'New', changed: 'Changed', unchanged: 'Unchanged' },
+		formerly: (ids: string[]) => `formerly ${joinIds(ids, 'and')}`,
+		newInC5: 'new in C5:2026',
+		changesNotes: 'Changes according to BSI',
+		previousWording: 'Wording in C5:2020',
+		changelogLangNote: '',
+		allChanges: 'All changes since C5:2020',
+		changesSummary: (n: number, c: number, u: number) => `${n} new, ${c} changed and ${u} unchanged criteria`,
+		changesIntro: "Based on BSI's changelog. Each criterion shows BSI's description of the changes and its C5:2020 wording.",
+		byDomain: 'By domain',
+		byOldId: 'From C5:2020 to C5:2026',
+		byOldIdAnchor: 'c5-2020-ids',
+		byOldIdIntro: 'Every C5:2020 ID and the criterion it became part of in C5:2026.',
 	},
 };
 
