@@ -123,7 +123,7 @@ for (const other of rest) {
 const changelogs = new Map();
 for (const loc of Object.values(LOCALES)) {
 	if (!changelogs.has(loc.changelog.file)) {
-		changelogs.set(loc.changelog.file, loadChangelog(loc.changelog.file, first.criteria.map((c) => c.id)));
+		changelogs.set(loc.changelog.file, loadChangelog(loc.changelog.file, catalogs[loc.changelog.lang].criteria));
 	}
 }
 
