@@ -1,0 +1,479 @@
+-
+  identifier: &ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms '01'
+  name: 'Richtlinie für die Verwendung kryptographischer Mechanismen'
+  basic:
+    -
+      identifier: &ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren mit prozessualen und technischen Sicherheitsmaßnahmen für kryptographische Mechanismen sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, in denen die folgenden Aspekte beschrieben sind:
+
+
+1. Verwendung von Verschlüsselungsverfahren und sicheren Netzprotokollen, die dem Stand der Technik entsprechen;
+
+2. Verwendung von Hash-Funktionen und Salt-Werten, die beide dem Stand der Technik entsprechen;
+
+3. Verwendung von Signaturschemata, die dem Stand der Technik entsprechen;
+
+4. Risikobasierte Vorschriften für den Einsatz von Verschlüsselung und Authentisierung, die mit Schemata zur Informationsklassifikation (vgl. AM-09) abgeglichen sind und den Kommunikationskanal sowie die Art, Stärke und Qualität der Verschlüsselung berücksichtigen;
+
+5. Anforderungen an die sichere Erzeugung, Speicherung, Archivierung, Abruf, Verteilung, Zurückziehung, Sicherung, Wiederherstellung und Löschung der Schlüssel;
+
+6. Anforderungen an die Rotation kryptographischer Schlüssel, die den Best Practices der Branche folgen und das potenzielle Risiko einer Offenlegung von Informationen berücksichtigen;
+
+7. Berücksichtigung der relevanten rechtlichen und regulatorischen Verpflichtungen und Anforderungen;
+
+8. Dokumentation eines Änderungsmanagementprozesses zur Steuerung von Änderungen an kryptographischen, Verschlüsselungs-, Authentisierungs- und Schlüsselmanagementtechnologien; und
+
+9. Berücksichtigung von Kryptoagilität, um einen effizienten Austausch implementierter kryptographischer Mechanismen während ihrer vorgesehenen Lebensdauer zu ermöglichen.
+
+'
+    -
+      identifier: &ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Basic_2 '02B'
+      criterion: 'Überprüfungen von Richtlinien und Verfahren bezüglich kryptographischer Mechanismen umfassen Prüfungen, dass die Richtlinien und Verfahren aktuell sind und der Technischen Richtlinie des BSI (BSI TR-02102) oder geeigneten NIST-Richtlinien (z. B. FIPS-140-Reihe und SP-800-Reihe) entsprechen. Abweichungen werden in einer Risikobewertung für zum jeweiligen Zeitpunkt gültigen kryptographischen Mechanismen analysiert und dokumentiert. Maßnahmen zur Abhilfe sind risikobasiert zu ergreifen.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter hat gemäß SP-01 eine Post-Quanten-Kryptographie-(PQC)-Strategie definiert und dokumentiert, um Bedrohungen zu begegnen, die von Gegnern ausgehen, die im Besitz eines Quantencomputers sind.'
+    -
+      identifier: &ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Die PQC-Strategie des Cloud-Anbieters ist mit den Kryptographie-Richtlinien und -Verfahren abgestimmt und umfasst die folgenden Aspekte:
+
+
+1. Pflege eines Verzeichnisses der verwendeten kryptographischen Mechanismen, einschließlich Prioritätsstufen für jeden Verzeichniseintrag auf Grundlage der Auswirkungen und Wahrscheinlichkeiten der durch Quantencomputing-Angriffe verursachten Risiken sowie des Aufwands zur Behebung solcher Risiken;
+
+2. Sich über Verschlüsselungsmaßnahmen informiert zu halten, die als Stand der Technik und als sicher gegen Gegner gelten, die im Besitz eines Quantencomputers sind;
+
+3. Verwendung hybrider Kryptographiemodelle, um Sicherheit sowohl gegen auf Quantencomputing als auch gegen nicht auf Quantencomputing basierende Angriffe zu gewährleisten; und
+
+4. Definition von auslösenden Ereignissen, erforderlichen Ressourcen, Übergangsplänen und Erfolgskriterien für die Implementierung post-quantenkryptographischer Mechanismen.
+
+'
+    -
+      identifier: &ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Die PQC-Strategie, einschließlich des Verzeichnisses und der Risikobeurteilung, wird mindestens jährlich oder bei wesentlichen Änderungen, die sich auf die PQC-Strategie auswirken, überprüft.'
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Basic_1
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Basic_2
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_2
+      information_text: 'Die folgenden Technischen Richtlinien (in der jeweils aktuellen Fassung) enthalten Empfehlungen und Schlüssellängen für kryptographische Mechanismen nach dem Stand der Technik:
+
+
+1. BSI TR-02102-1 Kryptographische Verfahren: Empfehlungen und Schlüssellängen;
+
+2. BSI TR-02102-2 Kryptographische Verfahren: Empfehlungen und Schlüssellängen – Verwendung von Transport Layer Security (TLS);
+
+3. BSI TR-02102-3 Kryptographische Verfahren: Empfehlungen und Schlüssellängen – Verwendung von Internet Protocol Security (IPSec) und Internet Key Exchange (IKEv2); und
+
+4. BSI TR-02102-4 Kryptographische Verfahren: Empfehlungen und Schlüssellängen – Verwendung von Secure Shell (SSH).
+
+
+Ein Änderungsmanagementprozess im Sinne des Basiskriteriums kann entweder durch den in DEV-03 beschriebenen Standard-Änderungsmanagementprozess abgedeckt oder als separater Prozess umgesetzt werden.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Basic_1
+      information_text: 'Kryptoagilität bezieht sich auf die Fähigkeit, die verwendeten kryptographischen Mechanismen oder die Implementierung solcher Mechanismen zu ändern, z. B. so, dass ein Wechsel zu größeren Schlüssellängen und stärkeren kryptographischen Mechanismen möglich ist. Für weitere Informationen wird auf BSI TR-02102-1 verwiesen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_2
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_3
+      information_text: 'Empfehlungen für die Migration zu PQC und die zukunftssichere Nutzung von Kryptographie werden beispielsweise bereitgestellt in:
+
+
+1. der BSI-Leitlinie ''Kryptografie quantensicher gestalten - Grundlagen, Entwicklungen, Empfehlungen'';
+
+2. der von der Europäischen Kommission veröffentlichten Roadmap ''Ein koordinierter Implementierungsfahrplan für den Übergang zur Post-Quantum-Kryptographie''; und
+
+3. den vorläufigen Entwürfen für die NIST-Veröffentlichung ''NIST SP 1800-38: NIST SP 1800-38: Migration to Post-Quantum Cryptography: Preparation for Considering the Implementation and Adoption of Quantum Safe Cryptography'' (ausschließlich in englischer Sprache verfügbar).
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_2
+      information_text: 'Hybride Kryptographiemodelle, wie sie im Kontext der Post-Quanten-Kryptographie definiert sind, kombinieren klassische und quantensichere Mechanismen, um sicherzustellen, dass das System auch dann sicher bleibt, wenn eine Komponente kompromittiert wird. Der Zweck solcher Modelle besteht darin, langfristigen Schutz vor Bedrohungen wie ''store now, decrypt later'' (jetzt speichern, später entschlüsseln) und anderen auf klassischem oder Quantencomputing basierenden Angriffen zu bieten.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_the_Use_of_Cryptographic_Mechanisms_Subcriterion_Additional_Complement_3
+      information_text: 'Die Risikobeurteilung als Teil der Post-Quanten-Kryptographie-Strategie sollte Folgendes berücksichtigen:
+
+
+1. die Bedrohungslandschaft, die durch Fortschritte im Quantencomputing entsteht;
+
+2. Fortschritte bei kryptographischen Mechanismen, die als sicher gegen Angreifer angesehen werden, die im Besitz eines Quantencomputers sind;
+
+3. dem kryptographischen Mechanismus innewohnende Schwachstellen; und
+
+4. Schwachstellen, die sich daraus ergeben, wie kryptographische Mechanismen eingesetzt werden (z. B. Schlüssel, die über einen längeren Zeitraum verwendet werden und die durch diese Schlüssel geschützten Cloud-Dienstdaten, abgeleitete Cloud-Dienstdaten, Cloud-Kundendaten und Kontodaten könnten bereits heute abgegriffen und zu einem späteren Zeitpunkt entschlüsselt werden).
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Cryptographic_Change_Management '02'
+  name: 'Kryptographisches Änderungsmanagement'
+  basic:
+    -
+      identifier: &ID_Criterion_Cryptographic_Change_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Bei der Umsetzung von Änderungen an kryptographischen Systemen führt der Cloud-Anbieter eine Bewertung ihrer potenziellen Auswirkungen gemäß DEV-06 durch. Dieser Prozess umfasst eine Analyse der Cloud-Infrastruktur des Cloud-Dienstes sowie eine Analyse potenzieller Störungen von vom Cloud-Kunden verwalteten Workloads und die Bewertung von Restrisiken, Kostenauswirkungen und Integrationsvorteilen. Der Cloud-Anbieter informiert Cloud-Kunden über diese nachgelagerten Auswirkungen, um unvorhergesehene Ausfälle innerhalb der spezifischen kryptographischen Implementierungen des Cloud-Kunden zu verhindern.'
+    -
+      identifier: &ID_Criterion_Cryptographic_Change_Management_Subcriterion_Basic_2 '02B'
+      criterion: 'Alle Änderungen und Anpassungen an kryptographischen Systemen sind dokumentiert und nachvollziehbar.'
+    -
+      identifier: &ID_Criterion_Cryptographic_Change_Management_Subcriterion_Basic_3 '03B'
+      criterion: 'Das für kryptographische Systeme verantwortliche Personal wird regelmäßig geschult und über entsprechende Änderungen informiert.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Cryptographic_Change_Management_Subcriterion_Basic_1
+      information_text: 'Bei der Bewertung der potenziellen Auswirkungen von Änderungen sollte der Cloud-Anbieter die Komplexität der verteilten Architektur seines Cloud-Dienstes berücksichtigen.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie, falls sie vom Cloud-Anbieter über Änderungen an kryptographischen Systemen informiert werden, sich aktiv an einer gründlichen Bewertung der potenziellen Auswirkungen auf ihre Nutzung des Cloud-Dienstes beteiligen.'
+-
+  identifier: &ID_Criterion_Review_of_Cryptography_Practices '03'
+  name: 'Überprüfung kryptographischer Verfahren'
+  basic:
+    -
+      identifier: &ID_Criterion_Review_of_Cryptography_Practices_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter stellt sicher, dass Verschlüsselungs-, Authentisierungs- und Schlüsselmanagementverfahrenn gemäß COM-02 und COM-03 regelmäßig auditiert werden, um potenzielle Schwachstellen zu identifizieren und zu beheben. Mindestens werden Überprüfungen jährlich und unmittelbar nach Sicherheitsvorfällen durchgeführt, an denen kryptographische Komponenten beteiligt sind.'
+    -
+      identifier: &ID_Criterion_Review_of_Cryptography_Practices_Subcriterion_Basic_2 '02B'
+      criterion: 'Im Rahmen der Überprüfungen stellt der Cloud-Anbieter fest, ob die kryptographischen Verfahren mit dem Stand der Technik übereinstimmen, und aktualisiert sie bei Bedarf.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Review_of_Cryptography_Practices_Subcriterion_Basic_1
+      information_text: 'Weitere Kriterien für das Schlüsselmanagement finden sich in den Kriterien CRY-06, CRY-07, CRY-09 - CRY-19'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Review_of_Cryptography_Practices_Subcriterion_Basic_2
+      information_text: 'Der Cloud-Anbieter sollte den kryptographischen Änderungsmanagementprozess (vgl. CRY-02) anwenden, wenn er die kryptographischen Verfahren aktualisiert, um sie an den Stand der Technik anzupassen.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Protection_of_Data_for_Transmission '04'
+  name: 'Schutz von Daten bei der Übertragung'
+  basic:
+    -
+      identifier: &ID_Criterion_Protection_of_Data_for_Transmission_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat für das Übertragen von Cloud-Kundendaten und abgeleiteten Cloud-Dienstdaten über öffentliche Netze Verfahren und technische Sicherheitsmaßnahmen zur Verschlüsselung und Authentisierung nach dem Stand der Technik eingerichtet.'
+    -
+      identifier: &ID_Criterion_Protection_of_Data_for_Transmission_Subcriterion_Basic_2 '02B'
+      criterion: 'Beim Fernzugriff auf die Produktionsumgebung verwendet der Cloud-Anbieter kryptographische Mechanismen nach dem Stand der Technik, einschließlich der Authentisierung des Personals, um die Kommunikation zu schützen.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Protection_of_Data_for_Transmission_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Protection_of_Data_for_Transmission_Subcriterion_Basic_1
+      criterion: 'Der Cloud-Anbieter hat für das Übertragen aller Cloud-Dienstdaten, abgeleiteten Cloud-Dienstdaten, Cloud-Kundendaten und Kontodaten über öffentliche Netze Verfahren und technische Sicherheitsmaßnahmen zur Verschlüsselung und Authentisierung nach dem Stand der Technik eingerichtet.'
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Protection_of_Data_for_Transmission_Subcriterion_Basic_1
+        - *ID_Criterion_Protection_of_Data_for_Transmission_Subcriterion_Basic_2
+        - *ID_Criterion_Protection_of_Data_for_Transmission_Subcriterion_Additional_Sharpen_1
+      information_text: 'Bei der Übertragung von Daten mit einem normalen Schutzbedarf innerhalb der Infrastruktur des Cloud-Anbieters ist keine zwingende Verschlüsselung anzuwenden, soweit die Übertragung nicht über öffentliche Netze erfolgt. In diesem Fall kann die nicht-öffentliche Umgebung des Cloud-Anbieters grundsätzlich als vertrauenswürdig angesehen werden. Die Konfiguration des TLS-Protokolls sollte den Empfehlungen der aktuellen Version der Technischen Richtlinie TR-02102-2 ''Kryptographische Verfahren: Empfehlungen und Schlüssellängen. Teil 2 - Verwendung von Transport Layer Security (TLS)'' des BSI entsprechen. Cipher Suites sollten Perfect Forward Secrecy bereitstellen. Im Allgemeinen sollten Wildcard-Zertifikate nicht verwendet werden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen für diejenigen Teile des Cloud-Dienstes unter ihrer Verantwortung sicher, dass ihre Cloud-Kundendaten über verschlüsselte Verbindungen entsprechend dem jeweiligen Schutzbedarf übertragen werden.'
+-
+  identifier: &ID_Criterion_Encryption_of_Sensitive_Data_for_Storage '05'
+  name: 'Verschlüsselung von sensiblen Daten bei der Speicherung'
+  basic:
+    -
+      identifier: &ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Verfahren und technische Maßnahmen zur Verschlüsselung von Cloud-Kundendaten bei der Speicherung (d. h. im Ruhezustand) eingerichtet.'
+    -
+      identifier: &ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_2 '02B'
+      criterion: 'Im Allgemeinen sind die privaten Schlüssel (für asymmetrische Algorithmen) oder geheimen Schlüssel (für symmetrische Algorithmen), die für die Verschlüsselung verwendet werden, in Übereinstimmung mit geltenden rechtlichen und regulatorischen Verpflichtungen und Anforderungen, nur für den Cloud-Kunden zugänglich. Wenn der Cloud-Anbieter aufgrund der Art des Cloud-Dienstes auf die privaten oder geheimen Schlüssel des Cloud-Kunden zugreifen muss, um den Cloud-Dienst bereitzustellen, erfolgt dieser Zugriff gemäß IAM-07. Ausnahmen folgen einem festgelegten Verfahren.'
+    -
+      identifier: &ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Verfahren für die Verwendung privater Schlüssel, inklusive gegebenenfalls bestehender Ausnahmen, werden mit dem Cloud-Kunden abgestimmt.'
+    -
+      identifier: &ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_4 '04B'
+      criterion: 'Wenn Änderungen dieser Verfahren und technischen Sicherheitsmaßnahmen die Vertraulichkeit der Cloud-Kundendaten beeinträchtigen können, kommuniziert der Cloud-Anbieter diese Änderungen an die Cloud-Kunden.'
+    -
+      identifier: &ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_5 '05B'
+      criterion: 'Wenn der Cloud-Anbieter einen Master-Schlüssel verwendet, testet der Cloud-Anbieter regelmäßig die Eignung des Designs und die betriebliche Wirksamkeit der jeweiligen Kontrollen zum Schutze des Master-Keys.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter stellt sicher, dass sichere Verschlüsselungsmechanismen vorhanden sind, um die Wiederherstellung von Cloud-Kundendaten zu verhindern, wenn Ressourcen neu zugewiesen oder physische Medien wiedereingesetzt werden.'
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_2
+        - *ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_3
+        - *ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_4
+        - *ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Additional_Complement_1
+      information_text: 'Die Anforderung ''nur für den Cloud-Kunden zugänglich'' bedeutet, dass Verschlüsselungsschlüssel ausschließlich im Wissen und unter der Kontrolle des Eigentümers (d. h. des Cloud-Kunden) verbleiben. Dies kann durch die Implementierung eines sicheren Schlüsselmanagementsystems adressiert werden. Wenn ein Schlüsselmanagementsystem verwendet wird, müssen die Schlüssel vor einer Nutzung geschützt werden, die nicht ausdrücklich vom Eigentümer des Schlüssels autorisiert wurde, und sie müssen im Klartext unzugänglich bleiben.
+
+
+Dieses Kriterium gilt nicht für Daten, die aus funktionalen Gründen für die Bereitstellung des Cloud-Dienstes nicht verschlüsselt werden können.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_2
+      information_text: 'Szenarien, in denen der Cloud-Anbieter auf die geheimen oder privaten Schlüssel des Cloud-Kunden zugreifen muss, umfassen unter anderem die Nutzung von vom Cloud-Anbieter verwalteten Schlüsseln in einem SaaS-Dienst.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_2
+        - *ID_Criterion_Encryption_of_Sensitive_Data_for_Storage_Subcriterion_Basic_5
+      information_text: 'Die Nutzung eines Master-Schlüssels durch den Cloud-Anbieter kann eine Ausnahme von der Anforderung darstellen, dass Schlüssel nur für die Cloud-Kunden zugänglich sind.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen für diejenigen Teile des Cloud-Dienstes unter ihrer Verantwortung (z. B. virtuelle Maschinen innerhalb einer IaaS-Lösung) sicher, dass ihre Cloud-Kundendaten während der Speicherung entsprechend dem jeweiligen Schutzbedarf verschlüsselt sind.'
+-
+  identifier: &ID_Criterion_Secure_Key_Generation '06'
+  name: 'Sichere Schlüsselerzeugung'
+  basic:
+    -
+      identifier: &ID_Criterion_Secure_Key_Generation_Subcriterion_Basic_1 '01B'
+      criterion: 'Verfahren und technische Sicherheitsmaßnahmen für die sichere Schlüsselgenerierung für verschiedene kryptographische Systeme und Anwendungen sind dokumentiert und umgesetzt. Diese Sicherheitsmaßnahmen erfordern die Verwendung sicherer Zufallszahlengeneratoren oder eine Erzeugung auf Grundlage von Schlüsseln, die auf diese Weise erstellt wurden.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Secure_Key_Generation_Subcriterion_Basic_1
+      information_text: 'Für die Definition sicherer Zufallszahlengeneratoren sollten sich Cloud-Anbieter auf BSI TR-02102-1 (Kapitel 8) beziehen.
+
+
+Der Cloud-Anbieter schützt die Schlüssel, die von den Cloud-Kunden erstellt und in den Cloud-Dienst eingebracht werden, nach denselben Kriterien wie die vom Cloud-Anbieter erstellten Schlüssel.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Rotation_of_Cryptographic_Keys '07'
+  name: 'Rotation kryptographischer Schlüssel'
+  basic:
+    -
+      identifier: &ID_Criterion_Rotation_of_Cryptographic_Keys_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat einen Zeitplan für die Rotation kryptographischer Schlüssel festgelegt, der mit den in CRY-01 festgelegten Anforderungen an die Rotation kryptographischer Schlüssel übereinstimmt. Falls der Cloud-Anbieter auf Grundlage der Ergebnisse einer Risikobewertung keine Schlüsselrotation durchführt, wird diese Entscheidung dem Cloud-Kunden transparent kommuniziert.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Public_Key_Certificate_Issuance '08'
+  name: 'Ausstellung von Public-Key-Zertifikaten'
+  basic:
+    -
+      identifier: &ID_Criterion_Public_Key_Certificate_Issuance_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Verfahren dokumentiert und umgesetzt, um Public-Key-Zertifikate sicher auszustellen, einzuholen und dabei die Integrität und Authentizität kryptographischer Schlüssel sicherzustellen. Diese Verfahren umfassen:
+
+
+1. Überprüfung der Identität vor der Ausstellung von Public-Key-Zertifikaten, die vom Cloud-Anbieter oder in seinem Auftrag für seine eigenen Systemkomponenten oder sein Personal ausgestellt werden, um sicherzustellen, dass sie legitimen Entitäten gewährt werden;
+
+2. Sichere Methoden für die Ausstellung von Zertifikaten, die vom Cloud-Anbieter oder in seinem Auftrag für seine eigenen Systemkomponenten oder sein Personal ausgestellt werden, um unbefugten Zugriff zu verhindern; und
+
+3. Verfahren zur Einholung von Public-Key-Zertifikaten von vertrauenswürdigen Zertifizierungsstellen, um die Authentizität der vom Cloud-Anbieter verwendeten Zertifikate sicherzustellen.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Public_Key_Certificate_Issuance_Subcriterion_Basic_1
+      information_text: 'Die ersten beiden Aufzählungspunkte gelten für Zertifikate, die vom Cloud-Anbieter oder in seinem Auftrag für seine eigenen Systemkomponenten und sein Personal ausgestellt werden. Wenn der Cloud-Anbieter Zertifizierungsstellendienste für Cloud-Kunden anbietet, gilt das Prinzip der geteilten Verantwortung, d. h. der Cloud-Anbieter sollte sicherstellen, dass der Cloud-Dienst angemessene technische Maßnahmen bereitstellt, damit Cloud-Kunden eine angemessene Identitätsprüfung durchführen können (vgl. auch die korrespondierenden Kontrollen der Cloud-Kunden).
+
+Der dritte Aufzählungspunkt gilt für Zertifikate, die der Cloud-Anbieter von externen Zertifizierungsstellen zur Verwendung in seinen eigenen Cloud-Dienst und Systemkomponenten einholt. Der Cloud-Anbieter sollte sicherstellen, dass Zertifikate nur von vertrauenswürdigen Zertifizierungsstellen eingeholt werden und dass die Authentizität erhaltener Zertifikate vor der Nutzung verifiziert wird. Dieses Kriterium erstreckt sich nicht notwendigerweise auf Zertifikate, die Cloud-Kunden von externen Zertifizierungsstellen für ihre eigenen Zwecke einholen; die Auswahl und Validierung externer Zertifizierungsstellen durch Cloud-Kunden fällt im Modell der geteilten Verantwortung in den Verantwortungsbereich der Cloud-Kunden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass dort, wo sie vom Cloud-Anbieter bereitgestellte Zertifizierungsstellendienste nutzen, dem ausgestellten Zertifikat angemessene Identitätsprüfungsverfahren umgesetzt werden und die vom Cloud-Dienst bereitgestellten technischen Kontrollen so konfiguriert sind, dass sie die Identitätsprüfung ermöglichen und durchsetzen. Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass dort, wo sie Zertifikate von externen Zertifizierungsstellen für ihre eigene Nutzung beschaffen, Verfahren zur Auswahl vertrauenswürdiger Zertifizierungsstellen und zur Validierung der Authentizität beschaffter Zertifikate festgelegt sind.'
+-
+  identifier: &ID_Criterion_Secure_Key_Provisioning '09'
+  name: 'Sichere Schlüsselbereitstellung'
+  basic:
+    -
+      identifier: &ID_Criterion_Secure_Key_Provisioning_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Verfahren und technische Sicherheitsmaßnahmen dokumentiert und umgesetzt, um sicherzustellen, dass kryptographische Schlüssel innerhalb seines Verantwortungsbereichs sicher bereitgestellt und aktiviert werden. Diese Verfahren umfassen die Überprüfung von Identität und Berechtigung vor der Bereitstellung und Aktivierung von Schlüsseln, um sicherzustellen, dass sie legitimen Entitäten gewährt werden.'
+    -
+      identifier: &ID_Criterion_Secure_Key_Provisioning_Subcriterion_Basic_2 '02B'
+      criterion: 'Bereitgestellte Schlüssel enthalten Aktivierungs- und Deaktivierungsfristen, um sicherzustellen, dass ihre Nutzung zeitlich begrenzt ist.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Secure_Storage_of_Keys '10'
+  name: 'Sichere Speicherung von Schlüsseln'
+  basic:
+    -
+      identifier: &ID_Criterion_Secure_Storage_of_Keys_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat technische Sicherheitsmaßnahmen für die sichere Speicherung kryptographischer Schlüssel dokumentiert und umgesetzt. Dazu gehört, die Trennung des Schlüsselmanagementsystems von den Anwendungs- und Middleware-Ebenen sicherzustellen, festzulegen, wie autorisierte Nutzer Zugang erhalten, und die geografische Verortung der Schlüssel zu berücksichtigen, um vertragliche, rechtliche, regulatorische und sicherheitsbezogene Anforderungen einzuhalten.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Secure_Storage_of_Keys_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Auf Grundlage einer Risikbeurteilung (vgl. OIS-07) verwendet der Cloud-Anbieter ein geeignetes Software- oder Hardware-Sicherheitsmodul für die sichere Speicherung kryptographischer Schlüssel.'
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Cryptographic_Key_Archival '11'
+  name: 'Archivierung kryptographischer Schlüssel'
+  basic:
+    -
+      identifier: &ID_Criterion_Cryptographic_Key_Archival_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Verfahren und technische Sicherheitsmaßnahmen für die sichere Archivierung kryptographischer Schlüssel dokumentiert und umgesetzt. Diese umfassen:
+
+
+1. Speicherung archivierter Schlüssel in einem Repository, um unbefugten Zugriff zu verhindern;
+
+2. Beschränkung des Zugriffs auf archivierte Schlüssel auf autorisiertes Personal nach dem ''Least-Privilege-Prinzip'';
+
+3. Unterstützung der späteren Wiederherstellung von Informationen durch archivierte Schlüssel;
+
+4. Aufbewahrung archivierter Schlüssel nur so lange, wie es erforderlich ist, und anschließende sichere Vernichtung; und
+
+5. Protokollierung aller Aktivitäten im Zusammenhang mit der Speicherung und Wiederherstellung archivierter Schlüssel.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Cryptographic_Key_Transition_Management '12'
+  name: 'Management von Statusänderungen kryptographischer Schlüssel'
+  basic:
+    -
+      identifier: &ID_Criterion_Cryptographic_Key_Transition_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Verfahren dokumentiert und umgesetzt, um Statusänderungen kryptographischer Schlüssel zu überwachen, einschließlich ihres Statuswechsels in und aus der Aussetzung. Diese Verfahren stellen sicher, dass alle Statuswechsel aller Schlüssel gründlich überwacht, überprüft und genehmigt werden, um die Sicherheit aufrechtzuerhalten, sowie geltendes Recht und Vorschriften einzuhalten.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Cryptographic_Key_Transition_Management_Subcriterion_Basic_1
+      information_text: 'Die Aussetzung eines kryptographischen Schlüssels bezieht sich auf einen vorübergehenden Zustand, in dem der Schlüssel deaktiviert ist und nicht für kryptographische Operationen verwendet werden kann, später aber wieder reaktiviert werden kann. Die Deaktivierung eines kryptographischen Schlüssels stellt dagegen einen dauerhaften Zustand dar, in dem der Schlüssel aus der Nutzung zurückgezogen wird und nicht wieder reaktiviert werden kann.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Handling_of_Compromised_Keys '13'
+  name: 'Umgang mit kompromittierten Schlüsseln'
+  basic:
+    -
+      identifier: &ID_Criterion_Handling_of_Compromised_Keys_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter steuert die Nutzung kompromittierter kryptographischer Schlüssel, um sicherzustellen, dass sie nur unter kontrollierten Umständen und ausschließlich zur Entschlüsselung oder Verifikation (im Fall von Signaturschlüsseln) verwendet werden, unter Einhaltung rechtlicher  und regulatorischer Anforderungen.'
+    -
+      identifier: &ID_Criterion_Handling_of_Compromised_Keys_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter benachrichtigt betroffene Cloud-Kunden unverzüglich darüber, dass ihre Schlüssel kompromittiert wurden und nicht länger für Verschlüsselung oder Signaturen verwendet werden.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Secure_Deactivation_of_Cryptographic_Keys '14'
+  name: 'Sichere Deaktivierung kryptographischer Schlüssel'
+  basic:
+    -
+      identifier: &ID_Criterion_Secure_Deactivation_of_Cryptographic_Keys_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Verfahren dokumentiert und umgesetzt, um kryptographische Schlüssel zu deaktivieren. Diese Verfahren stellen sicher, dass:
+
+
+1. abgelaufene Schlüssel nicht länger für Verschlüsselungszwecke verwendet werden, aber bei Bedarf weiterhin zur Entschlüsselung verwendet werden können;
+
+2. abgelaufene Schlüssel nicht länger zur Erstellung von Signaturen verwendet werden, aber weiterhin zur Signaturverifikation verwendet werden können;
+
+3. deaktivierte Schlüssel schließlich vernichtet werden, wenn sie nicht mehr benötigt werden, wobei relevante Metadaten für Audit-Zwecke aufbewahrt werden; und
+
+4. alle Maßnahmen im Zusammenhang mit der Deaktivierung und Vernichtung von Schlüsseln im Schlüsselmanagementsystem aufgezeichnet werden, um ein detailliertes Audit-Log aufrechtzuerhalten.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Requirements_for_pre_shared_Keys '15'
+  name: 'Anforderungen an Pre-Shared Keys'
+  basic:
+    -
+      identifier: &ID_Criterion_Requirements_for_pre_shared_Keys_Subcriterion_Basic_1 '01B'
+      criterion: 'Wenn Pre-Shared Keys oder Wildcard-Zertifikate verwendet werden, hat der Cloud-Anbieter dedizierte Verfahren und technische Sicherheitsmaßnahmen dokumentiert und umgesetzt, um deren sichere Nutzung und Bereitstellung sicherzustellen.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Operational_Continuity_for_Key_Management '16'
+  name: 'Betriebliche Kontinuität für das Schlüsselmanagement'
+  basic:
+    -
+      identifier: &ID_Criterion_Operational_Continuity_for_Key_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat die Vor- und Nachteile der Durchführung von Backups des in einem Hardware Security Module (HSM) gespeicherten Schlüsselmaterials zur Schlüsselwiederherstellung und dem Aufbau von Redundanz oder vergleichbaren Maßnahmen zur Sicherung von Schlüsseln zur Gewährleistung der betrieblichen Kontinuität abgewogen. Diese Abwägung umfasst die Beurteilung des Risikos einer Offenlegung von Schlüsseln, wenn die Kontrolle über das Schlüsselmaterial verloren geht. Entscheidungen darüber, ob Schlüssel-Backups verwendet oder Redundanz aufgebaut werden sollen, sind dokumentiert, und die gewählten Maßnahmen werden auf ihre Wirksamkeit und ihre Übereinstimmung mit vertraglichen, rechtlichen und regulatorischen Anforderungen überprüft.'
+    -
+      identifier: &ID_Criterion_Operational_Continuity_for_Key_Management_Subcriterion_Basic_2 '02B'
+      criterion: 'Verfahren zur Wiederherstellung verlorener oder beschädigter Schlüssel sind vorhanden.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Operational_Continuity_for_Key_Management_Subcriterion_Basic_1
+        - *ID_Criterion_Operational_Continuity_for_Key_Management_Subcriterion_Basic_2
+      information_text: 'Der Cloud-Anbieter sollte die folgenden Optionen zur Sicherung von Schlüsselmaterial berücksichtigen:
+
+
+1. Backup von Schlüsseln: Verschlüsselte Backups von Schlüsseln werden sicher außerhalb des HSM gespeichert. Der Backup-Prozess sollte sicherstellen, dass die Schlüssel während der Speicherung und Übertragung verschlüsselt sind, um unbefugten Zugriff zu verhindern. Regelmäßige Tests der Backup- und Wiederherstellungsverfahren sollten durchgeführt werden, um die Wirksamkeit und Integrität der Backups zu verifizieren. Backups außerhalb eines HSM sollten nur nach sorgfältiger Risikobeurteilung in Betracht gezogen werden.
+
+2. Redundante HSMs: Implementierung mehrerer HSMs an geografisch verteilten Standorten, um Redundanz zu schaffen und sicherzustellen, dass Schlüssel auch dann verfügbar und sicher bleiben, wenn ein HSM ausfällt. Die HSMs sollten synchronisiert sein, um die Konsistenz des Schlüsselmaterials über alle Geräte hinweg sicherzustellen. Regelmäßige Health-Checks und Failover-Tests sind erforderlich, um sicherzustellen, dass Redundanzmechanismen korrekt funktionieren. Die konkrete Art und Weise, wie diese Redundanz aufgebaut wird, kann von den Einzelheiten der vertraglichen Vereinbarungen zwischen Cloud-Anbieter und Cloud-Kunde abhängen. Wenn der Cloud-Kunde beispielsweise einen bestimmten Standort, eine Zone oder Region wählt, gilt diese Wahl auch für die in diesem Kriterium genannte Redundanz.
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Cryptographic_Key_Lifecycle_Management '17'
+  name: 'Management des Lebenszyklus kryptographischer Schlüssel'
+  basic:
+    -
+      identifier: &ID_Criterion_Cryptographic_Key_Lifecycle_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Verfahren und technische Sicherheitsmaßnahmen dokumentiert und umgesetzt, um den Lebenszyklus kryptographischer Schlüssel und kryptographischen Materials zu überwachen und zu dokumentieren.'
+    -
+      identifier: &ID_Criterion_Cryptographic_Key_Lifecycle_Management_Subcriterion_Basic_2 '02B'
+      criterion: 'Für alle Schlüssel mit Ausnahme ephemerer Schlüssel stellen die vorgenannten Sicherheitsmaßnahmen detaillierte Aufzeichnungen über jeden Schlüssel von der Erstellung bis zur Vernichtung sicher, einschließlich etwaiger Statusänderungen.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Usage_Of_External_Key_Management_Systems '18'
+  name: 'Nutzung externer Schlüsselmanagementsysteme'
+  basic:
+    -
+      identifier: &ID_Criterion_Usage_Of_External_Key_Management_Systems_Subcriterion_Basic_1 '01B'
+      criterion: 'Für den Fall, dass externe Schlüsselmanagementsysteme (KMS) als Option im Cloud-Dienst vorgesehen sind, stellt der Cloud-Anbieter sicher, dass Verfahren und technische Sicherheitsmaßnahmen für die Nutzung externer KMS eingerichtet sind. Dabei werden die folgenden Aspekte berücksichtigt:
+
+
+1. Die externen KMS verfügen über anerkannte Sicherheitszertifizierungen, die den Stand der Technik widerspiegeln, um rechtliche, regulatorische und vertragliche Anforderungen einzuhalten;
+
+2. Die Integration der externen KMS in die Cloud-Infrastruktur ist sicher, um die Vertraulichkeit, Integrität und Verfügbarkeit der Schlüssel zu gewährleisten;
+
+3. Strenge Zugriffskontrollen werden umgesetzt, um sicherzustellen, dass nur autorisierte Nutzer und Systeme Zugriff auf die Schlüssel haben (vgl. IAM-01);
+
+4. Verfahren für die regelmäßige Rotation und Erneuerung von Schlüsseln werden definiert und umgesetzt, um die Sicherheit der Schlüssel zu gewährleisten (vgl. CRY-07);
+
+5. Alle Zugriffe und Operationen auf die externen KMS werden protokolliert und überwacht, um verdächtige Aktivitäten zu erkennen und darauf zu reagieren; und
+
+6. Der Cloud-Anbieter stellt sicher, dass die externen KMS regelmäßig auf Schwachstellen geprüft (vgl. OPS-25) und aktualisiert (vgl. OPS-28) werden, um aktuellen Bedrohungen und technologischen Entwicklungen zu begegnen.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding: 'Cloud-Kunden stellen sicher, dass ihre eigenen Schlüsselmanagementverfahren mit den Anforderungen des externen KMS kompatibel sind und dass sie geeignete Kontrollen umsetzen, um die Sicherheit ihrer Schlüssel zu gewährleisten.'
+-
+  identifier: &ID_Criterion_Secure_Handling_of_Customer_Managed_Keys '19'
+  name: 'Sicherer Umgang mit kundenseitig verwalteten Schlüsseln'
+  basic:
+    -
+      identifier: &ID_Criterion_Secure_Handling_of_Customer_Managed_Keys_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter setzt Verfahren und technische Sicherheitsmaßnahmen um, um den sicheren Umgang mit kryptographischen Schlüsseln sicherzustellen, die von Cloud-Kunden verwaltet werden. In diesen Verfahren werden die folgenden Aspekte berücksichtigt:
+
+
+1. Sichere Integration von kundenseitig erzeugten Schlüsseln (''Bring-Your-Own-Key''; BYOK) in die Cloud-Umgebung;
+
+2. Protokollierung aller Aktivitäten im Zusammenhang mit kundenseitig verwalteten Schlüsseln; und
+
+3. Definition von Zugriffskontrollmechanismen, um zu ermöglichen, dass nur autorisierte Nutzer Zugriff auf kundenseitig verwaltete Schlüssel erhalten.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass ihre Vereinbarungen mit dem Cloud-Anbieter robuste Verfahren und technische Sicherheitsmaßnahmen für den sicheren Umgang mit kundenseitig verwalteten kryptographischen Schlüsseln umfassen. Cloud-Kunden stellen sicher, dass diese Verfahren die sichere Integration ihrer Schlüssel in die Cloud-Umgebung, eine umfassende Protokollierung aller Aktivitäten im Zusammenhang mit ihren Schlüsseln und klar definierte Zugriffskontrollmechanismen behandeln, um den Zugriff ausschließlich auf autorisierte Nutzer zu beschränken.'

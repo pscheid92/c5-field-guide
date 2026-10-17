@@ -1,0 +1,492 @@
+-
+  identifier: &ID_Criterion_Information_Security_Management_System '01'
+  name: 'Informationssicherheitsmanagementsystem (ISMS)'
+  basic: 
+    -
+      identifier: &ID_Criterion_Information_Security_Management_System_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter betreibt ein ISO/IEC 27001-konformes Informationssicherheitsmanagementsystem (ISMS). Der Anwendungsbereich des ISMS umfasst die Organisationseinheiten, Standorte, Zonen, Regionen und Verfahren des Cloud-Anbieters, die für die Entwicklung und den Betrieb des Cloud-Dienstes relevant sind.'
+    -
+      identifier: &ID_Criterion_Information_Security_Management_System_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Maßnahmen für Aufbau, Verwirklichung, Aufrechterhaltung und fortlaufende Verbesserung des ISMS sind dokumentiert. Die Dokumentation umfasst:
+
+
+1. Kontext des Cloud-Anbieters;
+
+2. Anwendungsbereich des ISMS (Abschnitt 4.3 der ISO/IEC 27001);
+
+3. Erklärung zur Anwendbarkeit (Abschnitt 6.1.3 der ISO/IEC 27001); 
+
+4. Überblick darüber, wie Aktivitäten im ISMS den Cloud-Dienst abdecken;
+
+5. Beschreibung, wie der Cloud-Anbieter die Sicherheit des Cloud-Dienstes aufrechterhält und verbessert; und
+
+6. Ergebnisse der letzten Managementbewertung (Abschnitt 9.3 der ISO/IEC 27001).
+
+'
+    -
+      identifier: &ID_Criterion_Information_Security_Management_System_Subcriterion_Basic_3 '03B'
+      criterion: 'Zusätzlich dokumentiert der Cloud-Anbieter den Umfang und die Grenzen des Cloud-Dienstes unter seiner betrieblichen Kontrolle, einschließlich etwaiger Ausschlüsse oder Bereiche mit geteilter Verantwortung.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Information_Security_Management_System_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Information_Security_Management_System_Subcriterion_Basic_1
+      criterion: 'Das Informationssicherheitsmanagementsystem (ISMS) verfügt über eine gültige Zertifizierung nach ISO/IEC 27001 oder ISO 27001 auf Basis von BSI IT-Grundschutz. Der Anwendungsbereich der Zertifizierung umfasst die Organisationseinheiten, Standorte, Zonen, Regionen und Verfahren des Cloud-Anbieters, die für die Entwicklung und den Betrieb des Cloud-Dienstes relevant sind.'   
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Information_Security_Management_System_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Bestehende gültige Zertifizierungen nach ISO/IEC 27001 werden von einer akkreditierten Zertifizierungsstelle ausgestellt und anerkannt.'   
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Information_Security_Management_System_Subcriterion_Basic_1
+      information_text: 'Das Basiskriterium kann auch ohne gültige Zertifizierung des ISMS nach ISO/IEC 27001 oder ISO 27001 auf Basis von IT-Grundschutz erfüllt werden, soweit die vorgelegte Dokumentation die Anforderungen der ISO/IEC 27001 erfüllt. Der Prüfer hat zu bewerten, ob die Dokumentation die referenzierten Anforderungen der ISO-Norm erfüllt. Dies erfordert kein vollständiges Zertifizierungsaudit des Managementsystems gemäß ISO 17021, sondern eine gezielte Prüfung der zugehörigen Dokumentation.
+
+
+Querschnittsfunktionen müssen nicht in ein einziges ISMS integriert werden. Stattdessen können mehrere ISMS eingerichtet werden, um sowohl Cloud-Dienst-spezifische interne Kontrollsysteme als auch organisationsweite/zentrale Funktionen wirksam abzudecken.
+
+
+Der Anwendungsbereich des ISMS kann über den Anwendungsbereich des internen Kontrollsystems des Cloud-Anbieters für den Cloud-Dienst,  der Gegenstand eines Prüfauftrags nach diesem Kriterienkatalog ist, hinausgehen. Wenn der Anwendungsbereich des ISMS breiter ist als der Anwendungsbereich des Prüfauftrags, können die über die Ausgestaltung und den Betrieb des ISMS einzuholenden Nachweise auf Aufzeichnungen beschränkt werden, die für den Cloud-Dienst, der Gegenstand des Prüfauftrags ist, relevant sind.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Information_Security_Policy '02'
+  name: 'Informationssicherheitsrichtlinie'
+  basic: 
+    -
+      identifier: &ID_Criterion_Information_Security_Policy_Subcriterion_Basic_1 '01B'
+      criterion: 'Die oberste Geschäftsleitung des Cloud-Anbieters hat eine Informationssicherheitsrichtlinie verabschiedet.' 
+    -
+      identifier: &ID_Criterion_Information_Security_Policy_Subcriterion_Basic_2 '02B'
+      criterion: 'Die oberste Geschäftsleitung des Cloud-Anbieters hat die Informationssicherheitsrichtlinie an das interne und externe Personal sowie die Cloud-Kunden kommuniziert.' 
+    -
+      identifier: &ID_Criterion_Information_Security_Policy_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Informationssicherheitsrichtlinie beschreibt:
+
+
+1. Den Stellenwert der Informationssicherheit, abgeleitet von den Anforderungen der Cloud-Kunden mit Bezug zur Informationssicherheit;
+
+2. Die Sicherheitsziele und das angestrebte Sicherheitsniveau, abgeleitet von den Geschäftszielen und Aufgaben des Cloud-Anbieters;
+
+3. Die Verpflichtung des Cloud-Anbieters, die erforderlichen Sicherheitsmaßnahmen zur Erfüllung der festgelegten Sicherheitsziele umzusetzen;
+
+4. Die wichtigsten Aspekte der Sicherheitsstrategie zum Erreichen der gesetzten Sicherheitsziele; und
+
+5. Die Organisationsstruktur für Informationssicherheit im Anwendungsbereich des ISMS.
+
+'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Information_Security_Policy_Subcriterion_Basic_1
+        - *ID_Criterion_Information_Security_Policy_Subcriterion_Basic_2
+      information_text: 'Die oberste Leitung ist eine natürliche Person oder Personengruppe, welche die letztgültige Entscheidung für die Institution trifft und für diese die Verantwortung trägt.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Interfaces_and_Dependencies '03'
+  name: 'Schnittstellen und Abhängigkeiten'
+  basic: 
+    -
+      identifier: &ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter etabliert, dokumentiert und kommuniziert ein Modell geteilter Sicherheitsverantwortung (engl. Shared Security Responsibility Model; SSRM), um Schnittstellen und Abhängigkeiten zwischen den vom Cloud-Anbieter ausgeführten Aktivitäten zur Erbringung des Cloud-Dienstes und den von den Cloud-Kunden ausgeführten Aktivitäten zu definieren und zu steuern.'
+    -
+      identifier: &ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_2 '02B'
+      criterion: 'Die SSRM-Dokumentation definiert klar die Verantwortlichkeiten zwischen beiden Parteien für den Umgang mit Schwachstellen, Sicherheitsvorfällen und Vorfällen. Art und Umfang der Dokumentation richten sich nach dem Informationsbedarf der Fachexperten der betroffenen Organisationen, um die Aktivitäten angemessen durchführen zu können (z. B. Definition von Rollen und Verantwortlichkeiten in Richtlinien, Beschreibung von Mitwirkungspflichten in Leistungsbeschreibungen und Verträgen).'
+    -
+      identifier: &ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_3 '03B'
+      criterion: 'Der Cloud-Anbieter überprüft und validiert die SSRM-Dokumentation regelmäßig gemäß SP-02, um ihre Genauigkeit und Relevanz für alle Angebote des Cloud-Dienstes sicherzustellen.' 
+    -
+      identifier: &ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_4 '04B'
+      criterion: 'Der Cloud-Anbieter implementiert, betreibt und überprüft die SSRM-Komponenten, für die er verantwortlich ist, und stellt die Einhaltung der definierten Sicherheitsmaßnahmen sicher.'
+    -
+      identifier: &ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_5 '05B'
+      criterion: 'Die Kommunikation von Änderungen am SSRM, an Schnittstellen und an Abhängigkeiten erfolgt zeitnah, damit die betroffenen Organisationen und Dritten vor Inkrafttreten der Änderungen angemessen mit organisatorischen und technischen Maßnahmen reagieren können.'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_1
+      information_text: 'Dritte im Sinne dieses Basiskriteriums sind z. B. Cloud-Kunden und Service-Organisationen (einschließlich Cloud-Vermittler).
+      
+Ein SSRM bietet einen konsolidierten Überblick über die wichtigsten Schnittstellen und Abhängigkeiten zwischen dem Cloud-Anbieter und Dritten. Detaillierte Informationen zu Schnittstellen und Abhängigkeiten können in separaten Dokumenten festgelegt werden, auf die im SSRM verwiesen wird, wie z. B. Leitlinien und Verfahren. So sollten beispielsweise Mitwirkungspflichten der Cloud-Kunden in Leistungsbeschreibungen und Verträgen beschrieben werden.
+
+Der Cloud-Anbieter kann das zugrunde liegende Shared Security Responsibility Model seines Cloud-Dienstes in Leitlinien und Verfahren darstellen, um den Cloud-Kunden zu helfen, ihre Rollen und Verantwortlichkeiten in Bezug auf Sicherheit und Betriebsmanagement zu verstehen.
+
+
+Wenn Cloud-Dienste über einen Cloud-Vermittler erbracht werden, sollte das SSRM die Verantwortlichkeiten zwischen dem Cloud-Anbieter, dem Cloud-Vermittler und dem Cloud-Kunden klar abgrenzen, insbesondere:
+
+
+1. Dateneigentum und Grenzen der Verarbeitung;
+
+2. Umsetzung von Sicherheitskontrollen durch die jeweiligen Parteien;
+
+3. Wege für die Benachrichtigung und Eskalation bei Vorfällen; und
+
+4. Umfang der Compliance-Bescheinigung.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_1
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_2
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_3
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_4
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_5
+      information_text: 'Der Cloud-Anbieter kann die im Basiskriterium beschriebenen Schnittstellen und Abhängigkeiten in Leitlinien und Verfahren definieren und dokumentieren. So sollten beispielsweise Mitwirkungspflichten der Cloud-Kunden in Leistungsbeschreibungen und Verträgen (oder deren Anhängen) beschrieben werden.
+      
+
+Der Cloud-Anbieter kann bestehende Dokumentation, wie Leitlinien, vertragliche Vereinbarungen oder Verfahren, nutzen, um das zugrunde liegende Shared Responsibility Model seines Cloud-Dienstes darzustellen und damit die Sicherheits- und Betriebsverantwortlichkeiten der Cloud-Kunden zu verdeutlichen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_3
+        - *ID_Criterion_Interfaces_and_Dependencies_Subcriterion_Basic_5
+      information_text: 'Durch die Pflege eines aktuellen und klar kommunizierten SSRM stellt der Cloud-Anbieter ein umfassendes Verständnis der Sicherheitsverantwortlichkeiten sicher und fördert so eine sichere und verlässliche Cloud-Umgebung für alle Beteiligten.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Leitlinien und Anforderungen zur Einhaltung der vertraglichen Vereinbarungen mit dem Cloud-Anbieter (d. h. Verantwortlichkeiten, Mitwirkungspflichten und Schnittstellen für die Meldung von Sicherheitsvorfällen) angemessen definiert, dokumentiert und eingerichtet sind.'
+-
+  identifier: &ID_Criterion_Segregation_of_Duties '04'
+  name: 'Aufgabentrennung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Segregation_of_Duties_Subcriterion_Basic_1 '01B'
+      criterion: 'Miteinander in Konflikt stehende Aufgaben und Verantwortlichkeitsbereiche sind auf Basis einer Risikobeurteilung gemäß OIS-07 getrennt, um Risiken unbefugter oder unbeabsichtigter Änderungen oder Missbrauch von Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten und Cloud-Anbieterdaten zu reduzieren. Die Risikobeurteilung umfasst folgende Bereiche, soweit diese zur Bereitstellung des Cloud-Dienstes anwendbar sind und im Verantwortungsbereich des Cloud-Anbieters liegen:
+
+
+1. Verwaltung eines Rollen-, Rechte- und Berechtigungsrahmenwerks auf Grundlage einer rollenbasierten Zugriffskontrolle und denr geschäftlichen sowie sicherheitsbezogenen Anforderungen des Cloud-Anbieters (vgl. IAM-01);
+
+2. Entwicklung, Test und Freigabe von Änderungen (vgl. DEV-01); 
+
+3. Risikomanagement (vgl. OIS-07); und
+
+4. Betrieb der Systemkomponenten.
+
+'
+    -
+      identifier: &ID_Criterion_Segregation_of_Duties_Subcriterion_Basic_2 '02B'
+      criterion: 'Mitigierende Maßnahmen werden im Risikobehandlungsplan (vgl. OIS-09) dargelegt und vom Cloud-Anbieter in einer Weise umgesetzt, die der Funktionstrennung Vorrang einräumt.'
+    -
+      identifier: &ID_Criterion_Segregation_of_Duties_Subcriterion_Basic_3 '03B'
+      criterion: 'Wenn eine Funktionstrennung aufgrund organisatorischer oder technischer Einschränkungen nicht umgesetzt werden kann, richtet der Cloud-Anbieter kompensierende Kontrollen ein und betreibt diese, um relevante Aktivitäten zu überwachen. Diese Kontrollen sind darauf ausgelegt, unbefugte oder unbeabsichtigte Änderungen, den Missbrauch von Daten oder Verstöße gegen betriebliche Richtlinien zu erkennen und zeitnahe sowie angemessene Reaktionsmaßnahmen zu ermöglichen.'
+    -
+      identifier: &ID_Criterion_Segregation_of_Duties_Subcriterion_Basic_4 '04B'
+      criterion: 'Ein Verzeichnis bestehend aus im Konflikt stehenden Aufgaben, Verantwortlichkeiten und auflösenden Maßnahmen wird vom Cloud-Anbieter eingerichtet und gepflegt. Bei der Zuweisung, Änderung oder Entziehung von Rollen, Rechten und Berechtigungen setzt der Cloud-Anbieter die Funktionstrennung durch.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Segregation_of_Duties_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Zur Auflösung von im Konflikt stehenden Rollen werden mit der Funktionstrennung verbundene Maßnahmen vom Cloud-Anbieter überwacht und durchgesetzt.' 
+    -
+      identifier: &ID_Criterion_Segregation_of_Duties_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Zeitnahe und angemessene Abhilfemaßnahmen adressieren alle bei der Überwachung festgestellten Abweichungen.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Segregation_of_Duties_Subcriterion_Basic_1
+      information_text: 'Identifizierte Ereignisse, die unbefugte oder unbeabsichtigte Änderungen an oder den Missbrauch von Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten und Cloud-Anbieterdaten darstellen können, können beispielsweise als Sicherheitsvorfall behandelt werden, vgl. SIM-01.
+      
+Der Bereich des Risikomanagements im Kontext der Funktionstrennung bezieht sich auf die sogenannten unterschiedlichen Verteidigungslinien, d. h. Rollen, die Risiken überprüfen (2. Verteidigungslinie), unterscheiden sich von Rollen, die Risiken verantworten (1. Verteidigungslinie).'
+  corresponding:
+-
+  identifier: &ID_Criterion_Threat_Intelligence '05'
+  name: 'Threat Intelligence'
+  basic: 
+    -
+      identifier: &ID_Criterion_Threat_Intelligence_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter sammelt Informationen aus ausgewählten internen und externen Quellen, um ein umfassendes Bild der Bedrohungslandschaft zu gewinnen, die zu Cybersicherheitsrisiken führt.'
+    -
+      identifier: &ID_Criterion_Threat_Intelligence_Subcriterion_Basic_2 '02B'
+      criterion: 'Die gesammelten Informationen werden korreliert und analysiert, um ihre potenziellen Auswirkungen auf die Organisation des Cloud-Anbieters zu identifizieren.' 
+    -
+      identifier: &ID_Criterion_Threat_Intelligence_Subcriterion_Basic_3 '03B'
+      criterion: 'Der Cloud-Anbieter integriert Threat Intelligence Erkenntnisse in seinen Risikomanagementprozess (vgl. OIS-07, OIS-08 und OIS-09).'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Threat_Intelligence_Subcriterion_Basic_1
+      information_text: 'Interne Quellen, die zur Sammlung von Informationen genutzt werden können, umfassen beispielsweise die interne Sicherheitsüberwachung des Cloud-Anbieters. Externe Quellen, die zur Sammlung von Informationen genutzt werden können, umfassen beispielsweise Threat Intelligence-Feeds von Regierungsstellen, kommerziellen Threat Intelligence-Anbietern oder Branchenkonsortien.
+      
+Threat Intelligence umfasst im Allgemeinen verschiedene Bereiche wie das Gewinnen von Informationen über Cybersicherheitsrisiken (z. B. durch Überwachung relevanter interner oder externer Quellen), Modellieren von Bedrohungen und Risikomanagement.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Threat_Intelligence_Subcriterion_Basic_2
+      information_text: 'Dieser Prozess kann beispielsweise die Korrelation von Threat Intelligence mit organisatorischen Vermögenswerten, Schwachstellen und Geschäftsprozessen umfassen, um relevante und umsetzbare Bedrohungen zu identifizieren. Die Ergebnisse können genutzt werden, um der Geschäftsleitung des Cloud-Anbieters und den Sicherheitsteams regelmäßige Bedrohungsbriefings bereitzustellen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Threat_Intelligence_Subcriterion_Basic_3
+      information_text: 'Wenn für diesen Prozess ein Bedrohungsmodell verwendet wird, kann der Cloud-Anbieter beispielsweise:
+
+
+1. Strukturierte Methodiken (z. B. STRIDE, PASTA, LINDDUN) verwenden, die für die Architektur des Cloud-Dienstes geeignet sind;
+
+2. Erkenntnisse über die aktuelle Bedrohungslandschaft spezifischen Systemkomponenten, Datenflüssen und Trust Boundaries zuordnen;
+
+3. Threat Intelligence in Echtzeit einbeziehen, um Bedrohungsmodelle dynamisch zu aktualisieren, anstatt sich auf statische jährliche Beurteilungen zu verlassen;
+
+4. Neu aufkommende Angriffsvektoren, Techniken und Verfahren (TTPs) berücksichtigen, die in Rahmenwerken wie MITRE ATT&CK dokumentiert sind; und
+
+5. Lieferketten- und Drittrisiken durch erweiterte Bedrohungsmodellierung berücksichtigen.
+
+
+Das Ziel der Bedrohungsmodellierung ist es, sicherzustellen, dass die aktuellen internen und externen Bedrohungen in Maßnahmen zum Umgang mit Risiken berücksichtigt werden.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Contact_with_Relevant_Government_Agencies_and_Interest_Groups '06'
+  name: 'Kontakt zu relevanten Behörden und Interessengruppen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Contact_with_Relevant_Government_Agencies_and_Interest_Groups_Subcriterion_Basic_1 '01B'
+      criterion: 'Soweit der Cloud-Dienst durch Organisationen des öffentlichen Sektors in Deutschland genutzt wird, etabliert und pflegt der Cloud-Anbieter, soweit angemessen, Kontakte zum Nationalen IT-Lagezentrum und dem CERT-Bund des BSI.'
+  additional_sharpen:
+  additional_complement: 
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Contact_with_Relevant_Government_Agencies_and_Interest_Groups_Subcriterion_Basic_1
+      information_text: 'Organisationen des öffentlichen Sektors in Deutschland sind z. B. Ministerien und Behörden. Wenn der Cloud-Anbieter keine Kunden im öffentlichen Sektor hat, ist dieses Kriterium nicht anwendbar.
+      
+
+Der Einschub ''soweit angemessen'' bedeutet, dass Kontakte hergestellt werden, wenn ein tatsächlicher Bedarf dazu besteht. Beispielsweise umfasst die Kontaktaufnahme mit dem CERT typischerweise die Meldung von Sicherheitsvorfällen an das CERT und das Verfolgen der Kommunikationskanäle vom CERT, um über aktuelle Bedrohungen, Schwachstellen und Sicherheitshinweise informiert zu bleiben. Die Pflege von Kontakt im Sinne von OIS-06.01B erfordert in diesem Fall nicht, dass der Cloud-Anbieter proaktiv und unaufgefordert mit CERT kommuniziert.
+      
+
+Für KRITIS (Betreiber kritischer Anlagen) im Sinne von § 2 Abs. 22 des BSI-Gesetzes (BSIG) können nach deutschem nationalem Recht ähnliche Anforderungen zur Pflege von Kontakten mit Behörden und Interessengruppen gelten.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Risk_Management_Policy '07'
+  name: 'Richtlinie für Risikomanagement'
+  basic: 
+    -
+      identifier: &ID_Criterion_Risk_Management_Policy_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren für Risikomanagementverfahren sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt. Risikomanagementverfahren basieren auf einer Methodik für Risikobeurteilungen. Die Methodik ermöglicht Vergleichbarkeit und Reproduzierbarkeit für die folgenden Aspekte:
+
+
+1.  Identifikation von Cybersicherheitsrisiken im Zusammenhang mit dem Verlust der Vertraulichkeit, Integrität, Verfügbarkeit und Authentizität von Informationen innerhalb des Anwendungsbereichs des ISMS und Zuweisung von Risikoeigentümern;
+
+2. Analyse der Eintrittswahrscheinlichkeiten und Auswirkungen bei Eintritt sowie Bestimmung des Risikoniveaus;
+
+3. Bewertung der Risikobeurteilung auf Basis definierter Kriterien zur Risikoakzeptanz und Priorisierung des Risikomanagements;
+
+4. Behandlung der Risiken durch Maßnahmen, einschließlich Genehmigung der Maßnahmen und Akzeptanz der Restrisiken durch Risikoeigentümer;
+
+5. Dokumentation der Tätigkeiten zur Anwendung des Verfahrens, um bei wiederholter Anwendung konsistente, gültige und vergleichbare Ergebnisse zu erhalten; und
+
+6. Bewertung der Risikobeurteilung und des Status von Risikobehandlungsplänen durch die Ebene der Leitung, die für die Sicherheit des Cloud-Dienstes verantwortlich ist.
+
+'
+  additional_sharpen:
+  additional_complement: 
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Management_Policy_Subcriterion_Basic_1
+      information_text: 'Die Bestimmung des Risikoniveaus anhand von Eintrittswahrscheinlichkeiten und Auswirkungen kann durch qualitative, semi-quantitative und quantitative Methoden (vgl. ISO 31010) erfolgen.
+
+
+Zur Identifizierung, Bewertung und Priorisierung potenzieller Bedrohungen und Schwachstellen im Zusammenhang mit Prozessen, Systemen und Datenflüssen kann Bedrohungsmodellierung eine strukturierte Methodik bereitstellen: Der Cloud-Anbieter kann Angriffsvektoren und mögliche Auswirkungen systematisch analysieren, um Prüfer und anderen Gruppen, die daran ein berechtigtes Interessen haben, bei der Validierung der Angemessenheit der Ausgestaltung implementierter Kontrollen zu unterstützen, Lücken in bestehenden Sicherheitsmaßnahmen hervorzuheben und die Ausrichtung an Best Practices für eine proaktive Risiko-Mitigation sicherzustellen.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Risk_Assessment '08'
+  name: 'Anwendung der Richtlinie für Risikomanagement - Risikobeurteilung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter führt den in OIS-07 definierten Risikomanagementprozess anlassbezogen und mindestens jährlich durch.' 
+    -
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Basic_2 '02B'
+      criterion: 'Beim Identifizieren von Risiken werden folgende Aspekte berücksichtigt, soweit diese für den bereitgestellten Cloud-Dienst anwendbar sind und im Verantwortungsbereich des Cloud-Anbieters liegen:
+
+
+1. Verarbeitung, Speicherung oder Übertragung von Cloud-Kundendaten und von abgeleiteten Cloud-Dienstdaten mit unterschiedlichen Schutzbedarfen;
+
+2. Auftreten von Schwachstellen und Vorfällen in technischen Schutzmaßnahmen zur Trennung gemeinsam genutzter Ressourcen;
+
+3. Angriffe über Zugangspunkte, einschließlich Schnittstellen, die aus öffentlichen Netzen zugänglich sind, und versehentlich offengelegte Schnittstellen;
+
+4. Abhängigkeiten von Service-Organisationen;
+
+5. Ein Risiko-Programm für Verschlüsselung und Schlüsselmanagement, das die Risiken der unbefugten Offenlegung, Veränderung, Zerstörung oder des Informationsverlusts kryptographischer Schlüssel adressiert; und
+
+6. Trennung der Cloud-Kunden und ihrer Daten innerhalb von Systemen, Netzen und Speichern.
+
+'
+    -
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Basic_3 '03B'
+      criterion: 'Richtlinien und Verfahren, die für die Erbringung und den Betrieb des Cloud-Dienstes relevante Risikobeurteilungen abdecken, werden vom Cloud-Anbieter umgesetzt.' 
+    -
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Basic_4 '04B'
+      criterion: 'Die Ergebnisse der Risikobeurteilung werden relevanten internen Parteien bereitgestellt.'
+    -
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Basic_5 '05B'
+      criterion: 'Relevanten externen Parteien werden Informationen aus den Risikobeurteilungen bereitgestellt, die auf die Zwecke der Parteien zugeschnitten sind.'
+    -
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Basic_6 '06B'
+      criterion: 'Die Analyse, Bewertung und Behandlung von Risiken, einschließlich der Genehmigung von Maßnahmen und der Akzeptanz von Restrisiken, wird von den Risikoeigentümern mindestens jährlich auf Angemessenheit überprüft. Zusätzlich wird bei wesentlichen Änderungen am Cloud-Dienst eine Überprüfung durchgeführt, die sich auf die für die Änderung relevanten Teile der Risikobeurteilung konzentriert.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Risk_Assessment_Subcriterion_Basic_1 
+      criterion: 'Der Cloud-Anbieter führt den in OIS-07 definierten Risikomanagementprozess anlassbezogen und mindestens jährlich durch. Die Entwicklung der Risiken wird überwacht und die Risikobeurteilungen werden entsprechend überprüft.'
+  additional_complement:
+    - 
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter integriert Cybersicherheitsrisiken in ein dokumentiertes Enterprise Risk Management (ERM)-Programm, das die folgenden Aspekte adressiert:
+      
+
+1. Integration von Informationssicherheitsrisiken auf Unternehmensebene, um ein Bewusstsein für Informationssicherheitsrisiken in der gesamten Organisation zu fördern;
+
+2. Bewusstsein der Führungsebene und Unterstützung bei Identifizierung, Analyse und Behandlung von Informationssicherheitsrisiken, um kontinuierliche Verbesserung zu fördern; und
+
+3. Berücksichtigung der strategischen Ziele des Cloud-Anbieters beim Management von Risiken, um die Risikobehandlung an den Zielen der Organisation auszurichten.
+
+'
+    - 
+      identifier: &ID_Criterion_Risk_Assessment_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Bei der Identifizierung von Risiken berücksichtigt der Cloud-Anbieter zusätzlich die Erkennung ungewöhnlicher und schädlicher Handlungen interner Bedrohungsakteure, soweit dies auf den bereitgestellten Cloud-Dienst anwendbar ist und im Verantwortungsbereich des Cloud-Anbieters liegt.'
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_1
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_2
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_3
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_4
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_5
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_6
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Additional_Sharpen_1
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Additional_Complement_2
+      information_text: 'Dieses Kriterium bezieht sich ausschließlich auf Risiken, die im Verantwortungsbereich des Cloud-Anbieters liegen. Auch beim Auslagern von Tätigkeiten zur Bereitstellung des Cloud-Dienstens auf Subservice-Organisationen verbleibt die Verantwortung für diese Risiken beim Cloud-Anbieter. Anforderungen an die Maßnahmen zur Behandlung dieser Risiken sind den Kriterien im Bereich ''Steuerung und Überwachung von Service-Organisationen und Lieferanten (SSO)'' zu entnehmen.
+      
+      
+Cloud-Anbieter können etablierte Risikomanagementstandards wie ISO 27005 oder die ISO-31000-Normenfamilie nutzen, um Risiken im Zusammenhang mit dem Cloud-Dienst zu adressieren. Bereits beim Cloud-Anbieter implementierte Risikomanagementverfahren können für OIS-08, soweit möglich, genutzt werden, um Redundanzen zu verringern. Die Dokumentation von Risiken, Behandlungsplänen und Risikoakzeptanz im Sinne dieses Kriteriums erfordert keine spezifischen formalen Rahmenwerke; schlanke Formen der Dokumentation können, soweit angemessen, genutzt werden, um die OIS-08-Unterkriterien zu adressieren.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_1
+      information_text: 'Beispiele für Szenarien, in denen der Risikomanagementprozess ''anlassbezogen'' durchgeführt werden kann, umfassen unter anderem die folgenden:
+
+
+1. Änderungen der Bedrohungslandschaft (vgl. OIS-05);
+
+2. Sicherheitsvorfälle oder Geschäftsunterbrechungen;
+
+3. Änderungen der rechtlichen, regulatorischen, selbst auferlegten und vertraglichen Anforderungen an den Cloud-Anbieter, die für die Informationssicherheit des Cloud-Dienstes relevant sind (vgl. COM-01);
+
+4. Änderungen der Organisationsstruktur des Cloud-Anbieters mit Auswirkungen auf Rollen, Verantwortlichkeiten oder Verfahren für die Bereitstellung des Cloud-Dienstes;
+
+5. Änderungen der Architektur des Cloud-Dienstes (vgl. OPS-31);
+
+6. Ereignisse im Zusammenhang mit Service-Organisationen des Cloud-Anbieters (vgl. SSO-05);
+
+7. Ausnahmen von Richtlinien oder Verfahren (vgl. SP-03); und
+
+8. Identifizierung kritischer Schwachstellen (vgl. OPS-22) oder Compliance-Abweichungen (vgl. COM-03).
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_2
+      information_text: 'Gemeinsam genutzte Ressourcen sind z. B. Netze, RAM oder Speicher.
+      
+
+Bei der Bestimmung des Schutzbedarfs von Cloud-Kundendaten und abgeleiteten Cloud-Dienstdaten sollten die für diese Datentypen geltende regulatorische Anforderungen berücksichtigt werden, wie z. B. PCI-DSS, HIPAA, DORA (Verordnung über digitale operationale Resilienz für den Finanzsektor und zur Änderung von Verordnungen), NIS-2-Richtlinie und KRITIS.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_4
+      information_text: 'Relevante interne Parteien können die Geschäftsleitung und die Sicherheitsteams des Cloud-Anbieters umfassen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Assessment_Subcriterion_Basic_5
+      information_text: 'Relevante externe Parteien können Cloud-Kunden, Subservice-Organisationen und Regulierungsbehörden umfassen.
+
+
+Informationen, die in diesem Kontext relevant sein können, umfassen Informationen über identifizierte Schwachstellen, Sicherheitsvorfälle und Bedrohungsinformationen.
+
+
+Der Cloud-Anbieter kann sich dafür entscheiden, diese Informationen über sein SSRM (vgl. OIS-03), seine Dokumentation und Richtlinien (vgl. PSS-01) oder seine Prozesse zur Information der Cloud-Kunden über bekannte Schwachstellen (vgl. PSS-03) zugänglich zu machen.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Risk_Treatment '09'
+  name: 'Anwendung der Richtlinie für Risikomanagement - Risikobehandlung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Risk_Treatment_Subcriterion_Basic_1 '01B'
+      criterion: 'Die Risikobehandlung wird entsprechend dem Niveau der mit dem Cloud-Dienst verbundenen Cybersicherheitsrisiken priorisiert.' 
+    -
+      identifier: &ID_Criterion_Risk_Treatment_Subcriterion_Basic_2 '02B'
+      criterion: 'Ein Risikobehandlungsplan gemäß der Risikobeurteilung (vgl. OIS-08) ist dokumentiert und umgesetzt.' 
+    -
+      identifier: &ID_Criterion_Risk_Treatment_Subcriterion_Basic_3 '03B'
+      criterion: 'Die im Risikobehandlungsplan festgelegten Maßnahmen reduzieren das Risikoniveau auf ein Restrisiko, das Risikoeigentümer akzeptieren können.'
+    -
+      identifier: &ID_Criterion_Risk_Treatment_Subcriterion_Basic_4 '04B'
+      criterion: 'Der Risikobehandlungsplan sowie in geeigneter Weise zusammengefasste und abstrahierte Versionen davon werden relevanten internen Parteien bereitgestellt.' 
+    -
+      identifier: &ID_Criterion_Risk_Treatment_Subcriterion_Basic_5 '05B'
+      criterion: 'Auf Grundlage vertraglicher Vereinbarungen und relevanter rechtlicher und regulatorischer Anforderungen bestimmt der Cloud-Anbieter, welchen relevanten externen Parteien Informationen über den Risikobehandlungsplan bereitgestellt werden, die auf die Zwecke der Parteien zugeschnitten sind. Der Cloud-Anbieter bestimmt auch, in welchem Umfang dies geschehen soll.' 
+    -
+      identifier: &ID_Criterion_Risk_Treatment_Subcriterion_Basic_6 '06B'
+      criterion: 'Die ausgewählten Optionen für die Risikobehandlung werden von den Risikoeigentümern jedes Mal überprüft, wenn die Risikobeurteilung geändert wird. Die Überprüfung berücksichtigt die Kriterien für die Risikoakzeptanz und die Priorisierung der Risikobehandlung.'
+    -
+      identifier: &ID_Criterion_Risk_Treatment_Subcriterion_Basic_7 '07B'
+      criterion: 'Für den Fall, dass der Cloud-Anbieter Risiken mit den Cloud-Kunden teilt, ordnet der Cloud-Anbieter geteilte Risiken korrespondierenden Kundenkontrollen zu und beschreibt sie in der Benutzerdokumentation (vgl. PSS-01).'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_1
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_2
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_3
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_4
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_5
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_6
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_7
+      information_text: 'Dieses Kriterium bezieht sich ausschließlich auf Risiken, die im Verantwortungsbereich des Cloud-Anbieters liegen. Auch beim Auslagern von Tätigkeiten zur Bereitstellung des Cloud-Dienstens auf Subservice-Organisationen verbleibt die Verantwortung für diese Risiken beim Cloud-Anbieter. Anforderungen an die Maßnahmen zur Behandlung dieser Risiken sind den Kriterien im Bereich ''Steuerung und Überwachung von Service-Organisationen und Lieferanten (SSO)'' zu entnehmen.
+      
+      
+Cloud-Anbieter können etablierte Risikomanagementstandards wie ISO 27005 oder die ISO-31000-Normenfamilie nutzen, um Risiken im Zusammenhang mit dem Cloud-Dienst zu adressieren. Bereits beim Cloud-Anbieter implementierte Risikomanagementverfahren können für OIS-09, soweit möglich, genutzt werden, um Redundanzen zu verringern. Die Dokumentation von Risiken, Behandlungsplänen und Risikoakzeptanz im Sinne dieses Kriteriums erfordert keine spezifischen formalen Rahmenwerke; schlanke Formen der Dokumentation können, soweit angemessen, genutzt werden, um die OIS-09-Unterkriterien zu adressieren.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_1
+      information_text: 'Die Priorisierung kann beispielsweise durch die Festlegung geeigneter Fristen für die Behandlung der Risiken erfolgen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_6
+      information_text: 'Optionen für die Risikobehandlung können eines oder mehrere der folgenden Elemente umfassen:
+
+
+1. Vermeidung des Risikos durch die Entscheidung, die Tätigkeit, die das Risiko hervorruft, nicht zu beginnen oder nicht fortzuführen;
+
+2. Übernahme oder Erhöhung des Risikos, um eine Chance zu verfolgen;
+
+3. Beseitigung der Risikoquelle;
+
+4. Änderung der Wahrscheinlichkeit;
+
+5. Änderung der Folgen;
+
+6. Teilung des Risikos (z. B. durch Verträge, Abschluss von Versicherungen); und
+
+7. Beibehaltung des Risikos auf Grundlage einer informierten Entscheidung.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Treatment_Subcriterion_Basic_7
+      information_text: 'Risiken, die der Cloud-Anbieter mit dem Cloud-Kunden teilt, werden als Teil des SSRM beschrieben (vgl. OIS-03).'
+  corresponding:
+-
+  identifier: &ID_Criterion_Information_Security_in_Project_Management '10'
+  name: 'Informationssicherheit im Projektmanagement'
+  basic: 
+    -
+      identifier: &ID_Information_Security_in_Project_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Informationssicherheit ist in das Projektmanagement integriert. Risiken werden vom Cloud-Anbieter gemäß OIS-07 beurteilt, und die Risikobehandlung wird anlassbezogen durchgeführt. Risiken werden in allen Projekten behandelt, die einen direkten oder wesentlichen Einfluss auf die Erbringung, den Betrieb oder die Sicherheit des Cloud-Dienstes haben können.'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Information_Security_in_Project_Management_Subcriterion_Basic_1
+      information_text: 'Risiken mit wesentlichem Einfluss sind solche, die, falls sie eintreten, einen Schaden in einem Ausmaß verursachen würden, der die Informationssicherheit des Cloud-Dienstes, die Wirksamkeit der Kontrollen oder die Servicezusagen des Cloud-Anbieters wesentlich beeinträchtigen würde.'
+  corresponding:

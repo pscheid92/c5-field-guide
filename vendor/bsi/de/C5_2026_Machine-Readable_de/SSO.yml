@@ -1,0 +1,387 @@
+-
+  identifier: &ID_Criterion_Policies_and_Procedures_for_Controlling_and_Monitoring_Service_Organisations '01'
+  name: 'Richtlinien und Verfahren zur Steuerung und Überwachung von Service-Organisationen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Policies_and_Procedures_for_Controlling_and_Monitoring_Service_Organisations_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren zur Steuerung und Überwachung von Service-Organisationen, deren Leistungen zur Entwicklung oder zum Betrieb des Cloud-Dienstes beitragen, sind hinsichtlich der folgenden Aspekte gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt:
+
+
+1. Anforderungen an die Beurteilung von Risiken, die sich aus der Beschaffung von Dienstleistungen Dritter ergeben;
+
+2. Anforderungen an die Klassifizierung der Service-Organisationen auf Basis einer Risikobeurteilung durch den Cloud-Anbieter und der Feststellung, ob es sich um eine Subservice-Organisation handelt;
+
+3. Informationssicherheitsanforderungen für die Verarbeitung, Speicherung oder Übertragung von Informationen durch Service-Organisationen auf der Grundlage des Stands der Technik und unter Berücksichtigung der Kriterien in diesem Katalog;
+
+4. Anforderungen an die Sensibilisierung und die Schulung des Personals;
+
+5. Anwendbare rechtliche und regulatorische Anforderungen;
+
+6. Anforderungen an den Umgang mit Schwachstellen, Sicherheitsvorfällen und Vorfällen;
+
+7. Vorgaben für die vertragliche Vereinbarung dieser Anforderungen;
+
+8. Vorgaben für die Überwachung dieser Anforderungen; und
+
+9. Vorgaben für die Weitergabe dieser Anforderungen auch an Subservice-Organisationen, die von den Service-Organisationen eingesetzt werden, soweit Leistungen dieser Subservice-Organisationen ebenso zur Entwicklung oder zum Betrieb des Cloud-Dienstes beitragen.
+
+'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Policies_and_Procedures_for_Controlling_and_Monitoring_Service_Organisations_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Subservice-Organisationen des Cloud-Anbieters sind vertraglich verpflichtet, regelmäßige Berichte unabhängiger Prüfer über die Angemessenheit der Ausgestaltung und die wirksame Umsetzung ihres dienstleistungsbezogenen internen Kontrollsystems bereitzustellen, die es dem Cloud-Anbieter ermöglichen festzustellen, ob die Subservice-Organisation Kontrollen ausgestaltet und betrieben hat, die den erwarteten korrespondierenden Kontrollen von Subservice-Organisationen (CSOC) angemessen sind.'
+    -
+      identifier: &ID_Criterion_Policies_and_Procedures_for_Controlling_and_Monitoring_Service_Organisations_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Falls solche Berichte nicht bereitgestellt werden können, vereinbart der Cloud-Anbieter geeignete Informations- und Prüfungsrechte, um die Ausgestaltung und den Betrieb des dienstleistungsbezogenen internen Kontrollsystems hinsichtlich der erwarteten CSOCs zu bewerten.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policies_and_Procedures_for_Controlling_and_Monitoring_Service_Organisations_Subcriterion_Basic_1
+        - *ID_Criterion_Policies_and_Procedures_for_Controlling_and_Monitoring_Service_Organisations_Subcriterion_Additional_Complement_1
+      information_text: 'Das Basiskriterium gilt für alle Service-Organisationen des Cloud-Anbieters, unabhängig davon, ob die ''inclusive''- oder die ''carve-out method'' angewendet wird. Das Zusatzkriterium gilt nur für diejenigen Service-Organisationen, die als Subservice-Organisationen angesehen werden. Siehe Abschnitt ''Berücksichtigung von Dienstleistungsunternehmen (Service-Organisationen)''.
+
+
+Berichte unabhängiger Prüfer über die Angemessenheit der Ausgestaltung und die wirksame Umsetzung ihres dienstleistungsbezogenen internen Kontrollsystems sind beispielsweise Prüfungsberichte nach ISAE 3402, IDW PS 951, SOC 2 oder BSI C5.
+
+
+Anwendbare rechtliche und regulatorische Anforderungen können z. B. in den Bereichen Datenschutz, Recht am geistigen Eigentum oder Urheberrecht bestehen.
+
+
+Falls gesetzliche oder regulatorische Anforderungen eine von diesen Kriterien abweichende Regelung für die Steuerung von Subservice-Organisationen vorsehen, bleiben diese Regelungen von den C5-Kriterien unberührt.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Risk_Assessment_of_Service_Organisations '02'
+  name: 'Risikobeurteilung von Service-Organisationen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Risk_Assessment_of_Service_Organisations_Subcriterion_Basic_1 '01B'
+      criterion: 'Service-Organisationen des Cloud-Anbieters unterliegen vor ihrem Einsatz zur Entwicklung oder zum Betrieb des Cloud-Dienstes einer Risikobeurteilung in Übereinstimmung mit den Richtlinien und Verfahren zur Steuerung und Überwachung von Service-Organisationen.
+
+
+Die Risikobeurteilung umfasst die Identifizierung, Analyse, Bewertung, Behandlung und Dokumentation von Risiken in Bezug auf die folgenden Aspekte:
+
+
+1. Schutzbedarf hinsichtlich der Vertraulichkeit, Integrität, Verfügbarkeit und Authentizität von Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten, die von der Service-Organisation verarbeitet, gespeichert oder übertragen werden;
+
+2. Auswirkungen einer Schutzverletzung auf die Erbringung des Cloud-Dienstes;
+
+3. Die Abhängigkeit des Cloud-Anbieters von der Service-Organisation hinsichtlich Umfang, Komplexität und Einzigartigkeit der erbrachten Dienstleistung, einschließlich der Berücksichtigung möglicher Alternativen;
+
+4. Korrespondierende Kontrollen von Subservice-Organisationen (CSOC), die bei der Ausgestaltung der Kontrollen des Cloud-Anbieters zur Erfüllung der anwendbaren C5-Kriterien vorausgesetzt werden;
+
+5. Abweichungen hinsichtlich der Ausgestaltung und des Betriebs von CSOCs, die bei als Subservice-Organisationen betrachteten Service-Organisationen vorausgesetzt werden, sowie mitigierende Maßnahmen des Cloud-Anbieters zur Behandlung solcher Abweichungen; 
+
+6. Die Fähigkeit des Cloud-Anbieters, Bezugsquellen zu diversifizieren und Vendor Lock-in zu begrenzen;
+
+7. Ob vom Cloud-Anbieter genutzte Service-Organisationen selbst unterbeauftragte Service-Organisationen (Subunternehmer) nutzen, die zur Entwicklung und zum Betrieb des Cloud-Dienstes beitragen; und
+
+8. Falls vom Cloud-Anbieter genutzte Service-Organisationen selbst Subunternehmer nutzen, die Arten von Daten, die von den Subunternehmern verarbeitet werden.
+      
+'
+    -
+      identifier: &ID_Criterion_Risk_Assessment_of_Service_Organisations_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Angemessenheit der Risikobeurteilung wird während des Leitungsbezugs regelmäßig, mindestens jährlich, durch qualifiziertes Personal des Cloud-Anbieters überprüft.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Risk_Assessment_of_Service_Organisations_Subcriterion_Basic_1
+      information_text: 'Zur Bewertung von Risiken bei Service-Organisationen kann der Cloud-Anbieter koordinierte Sicherheitsrisikobeurteilungen spezifischer kritischer IKT-Dienstleistungen, IKT-Systeme oder IKT-Produkte durchführen, die von Service-Organisationen bereitgestellt werden. Abgesehen von den in diesem Unterkriterium aufgeführten Aspekten sollte eine solche Risikobeurteilung technische und, soweit relevant, nichttechnische Risikofaktoren berücksichtigen.
+      
+
+Informationen zu CSOCs sind nur für Subservice-Organisationen einzuholen. Nicht jede Service-Organisation ist eine Subservice-Organisation (vgl. Abschnitt ''Berücksichtigung von Dienstleistungsunternehmen (Service-Organisationen)'').' 
+  corresponding:
+-
+  identifier: &ID_Criterion_Data_Processing_of_Service_Organizations '03'
+  name: 'Datenverarbeitung von Service-Organisationen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Data_Processing_of_Service_Organizations_Subcriterion_Basic_1 '01B'
+      criterion: 'Falls sich der Cloud-Anbieter für den Betrieb des Cloud-Dienstes auf Assets eines Lieferanten oder auf Dienstleistungen von Subservice-Organisationen stützt, erlaubt er diesen Lieferanten oder Service-Organisationen keinen Zugriff auf Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten oder Kontodaten. Ausnahmen sind nur zulässig, falls der Cloud-Anbieter eine Risikobeurteilung gemäß OIS-07 hinsichtlich der Möglichkeit durchgeführt hat, dass Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten oder Kontodaten offengelegt werden.'
+    -
+      identifier: &ID_Criterion_Data_Processing_of_Service_Organizations_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter holt vor der Verarbeitung von Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten oder Kontodaten die schriftliche Genehmigung des Cloud-Kunden ein, falls er Service-Organisationen einsetzt. Dies kann durch eine Genehmigung des Cloud-Kunden je Service-Organisation oder im Wege einer allgemeinen Vorabgenehmigung zwischen dem Cloud-Anbieter und dem Cloud-Kunden erreicht werden.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Data_Processing_of_Service_Organizations_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Data_Processing_of_Service_Organizations_Subcriterion_Basic_1
+      criterion: 'Falls sich der Cloud-Anbieter für den Betrieb des Cloud-Dienstes auf Assets eines Lieferanten oder auf Dienstleistungen von Subservice-Organisationen stützt, erlaubt er diesen Lieferanten oder Service-Organisationen keinen Zugriff auf Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten oder Kontodaten. Ausnahmen sind nur zulässig, falls der Cloud-Anbieter eine Risikobeurteilung gemäß OIS-07 hinsichtlich der Möglichkeit durchgeführt hat, dass Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten oder Kontodaten offengelegt werden, und sichergestellt ist, dass alle Vorgänge, die Zugriff auf diese Datentypen erfordern, von autorisiertem Personal durchgeführt oder überwacht werden (vgl. HR-01).'
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Processing_of_Service_Organizations_Subcriterion_Basic_2
+      information_text: 'Dieses Unterkriterium gilt nicht für abgeleitete Cloud-Dienstdaten, die keine kundeneigenen Daten enthalten. Beispiele für solche abgeleiteten Cloud-Dienstdaten sind Betriebskennzahlen oder technische Telemetriedaten.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Directory_of_Service_Organisations '04'
+  name: 'Verzeichnis von Service-Organisationen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Directory_of_Service_Organisations_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter führt ein Verzeichnis zur Steuerung und Überwachung der Service-Organisationen, die Dienstleistungen zur Erbringung des Cloud-Dienstes beitragen. Die folgenden Informationen werden im Verzeichnis geführt:
+
+
+1. Firmenname;
+
+2. Anschrift des Hauptsitzes;
+
+3. Geltende Rechtsordnung;
+
+4. Standorte, an denen Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten verarbeitet und gespeichert werden;
+
+5. Verantwortliche Kontaktgruppe/-person bei der Service-Organisation;
+
+6. Verantwortliche Kontaktgruppe/-person beim Cloud-Anbieter;
+
+7. Beschreibung der Dienstleistung;
+
+8. Klassifizierung auf Basis der Risikobeurteilung;
+
+9. Beginn der Dienstleistungsnutzung; und
+
+10. Nachweise über die Einhaltung der vertraglich vereinbarten Anforderungen.
+
+'
+    -
+      identifier: &ID_Criterion_Directory_of_Service_Organisations_Subcriterion_Basic_2 '02B'
+      criterion: 'Das Verzeichnis wird mindestens jährlich auf Vollständigkeit, Genauigkeit und Gültigkeit der Informationen überprüft.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Directory_of_Service_Organisations_Subcriterion_Basic_1
+      information_text: 'Zur Erfüllung des Basiskriteriums ist es nicht notwendig, ein einziges zentrales Verzeichnis zu führen.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements '05'
+  name: 'Überwachung der Einhaltung von Anforderungen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter überwacht die Einhaltung von Informationssicherheitsanforderungen und geltenden gesetzlichen und regulatorischen Anforderungen in Übereinstimmung mit Richtlinien und Verfahren zur Steuerung und Überwachung von Service-Organisationen.'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Überwachung umfasst eine regelmäßige Überprüfung der folgenden Informationen, soweit diese Informationen von Service-Organisationen gemäß den vertraglichen Vereinbarungen bereitzustellen sind:
+
+
+1. Berichte über die Qualität der Leistungserbringung;
+
+2. Zertifikate über die Konformität der Managementsysteme mit internationalen Standards;
+
+3. Aufzeichnungen der Service-Organisationen über den Umgang mit Schwachstellen, Sicherheitsvorfällen und Vorfällen;
+
+4. Berichte unabhängiger Dritter über die Ausgestaltung und den Betrieb ihres dienstleistungsbezogenen internen Kontrollsystems; und
+
+5. Falls vom Cloud-Anbieter genutzte Service-Organisationen selbst Subunternehmer nutzen, die Einhaltung relevanter vertraglicher, gesetzlicher und regulatorischer Anforderungen durch ihre Subunternehmer.
+
+'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Regelmäßigkeit der Durchführung entspricht der Klassifizierung der Service-Organisationen auf Basis der Risikobeurteilung des Cloud-Anbieters (vgl. SSO-02).'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_4 '04B'
+      criterion: 'Falls eine Service-Organisation als Subservice-Organisation betrachtet wird, beurteilt der Cloud-Anbieter diese Beziehung und führt geeignete Verfahren durch, um sicherzustellen, dass die anwendbaren C5-Kriterien erfüllt sind. Geeignete Verfahren liefern hinreichende Sicherheit: 
+
+
+1. Dass die Subservice-Organisation relevante Kontrollen ausgestaltet und betrieben hat; und
+
+2. Dass die Kontrollen der Subservice-Organisation den erwarteten korrespondierenden Kontrollen von Subservice-Organisationen (CSOC) entsprechen, die bei der Ausgestaltung der Kontrollen des Cloud-Anbieters vorausgesetzt wurden.
+
+'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_5 '05B'
+      criterion: 'Identifizierte Abweichungen werden in Übereinstimmung mit der Risikobeurteilung von Service-Organisationen (vgl. SSO-02) einer Analyse, Bewertung und Behandlung unterzogen.'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_6 '06B'
+      criterion: 'Wenn eine zur Erbringung des Cloud-Dienstes beitragende Service-Organisation eine Änderung durchläuft, die sich wesentlich zum Nachteil auf das Sicherheitsniveau des Cloud-Anbieters auswirkt, kommuniziert der Cloud-Anbieter dies allen seinen Cloud-Kunden unverzüglich.'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_7 '07B'
+      criterion: 'Der Cloud-Anbieter legt ein Verfahren fest, um Anforderungen an Geheimhaltungs- oder Vertraulichkeitsvereinbarungen für alle an der Erbringung des Cloud-Dienstes beteiligten Service-Organisationen regelmäßig zu überprüfen. Dieses Verfahren wird in der Praxis umgesetzt, und die Überprüfung wird mindestens einmal pro Jahr durchgeführt.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Die Verfahren zur Überwachung der Einhaltung der Anforderungen werden durch automatische Verfahren in Bezug auf die folgenden Aspekte ergänzt:
+
+
+1. Konfiguration von Systemkomponenten;
+
+2. Leistung und Verfügbarkeit von Systemkomponenten;
+
+3. Reaktionszeit auf Vorfälle und Sicherheitsvorfälle; und
+
+4. Wiederherstellungszeit (Zeit bis zum Abschluss der Fehlerbehandlung).
+
+'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Identifizierte Verstöße und Unstimmigkeiten werden automatisch an das verantwortliche Personal oder die verantwortlichen Systemkomponenten des Cloud-Anbieters gemeldet, damit eine zeitnahe Bewertung und Maßnahmen erfolgen können.'
+    -
+      identifier: &ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Der Cloud-Anbieter definiert und implementiert einen Prozess zur Durchführung periodischer Sicherheitsbeurteilungen für alle Service-Organisationen. Art und Umfang dieser Sicherheitsbeurteilungen entsprechen dem mit jeder Service-Organisation verbundenen Risiko. Diese risikobasierten Sicherheitsbeurteilungen stellen sicher, dass Service-Organisationen die erforderlichen Sicherheitsstandards erfüllen und dass potenzielle Risiken angemessen identifiziert und mitigiert werden.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_1
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_2
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_3
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_4
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_5
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_6
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_7
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Additional_Complement_2
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Additional_Complement_3
+      information_text: 'Informationen, die für die Überwachung der Ausgestaltung und des Betriebs des dienstleistungsbezogenen internen Kontrollsystems eingeholt werden, umfassen typischerweise Berichte nach ISAE 3402, IDW PS 951, SOC 2 oder BSI C5, ANSSI SecNumCloud oder CSA CCM. Auch Second-Party-Audits auf Grundlage solcher Rahmenwerke können hier nützlich sein. Für die strukturierte Analyse von BSI-C5-Berichten hat das BSI einen Excel-basierten Auswertungsleitfaden veröffentlicht.
+
+
+Falls solche Berichte von den Service-Organisationen bereitgestellt werden, überprüft der Cloud-Anbieter beispielsweise die folgenden Aspekte und bezieht die Feststellungen bei Bedarf in die Risikobeurteilung ein, um Risiko-mitigierende Maßnahmen abzuleiten und einzuleiten:
+
+
+1. Den Geltungsbereich und die Gültigkeit beziehungsweise den vom Bericht abgedeckten Zeitraum;
+
+2. Modifikationen des Prüfungsurteils, festgestellte Abweichungen/Ausnahmen und die Stellungnahme der Geschäftsleitung hierzu;
+
+3. Korrespondierende Kundenkontrollen (engl. Complementary User Entity Controls, CUEC), die vom Cloud-Anbieter ausgestaltet und betrieben werden müssen;
+
+4. Offengelegte Subservice-Organisationen einschließlich etwaiger Änderungen unter diesen (z. B. zusätzliche Subservice-Organisationen); und
+
+5. Angegebene Sicherheitsvorfälle.
+
+
+Informationen zu CSOCs sind nur für Subservice-Organisationen einzuholen. Nicht jede Service-Organisation ist eine Subservice-Organisation, vgl. Abschnitt ''Berücksichtigung von Dienstleistungsunternehmen (Service-Organisationen)''). Geeignete Verfahren können die Überprüfung von Berichten unabhängiger Dritter oder vom Cloud-Anbieter bei der Subservice-Organisation durchgeführte Prüfungsverfahren umfassen.
+
+
+Die im Zusatzkriterium beschriebenen automatisierten Überwachungsverfahren sind nur auf Service-Organisationen anwendbar, für die eine Überwachungsautomatisierung aufgrund der Art der für den Cloud-Anbieter erbrachten Dienstleistungen machbar ist.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Monitoring_of_Compliance_with_Requirements_Subcriterion_Basic_2
+      information_text: 'Bei der Überprüfung der von der Service-Organisation bereitgestellten Informationen sollte der Cloud-Anbieter zwischen fehlerhaften Informationen, die in gutem Glauben erstellt wurden (wie Berichte über mutmaßliche Sicherheitsvorfälle, die sich letztlich als unbegründet herausstellten), und bewusst falschen oder böswilligen Informationen unterscheiden.
+      
+      
+Die Überwachung von Subunternehmern kann über Audits, Zertifizierungen und Berichte Dritter erfolgen (vgl. SSO-05) und von den Service-Organisationen des Cloud-Anbieters durchgeführt werden. Der Cloud-Anbieter bleibt dafür verantwortlich, die Ergebnisse der Compliance-Überwachung zu überprüfen und das Risiko zu bewerten.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie über die Subservice-Organisationen ihres Cloud-Anbieters informiert bleiben (z. B. auf Grundlage der Informationen im C5-Prüfungsbericht) und entscheiden auf Grundlage des Schutzbedarfs ihrer im Cloud-Dienst verarbeiteten und gespeicherten Daten, ob weitere Maßnahmen zur Überwachung und Prüfung dieser Subservice-Organisationen ergriffen werden sollten.'
+-
+  identifier: &ID_Criterion_Contract_Termination_Strategy_for_Service_Organisations '06'
+  name: 'Strategie zur Vertragsbeendigung für Service-Organisationen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Contract_Termination_Strategy_for_Service_Organisations_Subcriterion_Basic_1 '01B'
+      criterion:  'Der Cloud-Anbieter hat Strategien zur Vertragsbeendigung oder zum Ausstieg für den Bezug von Dienstleistungen definiert und dokumentiert, falls die Risikobeurteilung der Service-Organisationen hinsichtlich Umfang, Komplexität und Einzigartigkeit der erbrachten Dienstleistung eine sehr hohe Abhängigkeit festgestellt hat (vgl. Ergänzende Informationen).'
+    -
+      identifier: &ID_Criterion_Contract_Termination_Strategy_for_Service_Organisations_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Ausstiegsstrategien sind mit den Plänen zur betrieblichen Kontinuität abgestimmt und umfassen die folgenden Aspekte:
+
+
+1. Analyse der potenziellen Kosten, Auswirkungen, Ressourcen und des zeitlichen Rahmens für den Übergang einer bezogenen Dienstleistung zu einer alternativen Service-Organisation;
+
+2. Festlegung und Zuweisung von Rollen, Verantwortlichkeiten und ausreichenden Ressourcen zur Durchführung der Aktivitäten für einen Übergang;
+
+3. Festlegung von Erfolgskriterien für den Übergang; und
+
+4. Festlegung von Indikatoren zur Überwachung der Leistung von Dienstleistungen, die den Rückzug aus der Dienstleistung einleiten sollten, wenn die Ergebnisse nicht akzeptabel sind.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Contract_Termination_Strategy_for_Service_Organisations_Subcriterion_Basic_1
+        - *ID_Criterion_Contract_Termination_Strategy_for_Service_Organisations_Subcriterion_Basic_2
+      information_text: 'Von einer sehr hohen Abhängigkeit kann insbesondere ausgegangen werden, wenn die bezogene Dienstleistung für die Erbringung des Cloud-Dienstes unverzichtbar ist. Diese Situation liegt vor, wenn der Cloud-Anbieter:
+
+
+1. Den Cloud-Dienst aus Rechenzentren erbringt, die von Service-Organisationen betrieben werden; oder
+
+2. Einen SaaS-Dienst erbringt und das IaaS oder PaaS eines anderen Cloud-Anbieters nutzt.
+
+
+Von einer sehr hohen Abhängigkeit kann auch ausgegangen werden, wenn die Dienstleistung nicht innerhalb eines Monats von einer alternativen Service-Organisation bezogen werden kann, da:
+
+
+1. Sie auf dem Markt einzigartig ist und keine andere Service-Organisation sie liefern kann;
+
+2. Sie durch die Service-Organisation und/oder den Cloud-Anbieter stark individualisiert ist;
+
+3. Sie von keiner anderen Service-Organisation in der erforderlichen Dienstgüte erbracht werden kann; oder
+
+4. Sie spezifisches Wissen erfordert, das nur/hauptsächlich der aktuellen Service-Organisation und nicht dem Cloud-Anbieter zur Verfügung steht.
+		
+
+Ausstiegsstrategien können je nach Art und Grad der Abhängigkeit des Cloud-Dienstes von Drittleistungen und Service-Organisationen in ihrer Komplexität variieren. Die Nutzung eines Cloud-Service-Vermittlers ist ein Beispiel für ein komplexes Szenario. Die in SSO-06.02B aufgeführten Aspekte sollten auf Grundlage der Ergebnisse der Risikobeurteilung des Cloud-Anbieters berücksichtigt werden. Wurde ein geringerer Grad der Abhängigkeit festgestellt, sind Ausstiegsstrategien oder einzelne Aspekte davon im Sinne dieses Kriteriums nicht verpflichtend.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Ensuring_Transparency_within_Service_Organisations '07'
+  name: 'Sicherstellung von Transparenz innerhalb von Service-Organisationen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Ensuring_Transparency_within_Service_Organisations_Subcriterion_Basic_1 '01B'
+      criterion:  'Der Cloud-Anbieter entwirft, implementiert und pflegt Kontrollen, um Transparenz innerhalb seiner Service-Organisationen in Bezug auf die folgenden Aspekte sicherzustellen: 
+
+
+1. Datenflüsse und Schnittstellen zwischen dem Cloud-Anbieter und den vom Cloud-Anbieter genutzten Service-Organisationen sind dokumentiert, einschließlich Maßnahmen zur sicheren Übertragung und Zugriffskontrolle für Daten, die mit Service-Organisationen geteilt werden; und 
+
+2. Cloud-Kunden werden über die vom Cloud-Anbieter für Entwicklung und Betrieb des Cloud-Dienstes genutzten Service-Organisationen informiert und darüber, welche Art von Daten diese Service-Organisationen und ihre Subunternehmer verarbeiten.
+
+
+Cloud-Kunden werden darüber informiert, welche der Service-Organisationen selbst Subunternehmer zur Verarbeitung von Cloud-Kundendaten nutzen.'
+    -
+      identifier: &ID_Criterion_Ensuring_Transparency_within_Service_Organisations_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter dokumentiert diese Informationen und überprüft mindestens jährlich ihre Vollständigkeit, Genauigkeit und Aktualität.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Ensuring_Transparency_within_Service_Organisations_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Ensuring_Transparency_within_Service_Organisations_Subcriterion_Basic_1
+      criterion: 'Der Cloud-Anbieter entwirft, implementiert und pflegt Kontrollen, um Transparenz innerhalb seiner Service-Organisationen in Bezug auf die folgenden Aspekte sicherzustellen: 
+
+
+1. Datenflüsse und Schnittstellen zwischen dem Cloud-Anbieter und den vom Cloud-Anbieter genutzten Service-Organisationen sind dokumentiert, einschließlich Maßnahmen zur sicheren Übertragung und Zugriffskontrolle für Daten, die mit Service-Organisationen geteilt werden; und 
+
+2. Cloud-Kunden werden über die vom Cloud-Anbieter für Entwicklung und Betrieb des Cloud-Dienstes genutzten Service-Organisationen und ihre Subunternehmer informiert und darüber, welche Art von Daten diese Service-Organisationen und ihre Subunternehmer verarbeiten.
+
+
+Cloud-Kunden werden darüber informiert, welche der Service-Organisationen selbst Subunternehmer zur Verarbeitung von Cloud-Kundendaten nutzen.'
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Ensuring_Transparency_within_Service_Organisations_Subcriterion_Basic_1
+      information_text: 'Dieses Kriterium adressiert die Notwendigkeit, Risiken in der Lieferkette zu steuern (z. B. Schwachstellen von Service-Organisationen, Praktiken der Datenverarbeitung, Compliance-Lücken oder Betriebsunterbrechungen) und diese Risiken an Cloud-Kunden zu kommunizieren, damit diese ihre eigenen Risiken in der Lieferkette wirksam überwachen und steuern können.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Controlling_Exchanges_with_Suppliers_of_Functional_Components '08'
+  name: 'Steuerung des Austauschs mit Lieferanten funktionaler Komponenten'
+  basic: 
+    -
+      identifier: &ID_Criterion_Controlling_Exchanges_with_Suppliers_of_Functional_Components_Subcriterion_Basic_1 '01B'
+      criterion: 'Wenn funktionale Komponenten, die für die Erbringung des Cloud-Dienstes verwendet werden, direkt oder indirekt auf Cloud-Kundendaten zugreifen können, definiert und implementiert der Cloud-Anbieter eine Richtlinie gemäß SP-01, die keinen direkten Austausch zwischen solchen Komponenten und ihren Lieferanten erlaubt.'
+    -
+      identifier: &ID_Criterion_Controlling_Exchanges_with_Suppliers_of_Functional_Components_Subcriterion_Basic_2 '02B'
+      criterion: 'Darüber hinaus werden gemäß SP-01 Verfahren definiert und implementiert, die vom Cloud-Anbieter verlangen, Inhalte zu genehmigen, die von einem Lieferanten für seine funktionalen Komponenten bereitgestellt oder von einer funktionalen Komponente an ihren Lieferanten gesendet werden sollen. Die Genehmigung erfolgt vor der Übertragung des Inhalts und für jede Übertragung.'
+    -
+      identifier: &ID_Criterion_Controlling_Exchanges_with_Suppliers_of_Functional_Components_Subcriterion_Basic_3 '03B'
+      criterion: 'Wenn ein Verfahren zur Genehmigung von Inhalten vor ihrer Übertragung automatisiert ist, implementiert der Cloud-Anbieter es unter Verwendung einer Lösung, die Nachvollziehbarkeit über folgende Aspekte enthält: 
+
+
+1. Die Vorgänge, die vom Lieferanten der funktionalen Komponente vorgeschlagen werden;
+
+2. Die Überprüfung, die durchgeführt wird, um den Inhalt vor seiner Übertragung zu genehmigen; und
+
+3. Die Übertragungen, sowohl eingehende als auch ausgehende, die tatsächlich durchgeführt werden.
+    
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Controlling_Exchanges_with_Suppliers_of_Functional_Components_Subcriterion_Basic_1
+        - *ID_Criterion_Controlling_Exchanges_with_Suppliers_of_Functional_Components_Subcriterion_Basic_2
+        - *ID_Criterion_Controlling_Exchanges_with_Suppliers_of_Functional_Components_Subcriterion_Basic_3
+      information_text: 'Ein Lieferant einer funktionalen Komponente ist typischerweise eine Service-Organisation des Cloud-Anbieters. Die Genehmigung für die Übertragung kann automatisiert werden. Von dem Lieferanten bereitgestellte Inhalte beziehen sich auf Aktualisierungen der funktionalen Komponenten.' 
+  corresponding:

@@ -1,0 +1,56 @@
+---
+// Reading pane for one General Condition (GC-01 … GC-06).
+import { type Condition, GC, type Site } from './data';
+
+interface Props {
+	site: Site;
+	condition: Condition;
+}
+
+const { site: s, condition: g } = Astro.props;
+const { t } = s;
+const items = s.data.conditions.items;
+const index = items.indexOf(g);
+const prev = items[index - 1];
+const next = items[index + 1];
+---
+
+<article class="doc">
+	<p class="crumb"><a href={s.domainUrl(GC)}>{GC} · {s.data.conditions.title}</a></p>
+	<h1>{g.id} {g.name}</h1>
+	<p class="doc-meta">{s.data.conditions.note}</p>
+
+	<section>
+		<h2>{t.condition}</h2>
+		<div class="text after-heading" set:html={g.conditionHtml} />
+	</section>
+	{
+		g.hintHtml && (
+			<section>
+				<h2>{t.hint}</h2>
+				<div class="panel text" set:html={g.hintHtml} />
+			</section>
+		)
+	}
+
+	<nav class="pager" aria-label={t.paging}>
+		{
+			prev && (
+				<a href={prev.url}>
+					<span>← {t.previous}</span>
+					{prev.id} {prev.name}
+				</a>
+			)
+		}
+		{
+			next && (
+				<a class="next" href={next.url}>
+					<span>{t.next} →</span>
+					{next.id} {next.name}
+				</a>
+			)
+		}
+	</nav>
+
+	<p class="attribution" set:html={s.data.attribution} />
+</article>

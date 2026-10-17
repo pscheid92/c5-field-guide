@@ -1,0 +1,30 @@
+version: '1.1.0'
+document_history:
+  -
+    version: '1.0.0'
+    date: '07.04.2026'
+    description: 'Englische Erstveröffentlichung'
+  -
+    version: '1.1.0'
+    date: '11.08.2026'
+    description: 'Korrekturen und redaktionelle Anpassung'
+source: 'Bundesamt für Sicherheit in der Informationstechnik
+
+
+Postfach 20 03 63
+
+
+53133 Bonn
+
+
+Tel.: +49 22899 9582-0
+
+ 
+E-Mail: cloudsecurity@bsi.bund.de
+
+
+Internet: https://www.bsi.bund.de
+
+
+© Bundesamt für Sicherheit in der Informationstechnik 2026'
+license: 'Dieses Werk ist unter der Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0) lizensiert. Um eine Kopie der Lizenz einzusehen, besuchen Sie https://creativecommons.org/licenses/by-nd/4.0/deed.de'

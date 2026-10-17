@@ -1,0 +1,54 @@
+# Domain codes → titles, in catalogue order. BSI's YAML only carries the code
+# (as the file name), so titles live here. Source: table of contents of the
+# C5:2026 PDFs (vendor/bsi/C5_2026_en.pdf, section 5; C5_2026_de.pdf, Abschnitt 5).
+- code: OIS
+  title: Organisation of Information Security
+  title_de: Organisation der Informationssicherheit
+- code: SP
+  title: Security Policies and Procedures
+  title_de: Sicherheitsrichtlinien und Arbeitsanweisungen
+- code: HR
+  title: Personnel
+  title_de: Personal
+- code: AM
+  title: Asset Management
+  title_de: Asset Management
+- code: PS
+  title: Physical Security
+  title_de: Physische Sicherheit
+- code: OPS
+  title: Operations
+  title_de: Regelbetrieb
+- code: IAM
+  title: Identity and Access Management
+  title_de: Identitäts- und Berechtigungsmanagement
+- code: CRY
+  title: Cryptography and Key Management
+  title_de: Kryptographie und Schlüsselmanagement
+- code: COS
+  title: Communication Security
+  title_de: Kommunikationssicherheit
+- code: PI
+  title: Portability and Interoperability
+  title_de: Portabilität und Interoperabilität
+- code: DEV
+  title: Procurement, Development and Modification of Information Systems
+  title_de: Beschaffung, Entwicklung und Änderung von Informationssystemen
+- code: SSO
+  title: Control and Monitoring of Service Providers and Suppliers
+  title_de: Steuerung und Überwachung von Service-Organisationen und Lieferanten
+- code: SIM
+  title: Security Incident Management
+  title_de: Umgang mit Sicherheitsvorfällen
+- code: BCM
+  title: Business Continuity Management
+  title_de: Kontinuität des Geschäftsbetriebs und Notfallmanagement
+- code: COM
+  title: Compliance
+  title_de: Compliance
+- code: INQ
+  title: Dealing with Investigation Requests from Government Agencies
+  title_de: Umgang mit behördlichen Auskunfts- und Herausgabeverlangen
+- code: PSS
+  title: Product Safety and Security
+  title_de: Produktsicherheit

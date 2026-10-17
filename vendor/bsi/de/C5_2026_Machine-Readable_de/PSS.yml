@@ -1,0 +1,443 @@
+- identifier: &ID_Criterion_Guidelines_and_Recommendations_for_Cloud_Customers '01'
+  name: 'Leitlinien und Empfehlungen für Cloud-Kunden'
+  basic:
+  - identifier: &ID_Criterion_Guidelines_and_Recommendations_for_Cloud_Customers_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter veröffentlicht Leitlinien und Empfehlungen für Cloud-Kunden hinsichtlich der sicheren Nutzung des bereitgestellten Cloud-Dienstes. Die darin enthaltenen Informationen sollen den Cloud-Kunden bei der sicheren Konfiguration und Nutzung des Cloud-Dienstes sowie, soweit auf den Cloud-Dienst und den Verantwortungsbereich des Cloud-Kunden anwendbar, bei der Umsetzung korrespondierender Kontrollen des Cloud-Kunden unterstützen.'
+  - identifier: &ID_Criterion_Guidelines_and_Recommendations_for_Cloud_Customers_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Art und der Umfang der Informationen in den Leitlinien und Empfehlungen für die sichere Nutzung des bereitgestellten Cloud-Dienstes richten sich nach den Bedürfnissen des sachverständigen Personals der Cloud-Kunden, die Informationssicherheitsanforderungen festlegen, umsetzen oder deren Umsetzung überprüfen (z. B. IT, Compliance, Interne Revision). Die Informationen in den Leitlinien und Empfehlungen für die sichere Nutzung des Cloud-Dienstes behandeln, soweit auf den Cloud-Dienst anwendbar, die folgenden Aspekte:
+    
+  
+1. Verfahren für eine sichere Konfiguration;
+  
+2. Informationsquellen zu bekannten Schwachstellen und Aktualisierungsmechanismen;
+  
+3. Malware-Schutz für Container oder virtuelle Maschinen;
+  
+4. Mechanismen zur Fehlerbehandlung und Protokollierung;
+  
+5. Authentisierungsmechanismen;
+  
+6. Rahmenwerk für Rollen und Berechtigungen einschließlich Kombinationen, die zu einem erhöhten Risiko führen;
+  
+7. Dienste und Funktionen für die Administration des Cloud-Dienstes durch privilegierte Cloud-Nutzer;
+  
+8. Korrespondierende Kontrollen der Cloud-Kunden;
+  
+9. Verschlüsselungsmechanismen und -dienste;
+  
+10. Verhinderung von Datenabfluss;
+  
+11. Sichere Anwendungsentwicklung und sicherer Betrieb auf dem Cloud-Dienst;
+  
+12. Anweisungen zur Nutzung und Konfiguration defensiver Mechanismen;
+  
+13. Anweisungen zur Nutzung und Konfiguration von Mechanismen verteilter Weitverkehrsarchitekturen;
+  
+14. Methoden, die zur Trennung von Kundendaten verwendet werden (vgl. OPS-30 und OPS-31);
+  
+15. Wie Cybersicherheitsrisiken im Zusammenhang mit der Nutzung des Cloud-Dienstes durch geeignete Protokollierungs- und Überwachungsmechanismen adressiert werden können; und
+  
+16. Eingabe und Ausgabeschnittstellen, über die auf den Cloud-Dienst durch andere Cloud-Dienste oder IT-Systeme von Cloud-Kunden zugegriffen werden kann (vgl. PI-01).
+  
+'
+  - identifier: &ID_Criterion_Guidelines_and_Recommendations_for_Cloud_Customers_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Cloud-Anbieter beschreibt in der Cloud-Nutzerdokumentation alle erforderlichen korrespondierenden Kontrollen der Cloud-Kunden und entsprechende Erläuterungen dazu, sodass der Cloud-Kunde über ausreichende Informationen für ein angemessenes Risikomanagement auf seiner Seite verfügt.'
+  - identifier: &ID_Criterion_Guidelines_and_Recommendations_for_Cloud_Customers_Subcriterion_Basic_4 '04B'
+    criterion: 'Die oben genannten Informationen werden so gepflegt, dass sie auf den bereitgestellten Cloud-Dienst, in der für den produktiven Einsatz vorgesehenen Version, anwendbar sind.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Guidelines_and_Recommendations_for_Cloud_Customers_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter informiert Cloud-Kunden zeitnah über geplante Änderungen am Cloud-Dienst, damit die betroffenen Cloud-Kunden mit organisatorischen und technischen Maßnahmen angemessen reagieren können, bevor die Änderungen wirksam werden.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Guidelines_and_Recommendations_for_Cloud_Customers_Subcriterion_Basic_1
+    information_text: 'In einer Cloud-Umgebung werden Sicherheitsverantwortlichkeiten zwischen dem Cloud-Anbieter und dem Cloud-Kunden geteilt, wobei sie je nach Servicemodel — Infrastructure as a Service (IaaS), Platform as a Service (PaaS) oder Software as a Service (SaaS) — variieren. Leitlinien zu den korrespondierenden Kontrollen helfen Cloud-Kunden, ihre Rollen und Verantwortlichkeiten innerhalb des Shared Responsibility Model auch im Hinblick auf Sicherheits- und Betriebsmanagement zu verstehen (vgl. OIS-03). Durch das Angebot detaillierter Leitlinien werden Cloud-Kunden in die Lage versetzt, die erforderlichen Kontrollen zu verstehen und umzusetzen, die in ihren Verantwortungsbereich fallen. Der Detaillierungsgrad und der Umfang können je nach Art des bereitgestellten Cloud-Dienstes variieren.
+
+
+Beispiele für defensive Mechanismen sind Payload-Filterung, Traffic Shaping, Load Balancing, Load Shedding und DDoS-Abwehr.
+
+
+Beispiele für Mechanismen verteilter Weitverkehrsarchitekturen sind Fehlertoleranz durch Replikation, die Vermeidung lokalisierter Ausfälle und Katastrophen durch die Nutzung mehrerer Cloud-Regionen sowie die Verringerung der aufseiten der Cloud-Nutzer wahrgenommenen Latenz durch die geografische Verteilung von Dienstendpunkten.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Informationen des Cloud-Anbieters verwendet werden, um Richtlinien, Rahmenwerke und Maßnahmen für die sichere Konfiguration und Nutzung (gemäß ihrer eigenen Risikobeurteilung) des Cloud-Dienstes abzuleiten. Die Einhaltung dieser Richtlinien, Rahmenwerke und Maßnahmen wird überprüft. Änderungen an den Informationen werden zeitnah hinsichtlich ihrer Auswirkungen auf diese Dokumente bewertet und erforderliche Änderungen werden umgesetzt.'
+- identifier: &ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service '02'
+  name: 'Identifikation von Schwachstellen des Cloud-Dienstes'
+  basic:
+  - identifier: &ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter überprüft den Cloud-Dienst durch geeignete Verfahren auf Schwachstellen, die durch den Softwareentwicklungsprozess in den Cloud-Dienst einfließen können.'
+  - identifier: &ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Verfahren zur Identifkation solcher Schwachstellen sind Teil des Softwareentwicklungsprozesses und umfassen in Abhängigkeit von einer Risikobeurteilung die folgenden Aktivitäten:
+
+
+
+1. Statische Code-Analysen;
+
+2. Dynamische Code-Analysen;
+
+3. Code-Reviews durch sachverständiges Personal des Cloud-Anbieters;
+
+4. Durchführung von Sicherheitsprüfungen auf Grundlage einer Liste von Softwarekomponenten oder einer Software Bill of Materials; und
+
+5. Einholen von Information über bestätigte Schwachstellen in Software-Bibliotheken, die von Dritten bereitgestellt und im eigenen Cloud-Dienst genutzten werden.
+
+'
+  - identifier: &ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Schweregrad identifizierter Schwachstellen wird nach definierten Kriterien beurteilt und Maßnahmen zur zeitnahen Behebung oder Mitigation eingeleitet.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Die Verfahren zur Indentifikation solcher Schwachstellen umfassen außerdem jährliche Code-Reviews oder Sicherheits-Penetrationstests durch qualifizierte externe Dritte.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Basic_1
+    - *ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Basic_2
+    - *ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Basic_3
+    - *ID_Criterion_Identification_of_Vulnerabilities_of_the_Cloud_Service_Subcriterion_Additional_Complement_1
+    information_text: 'Bekannte Schwachstellen in extern bezogenen Systemkomponenten (z. B. Betriebssystemen), die für die Entwicklung und Bereitstellung des Cloud-Dienstes verwendet werden, aber nicht den Softwareentwicklungsprozess des Cloud-Anbieters durchlaufen, sind Gegenstand des Kriteriums OPS-25 (Management von Schwachstellen, Vorfällen und Fehlern - Schwachstellenscans).'
+  corresponding:
+- identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities '03'
+  name: 'Information der Cloud-Kunden über bekannte Schwachstellen'
+  basic:
+  - identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter stellt durch einen koordinierten Prozess sicher, dass Cloud-Kunden Zugang zu regelmäßig aktualisierten Informationen über bekannte Schwachstellen im Zusammenhang mit dem Cloud-Dienst haben, die die Informationssicherheit des Cloud-Kunden beeinträchtigen können. Dies umfasst:
+
+
+1. Bekannte ausgenutzte Schwachstellen;
+
+2. Bekannte Schwachstellen, für die ein Patch und/oder Maßnahmen zur Risikomitigation vom Cloud-Anbieter bereitgestellt werden (N-Day-Schwachstellen), mit geeigneten Verweisen auf den Patch/die Maßnahme; und
+
+3. Bekannte Schwachstellen, für die ein Patch und/oder Maßnahmen zur Risikomitigation vom Cloud-Anbieter voraussichtlich nicht bereitgestellt werden (Forever-Day-Schwachstellen), zusammen mit einer Begründung, warum sie nicht bereitgestellt werden.
+
+
+Diese betreffen den bereitgestellten Cloud-Dienst und vom Cloud-Anbieter bereitgestellte Assets, die die Cloud-Kunden innerhalb ihres eigenen Verantwortungsbereichs installieren, bereitstellen oder betreiben müssen.'
+  - identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_2 '02B'
+    criterion: 'Die den Cloud-Kunden bereitgestellten Informationen umfassen, soweit verfügbar, eine Beschreibung anwendbarer und geplanter Abhilfemaßnahmen oder mitigierender Maßnahmen für die identifizierten Schwachstellen.'
+  - identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_3 '03B'
+    criterion: 'Diese Schwachstellen werden auch auf Grundlage von Daten aus einer Liste von Softwarekomponenten oder von Daten einer Software Bill of Materials identifiziert.'
+  - identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_4 '04B'
+    criterion: 'Die Schwachstellen werden mit Verweisen auf die Common Vulnerabilities and Exposures (CVE) dargestellt, und die Bewertungen basieren auf:
+
+
+1. dem Common Vulnerability Scoring System (CVSS); und
+
+2. dem Exploit Prediction Scoring System (EPSS), der Stakeholder-Specific Vulnerability Categorization (SSVC) oder anderen ähnlichen Bewertungsmetriken
+
+
+in der zum Zeitpunkt der Bewertung gültigen neuesten Version.
+
+
+Diese Informationen sind für alle Cloud-Kunden zugänglich und unterstützen deren Risikobeurteilung und Folgemaßnahmen, gegebenenfalls mit Verweisen auf schwachstellenspezifische Maßnahmen.'
+  - identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_5 '05B'
+    criterion: 'Der Cloud-Anbieter konsultiert mindestens täglich die Schwachstelleninformationen seiner Lieferanten und Service-Organisationen. Die veröffentlichten Schwachstellen werden hinsichtlich ihrer potenziellen Auswirkungen auf den Cloud-Dienst analysiert und gemäß dem Prozess zur Behandlung von Schwachstellen behandelt (vgl. OPS-18). Falls der Lieferant oder die Service-Organisation keine täglichen Informationen bereitstellt, wird das damit verbundene Risiko gemäß OIS-07 gesteuert.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Vom Cloud-Anbieter bereitgestellte Assets, die Cloud-Kunden in ihrem Verantwortungsbereichs selbst installieren, bereitstellen oder betreiben müssen, sind mit automatischen Aktualisierungsmechanismen ausgestattet. Nach einer Freigabe durch den jeweiligen Cloud-Kunden können Softwareaktualisierungen darüber durch den Cloud-Anbieter ausgerollt werden.'
+  - identifier: &ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Schwachstellen werden in Übereinstimmung mit dem Common Security Advisory Framework Version 2.0 oder höher und, wie in der Technischen Richtlinie TR-03191 des BSI festgelegt, offengelegt.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_1
+    information_text: 'Dieses Kriterium unterstützt Transparenz im Management von Schwachstellen. Es verlangt vom Cloud-Anbieter, Cloud-Kunden proaktiv über Schwachstellen zu informieren, die aufgrund des Fehlens von Abhilfeoptionen ein Restrisiko darstellen können. Solche Offenlegungen helfen Cloud-Kunden, ihre Exponierung zu bewerten und bei Bedarf kompensierende Kontrollen umzusetzen.
+
+
+Informationen über bekannte ausgenutzte Schwachstellen und bekannte Schwachstellen können beispielsweise Informationen über Schwachstellen in Autorisierungsmechanismen umfassen, die aus dem im Rahmen von PSS-09 durchgeführten Validierungsprozess gewonnen wurden.'
+  - applicable_criteria:
+    - *ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_3
+    information_text: 'Obwohl der Cloud-Anbieter die Schwachstellen auf Grundlage von einer Liste von Softwarekomponenten oder SBOM-Daten identifizieren muss, um dieses Kriterium zu erfüllen, müssen diese Liste von Softwarekomponenten oder SBOM-Daten zur Erfüllung des Kriteriums nicht an den Cloud-Kunden übergeben werden.'
+  - applicable_criteria:
+    - *ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_4
+    information_text: 'Schwachstellenspezifische Maßnahmen können beispielsweise im ''Vulnerability, Exploitability eXchange'' (VEX) oder in den ''Common Security Advisory Frameworks'' (CSAF) gefunden werden.
+    
+
+Das Common Vulnerability Scoring System (CVSS) bewertet den Schweregrad identifizierter Schwachstellen (vgl. OPS-18). Das Exploit Prediction Scoring System (EPSS), die Stakeholder-Specific Vulnerability Categorization (SSVC) und andere ähnliche Bewertungsmetriken priorisieren Maßnahmen, die zur Behebung oder Risikomitigation identifizierter Schwachstellen umzusetzen sind. Beide Arten von Systemen sollten im Zusammenspiel verwendet werden.'
+  - applicable_criteria:
+    - *ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Basic_5
+    information_text: 'Es kann verschiedene Wege geben, Informationen über Schwachstellen von Lieferanten und Service-Organisationen zu erhalten. Das Kriterium verlangt keinen bestimmten Weg zur Beschaffung dieser Informationen, sondern dass die Informationen mindestens täglich eingeholt werden.'
+  - applicable_criteria:
+    - *ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Additional_Complement_1
+    - *ID_Criterion_Informing_Customers_about_Known_Vulnerabilities_Subcriterion_Additional_Complement_2
+    information_text: 'Vom Cloud-Anbieter bereitgestellte Assets, welche die Cloud-Kunden in ihrem Verantwortungsbereich selbst installieren, bereitstellen oder betreiben müssen, sind beispielsweise lokale Software-Clients und Apps sowie Werkzeuge zur Integration des Cloud-Dienstes.
+
+
+Falls der Cloud-Dienst auf andere Cloud-Dienste angewiesen ist, sollten diese Informationen die Schwachstellen dieser anderen Cloud-Dienste einbeziehen oder auf sie verweisen, damit dieses Kriterium erfüllt ist.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die erhaltenen Schwachstelleninformationen zeitnah in ihr eigenes Risikomanagement einfließen, bewertet und, falls erforderlich, im eigenen Verantwortungsbereich berücksichtigt werden.'
+- identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms '04'
+  name: 'Fehlerbehandlungs- und Protokollierungsmechanismen'
+  basic:
+  - identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_1 '01B'
+    criterion: 'Der bereitgestellte Cloud-Dienst ist mit Fehlerbehandlungs- und Protokollierungsmechanismen für Systemkomponenten ausgestattet, die in den Verantwortungsbereich des Cloud-Kunden fallen. Diese ermöglichen es Cloud-Kunden, sicherheitsrelevante Informationen über den Sicherheitsstatus des Cloud-Dienstes sowie die von ihm bereitgestellten Daten, Dienste oder Funktionen zu erhalten.'
+  - identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_2 '02B'
+    criterion: 'Diese Mechanismen sind so gestaltet, dass sie identifizierte Sicherheitsrisiken im Zusammenhang mit der Nutzung des Cloud-Dienstes adressieren. Der Cloud-Anbieter identifiziert und dokumentiert diese Risiken im Voraus und stellt sicher, dass die implementierten Protokollierungsmechanismen relevante Ereignisse und Aktivitäten erfassen.'
+  - identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_3 '03B'
+    criterion: 'Die Informationen sind so detailliert, dass Cloud-Kunden damit die folgenden Aspekte prüfen können, soweit sie auf den Cloud-Dienst anwendbar sind:
+
+
+1. Auf welche Cloud-Kundendaten und abgeleitete Cloud-Dienstdaten, Dienste oder Funktionen, die dem Cloud-Kunden innerhalb des Cloud-Dienstes zur Verfügung stehen, von wem, wann und von wo zugegriffen wurde (Audit Logs);
+
+2. Störungen beim Verarbeiten von automatischen oder manuellen Aktionen; und
+
+3. Änderungen an sicherheitsrelevanten Konfigurationsparametern, Fehlerbehandlungs- und Protokollierungsmechanismen, Cloud-Nutzerauthentisierung, Aktionsautorisierung, Kryptographie und Kommunikationssicherheit.
+
+'
+  - identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_4 '04B'
+    criterion: 'Die protokollierten Informationen sind vor unautorisierten Zugriffen und unautorisierten Änderungen geschützt und können vom Cloud-Kunden gelöscht werden.'
+  - identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_5 '05B'
+    criterion: 'Soweit anwendbar, kann der Cloud-Kunde die Protokollierung aktivieren oder deaktivieren und den Umfang sowie den Detaillierungsgrad der Protokollierung steuern, die der Cloud-Dienst bereitstellt.'
+  - identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_6 '06B'
+    criterion: 'Die Protokollierung von Aktionen der Management-Ebene durch die Cloud-Kunden deckt alle relevanten Systeme und Systemkomponenten ab.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Cloud-Kunden können sicherheitsrelevante Informationen über dokumentierte Schnittstellen abrufen, die für die Weiterverarbeitung dieser Informationen im Rahmen ihres Security Information and Event Management (SIEM) geeignet sind.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_1
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_2
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_3
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_4
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_5
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_6
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Additional_Complement_1
+    information_text: 'Im Gegensatz zum Zusatz-Kriterium von OPS-15, das sowohl Systemkomponenten unter der Verantwortung des Cloud-Anbieters als auch Systemkomponenten unter der Verantwortung des Cloud-Kunden abdeckt, ist der Geltungsbereich dieses Kriteriums strikt auf Systemkomponenten beschränkt, die nur unter der Verantwortung des Cloud-Kunden stehen.
+
+
+Der Umfang der Protokollierung hängt vom Cloud-Dienst ab. Daher kann es Cloud-Dienste geben, wie SaaS-Dienste, bei denen die Anzahl der Systemkomponenten unter der Verantwortung des Cloud-Kunden sehr begrenzt ist und auf die dieses Kriterium nicht anwendbar ist.'
+  - applicable_criteria:
+    - *ID_Criterion_Error_Handling_and_Logging_Mechanisms_Subcriterion_Basic_4
+    information_text: 'Die Löschung der protokollierten Informationen durch den Cloud-Kunden kann beispielsweise dadurch umgesetzt werden, dass dem Cloud-Kunden ein Prozess zur Beantragung dieser Löschung bereitgestellt wird.'
+  corresponding: 'Falls der Cloud-Dienst mit Fehlerbehandlungs- und Protokollierungsmechanismen ausgestattet ist, müssen Cloud-Kunden diese aktivieren und entsprechend festgelegten Anforderungen konfigurieren. Der Cloud-Kunde muss hierfür sein eigenes Informationssicherheitsmanagement einbeziehen.'
+- identifier: &ID_Criterion_Authentication_Mechanisms '05'
+  name: 'Authentisierungsmechanismen'
+  basic:
+  - identifier: &ID_Criterion_Authentication_Mechanisms_Subcriterion_Basic_1 '01B'
+    criterion: 'Der bereitgestellte Cloud-Dienst ist mit Authentisierungsmechanismen ausgestattet, die für Cloud-Nutzer, IT-Komponenten oder Anwendungen innerhalb des Verantwortungsbereichs der Cloud-Kunden Multi-Faktor-Authentisierung erzwingen können. Diese Authentisierungsmechanismen sind an allen Zugangspunkten eingerichtet, die es Cloud-Nutzern, IT-Komponenten oder Anwendungen ermöglichen, mit dem Cloud-Dienst zu interagieren.'
+  - identifier: &ID_Criterion_Authentication_Mechanisms_Subcriterion_Basic_2 '02B'
+    criterion: 'Für privilegierte Cloud-Nutzer, IT-Komponenten oder Anwendungen unter der Verantwortung des Cloud-Kunden können diese Authentisierungsmechanismen vom Cloud-Kunden erzwungen werden.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Authentication_Mechanisms_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Dienst bietet Out-of-Band-Authentisierung (OOB-Authentisierung), bei der die Faktoren über unterschiedliche Kanäle übertragen werden (z. B. Internet und Mobilfunknetz).'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Authentication_Mechanisms_Subcriterion_Basic_1
+    - *ID_Criterion_Authentication_Mechanisms_Subcriterion_Basic_2
+    - *ID_Criterion_Authentication_Mechanisms_Subcriterion_Additional_Complement_1
+    information_text: 'IT-Komponenten im Sinne dieses Kriteriums sind eigenständig nutzbare Objekte mit externen Schnittstellen, die mit anderen IT-Komponenten verbunden werden können.
+
+
+ Zugangspunkte im Sinne dieses Kriteriums sind solche, die von Cloud-Nutzern, IT-Komponenten oder Anwendungen über Netze erreicht werden können (für Cloud-Nutzer beispielsweise der Anmeldebildschirm auf der öffentlich zugänglichen Website des Cloud-Anbieters).
+
+
+Multi-Faktor-Authentisierung sollte erzwungen werden und kann z. B. mit kryptographischen Zertifikaten, Smartcards oder Token durchgeführt werden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die vom Cloud-Dienst angebotenen Authentisierungsmechanismen gemäß den Vorgaben des Identitäts- und Berechtigungsmanagement des Cloud-Kunden genutzt werden. Falls Cloud-Kunden virtuelle Maschinen oder Container mit dem Cloud-Dienst betreiben, stellen sie mit geeigneten Kontrollen sicher, dass die Authentisierungsmechanismen container-spezifische Szenarien abdecken, wie etwa Multi-Faktor-Authentisierung für Container-Hosts und den Zugriff auf Registries.'
+- identifier: &ID_Criterion_Session_Management '06'
+  name: 'Session Management'
+  basic:
+  - identifier: &ID_Criterion_Session_Management_Subcriterion_Basic_1 '01B'
+    criterion: 'Zum Schutz von Vertraulichkeit, Verfügbarkeit, Integrität und Authentizität während der Interaktionen mit dem Cloud-Dienst wird ein geeignetes Session Management verwendet, das dem Stand der Technik entspricht und gegen bekannte Angriffe geschützt ist.'
+  - identifier: &ID_Criterion_Session_Management_Subcriterion_Basic_2 '02B'
+    criterion: 'Es werden Mechanismen implementiert, die eine Session ungültig machen, nachdem erkannt wurde, dass sie inaktiv ist. Die Inaktivität kann durch Zeitmessung erkannt werden. In diesem Fall kann das Zeitintervall vom Cloud-Anbieter oder - soweit technisch möglich - vom Cloud-Kunden konfiguriert werden.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Session_Management_Subcriterion_Basic_1
+    information_text: 'Bekannte Angriffe umfassen Manipulation, Fälschung, Sessionübernahme, Denial-of-Service-Angriffe, Enveloping-, Replay- und Null-Cipher-Angriffe.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie die Schutzfunktionen des Session Managements des Cloud-Dienstes gemäß den Vorgaben aus ihrem eigenen ISMS nutzen. Außerdem legen sie die Zeitspanne, nach der eine Session ungültig wird, nach den Vorgaben aus ihrem eigenen ISMS fest.'
+- identifier: &ID_Criterion_Confidentiality_of_Authentication_Information '07'
+  name: 'Vertraulichkeit von Authentisierungsinformationen'
+  basic:
+  - identifier: &ID_Criterion_Confidentiality_of_Authentication_Information_Subcriterion_Basic_1 '01B'
+    criterion: 'Falls Passwörter als Authentisierungsinformationen für den Cloud-Dienst verwendet werden, stellt der Cloud-Anbieter den Cloud-Kunden die folgenden Verfahren zum Schutz der Vertraulichkeit der Passwörter zur Verfügung:
+
+
+1. Cloud-Nutzer können das Passwort zunächst selbst erstellen oder müssen ein Initialpasswort bei der ersten Anmeldung am Cloud-Dienst ändern. Ein Initialpasswort verliert nach maximal 14 Tagen seine Gültigkeit;
+
+2. Bei der Erstellung von Passwörtern wird die Einhaltung der Längen- und Komplexitätsanforderungen des Cloud-Anbieters (vgl. IAM-08) oder des Cloud-Kunden technisch erzwungen;
+
+3. Der Cloud-Nutzer wird über die Änderung oder Zurücksetzung des Passworts informiert. Verfahren zum Zurücksetzen von Passwörtern sind höchstens 48 Stunden gültig. Nachdem das Zurücksetzungsverfahren verwendet wurde, ist das Passwort vom Cloud-Nutzer zu ändern; und
+
+4. Die serverseitige Speicherung verwendet Hashfunktionen in Kombination mit Salt-Werten, die beide dem Stand der Technik entsprechen.
+
+'
+  - identifier: &ID_Criterion_Confidentiality_of_Authentication_Information_Subcriterion_Basic_2 '02B'
+    criterion: 'Regeln und Empfehlungen werden den Cloud-Kunden so mitgeteilt, wie sie für die Cloud-Nutzer unter ihrer Verantwortung anwendbar sind. Der Cloud-Anbieter bietet den Cloud-Kunden Werkzeuge für die Verwaltung und Erzwingung dieser Regeln an.'
+  - identifier: &ID_Criterion_Confidentiality_of_Authentication_Information_Subcriterion_Basic_3 '03B'
+    criterion: 'Bei der Verteilung von Zugangsdaten überprüft der Cloud-Anbieter die Identität des Empfängers, validiert die Anfrage und schützt die Zugangsdaten durch den Einsatz zusätzlicher Sicherheitsmechanismen wie Multi-Faktor-Authentisierung.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Confidentiality_of_Authentication_Information_Subcriterion_Basic_1
+    information_text: 'Der Stand der Technik in Bezug auf kryptographische Hashfunktionen wird in der aktuellen Version der Technischen Richtlinie TR-02102-1 ''Kryptographische Verfahren: Empfehlungen und Schlüssellängen'' des BSI beschrieben. '
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie hinreichend sichere Passwörter verwenden (vgl. IAM-08) und die vom Cloud-Anbieter bereitgestellten Verfahren zum Schutz der Vertraulichkeit der Passwörter entsprechend ihrer eigenen Einschätzung einsetzen und dass die mit ihrer eigenen Wahl verbundenen Risiken unautorisierter Zugriffe getragen werden. Falls Cloud-Kunden virtuelle Maschinen oder Container mit dem Cloud-Dienst betreiben, stellen sie mit geeigneten Kontrollen sicher, dass die Vertraulichkeit der Informationen auch bei der Zuweisung von Authentisierungsinformationen für die virtuellen Maschinen oder Container gewährleistet ist.'
+- identifier: &ID_Criterion_Roles_and_Rights_Framework '08'
+  name: 'Rahmenwerk für Rollen und Berechtigungen'
+  basic:
+  - identifier: &ID_Criterion_Roles_and_Rights_Framework_Subcriterion_Basic_1 '01B'
+    criterion: 'Der bereitgestellte Cloud-Dienst umfasst ein Rahmenwerk für Rollen und Berechtigungen für Cloud-Nutzer des Cloud-Kunden. Dieses Rahmenwerk ermöglicht es Cloud-Nutzern, ihre eigenen Zugriffsrechte zu verwalten. Es beschreibt Zugriffsrechte und Rollen für die vom Cloud-Dienst bereitgestellten Funktionen. Cloud-Kunden können relevante Parameter der Zugriffskontrolle selbst konfigurieren.'
+  - identifier: &ID_Criterion_Roles_and_Rights_Framework_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Zugriffsrechte und Rollen sind geeignet, Cloud-Nutzern des Cloud-Kunden die Verwaltung von Zugriffsrechten und Zugangsberechtigungen in Übereinstimmung mit dem Prinzip der geringsten Berechtigung (''Least-Privilege-Prinzip'') und soweit dies für die Erfüllung von Aufgaben erforderlich ist (''Need-to-know-Prinzip'') zu ermöglichen und das Prinzip der funktionalen Trennung zwischen ausführenden und kontrollierenden Funktionen (''Separation of Duties'') umzusetzen.'
+  - identifier: &ID_Criterion_Roles_and_Rights_Framework_Subcriterion_Basic_3 '03B'
+    criterion: 'Der bereitgestellte Cloud-Dienst ist mit einer Funktionalität ausgestattet, die Cloud-Kunden dabei unterstützt, Cloud-Nutzerzugriffsrechte unter ihrer Verantwortung zu überprüfen.'
+  - identifier: &ID_Criterion_Roles_and_Rights_Framework_Subcriterion_Basic_4 '04B'
+    criterion: 'Falls der Cloud-Dienst die Verwaltung von Kundenidentitäten umfasst, ist der bereitgestellte Cloud-Dienst für eine bestimmte Kundenidentität mit einer Funktionalität ausgestattet, eine Liste der dieser Identität derzeit gewährten Zugriffsrechte gemäß den vertraglichen Bedingungen bereitzustellen.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Roles_and_Rights_Framework_Subcriterion_Basic_1
+    information_text: 'Bei IaaS würde ein Rahmenwerk für Rollen und Berechtigungen unter anderem die Zugriffsrechte und Rollen für die folgenden Funktionen des Cloud-Dienstes beschreiben:
+
+
+1. Verwaltung der Zustände virtueller Maschinen (Start, Pause, Stopp) sowie ihrer Migration oder Überwachung;
+
+2. Verwaltung verfügbarer Images, die zur Erstellung virtueller Maschinen verwendet werden können; und
+
+3. Verwaltung virtueller Netze (z. B. Konfiguration virtueller Router und Switches).
+
+'
+  - applicable_criteria:
+    - *ID_Criterion_Roles_and_Rights_Framework_Subcriterion_Basic_3
+    information_text: 'Diese Funktionalität kann z. B. das Abrufen einer Liste aller Rollen und Zugriffe umfassen, die der Cloud-Kunde aktiviert hat, und wann sie zuletzt geändert wurden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass:
+
+
+1. Sie das vom Cloud-Anbieter angebotene Rahmenwerk für Rollen und Berechtigungen sowie die begleitenden Funktionalitäten aktiv nutzen;
+
+2. Die Erteilung von Berechtigungen an Cloud-Nutzer in ihrem Verantwortungsbereich einer Autorisierung unterliegt; und
+
+3. Die Angemessenheit der zugewiesenen Berechtigungen regelmäßig überprüft wird und Berechtigungen bei erforderlichen Änderungen (z. B. Ausscheiden von Personal) zeitnah angepasst oder entzogen werden.
+
+'
+- identifier: &ID_Criterion_Authorisation_Mechanisms '09'
+  name: 'Autorisierungsmechanismen'
+  basic:
+  - identifier: &ID_Criterion_Authorisation_Mechanisms_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Zugriff auf die vom Cloud-Dienst bereitgestellten Funktionen ist durch Zugriffskontrollen (Autorisierungsmechanismen) beschränkt, die überprüfen, ob Cloud-Nutzer, IT-Komponenten oder Anwendungen berechtigt sind, bestimmte Aktionen auszuführen.'
+  - identifier: &ID_Criterion_Authorisation_Mechanisms_Subcriterion_Basic_2 '02B'
+    criterion: 'Der Cloud-Anbieter validiert die Funktionalität der Autorisierungsmechanismen, bevor neue Funktionen für Cloud-Kunden verfügbar gemacht werden, sowie bei Änderungen an den Autorisierungsmechanismen bestehender Funktionen (vgl. DEV-07).'
+  - identifier: &ID_Criterion_Authorisation_Mechanisms_Subcriterion_Basic_3 '03B'
+    criterion: 'Falls Validierungsaktivitäten Schwachstellen offenlegen, werden die Verfahren zur Indentifikation von Schwachstellen (vgl. PSS-02) angewendet und Maßnahmen zur zeitnahen Behebung oder Risikomitigation eingeleitet.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Authorisation_Mechanisms_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Zugriffskontrollen sind attributbasiert, um granulare und kontextbezogene Prüfungen gegen mehrere Attribute eines Cloud-Nutzers, einer IT-Komponente oder einer Anwendung zu ermöglichen (z. B. Rolle, Standort, Authentisierungsmethode).'
+  information:
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass Systemkomponenten unter ihrer Verantwortung regelmäßig auf Schwachstellen überprüft und diese durch geeignete Maßnahmen mitigiert werden.'
+- identifier: &ID_Criterion_Software_Defined_Networking '10'
+  name: 'Software-defined Networking'
+  basic:
+  - identifier: &ID_Criterion_Software_Defined_Networking_Subcriterion_Basic_1 '01B'
+    criterion: 'Falls der Cloud-Dienst Funktionen für softwaredefinierte Netze (SDN) anbietet, wird die Vertraulichkeit der Cloud-Kundendaten durch geeignete SDN-Verfahren sichergestellt.'
+  - identifier: &ID_Criterion_Software_Defined_Networking_Subcriterion_Basic_2 '02B'
+    criterion: 'Der Cloud-Anbieter validiert die Funktionalität der SDN-Funktionen, bevor neue SDN-Merkmale für Cloud-Kunden bereitgestellt oder bestehende SDN-Merkmale geändert werden. Identifizierte Mängel werden risikoorientiert beurteilt und korrigiert.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Software_Defined_Networking_Subcriterion_Basic_1
+    - *ID_Criterion_Software_Defined_Networking_Subcriterion_Basic_2
+    information_text: 'Dieses Kriterium ist für das Servicemodell SaaS typischerweise nicht anwendbar.
+
+
+Geeignete SDN-Methoden zur Erhöhung der Vertraulichkeit sind beispielsweise L2-Overlay-Netze (Tagging) oder Tunneling/Kapselung.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie die Funktionalität von SDN-Merkmalen für ihre individuellen Anwendungsfälle validieren, bevor sie neu eingeführte Fähigkeiten oder geänderte bestehende nutzen.'
+- identifier: &ID_Criterion_Images_for_Virtual_Machines_and_Containers '11'
+  name: 'Images für virtuelle Maschinen und Container'
+  basic:
+  - identifier: &ID_Criterion_Images_for_Virtual_Machines_and_Containers_Subcriterion_Basic_1 '01B'
+    criterion: 'Falls Cloud-Kunden virtuelle Maschinen oder Container mit dem Cloud-Dienst betreiben, ist der bereitgestellte Cloud-Dienst mit Funktionalitäten ausgestattet, die die folgenden Aspekte sicherstellen:
+
+
+1. Cloud-Kunden können die Auswahl von Images virtueller Maschinen oder Containern nach ihren Vorgaben einschränken, sodass Cloud-Nutzer des Cloud-Kunden nur die gemäß diesen Einschränkungen freigegebenen Images oder Container starten können;
+
+2. Falls der Cloud-Anbieter dem Cloud-Kunden Images virtueller Maschinen oder Container bereitstellt, informiert der Cloud-Anbieter den Cloud-Kunden in angemessener Weise über die gegenüber der vorherigen Version vorgenommenen Änderungen;
+
+3. Vom Cloud-Anbieter bereitgestellte Images sind mit Informationen zu ihrer Herkunft gekennzeichnet; und
+
+4. Die vom Cloud-Anbieter bereitgestellten Images sind nach allgemein akzeptierten Branchenstandards gehärtet.
+
+'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Images_for_Virtual_Machines_and_Containers_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter prüft beim Start die Integrität und Authentizität von virtuellen Maschinen oder Container-Images und informiert den Cloud-Kunden entsprechend über die Ergebnisse dieser Prüfungen.'
+  - identifier: &ID_Criterion_Images_for_Virtual_Machines_and_Containers_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Während der Laufzeit schützt der Cloud-Anbieter die virtuellen Maschinen oder Container-Images vor Manipulation und informiert den Cloud-Kunden entsprechend über den Status während der Laufzeit.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Images_for_Virtual_Machines_and_Containers_Subcriterion_Basic_1
+    information_text: 'Dieses Kriterium ist für das Servicemodell SaaS typischerweise nicht anwendbar.
+
+
+Allgemein akzeptierte Branchenstandards sind z. B. der Security Configuration Benchmark des Center for Internet Security (CIS) oder die entsprechenden Bausteine im BSI IT-Grundschutz-Kompendium.'
+  - applicable_criteria:
+    - *ID_Criterion_Images_for_Virtual_Machines_and_Containers_Subcriterion_Additional_Complement_1
+    information_text: 'Typische Maßnahmen zur Prüfung von virtuellen Maschinen oder Container-Images hinsichtlich Integrität und Authentizität umfassen den Einsatz kryptographischer Signaturen.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Images virtueller Maschinen oder Container, die sie mit dem Cloud-Dienst betreiben, ihren Anforderungen an das Informationssicherheitsmanagement entsprechen und dass die Ergebnisse der Integritätsprüfungen beim Start und während der Laufzeit gemäß diesen Anforderungen verarbeitet werden.'
+- identifier: &ID_Criterion_Region_of_Data_Processing_and_Storage '12'
+  name: 'Region der Datenverarbeitung und -speicherung'
+  basic:
+  - identifier: &ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_1 '01B'
+    criterion: 'Die Architektur des Cloud-Dienstes, einschließlich der technischen Ausgestaltung seiner Infrastruktur, stellt sicher, dass Cloud-Kundendaten und etwaige Datensicherungen davon nur in der in den vertraglichen Vereinbarungen mit dem Cloud-Anbieter festgelegten Region verarbeitet und gespeichert werden. Falls der Cloud-Kunde aus mehreren Regionen auswählen kann, ist die Verarbeitung und Speicherung der vorgenannten Daten auf die ausgewählten Regionen beschränkt.'
+  - identifier: &ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Verarbeitung und Speicherung von Cloud-Kundendaten innerhalb der Service-Organisationen des Cloud-Anbieters hält sich ebenfalls an die vom Cloud-Kunden ausgewählten Regionen.'
+  - identifier: &ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_3 '03B'
+    criterion: 'Die vertraglichen Vereinbarungen legen die Regionen fest, in denen die Verarbeitung und Speicherung von Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten und Kontodaten erfolgt, sowie die Umstände, unter denen Änderungen vorgenommen werden können.'
+  - identifier: &ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_4 '04B'
+    criterion: 'Cloud-Kunden werden im Voraus über Änderungen der Regionen informiert, in denen die vorgenannten Daten verarbeitet oder gespeichert werden. Falls dem Cloud-Anbieter hierfür keine vorherige allgemeine Autorisierung durch den Cloud-Kunden erteilt wurde, werden solche Berechtigungen gemäß den in den vertraglichen Vereinbarungen festgelegten Anforderungen eingeholt oder dem Cloud-Kunden die Ausübung von Kündigungsrechten ermöglicht.'
+  additional_sharpen:
+  - identifier: &ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Additional_Sharpen_1 '01AS'
+    sharpened_basic_criterion: *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_1
+    criterion: 'Die Architektur des Cloud-Dienstes, einschließlich der technischen Ausgestaltung seiner Infrastruktur, stellt sicher, dass die Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten und etwaige Datensicherungen davon nur in der in den vertraglichen Vereinbarungen mit dem Cloud-Anbieter festgelegten Region verarbeitet und gespeichert werden. Falls der Cloud-Kunde aus mehreren Regionen auswählen kann, ist die Verarbeitung und Speicherung der vorgenannten Daten auf die ausgewählten Regionen beschränkt.'
+  - identifier: &ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Additional_Sharpen_2 '02AS'
+    sharpened_basic_criterion: *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_2
+    criterion: 'Die Verarbeitung und Speicherung von Cloud-Kundendaten und abgeleiteten Cloud-Dienstdaten innerhalb der Service-Organisationen des Cloud-Anbieters hält sich ebenfalls an die vom Cloud-Kunden ausgewählten Regionen.'
+  additional_complement:
+  - identifier: &ID_Criterion_Partitions_of_Data_Processing_and_Storage_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter bietet vom Cloud-Kunden auswählbare Partitionen an, in denen partitionsspezifisches Identitätsmanagement sowohl für Cloud-Kunden als auch für sämtliches Personal des Cloud-Anbieters erzwungen wird. Identitätsprüfung und Identitätsspeicherung sind auf die geografischen Grenzen der ausgewählten Partition beschränkt.'
+  - identifier: &ID_Criterion_Partitions_of_Data_Processing_and_Storage_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Innerhalb dieser Partitionen sind die folgenden Operationen des Cloud-Anbieters darauf beschränkt, nur innerhalb der geografischen Grenzen der vom Cloud-Kunden ausgewählten Partitionen stattzufinden:
+
+
+1. Privilegierter Zugang zur Produktionsumgebung durch den Cloud-Anbieter, einschließlich potenziellen Zugriffs auf Cloud-Kundendaten und abgeleitete Cloud-Dienstdaten;
+
+2. Systemprotokollierung und Ereignisüberwachung durch den Cloud-Anbieter, ausgenommen die Verarbeitung von Ereignisprotokollen speziell für Threat Intelligence und die Verarbeitung von IP-Adressen zu Routing-Zwecken; und
+
+3. Verfahren zur Verwaltung und Speicherung kryptographischer Schlüssel, um sicherzustellen, dass Schlüssel innerhalb der Grenzen der Partition gehandhabt und gespeichert werden.
+
+
+Diese Beschränkungen unter Berücksichtigung von Partitionen gelten auch für alle Service-Organisationen, die am Betrieb des Cloud-Dienstes beteiligt sind.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_3
+    information_text: 'Dieses Kriterium bezieht sich auf die Architektur des Cloud-Dienstes und legt der vom Cloud-Kunden entworfenen Architektur keine Beschränkungen auf. 
+    
+
+Wenn ein Cloud-Anbieter mehrere Regionen anbietet, die denselben Dienst bereitstellen, steht es dem Cloud-Kunden frei, den Dienst in unterschiedlichen Regionen zu nutzen (z. B. für mehr Resilienz).
+
+
+Dieses Unterkriterium bezieht sich auf vertragliche Vereinbarungen, die die Zusage einschließen, dass Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten in der gewählten Region verbleiben. Es behandelt auch, wie vertragliche Vereinbarungen aktualisiert werden, und stellt eine transparente Kommunikation sowie den fortgesetzten Verbleib aller vier Datentypen in der/den vereinbarten Region(en) sicher.'
+  - applicable_criteria:
+    - *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_1
+    - *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_2
+    - *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_3
+    - *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Basic_4
+    - *ID_Criterion_Regions_of_Data_Processing_and_Storage_Subcriterion_Additional_Sharpen_1
+    - *ID_Criterion_Partitions_of_Data_Processing_and_Storage_Subcriterion_Additional_Complement_1
+    - *ID_Criterion_Partitions_of_Data_Processing_and_Storage_Subcriterion_Additional_Complement_2
+    information_text: 'Dieses Kriterium ergänzt die Allgemeine Bedingung GC-01. Es verlangt nicht, dass der Cloud-Anbieter mehrere Regionen oder Partitionen anbietet. Falls der Cloud-Anbieter nur eine Partition für den/die im Geltungsbereich befindlichen Cloud-Dienst(e) anbietet, stellt dies keine Abweichung vom Kriterium dar.
+
+
+Falls das Zusatz-Unterkriterium nur für ausgewählte Partitionen im Geltungsbereich eines Attestierungsauftrags gemäß diesem Katalog anwendbar ist, sollte dies in der Beschreibung seines internen Kontrollsystems für den Cloud-Dienst durch den Cloud-Anbieter dargestellt werden.
+
+
+Dieses Kriterium ist eine Voraussetzung für technische Dienst-Souveränität.
+
+
+Die Überwachung von Threat Intelligence Daten, die keine Cloud-Kundendaten und keine Kontodaten umfassen, sowie die Protokollierung erforderlicher Routing-Informationen wie IP-Adressen müssen nicht geografisch auf eine einzelne Partition beschränkt sein.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie bei der Auswahl von Cloud-Anbietern und der Konfiguration des Cloud-Dienstes über die verfügbaren Partitionen für Datenverarbeitung und -speicherung informiert sind und, falls eine Wahl zwischen verschiedenen Partitionen besteht, diejenigen auswählen, die ihren eigenen Anforderungen entsprechen.
+
+
+Je nach Anwendungsfall und insbesondere bei der Nutzung von Diensten eines Cloud-Anbieters, der in einem anderen Land ansässig ist, berücksichtigen Cloud-Kunden bei ihrer Auswahl die für sie geltenden Gesetze ihrer eigenen Jurisdiktion (z. B. bei der Verarbeitung personenbezogener Daten; Einhaltung gesetzlicher Aufbewahrungspflichten für Geschäftsunterlagen usw.).'

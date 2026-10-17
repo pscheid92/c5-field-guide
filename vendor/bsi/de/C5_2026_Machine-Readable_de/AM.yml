@@ -1,0 +1,530 @@
+-
+  identifier: &ID_Criterion_Asset_Management_Framework '01'
+  name: 'Rahmenwerk für Asset Management'
+  basic: 
+    -
+      identifier: &ID_Criterion_Asset_Management_Framework_Subcriterion_Basic_1 '01B'
+      criterion: 'Ein Rahmenwerk für Asset Management ist gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, in dem die folgenden Aspekte beschrieben sind:
+
+
+1. Identifizierung von Assets, die verwendet werden, um den Cloud-Dienst in der Produktionsumgebung bereitzustellen;
+
+2. Definition eines Schemas zur Ermittlung des Schutzbedarfs auf der Grundlage der Informationen, die auf dem Asset verarbeitet, gespeichert oder übertragen werden;
+
+3. Definition von Asset-Typen unter Berücksichtigung mindestens der Unterscheidung zwischen Hardware- und Software-Objekten;
+
+4. Definition von Asset-Lebenszyklen auf der Grundlage des Asset-Typs; und
+
+5. Definition von Verfahren für die Inventarisierung von Hardware- und Software-Assets.
+
+'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Asset_Management_Framework_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Die über Assets gesammelten Informationen werden in Logging- und Monitoring-Anwendungen berücksichtigt, um:
+      
+      
+1. die Auswirkungen auf Cloud-Dienste und -Funktionen im Falle von Ereignissen zu identifizieren, die zu einer Verletzung der Schutzziele führen könnten; und 
+
+2. Informationen zur Unterstützung betroffener Cloud-Kunden gemäß den vertraglichen Vereinbarungen bereitzustellen.
+
+'
+    
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Asset_Management_Framework_Subcriterion_Basic_1
+        - *ID_Criterion_Asset_Management_Framework_Subcriterion_Additional_Complement_1
+      information_text: 'Assets im Sinne dieses Kriterienbereichs sind die für die Informationssicherheit des Cloud-Dienstes während der Erstellung, Verarbeitung, Speicherung, Übermittlung, Löschung oder Vernichtung von Informationen benötigten Objekte im Verantwortungsbereich des Cloud-Anbieters, z. B. Firewalls, Loadbalancer, Webserver, Anwendungsserver und Datenbankserver.
+
+
+Diese Objekte bestehen wiederum aus Hardware- und Software-Objekten:
+
+
+Hardware-Objekte sind:
+
+
+1. Physische und virtuelle Infrastruktur-Ressourcen (z. B. Server, Speichersysteme, Netzkomponenten); und
+
+2. Endgeräte, soweit der Cloud-Anbieter in einer Risikobeurteilung festgestellt hat, dass diese bei Verlust oder unautorisierten Zugriffen die Informationssicherheit des Cloud-Dienstes gefährden könnten (z. B. Mobilgeräte, die als Security-Token zur Authentifizierung genutzt werden).
+
+
+Software-Objekte sind z. B. Hypervisor, Container, Betriebssysteme, Datenbanken, Microservices und Programmierschnittstellen (APIs).
+
+
+Der Lebenszyklus eines Assets umfasst:
+
+
+1. Anschaffung;
+
+2. Inbetriebnahme;
+
+3. Instandhaltung;
+
+4. Außerbetriebnahme; und
+
+5. Entsorgung.
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Asset_Inventory '02'
+  name: 'Asset-Inventar'
+  basic: 
+    -
+      identifier: &ID_Criterion_Asset_Inventory_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter führt ein Asset-Inventar von Hardware- und Software-Assets gemäß dem Rahmenwerk für Asset Management (vgl. AM-01).'
+    -
+      identifier: &ID_Criterion_Asset_Inventory_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Inventarisierung erfolgt automatisch und/oder durch für die Assets zuständige Personen oder Gruppen, um eine vollständige, richtige, gültige und konsistente Erfassung über den Lebenszyklus der Assets sicherzustellen.'
+    -
+      identifier: &ID_Criterion_Asset_Inventory_Subcriterion_Basic_3 '03B'
+      criterion: 'Zu den Assets werden jene Informationen erfasst, die zur Anwendung des Risikomanagement-Verfahrens (vgl. OIS-07), einschließlich der Maßnahmen zur Behandlung dieser Risiken über den Lebenszyklus der Assets benötigt werden.'     
+    -
+      identifier: &ID_Criterion_Asset_Inventory_Subcriterion_Basic_4 '04B'
+      criterion: 'Änderungen an den erfassten Informationen eines Assets werden protokolliert.'
+    -
+      identifier: &ID_Criterion_Asset_Inventory_Subcriterion_Basic_5 '05B'
+      criterion: 'Der Cloud-Anbieter führt Listen aller Benutzer in seinem Verantwortungsbereich, die Zugriff auf eine bestimmte Ressource haben, zusammen mit ihren jeweiligen Zugriffsrechten.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Asset_Iventory_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter stellt sicher, dass das Asset-Inventar aktuell ist, indem er Überwachungsmaßnahmen für den Prozess implementiert, der es pflegt.' 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Asset_Inventory_Subcriterion_Basic_1
+        - *ID_Criterion_Asset_Inventory_Subcriterion_Basic_2
+        - *ID_Criterion_Asset_Inventory_Subcriterion_Basic_3
+        - *ID_Criterion_Asset_Inventory_Subcriterion_Basic_4
+        - *ID_Criterion_Asset_Inventory_Subcriterion_Basic_5
+      information_text: 'Cloud-Anbieter, die ihre Cloud-Infrastruktur als virtuelle Infrastruktur von einer Service-Organisation beziehen (z. B. virtuelle Maschinen oder Container), können von der Service-Organisation bereitgestellte Werkzeuge verwenden, um diese Assets zu inventarisieren, sofern der Cloud-Anbieter diese auf der Grundlage seines Rahmenwerks für Asset Management als geeignet erachtet.
+
+
+In der Praxis kann die Umsetzung des Asset-Inventars je nach Anzahl, Größe und Komplexität der bereitgestellten Cloud-Dienste stark variieren.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Asset_Inventory_Subcriterion_Basic_5
+      information_text: 'Diese Listen können, müssen aber nicht, durch das Inventarsystem bereitgestellt werden, das durch die Kriterien AM-02, AM-03 und AM-04 eingerichtet wird.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Hardware_Asset_Inventory '03'
+  name: 'Hardware-Asset-Inventar'
+  basic: 
+    -
+      identifier: &ID_Criterion_Hardware_Asset_Inventory_Subcriterion_Basic_1 '01B'
+      criterion: 'Das vom Cloud-Anbieter geführte Hardware-Asset-Inventar (vgl. AM-02) enthält für jeden Eintrag Informationen, die:
+
+
+1. die Identifizierung des Hardware-Assets ermöglichen; 
+
+2. Einblick in den Lebenszyklus des Hardware-Assets geben; und
+
+3. dem Cloud-Anbieter ermöglichen, das Hardware-Asset zu kontrollieren, eine Risikobeurteilung durchzuführen und seine Informationssicherheit zu schützen.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria: 
+        - *ID_Criterion_Hardware_Asset_Inventory_Subcriterion_Basic_1
+      information_text: 'Dieses Basiskriterium kann, muss aber nicht, erfüllt werden, indem für jeden Eintrag des Hardware-Asset-Inventars die folgenden Details aufgenommen werden:
+
+
+1. Identifizierungsdetails (wie Name, IP-Adresse, MAC-Adresse usw.);
+
+2. Die Funktion des Assets;
+
+3. Das Modell des Assets;
+
+4. Der Standort des Assets;
+
+5. Der Eigentümer des Assets; und
+
+6. Informationssicherheitsanforderungen für das Asset.
+      
+      
+Ein Asset Owner ist eine Person oder Rolle, welche die Verantwortung und Rechenschaftspflicht für die Verwaltung und den Schutz eines Assets einer Organisation zugewiesen ist, und impliziert kein rechtliches Eigentum an den Assets.
+ 
+
+Wenn Cloud-Kunden virtuelle Maschinen oder Container mit dem Cloud-Dienst betreiben, inventarisiert der Cloud-Anbieter die Container und dokumentiert ihren Lebenszyklus (vgl. OPS-34).'
+  corresponding:
+-
+  identifier: &ID_Criterion_Software_Asset_Inventory '04'
+  name: 'Software-Asset-Inventar'
+  basic: 
+    -
+      identifier: &ID_Criterion_Software_Asset_Inventory_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter führt ein umfassendes Inventar aller Software-Assets, einschließlich verwendeter Software (vgl. AM-02). Dieses Inventar enthält für jeden Eintrag Informationen, die: 
+
+
+1. die Identifizierung des Software-Assets ermöglichen;
+
+2. Einblick darin geben, welche anderen Assets das Software-Asset für die Bereitstellung des Cloud-Dienstes verwenden; und
+
+3. dem Cloud-Anbieter ermöglichen, das Software-Asset zu kontrollieren, eine Risikobeurteilung durchzuführen und seine Informationssicherheit zu schützen.
+
+'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Software_Asset_Inventory_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Das Inventar enthält außerdem für jeden Eintrag Informationen, die Einblick darin geben, wie lange das Software-Asset Sicherheitsupdates von seinem Lieferanten erhalten wird, sofern ein solcher Zeitraum vom Lieferanten mitgeteilt wurde.'
+  information: 
+    -
+      applicable_criteria: 
+        - *ID_Criterion_Software_Asset_Inventory_Subcriterion_Basic_1
+      information_text: 'Dieses Basiskriterium kann, muss aber nicht, erfüllt werden, indem für jeden Eintrag des Software-Asset-Inventars die folgenden Details aufgenommen werden:
+
+
+1. Identifizierungsdetails (wie Name, IP-Adresse, MAC-Adresse usw.);
+
+2. Die Version der Software; und
+
+3. Die übergeordnete Ressource (Hardware-Asset oder Software-Asset), auf der die Software installiert ist.
+
+'
+    -
+      applicable_criteria: 
+        - *ID_Criterion_Software_Asset_Inventory_Subcriterion_Additional_Complement_1
+      information_text: 'Dieses Zusatz-Unterkriterium kann, muss aber nicht, erfüllt werden, indem für jeden Eintrag des Software-Asset-Inventars Lizenzinformationen, einschließlich mitgeteilter End-of-Support-Daten in Bezug auf die lizenzierte Software, aufgenommen werden.'
+  corresponding: 
+-
+  identifier: &ID_Criterion_Policy_Use_and_Safe_Handling_of_Assets '05'
+  name: 'Richtlinie für die ordnungsgemäße und sichere Nutzung von Assets'
+  basic: 
+    -
+      identifier: &ID_Criterion_Policy_Use_and_Safe_Handling_of_Assets_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren für die ordnungsgemäße und sichere Nutzung mit Assets sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt und adressieren folgende Aspekte im Lebenszyklus von Assets, soweit diese für das Asset anwendbar sind:
+
+
+1. Genehmigungsverfahren für Anschaffung, Inbetriebnahme, Instandhaltung, Außerbetriebnahme und Entsorgung durch autorisiertes Personal oder Systemkomponenten;
+
+2. Klassifizierung und Kennzeichnung auf Basis des Schutzbedarfs der Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten sowie Maßnahmen zur ermittelten Sicherheitsniveau;
+
+3. Sichere Konfiguration der Mechanismen für Fehlerbehandlung, Protokollierung, Verschlüsselung, Authentisierung und Autorisierung;
+
+4. Anforderungen an Software- und Image-Versionen sowie Anwendung von Patches;
+
+5. Umgang mit Software für die kein Support und keine Sicherheitsaktualisierungen mehr verfügbar sind;
+
+6. Einschränkung von Software-Installationen oder Nutzung von Diensten;
+
+7. Schutz vor Schadsoftware;
+
+8. Remote-Deaktivierung, -Löschung oder -Sperrung;
+
+9. Physische Übergabe und Transport;
+
+10. Umgang mit Störungen und Schwachstellen;
+
+11. Löschung von Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten; und
+
+12. Sichere Handhabung und Nutzung von Wechselmedien, z. B. durch Festlegung, welche Geräte mit Wechselmedien interagieren dürfen und welche Daten auf ihnen gespeichert werden können, oder durch Verbot der Wiederverwendung von Wechselmedien.
+
+'
+    -
+      identifier: &ID_Criterion_Policy_Use_and_Safe_Handling_of_Assets_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Anwendbarkeit dieser Aspekte wird auf der Grundlage des Rahmenwerks für Asset Management des Cloud-Anbieters definiert (vgl. AM-01).'
+  additional_sharpen:
+  additional_complement:
+  information: 
+  corresponding:
+-
+  identifier: &ID_Criterion_Comissioning_of_Hardware '06'
+  name: 'Inbetriebnahme von Hardware'
+  basic: 
+    -
+      identifier: &ID_Criterion_Comissioning_of_Hardware_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat einen Genehmigungsprozess für die Inbetriebnahme von Hardware implementiert, die verwendet wird, um den Cloud-Dienst in der Produktionsumgebung bereitzustellen. Dieser Prozess umfasst die Identifizierung, Analyse und Mitigierung aller mit der Inbetriebnahme verbundenen Risiken (vgl. OIS-07).' 
+    -
+      identifier: &ID_Criterion_Comissioning_of_Hardware_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Genehmigung erfolgt nach Verifikation der sicheren Konfiguration der Mechanismen für Fehlerbehandlung, Protokollierung, Verschlüsselung, Authentisierung und Autorisierung gemäß der vorgesehenen Verwendung und auf Basis der anwendbaren Richtlinien.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria: 
+        - *ID_Criterion_Comissioning_of_Hardware_Subcriterion_Basic_1
+        - *ID_Criterion_Comissioning_of_Hardware_Subcriterion_Basic_2
+      information_text: 'Das Kriterium bezieht sich nur auf physische Hardware-Objekte, z. B. Server, Speichersysteme und Netzkomponenten.
+
+Virtuelle Hardware- und Software-Objekte werden in den Kriterienbereichen (OPS) und (DEV) betrachtet.
+
+Der Genehmigungsprozess berücksichtigt typischerweise sowohl die grundsätzliche Freigabe zur Nutzung der Hardware als auch die finale Freigabe der konfigurierten Assets.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Decomissioning_of_Hardware '07'
+  name: 'Außerbetriebnahme von Hardware'
+  basic: 
+    -
+      identifier: &ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter definiert, dokumentiert und implementiert ein Verfahren für die Außerbetriebnahme von Hardware, die verwendet wird, um Systemkomponenten zu betreiben, die die Produktionsumgebung des Cloud-Dienstes unterstützen und in der Verantwortung des Cloud-Anbieters liegen. Im Rahmen dieses Verfahrens ist eine Genehmigung durch autorisiertes Personal des Cloud-Anbieters auf der Grundlage der anwendbaren Richtlinien erforderlich.'
+    -
+      identifier: &ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Außerbetriebnahme umfasst entweder: 
+
+
+1. Die vollständige und unwiderrufliche Löschung aller Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten; oder
+
+2. Die ordnungsgemäße Vernichtung der Datenträger. 
+
+
+Kontodaten müssen zumindest in Fällen gelöscht werden, in denen sich die Daten in der Produktionsumgebung für den Betrieb von Systemkomponenten befinden.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Basic_1
+      criterion: 'Der Cloud-Anbieter definiert, dokumentiert und implementiert ein Verfahren für die Außerbetriebnahme von Hardware, die verwendet wird, um Systemkomponenten zu betreiben, die die Produktions-, Entwicklungs-, Test- oder Staging-Umgebung des Cloud-Dienstes unterstützen und in der Verantwortung des Cloud-Anbieters liegen. Im Rahmen dieses Verfahrens ist eine Genehmigung durch autorisiertes Personal des Cloud-Anbieters auf der Grundlage der anwendbaren Richtlinien erforderlich.' 
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Die Vernichtung von Daten auf Hardware-Komponenten erfolgt in einer solchen Weise, dass eine Datenwiederherstellung als unmöglich angesehen werden kann.'
+  information:
+  corresponding:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Basic_1
+      information_text: 'Das Verfahren zur Außerbetriebnahme umfasst typischerweise:
+
+
+1. die Verifizierung, dass das Asset für den operativen Einsatz nicht mehr benötigt wird;
+
+2. die Bewertung zugehöriger Risiken und Abhängigkeiten;
+
+3. die Genehmigung durch autorisiertes Personal auf der Grundlage interner Richtlinien;
+
+4. die Durchführung sicherer Datenlöschungs- oder Bereinigungsprozesse;
+
+5. die Aktualisierung des Asset-Inventars, um den Status der Außerbetriebnahme widerzuspiegeln; und
+        
+6. die Entsorgung oder Umwidmung der Hardware in Übereinstimmung mit Umwelt- und Sicherheitsrichtlinien.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Basic_2
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Additional_Complement_1
+      information_text: 'Die Löschung von Daten bzw. physische Vernichtung von Datenträgern kann z. B. gemäß DIN 66399 oder BSI IT-Grundschutz-Baustein CON.6 erfolgen'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Additional_Complement_1
+      information_text: 'Dieser Genehmigungsprozess stellt sicher, dass außerhalb des Standorts durchgeführte Entsorgungsaktivitäten den Sicherheits-, Compliance- und Umweltrichtlinien der Organisation entsprechen. Er umfasst typischerweise:
+
+
+1. die Verifizierung von Asset-Eigentum und Nutzungshistorie;
+
+2. die Bewertung der Anforderungen an die Datenbereinigung;
+
+3. die Auswahl genehmigter Entsorgungsdienstleister oder -methoden;
+
+4. die Dokumentation der Entsorgungsmaßnahmen und Genehmigungen; und
+
+5. die Bestätigung der sicheren Datenlöschung oder Vernichtung des Datenträgers.
+      
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Basic_1
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Basic_2
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Additional_Sharpen_1
+        - *ID_Criterion_Decomissioning_of_Hardware_Subcriterion_Additional_Complement_1
+      information_text: 'Dieses Kriterium ist nicht anwendbar auf Hardware-Komponenten, die keine Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten, Cloud-Anbieterdaten oder Kontodaten speichern (z. B. Monitore, Router oder Tastaturen).'
+      
+      corresponding:
+-
+  identifier: &ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets '08'
+  name: 'Verpflichtung zur ordnungsgemäßen Nutzung, sicheren Handhabung und Rückgabe von Assets'
+  basic: 
+    -
+      identifier: &ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter stellt in einer Risikobeurteilung (vgl. OIS-07) fest, ob der Verlust von oder unautorisierte Zugriffe auf Assets die Informationssicherheit des Cloud-Dienstes gefährden könnten. Falls dies der Fall ist, wird das interne und externe Personal des Cloud-Anbieters nachweislich auf die Richtlinien und Verfahren für die ordnungsgemäße Nutzung und sichere Handhabung von Assets verpflichtet, bevor diese verwendet werden dürfen.'
+    -
+      identifier: &ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets_Subcriterion_Basic_2 '02B'
+      criterion: 'Ausgehändigte Assets werden bei Beendigung des Beschäftigungsverhältnisses nachweislich zurückgegeben.'
+    -
+      identifier: &ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets_Subcriterion_Basic_3 '03B'
+      criterion: 'Wenn Assets nicht vor oder am Tag der Beendigung zurückgegeben werden können, entfernt der Cloud-Anbieter die Zugriffsrechte des Personals spätestens zum Datum der Beendigung des Beschäftigungsverhältnisses.'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets_Subcriterion_Basic_1
+        - *ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets_Subcriterion_Basic_2
+        - *ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets_Subcriterion_Basic_3
+      information_text: 'Das Kriterium betrifft im Wesentlichen Mobilgeräte (z. B. Notebooks, Tablets, Smartphones, FIDO2-Sicherheitsschlüssel etc.), insbesondere, wenn auf diesen Geräten vertrauliche Informationen gespeichert sind, die bei unautorisierten Zugriffen dazu genutzt werden können, privilegierten Zugriff auf den Cloud-Dienst zu erhalten (z. B. wenn diese als Security-Token zur Authentifizierung genutzt werden).'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Commitment_to_Permissible_Use_Safe_Handling_Return_of_Assets_Subcriterion_Basic_3
+      information_text: 'Die Entfernung der Zugriffsrechte von ausgeschiedenem Personal kann z. B. umgesetzt werden, indem die Identität des jeweiligen Personals auf dem Gerät deaktiviert wird.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Asset_Classification_and_Labelling '09'
+  name: 'Klassifizierung und Kennzeichnung von Assets'
+  basic: 
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_1 '01B'
+      criterion: 'Assets werden klassifiziert und, falls möglich, gekennzeichnet. Klassifizierung und Kennzeichnung eines Assets entsprechen dem Schutzbedarf der Kategorie von Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten, die es verarbeitet, speichert oder übermittelt.' 
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_2 '02B'
+      criterion: 'Klassifizierungsstufen werden mindestens jährlich und bei wesentlichen Änderungen am Cloud-Dienst überprüft. Auf der Grundlage der Überprüfung werden die Klassifizierungsstufen gegebenenfalls aktualisiert.'
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_3 '03B'
+      criterion: 'Der Schutzbedarf wird durch die für Assets zuständigen Personen oder Gruppen des Cloud-Anbieters nach einem einheitlichen und dokumentierten Klassifizierungsschema ermittelt.'     
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_4 '04B'
+      criterion: 'Das Klassifizierungsschema sieht Sicherheitsniveaus für die Schutzziele Vertraulichkeit, Integrität, Verfügbarkeit und Authentizität vor. Diese Schutzziele sind auf Liefer- und Wiederherstellungsziele abgestimmt, die in Geschäftsfortführungs- und Wiederherstellungsplänen festgelegt sind.'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Die eindeutige Identifizierung physischer Geräte dient als zusätzliche Methode für die Verbindungsauthentifizierung.' 
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Die Geräteidentifizierung ist in die Prozesse der Asset-Klassifizierung und -Kennzeichnung integriert.'
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Anwendungen zur Protokollierung und Überwachung berücksichtigen den Schutzbedarf der Assets, um bei Ereignissen, die zu einer Verletzung der Schutzziele führen können, das dafür zuständige Personal so zu informieren, dass erforderliche Maßnahmen mit einer geeigneten Priorität eingeleitet werden.'
+    -
+      identifier: &ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Additional_Complement_4 '04AC'
+      criterion: 'Maßnahmen für Ereignisse bei Assets mit einem erhöhten Schutzbedarf haben Priorität vor Ereignissen bei Assets mit einem geringeren Schutzbedarf.'
+  information: 
+    -  
+      applicable_criteria:
+        - *ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_1
+        - *ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_2
+        - *ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_3
+        - *ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_4
+      information_text: 'Sofern der Cloud-Anbieter keine spezifische Klassifizierung der Assets vornimmt, können alle Assets so behandelt werden, als würden sie das höchste Sicherheitsniveau erfordern.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Basic_2
+      information_text: 'Wenn eine Überprüfung durch wesentliche Änderungen am Cloud-Dienst ausgelöst wird, müssen nur die von den Änderungen betroffenen Klassifizierungsstufen in die Überprüfung einbezogen werden.'
+    -  
+      applicable_criteria:
+        - *ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Additional_Complement_1
+      information_text: 'Um sicherzustellen, dass alle physischen Assets eindeutig identifiziert werden, kann der Cloud-Anbieter Praktiken implementieren wie:
+
+
+1. die Nutzung einer zentralisierten Geräteverwaltungsplattform zur Überwachung und Steuerung aller Geräte;
+
+2. die Zuweisung eindeutiger Identifikatoren (z. B. MAC-Adressen, Seriennummern) zu allen Geräten; und
+
+3. die Nutzung automatisierter Mechanismen zur Registrierung verbundener Geräte.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Asset_Classification_and_Labelling_Subcriterion_Additional_Complement_2
+      information_text: 'Die Integration der Geräteidentifizierung stellt sicher, dass jedes Asset eindeutig erkannt und auf der Grundlage seines Schutzbedarfs angemessen klassifiziert wird. Dies ist besonders wichtig für mobile Geräte und Endgeräte, die sensible Daten enthalten oder als Zugangspunkte zu Cloud-Diensten dienen können. Eine ordnungsgemäße Kennzeichnung unterstützt die Rückverfolgbarkeit, die Risikobeurteilung und die Durchsetzung von Sicherheitskontrollen über den gesamten Asset-Lebenszyklus hinweg.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass der Schutzbedarf der Informationen, die mit dem Cloud-Dienst verarbeitet oder gespeichert werden können, angemessen bestimmt wird.
+
+
+Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass der Schutzbedarf der Informationen, die mit dem Cloud-Dienst verarbeitet oder gespeichert werden dürfen, angemessen ermittelt wird.
+
+Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die mit dem Cloud-Dienst verarbeiteten oder gespeicherten Informationen gemäß ihrem Schutzbedarf vor Manipulieren, Kopieren, Modifizieren, Umleiten oder Löschen geschützt sind.'
+-
+  identifier: &ID_Criterion_Protection_of_Hardware_on_Hold '10'
+  name: 'Schutz von vorübergehend nicht genutzter Hardware'
+  basic: 
+    -
+      identifier: &ID_Criterion_Protection_of_Hardware_on_Hold_Subcriterion_Basic_1 '01B'
+      criterion: 'Auf der Grundlage einer Risikobeurteilung (vgl. OIS-07) hat der Cloud-Anbieter ein Verfahren zum Schutz von Hardware-Komponenten der Produktionsumgebung des Cloud-Dienstes, die vorübergehend nicht genutzt werden, dokumentiert und implementiert. Das Verfahren unterstützt die sichere Lagerung und den Schutz inaktiver Hardware vor unbefugtem Zugriff oder Beschädigung, bis sie wieder benötigt wird.'
+  additional_sharpen: 
+    -
+      identifier: &ID_Criterion_Protection_of_Hardware_on_Hold_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Protection_of_Hardware_on_Hold_Subcriterion_Basic_1
+      criterion: 'Auf der Grundlage einer Risikobeurteilung (vgl. OIS-07) hat der Cloud-Anbieter ein Verfahren zum Schutz beliebiger Hardware-Komponenten, die vorübergehend nicht genutzt werden, dokumentiert und implementiert. Das Verfahren unterstützt die sichere Lagerung und den Schutz inaktiver Hardware vor unbefugtem Zugriff oder Beschädigung, bis sie wieder benötigt wird.'
+  additional_complement:
+  information: 
+  corresponding:
+-
+  identifier: &ID_Criterion_Transfer_of_Hardware '11'
+  name: 'Transfer von Hardware'
+  basic: 
+    -
+      identifier: &ID_Criterion_Transfer_of_Hardware_Subcriterion_Basic_1 '01B'
+      criterion: 'Auf der Grundlage einer Risikobeurteilung (vgl. OIS-07) stellt der Cloud-Anbieter den sicheren und kontrollierten Transfer von Hardware-Objekten, die in der Produktionsumgebung des Cloud-Dienstes verwendet werden, an einen externen oder alternativen Standort sicher.'
+    -
+      identifier: &ID_Criterion_Transfer_of_Hardware_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Transfer von Hardware wird durch benanntes Personal autorisiert.'
+    -
+      identifier: &ID_Criterion_Transfer_of_Hardware_Subcriterion_Basic_3 '03B'
+      criterion: 'Der Cloud-Anbieter stellt sicher, dass alle Transfers von Hardware-Objekten, die in der Produktionsumgebung des Cloud-Dienstes verwendet werden, unter Verwendung sicherer, dokumentierter Methoden durchgeführt werden, die darauf ausgelegt sind, unbefugten Zugriff, Manipulation, Datenabfluss oder Verlust während des Transports zu verhindern. Diese Methoden umfassen physischen Schutz, Nachverfolgung der Nachweiskette und Verifizierung bei Erhalt.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    - 
+      applicable_criteria:
+        - *ID_Criterion_Transfer_of_Hardware_Subcriterion_Basic_2
+      information_text: 'Die Autorisierung stellt sicher, dass Transfers von Hardware-Objekten, ob intern oder extern, kontrolliert, nachvollziehbar und mit organisatorischen Richtlinien konform sind. Dies ist besonders wichtig für Assets, die sensible Daten enthalten oder in Produktionsumgebungen verwendet werden. Der Prozess umfasst typischerweise:
+
+
+1. die Verifizierung von Asset-Eigentum und Klassifizierung;
+
+2. die Bewertung zugehöriger Risiken;
+
+3. die Dokumentation des Transferantrags und der Genehmigung; und
+
+4. die Bestätigung der sicheren Handhabung während des Transports.
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Removable_Media_and_Endpoint_Devices '12'
+  name: 'Wechselmedien und Endgeräte'
+  basic: 
+    -
+      identifier: &ID_Criterion_Removable_Media_and_Endpoint_Devices_Subcriterion_Basic_1 '01B'
+      criterion: 'Auf der Grundlage einer Risikobeurteilung (vgl. OIS-07) entwirft, implementiert und pflegt der Cloud-Anbieter Kontrollen für Endgeräte und Wechselmedien in Bezug auf die folgenden Aspekte:
+
+
+1. Außer für systemadministrative Aufgaben, für die keine andere Methode verfügbar ist, ist die Nutzung von Wechselmedien verboten;
+
+2. Wechselmedien werden nur für festgelegte, spezifische Zwecke verwendet;
+
+3. Speicher-Verschlüsselung ist auf verwalteten Endgeräten und Wechselmedien (außer solchen, die für unvermeidbare Systemadministrationsmaßnahmen verwendet werden) aktiviert, um Informationen vor unbefugter Offenlegung zu schützen;
+
+4. Verwaltete Endgeräte sind mit Technologien und Diensten zur Erkennung und Verhinderung von Schadsoftware konfiguriert;
+
+5. Selbstausführung von Wechselmedien ist deaktiviert und Speichermedien werden vor der Nutzung auf den Systemen des Cloud-Anbieters gescannt;
+
+6. Von Benutzern sind Maßnahmen zu ergreifen, um mobile Endgeräte und Wechselmedien während des Transports und der Aufbewahrung zu schützen;
+
+7. Der Schutz hinsichtlich Vertraulichkeit und Integrität jeglicher Geräte, die Cloud-Kundendaten enthalten, ist während des Transfers außerhalb des Standorts zur Entsorgung dem Schutz vor Ort gleichwertig;
+
+8. Auf gemeinsam genutzten Geräten gespeicherte Cloud-Kundendaten und abgeleitete Cloud-Dienstdaten werden gemäß CRY-05 verschlüsselt oder unter Verwendung eines sicheren Löschmechanismus vernichtet, bevor die Geräte mit einer dritten Partei geteilt werden;
+
+9. Benutzer haben mobile Endgeräte und Wechselmedien in sicherer Weise zu verwenden; dies umfasst zum Beispiel, Medien nicht offen zugänglich in öffentlichen Räumen liegen zu lassen sowie Bildschirmsperren und Blickschutzfolien zu verwenden; und
+
+10. Maßnahmen zur Aufrechterhaltung einer ordnungsgemäßen Sicherheit von Endgeräten Dritter mit Zugriff auf organisatorische Assets sind zu definieren.
+
+'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Removable_Media_and_Endpoint_Devices_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Richtlinien und Verfahren für Endgeräte und Wechselmedien enthalten darüber hinaus die folgenden Aspekte:
+
+
+1. Verwaltete Endgeräte sind mit geeigneten Software-Firewalls konfiguriert;
+
+2. Verwaltete Endgeräte sind gemäß einer Risikobeurteilung (vgl. OIS-07) mit Technologien und Regeln zur Verhinderung von Datenverlust (Data Loss Prevention, DLP) konfiguriert;
+
+3. Fern-Lokalisierungsfunktionen sind für alle verwalteten mobilen Endgeräte aktiviert; und
+
+4. Prozesse, Verfahren und technische Schutzmaßnahmen definieren, implementieren und bewerten, um die Löschung von Unternehmensdaten aus der Ferne auf verwalteten Endgeräten zu ermöglichen.
+
+'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Removable_Media_and_Endpoint_Devices_Subcriterion_Basic_1
+        - *ID_Criterion_Removable_Media_and_Endpoint_Devices_Subcriterion_Additional_Complement_1
+      information_text: 'Ein Wechselmedium ist ein tragbares Datenspeichermedium, das einem Endgerät oder Netzwerk hinzugefügt oder daraus entfernt werden kann. Beispiele umfassen unter anderem optische Datenträger (z. B. CD, DVD, Blu-ray), externe oder entfernbare Festplatten oder Solid-State-Festplatten, magnetische oder optische Bänder und Flash-Speichergeräte (z. B. USB, eSATA, Flash-Laufwerk, Thumb Drive).'
+  corresponding:

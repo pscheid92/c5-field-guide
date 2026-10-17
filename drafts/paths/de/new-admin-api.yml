@@ -1,0 +1,68 @@
+title: "Aufgabenpfad: eine neue Admin-API bauen"
+label: Eine neue Admin-API bauen
+order: 1
+description: Die C5:2026-Kriterien, die beim Entwurf, Bau und Betrieb einer API zu prüfen sind, die Konfiguration ändert oder auf Kundendaten zugreift.
+intro: |
+  Du entwirfst eine API, mit der jemand den Dienst administriert: Konfiguration ändern, Benutzer verwalten oder Kundendaten lesen. Das sind die Kriterien, die sich ein Prüfer voraussichtlich ansieht, gruppiert nach der Frage, die sie beantworten.
+
+  Der Pfad deckt die Anbieterseite ab (eigene Mitarbeitende und Automatisierung rufen die API auf) und die Produktseite (Kunden rufen sie auf). Den Abschnitt, der nicht zutrifft, einfach überspringen.
+
+  Dieser Pfad ist eine kuratierte Leseliste, keine vollständige Zuordnung von Kontrollen. Jeder Schritt verlinkt den vollständigen, unveränderten Kriterientext.
+sections:
+  - title: Wer ruft sie auf der Anbieterseite auf?
+    intro: Wenn eigene Mitarbeitende, Bereitschaftsdienst oder Automatisierung die API nutzen.
+    steps:
+      - id: IAM-06
+        why: Das zentrale Kriterium. Privilegierte Zugriffe müssen personalisiert, zeitlich begrenzt und protokolliert sein, mit automatischer Erkennung von Missbrauch. Administrationsschnittstellen brauchen MFA.
+        focus: [02B, 03B, 09B, 03AC, 04AC]
+      - id: IAM-08
+        why: MFA für jeden Zugriff auf die Produktionsumgebung, für Menschen und für automatisierte Prozesse. Konten werden nach wiederholten Fehlversuchen gesperrt.
+        focus: [02B, 06B, 07B]
+      - id: COS-05
+        why: Administrativer Datenverkehr gehört in ein separates Administrationsnetz, geschützt durch MFA.
+        focus: [01B]
+      - id: CRY-04
+        why: Fernzugriff auf die Produktion nutzt Kryptographie nach dem Stand der Technik, einschließlich Authentisierung der Mitarbeitenden.
+        focus: [02B]
+      - id: IAM-07
+        why: Kann die API Kundendaten lesen oder schreiben, muss der Zugriff dem Kunden binnen 72 Stunden mitgeteilt werden, oder nach den Zusatzkriterien vorab von ihm genehmigt werden.
+        focus: [03B, 05B, 03AS]
+  - title: Wer ruft sie auf der Produktseite auf?
+    intro: Wenn die API Teil der Verwaltungsebene des Dienstes für Kunden ist.
+    steps:
+      - id: PSS-05
+        why: Kunden müssen MFA an jedem Zugangspunkt erzwingen können, auch an der API.
+        focus: [01B, 02B]
+      - id: PSS-08
+        why: Die API bietet ein Rollen- und Rechtekonzept, das Least Privilege und Funktionstrennung unterstützt.
+        focus: [01B, 02B, 03B]
+      - id: PSS-09
+        why: Autorisierungsprüfungen werden vor jeder neuen Funktion validiert und immer dann, wenn sich die Autorisierungslogik ändert.
+        focus: [01B, 02B]
+      - id: PSS-06
+        why: Sitzungen sind gegen bekannte Angriffe geschützt und werden nach Inaktivität ungültig.
+        focus: [01B, 02B]
+      - id: IAM-07
+        why: Administrations- und Endnutzerschnittstellen für Kunden sind getrennt und nutzen unterschiedliche Zugangswege.
+        focus: [04AC]
+  - title: Wie wird sie entworfen und getestet?
+    steps:
+      - id: DEV-05
+        why: Sicherheitsfunktionen brauchen eine Entwurfsdokumentation auf Basis einer Sicherheitsanalyse, einschließlich erwarteter Eingaben, Ausgaben und Fehler.
+        focus: [01B]
+      - id: DEV-07
+        why: Tests müssen die Spezifikation der Sicherheitsfunktionen vollständig abdecken, einschließlich Fehlerbedingungen. Die Zusatzkriterien verlangen einen Penetrationstest vor dem Start.
+        focus: [04B, 01AC]
+  - title: Was wird protokolliert?
+    steps:
+      - id: OPS-10
+        why: Die Protokollierungsrichtlinie legt fest, welche Ereignisse relevant sind, und Zeitquellen müssen synchronisiert sein.
+        focus: [01B]
+      - id: OPS-15
+        why: Protokolle müssen zeigen, welcher Benutzer in welchem Mandanten worauf zugegriffen hat, Zeitstempel tragen und forensische Analysen unterstützen.
+        focus: [01B, 02B, 03B]
+      - id: PSS-04
+        why: Kunden erhalten Audit-Logs darüber, wer auf ihrer Seite was getan hat, einschließlich aller Aktionen auf der Verwaltungsebene.
+        focus: [03B, 06B]
+outro: |
+  Fehlt etwas? Aufgabenpfade liegen in `paths/<sprache>/*.yml` und werden wie Code reviewt.

@@ -1,0 +1,9 @@
+---
+// /en/iam/ (domain), /en/iam-06/ (criterion), /en/gc-01/ (general condition)
+import SlugView from '../../../site/SlugView.astro';
+import { slugPaths } from '../../../site/routes';
+
+export const getStaticPaths = () => slugPaths('en');
+---
+
+<SlugView lang="en" {...Astro.props} />

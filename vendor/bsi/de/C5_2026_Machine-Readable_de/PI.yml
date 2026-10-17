@@ -1,0 +1,146 @@
+-
+  identifier: &ID_Criterion_Safety_of_Input_and_Output_Interfaces '01'
+  name: 'Sicherheit von Eingabe- und Ausgabeschnittstellen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Basic_1 '01B'
+      criterion: 'Für die Eingabe- und Ausgabeschnittstellen, über die auf den Cloud-Dienst durch andere Cloud-Dienste oder IT-Systeme von Cloud-Kunden zugegriffen werden kann, entwirft, implementiert und pflegt der Cloud-Anbieter Kontrollen hinsichtlich der folgenden Aspekte:
+
+
+1. Die Verwendung standardisierter Kommunikationsprotokolle für Interaktionen zwischen verschiedenen Anwendungsschnittstellen, um die Vertraulichkeit und Integrität der übertragenen Informationen entsprechend ihrem Schutzbedarf sowie die angemessene Authentisierung des Nutzers sicherzustellen;
+
+2. Die Verwendung von Verschlüsselung gemäß CRY-02 bei Kommunikation über nicht vertrauenswürdige Netze;
+
+3. Die Verwendung standardisierter Datenformate und gemeinsamer Standards der Datenverarbeitung, um die Interoperabilität der Informationsverarbeitung zu erleichtern;
+
+4. Die Implementierung von Mechanismen zur Validierung der Datenintegrität und zur Etablierung von Sicherungs- und Wiederherstellungsprozessen, um Datensicherheit und Zuverlässigkeit während Austausch, Nutzung und Übertragung sicherzustellen; und
+
+5. Die Bereitstellung aktueller Informationen über die verfügbaren Kommunikationsprotokolle sowie die anwendbaren Datenformate und Standards der Datenverarbeitung.
+
+'
+    -
+      identifier: &ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter stellt dem Cloud-Kunden geeignete technische Mittel zur Extraktion von Cloud-Kundendaten gemäß dem vorherigen Unterkriterium zur Verfügung. Soweit Datenvolumen, Format oder Architektur eine kundenseitige Extraktion nicht praktikabel machen, stellt der Cloud-Anbieter dem Cloud-Kunden angemessene Extraktionsdienste zur Verfügung.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter richtet eine Anwendungs-Firewall ein, um die über öffentliche Netze erreichbaren Administrationsschnittstellen für Cloud-Kunden zu schützen.'
+    - 
+      identifier: &ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Der Cloud-Dienst stellt Cloud-Kunden Schnittstellen für kundenspezifische Identitätsanbieter zur Verfügung, um die Authentisierungsinformationen von Nutzern unter der Verantwortung des Cloud-Kunden zu verwalten. Diese Schnittstellen werden von einem standardisierten Protokoll begleitet, um die Kommunikation zwischen dem Cloud-Dienst und dem externen Identitätsanbieter zu erleichtern.' 
+    -
+      identifier: &ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Die Schnittstellen sind klar dokumentiert, um sachverständigem Personal des Cloud-Kunden die Integration ihres Identitätsanbieters mit dem Cloud-Dienst zu ermöglichen.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Basic_1
+        - *ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Basic_2
+        - *ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Additional_Complement_2
+        - *ID_Criterion_Safety_of_Input_and_Output_Interfaces_Subcriterion_Additional_Complement_3
+      information_text: 'In diesem Kontext ist eine Schnittstelle ein Systemzugangspunkt oder eine Bibliotheksfunktion mit einer wohldefinierten Syntax. Sie umfasst dokumentierte Methoden, die es Cloud-Kunden ermöglichen, sicher auf den Cloud-Dienst zuzugreifen und mit ihm zu interagieren, wodurch der Austausch von Daten ermöglicht wird.
+
+
+Diese Schnittstellen und ihre Dokumentation sollten ausreichende Informationen über den Cloud-Dienst enthalten, um die Entwicklung von Software zu ermöglichen, die zum Zweck der Datenportabilität und Interoperabilität mit ihm kommuniziert. Der Cloud-Anbieter ist jedoch nicht verpflichtet, zu diesem Zweck neue Technologien zu entwickeln oder Informationen weiterzugeben, die durch Rechte des geistigen Eigentums geschützt sind oder ein Geschäftsgeheimnis darstellen.
+
+
+Während diese Schnittstellen die Mittel zur Kommunikation mit dem Cloud-Dienst bereitstellen, bedeuten sie nicht, dass Cloud-Kunden ihre kundenspezifischen Systeme direkt anschließen können, als wären diese nativ integriert. Stattdessen können Cloud-Kunden ihre Systeme konfigurieren, indem sie Methoden wie API-Aufrufe verwenden und die vom Cloud-Anbieter bereitgestellten festgelegten Protokolle und Datenformate einhalten.
+
+
+Um eine nahtlose und sichere Kommunikation zwischen Schnittstellen sicherzustellen, verwendet der Cloud-Anbieter branchenübliche API-Protokolle und implementiert dem Stand der Technik entsprechende Transportschichtsicherheit. Der Cloud-Anbieter unterstützt plattformübergreifende Informationsverarbeitung durch den Einsatz von Containerisierungstechnologien und Cloud-Anbieter-agnostischen Entwicklungs-Frameworks. Infrastructure as Code Verfahren werden übernommen, um die Bereitstellung von Infrastruktur zu standardisieren. Gemeinsame Richtlinien zur Datennutzung werden definiert und durchgesetzt, um einen konsistenten und sicheren Zugriff auf Cloud-Kundendaten sowie deren Nutzung und Weitergabe sicherzustellen. Nach Vertragsbeendigung unterstützt der Cloud-Anbieter Cloud-Kunden beim Export und bei der Übertragung ihrer Cloud-Kundendaten, z. B. durch die Bereitstellung technischer Dokumentation und von Datenexportwerkzeugen.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die bereitgestellten Schnittstellen (und deren Sicherheit) durch geeignete Prüfungen vor Beginn der Nutzung des Cloud-Dienstes und jedes Mal, wenn die Schnittstellen geändert werden, für ihren Schutzbedarf angemessen sind.'
+-
+  identifier: &ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data '02'
+  name: 'Vertragliche Vereinbarungen zur Bereitstellung von Cloud-Kundendaten'
+  basic: 
+    -
+      identifier: &ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data_Subcriterion_Basic_1 '01B'
+      criterion: 'In vertraglichen Vereinbarungen werden für die Bereitstellung von Cloud-Kundendaten nach Beendigung des Vertragsverhältnisses die folgenden Aspekte definiert, soweit diese auf den Cloud-Dienst anwendbar sind:
+
+
+1. Art, Umfang und Format der Cloud-Kundendaten, die der Cloud-Anbieter dem Cloud-Kunden bereitstellt;
+
+2. Methoden zur Bereitstellung der Cloud-Kundendaten an den Cloud-Kunden;
+
+3. Bedingungen und Zeitrahmen für die Bereitstellung von Cloud-Kundendaten über die Dauer des Vertragsverhältnisses hinweg;
+
+4. Recht zur Kündigung des Vertrags und Definition des Zeitrahmens, innerhalb dessen der Cloud-Anbieter dem Cloud-Kunden die Cloud-Kundendaten nach Vertragsbeendigung zur Verfügung stellt;
+
+5. Definition des Zeitpunkts, ab dem der Cloud-Anbieter die Cloud-Kundendaten für den Cloud-Kunden unzugänglich macht und diese nach Vertragsbeendigung löscht;
+
+6. Die Verantwortlichkeiten und Mitwirkungspflichten der Cloud-Kunden für die Bereitstellung der Cloud-Kundendaten; und
+
+7. Cloud-Kundendaten bleiben während des gesamten Vertragsverhältnisses Eigentum des Cloud-Kunden. Nach dessen Beendigung sind die Cloud-Kundendaten wieder das alleinige Eigentum und der alleinige Besitz des Cloud-Kunden.
+
+
+Die Definitionen orientieren sich an den Bedürfnissen von sachverständigem Personal potenzieller Cloud-Kunden, die die Eignung des Cloud-Dienstes im Hinblick auf eine Abhängigkeit vom Cloud-Anbieter sowie rechtliche und regulatorische Anforderungen bewerten.'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Die Ausgestaltung der Aspekte basiert auf rechtlichen und regulatorischen Anforderungen im Umfeld des Cloud-Anbieters. Der Cloud-Anbieter identifiziert die Anforderungen regelmäßig, mindestens einmal im Jahr, prüft diese auf Aktualität und passt die vertraglichen Vereinbarungen entsprechend an.'
+    -
+      identifier: &ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Der Cloud-Anbieter stellt dem Cloud-Kunden bei Beendigung des Vertragsverhältnisses auch abgeleitete Cloud-Dienstdaten zur Verfügung. Die Bereitstellung dieser abgeleiteten Cloud-Dienstdaten ist ebenfalls in den vertraglichen Vereinbarungen definiert und umfasst die im Basiskriterium genannten Aspekte.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data_Subcriterion_Basic_1
+        - *ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data_Subcriterion_Additional_Complement_2
+      information_text: 'Art und Umfang der von diesem Kriterium umfassten Cloud-Kundendaten sowie die Verantwortlichkeiten für deren Bereitstellung hängen vom Servicemodell des Cloud-Dienstes oder von den bereitgestellten Diensten und Funktionen ab:
+
+
+Im Fall von IaaS- und PaaS-ähnlichen Diensten ist der Cloud-Kunde grundsätzlich dafür verantwortlich, die im Cloud-Dienst gespeicherten Cloud-Kundendaten vor Beendigung des Vertragsverhältnisses zu extrahieren und zu sichern (vgl. korrespondierendes Kundenkriterium).
+
+
+Die Verantwortung des Cloud-Anbieters ist typischerweise auf die Bereitstellung von Cloud-Kundendaten für die Konfiguration der Infrastruktur oder Plattform beschränkt, die der Cloud-Kunde innerhalb seiner Umgebung eingerichtet hat (z. B. Konfiguration von Netzen, Images virtueller Maschinen und Container).
+
+
+Bei SaaS stützt sich der Cloud-Kunde typischerweise auf vom Cloud-Anbieter bereitgestellte Exportfunktionen. Vom Cloud-Kunden erzeugte Daten sollten in demselben Format verfügbar sein, in dem sie im Cloud-Dienst gespeichert sind. Andere solcher Cloud-Kundendaten, einschließlich relevanter Protokolldateien und Metadaten, sollten in einem anwendbaren Standardformat wie CSV, JSON oder XML verfügbar sein.
+
+
+Rechtliche Anforderungen können beispielsweise den EU Data Act umfassen. In Deutschland lassen sich gesetzliche Vorgaben zur Aufbewahrung beispielsweise der Abgabenordnung (§147 AO) und dem Handelsgesetzbuch (§ 257 HGB) entnehmen. Diese sehen eine Aufbewahrungspflicht von sechs oder zehn Jahren vor.
+
+
+Falls vertragliche Vereinbarungen die im Basiskriterium aufgeführten Aspekte nicht enthalten und diese aufgrund des Servicemodells anwendbar sind, ist das Kriterium nicht erfüllt und eine Abweichung ist vom Auditor festzuhalten.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Contractual_Agreements_for_the_Provision_of_Data_Subcriterion_Basic_1
+      information_text: 'Falls der Cloud-Anbieter als Cloud-Vermittler agiert, sollte vertraglichen Klauseln zur Datenportabilität besondere Beachtung geschenkt werden, die die Komplexität des jeweiligen Cloud-Vermittler-Szenarios berücksichtigen. Dies kann unter anderem die Definition von Folgendem umfassen:
+        
+
+1. Verantwortung für den Export von Cloud-Kundendaten; 
+
+2. Falls mehrere zugrunde liegende Cloud-Anbieter vorhanden sind, den Exportumfang, das konsolidierte Format, etwaige Vollständigkeitsgrenzen und den Umgang mit vom Cloud-Vermittler erzeugten Artefakten wie aggregierten Protokollierungen; 
+
+3. Ob Cloud-Kunden direkt über APIs auf die Cloud-Dienste zugrunde liegender Cloud-Anbieter zugreifen können oder auf die Exportschnittstelle des Cloud-Vermittlers angewiesen sind und ob es zeitliche oder nutzungsbezogene Einschränkungen gibt; und
+
+4. Zeitrahmen für die Bereitstellung von Exporten der Cloud-Kundendaten an den Cloud-Kunden.
+
+'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Daten, auf die sie vertraglich Anspruch haben, am Ende des Vertrags vom Cloud-Anbieter angefordert oder über definierte Schnittstellen abgerufen werden (Art und Umfang der Daten entsprechen den vertraglichen Vereinbarungen, die vor der Nutzung des Cloud-Dienstes geschlossen wurden) und dass sie in Übereinstimmung mit den für diese Daten geltenden rechtlichen Anforderungen gespeichert werden.'
+-
+  identifier: &ID_Criterion_Secure_Deletion_of_Data '03'
+  name: 'Sichere Datenlöschung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Secure_Deletion_of_Data_Subcriterion_Basic_1 '01B'
+      criterion: 'Die Verfahren des Cloud-Anbieters zur Löschung von Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten und Kontodaten bei Beendigung des Vertragsverhältnisses stellen die Einhaltung der vertraglichen Vereinbarungen sicher (vgl. PI-02). Ausnahmen sind nur zulässig, falls sie durch eine gültige gerichtliche Anordnung erforderlich sind oder zur Erfüllung bekannter zukünftiger finanzieller und rechtlicher Verpflichtungen benötigt werden.'
+    -
+      identifier: &ID_Criterion_Secure_Deletion_of_Data_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Löschverfahren verhindern eine Wiederherstellung durch forensische Mittel, die dem Stand der Technik entsprechen.'
+    -
+      identifier: &ID_Criterion_Secure_Deletion_of_Data_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Löschung der Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten und Kontodaten wird in einer Weise dokumentiert, die es dem Cloud-Kunden ermöglicht, einen Nachweis über die Löschung seiner Daten zu erhalten.'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Secure_Deletion_of_Data_Subcriterion_Basic_1
+        - *ID_Criterion_Secure_Deletion_of_Data_Subcriterion_Basic_2
+      information_text: 'Geeignete Methoden zur Datenlöschung sind z. B. mehrfaches Überschreiben oder die Löschung des Verschlüsselungsschlüssels.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die rechtlichen und regulatorischen Rahmenbedingungen (z. B. rechtliche Anforderungen an Aufbewahrung und Löschung) identifiziert wird und die Löschung ihrer Daten entsprechend veranlasst wird.'

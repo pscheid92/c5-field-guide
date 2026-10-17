@@ -1,0 +1,198 @@
+- identifier: &ID_Criterion_Technical_Safeguards '01'
+  name: 'Technische Schutzmaßnahmen'
+  basic:
+  - identifier: &ID_Criterion_Technical_Safeguards_Subcriterion_Basic_1 '01B'
+    criterion: 'Basierend auf den Ergebnissen einer gemäß OIS-07 durchgeführten Risikobeurteilung hat der Cloud-Anbieter technische Schutzmaßnahmen implementiert, die geeignet sind, netzbasierte Angriffe auf Systemkomponenten, die für die Bereitstellung des Cloud-Dienstes verwendet werden, zeitnah zu erkennen und darauf zu reagieren.'
+  - identifier: &ID_Criterion_Technical_Safeguards_Subcriterion_Basic_2 '02B'
+    criterion: 'Für diese technischen Schutzmaßnahmen werden auf mehreren Ebenen Präventions- und Schutzmaßnahmen implementiert (Defense in Depth), um das Risiko eines Durchbrechens des eingesetzten Verteidigungssystems zu mindern. Dies schließt netzbasierte Cyberangriffe ein, wie zum Beispiel:
+
+
+1. Angriffe auf Basis anomaler Eingangs- oder Ausgangs-Traffic-Muster;
+
+2. Distributed-Denial-of-Service-(DDoS-)Angriffe;
+
+3. Spoofing-Angriffe;
+
+4. Code-Injection-Angriffe;
+
+5. DNS-Tunneling; und
+
+6. IoT-Angriffe, die auf Geräte innerhalb eines Netzes abzielen.
+
+'
+  - identifier: &ID_Criterion_Technical_Safeguards_Subcriterion_Basic_3 '03B'
+    criterion: 'Aus entsprechend implementierten technischen Schutzmaßnahmen stammende Daten (Teil der Cloud-Anbieterdaten) werden in das SIEM-System des Cloud-Anbieters (vgl. OPS-13) eingespeist, sodass für miteinander korrelierte Ereignisse erforderliche (Gegen-) Maßnahmen initiiert werden können. Die Schutzmaßnahmen sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Technical_Safeguards_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter stellt mit technischen Maßnahmen sicher, dass seinem (physischen oder virtuellen) Netz keine unbekannten (physischen oder virtuellen) Geräte beitreten.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Technical_Safeguards_Subcriterion_Basic_2
+    - *ID_Criterion_Technical_Safeguards_Subcriterion_Additional_Complement_1
+    information_text: 'Technische Schutzmaßnahmen, die Schutz und Prävention auf mehreren Ebenen bieten, sind z. B. eine spezielle Trennung im Identitäts- und Berechtigungsmanagement, eine separate Protokollierung für Schutzsysteme und Web Application Firewalls (WAFs) für den Zugriff auf Schutzsysteme.
+
+
+Netzbasierte Angriffe können z. B. durch MAC-Spoofing und ARP-Poisoning-Angriffe erfolgen. Technische Maßnahmen zum Verhindern des Beitretens unbekannter physischer oder virtueller Geräte zu einem physischen oder virtuellen Netz können sich z. B. an MACSec gemäß IEEE 802.1X:2010 orientieren.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen für jene Teile des Cloud-Dienstes, die in ihrem Verantwortungsbereich liegen (z. B. virtuelle Maschinen innerhalb einer IaaS-Lösung), sicher, dass sie netzbasierte Angriffe auf Basis anomaler Eingangs- und Ausgangs-Traffic Muster (z. B. durch MAC-Spoofing und ARP-Poisoning-Angriffe) und/oder Distributed-Denial-of-Service (DDoS) Angriffe zeitnah erkennen und auf diese reagieren.'
+- identifier: &ID_Criterion_Security_Requirements_for_Connections_in_the_CSP_Network '02'
+  name: 'Sicherheitsanforderungen an Verbindungen im Netz des Cloud-Anbieters'
+  basic:
+  - identifier: &ID_Criterion_Security_Requirements_for_Connections_in_the_CSP_Network_Subcriterion_Basic_1 '01B'
+    criterion: 'Spezifische Sicherheitsanforderungen werden für die Herstellung von Verbindungen innerhalb des Netzes des Cloud-Anbieters konzipiert, dokumentiert und bereitgestellt. Die Sicherheitsanforderungen definieren für den Verantwortungsbereich des Cloud-Anbieters:
+
+
+1. In welchen Fällen die Sicherheitszonen zu trennen sind und in welchen Fällen Cloud-Kunden logisch oder physisch voneinander zu trennen sind;
+
+2. Welche Kommunikationsbeziehungen und welche Netz- und Anwendungsprotokolle jeweils zugelassen werden;
+
+3. Wie der Datenverkehr für Administration und Überwachung auf Netzebene voneinander getrennt wird;
+
+4. Wie Büronetze mit Firewalls und sicheren WIFI-Konfigurationen sowie VPN für den Remote-Zugriff abgesichert werden;
+
+5. Welche interne, partitionsübergreifende Kommunikation zulässig ist; und
+
+6. Welche netzübergreifende Kommunikation erlaubt ist.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Security_Requirements_for_Connections_in_the_CSP_Network_Subcriterion_Basic_1
+    information_text: 'Partitionsübergreifende Kommunikation kann z. B. für einzelne Regionen oder Standorte über z. B. WAN, LAN, VPN, RAS realisiert werden.'
+  corresponding:
+- identifier: &ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network '03'
+  name: 'Überwachung von Verbindungen im Netz des Cloud-Anbieters'
+  basic:
+  - identifier: &ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter unterscheidet zwischen vertrauenswürdigen und nicht vertrauenswürdigen Netzen. Auf Grundlage einer Risikobeurteilung gemäß OIS-07 werden diese in verschiedene Sicherheitszonen für interne und externe Netzbereiche (und DMZ, falls vorhanden) getrennt.'
+  - identifier: &ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_2 '02B'
+    criterion: 'Physische und virtualisierte Netzumgebungen werden so konzipiert und konfiguriert, dass die hergestellte Verbindung zu vertrauenswürdigen oder nicht vertrauenswürdigen Netzen gemäß den definierten Sicherheitsanforderungen eingeschränkt und überwacht wird (vgl. COS-02).'
+  - identifier: &ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Cloud-Anbieter stellt sicher, dass die Konfiguration der Netze den Sicherheitsanforderungen entspricht (vgl. COS-02). Der Cloud-Anbieter überprüft mindestens jährlich und im Falle wesentlicher Änderungen am Cloud-Dienst den Entwurf und die Umsetzung der Konfiguration der Verbindungen im Hinblick auf die definierten Sicherheitsanforderungen.'
+  - identifier: &ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_4 '04B'
+    criterion: 'Identifizierte Schwachstellen und Abweichungen werden gemäß dem Risikomanagementverfahren einer Risikobeurteilung unterzogen (vgl. OIS-07), und Folgemaßnahmen werden definiert und nachverfolgt (vgl. OPS-18).'
+  - identifier: &ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_5 '05B'
+    criterion: 'In festgelegten Abständen wird die geschäftliche Begründung für die Nutzung aller Dienste, Protokolle und Ports überprüft. Die Überprüfung umfasst auch die Begründungen für kompensierende Maßnahmen für die Nutzung von Protokollen, die als unsicher gelten.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_3
+    - *ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_4
+    - *ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_5
+    information_text: 'Die Überprüfung der Sicherheitsanforderungen hängt von den eingerichteten Maßnahmen zur Ausgestaltung der Netze ab und kann z. B. die Überwachung und Durchsicht von Firewall-Regeln oder Protokolldateien auf Auffälligkeiten sowie Sichtprüfungen physischer Netzkomponenten auf Veränderungen umfassen.'
+  - applicable_criteria:
+    - *ID_Criterion_Monitoring_of_Connections_in_the_CSP_Network_Subcriterion_Basic_3
+    information_text: 'Wenn die Überprüfung durch wesentliche Änderungen am Cloud-Dienst verursacht wird, müssen nur der Entwurf und die Umsetzung der Konfiguration der von diesen Änderungen betroffenen Verbindungen in die Überprüfung einbezogen werden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die virtuellen Netze innerhalb des Cloud-Dienstes, für die sie verantwortlich sind, gemäß ihren Netzsicherheitsanforderungen konzipiert, konfiguriert und dokumentiert werden (z. B. logische Segmentierung der Organisationseinheiten des Cloud-Kunden).'
+- identifier: &ID_Criterion_Cross_Network_Access '04'
+  name: 'Netzübergreifender Zugriff'
+  basic:
+  - identifier: &ID_Criterion_Cross_Network_Access_Subcriterion_Basic_1 '01B'
+    criterion: 'Jeder Netzperimeter wird durch Sicherheitsgateways kontrolliert.'
+  - identifier: &ID_Criterion_Cross_Network_Access_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Autorisierung des Systemzugriffs für einen netzübergreifenden Zugriff basiert auf einer Sicherheitsbeurteilung auf Grundlage der Anforderungen der Cloud-Kunden.'
+  additional_sharpen:
+  - identifier: &ID_Criterion_Cross_Network_Access_Subcriterion_Additional_Sharpen_1 '01AS'
+    sharpened_basic_criterion: *ID_Criterion_Cross_Network_Access_Subcriterion_Basic_1
+    criterion: 'Jeder Netzperimeter wird durch redundante und hochverfügbare Sicherheitsgateways kontrolliert.'
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Cross_Network_Access_Subcriterion_Basic_2
+    information_text: 'Ein Sicherheitsgateway ist ein Stack aus verketteten Filter- und Firewall-Komponenten, welche die Kommunikation auf ausdrücklich erlaubten Verkehr beschränken. Sicherheitsgateways können beispielsweise eine P-A-P-Struktur aufweisen, bestehend aus einem äußeren Paketfilter, einem Gateway auf Anwendungsebene, das als Deep-Inspection-Proxy fungiert, und einem inneren Paketfilter. Der Stack kann weiter um ein Intrusion Detection System, ein Intrusion Prevention System oder einen Virenscanner ergänzt werden. Diese Struktur ist jedoch nicht verpflichtend. Sie dient dazu, Filter- und Prüffunktion funktional voneinander unabhängig zu halten, sodass ein Ausfall in der einen Schicht nicht automatisch zu einem Ausfall der anderen Schicht führt.'
+  - applicable_criteria:
+    - *ID_Criterion_Cross_Network_Access_Subcriterion_Basic_2
+    information_text: 'Netzübergreifende Zugriffe sind Zugriffe von einem Netz in ein anderes Netz über einen definierten Netzperimeter.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass der Zugriff entsprechend ihrem Schutzbedarf durch Sicherheitsgateways an den Perimetern der virtuellen Netze innerhalb des Cloud-Dienstes, für die sie verantwortlich sind, kontrolliert wird.'
+- identifier: &ID_Criterion_Networks_for_Administration '05'
+  name: 'Netze für die Administration'
+  basic:
+  - identifier: &ID_Criterion_Networks_for_Administration_Subcriterion_Basic_1 '01B'
+    criterion: 'Es gibt separate Netze für die administrative Verwaltung der Infrastruktur und für den Betrieb von Management-Konsolen. Diese Netze sind logisch oder physisch vom Netz des Cloud-Kunden getrennt und durch Multi-Faktor-Authentisierung (vgl. IAM-08) vor unbefugtem Zugriff geschützt.'
+  - identifier: &ID_Criterion_Networks_for_Administration_Subcriterion_Basic_2 '02B'
+    criterion: 'Netze, die vom Cloud-Anbieter verwendet werden, um Compute-Workloads (z. B. virtuelle Maschinen, Container, Funktionen) zu erstellen, zu migrieren oder zu orchestrieren, sind physisch oder logisch von Netzen der Cloud-Kunden getrennt.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Networks_for_Administration_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Bei nicht-physischer Trennung zwischen den Administrationsnetzen und anderen Netzen wird der Verkehr des Administrationsnetzes nach dem Stand der Technik (vgl. CRY-01) verschlüsselt.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Networks_for_Administration_Subcriterion_Basic_1
+    information_text: 'Die Trennung kann physisch oder logisch erfolgen (z. B. VLAN, SDN, VRF).'
+  corresponding:
+- identifier: &ID_Criterion_Separation_of_Data_Traffic_in_Jointly_Used_Network_Environments '06'
+  name: 'Trennung des Datenverkehrs in gemeinsam genutzten Netzumgebungen'
+  basic:
+  - identifier: &ID_Criterion_Separation_of_Data_Traffic_in_Jointly_Used_Network_Environments_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Datenverkehr der Cloud-Kunden in gemeinsam genutzten Netzumgebungen wird auf Netzebene gemäß eines dokumentierten Rahmenwerks getrennt, um die Vertraulichkeit und Integrität der übertragenen Daten sicherzustellen.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Separation_of_Data_Traffic_in_Jointly_Used_Network_Environments_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Im Falle von IaaS/PaaS wird die sichere Trennung durch physisch getrennte Netze oder durch Verschlüsselung nach dem Stand der Technik in Kombination mit logischer Netztrennung oder -Kapselung sichergestellt.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Separation_of_Data_Traffic_in_Jointly_Used_Network_Environments_Subcriterion_Basic_1
+    - *ID_Criterion_Separation_of_Data_Traffic_in_Jointly_Used_Network_Environments_Subcriterion_Additional_Complement_1
+    information_text: 'Wenn der Cloud-Anbieter keine gemeinsam genutzten Netzumgebungen für Cloud-Kunden verwendet und stattdessen eine physische Trennung nutzt, ist das Basiskriterium nicht anwendbar.
+    
+
+Soweit Angemessenheit und Wirksamkeit der logischen Segmentierung nicht mit hinreichender Sicherheit beurteilt werden können (z. B. aufgrund einer komplexen Implementierung), kann der Nachweis auch über Prüfungsergebnisse sachverständiger Dritter erfolgen (z. B. Sicherheitsaudit zur Validierung des Rahmenwerks). Die Trennung gespeicherter und verarbeiteter Cloud-Kundendaten ist Gegenstand der Kriterien OPS-30 und OPS-31. Nach erfolgreicher Authentisierung über einen ungesicherten Kommunikationskanal (HTTP) soll auf einen gesicherten Kommunikationskanal (HTTPS) gewechselt werden.
+
+
+Bei IaaS/PaaS wird die sichere Trennung durch physisch getrennte Netze oder durch eine Verschlüsselung der Netze sichergestellt, die dem Stand der Technik entspricht. Für die Definition einer Verschlüsselung nach dem Stand der Technik sollte die Technische Richtlinie TR-02102 des BSI berücksichtigt werden (vgl. CRY-01).'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen für diejenigen Teile des Cloud-Dienstes in ihrer Verantwortung sicher, dass virtuelle Netze gemäß ihren Netzsicherheitsanforderungen konzipiert, konfiguriert und dokumentiert werden (z. B. logische Segmentierung von Organisationseinheiten).'
+- identifier: &ID_Criterion_Documentation_of_the_Network_Topology '07'
+  name: 'Dokumentation der Netztopologie'
+  basic:
+  - identifier: &ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_1 '01B'
+    criterion: 'Die Dokumentation der logischen Struktur des Netzes, das zur Bereitstellung oder zum Betrieb des Cloud-Dienstes verwendet wird, ist nachvollziehbar und aktuell, um administrative Fehler im Wirkbetrieb zu vermeiden und eine zeitnahe Wiederherstellung im Falle von Vorfällen gemäß den vertraglichen Verpflichtungen sicherzustellen. Die Dokumentation zeigt:
+    
+    
+1. Wie die Subnetze zugewiesen sind;
+
+2. Wie das Netz zoniert und segmentiert ist;
+
+3. Wie das Netz mit Drittanbieter- und öffentlichen Netzen verbunden ist; und
+
+4. Wie die Daten zwischen verschiedenen Subnetzen und Systemkomponenten innerhalb des Netzes fließen, um das Management, die Überwachung und die Analyse des Netzes zu unterstützen.
+
+'
+  - identifier: &ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Partitionen, Regionen, Zonen oder der Standort, an denen die Cloud-Kundendaten gespeichert werden, sind angegeben.'
+  - identifier: &ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Cloud-Anbieter erstellt und pflegt auf Grundlage der Dokumentation der Netztopologie und des Asset-Inventars (vgl. AM-02) eine zutreffende Darstellung der technischen und logischen Struktur der Systeme des Cloud-Anbieters. Die Dokumentation umfasst die Systemkomponenten, die Sicherheitsfunktionen bereitstellen, und die Systemkomponenten, welche die entsprechenden Cloud-Kundendaten und abgeleitete Cloud-Dienstdaten hosten oder sensible Funktionen bereitstellen.'
+  - identifier: &ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_4 '04B'
+    criterion: 'Die Dokumentation der Netztopologie wird mindestens einmal pro Jahr überprüft. Zeitnahe und angemessene Abhilfemaßnahmen adressieren alle bei der Überprüfung identifizierten Abweichungen.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_1
+    - *ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_2
+    - *ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_3
+    information_text: 'Die Netzdokumentation kann je nach Umfang des Betriebs einem hierarchischen oder gruppierten Ansatz folgen.'
+  - applicable_criteria:
+    - *ID_Criterion_Documentation_of_the_Network_Topology_Subcriterion_Basic_1
+    information_text: 'Bei einer Zonierung handelt es sich um eine Segmentierung der Subnetze mit einer an den Netzperimetern implementierten Firewall.'
+  corresponding:
+- identifier: &ID_Criterion_Policies_for_Data_Transmission '08'
+  name: 'Richtlinien für die Datenübertragung'
+  basic:
+  - identifier: &ID_Criterion_Policies_for_Data_Transmission_Subcriterion_Basic_1 '01B'
+    criterion: 'Richtlinien und Verfahren mit technischen und organisatorischen Schutzmaßnahmen zum Schutz der Übertragung von Cloud-Kundendaten, vom abgeleitete Cloud-Dienstdaten, von Cloud-Anbieterdaten und Kontodaten gegen unbefugtes Abfangen, Manipulation, Kopieren, Ändern, Umleiten, Zerstören oder das Eindringen von Schadsoftware sind dokumentiert, kommuniziert und gemäß SP-01 bereitgestellt. Die Richtlinien und Verfahren stellen einen Bezug zur Asset-Klassifizierung und -Kennzeichnung (vgl. AM-09) und zu kryptographischen Mechanismen (vgl. CRY-01) her.'
+  - identifier: &ID_Criterion_Policies_for_Data_Transmission_Subcriterion_Basic_2 '02B'
+    criterion: 'Technische Schutzmaßnahmen, die in den dokumentierten Richtlinien und Verfahren zum Schutz der Datenübertragung beschrieben sind, werden implementiert und regelmäßig sowie im Falle wesentlicher Änderungen am Cloud-Dienst überprüft.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Policies_for_Data_Transmission_Subcriterion_Basic_1
+    - *ID_Criterion_Policies_for_Data_Transmission_Subcriterion_Basic_2
+    information_text: 'Eine Schutzmaßnahme gegen unbefugtes Abfangen, Manipulation, Kopieren, Ändern, Umleiten oder Zerstören von Daten während der Übertragung ist z. B. die Verwendung von Transportverschlüsselung gemäß CRY-04.'
+  - applicable_criteria:
+    - *ID_Criterion_Policies_for_Data_Transmission_Subcriterion_Basic_2
+    information_text: 'Wenn eine Überprüfung durch wesentliche Änderungen am Cloud-Dienst verursacht wird, müssen nur die von diesen Änderungen betroffenen technischen Schutzmaßnahmen in die Überprüfung einbezogen werden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die an den Cloud-Dienst übertragenen Daten entsprechend ihrem Schutzbedarf gegen Manipulation, Kopieren, Ändern, Umleiten oder Löschen geschützt sind.'

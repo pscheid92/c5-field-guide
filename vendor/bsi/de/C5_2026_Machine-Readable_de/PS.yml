@@ -1,0 +1,380 @@
+- identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements '01'
+  name: 'Sicherheitsanforderungen für Gebäude und Räumlichkeiten'
+  basic:
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter definiert und dokumentiert mindestens zwei Sicherheitsbereiche, mit mindestens einem sensiblen Bereich und einem öffentlichen Bereich. Ein sensibler Bereich umfasst die Gebäude und Räumlichkeiten, in denen sensible Tätigkeiten stattfinden, wie etwa das Hosting der Systemkomponenten, die für die Bereitstellung des Cloud-Dienstes verwendet werden. Ein öffentlicher Bereich umfasst alle Gebäude und Räumlichkeiten, die nicht anderweitig durch einen Sicherheitsbereich abgedeckt sind.'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_2 '02B'
+    criterion: 'Sicherheitsanforderungen für Gebäude und Räumlichkeiten mit Bezug zum bereitgestellten Cloud-Dienst sind aus den Sicherheitszielen der Informationssicherheitsrichtlinie, dem identifizierten Schutzbedarf für den Cloud-Dienst und einer Risikobeurteilung hinsichtlich der physischen und umgebungsbezogenen Sicherheit abgeleitet. Die Sicherheitsanforderungen sind in einer Richtlinie oder einem Rahmenwerk gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt.'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_3 '03B'
+    criterion: 'Sicherheitsanforderungen für Rechenzentren basieren auf Kriterien in Übereinstimmung mit dem Stand der Technik und den Kriterien PS-02 bis PS-07. Sie sind geeignet, die folgenden Risiken im Einklang mit den anwendbaren gesetzlichen und vertraglichen Anforderungen zu adressieren:
+
+
+1. Fehlerhafte Planung;
+
+2. Unbrechtigter Zutritt (einschließlich Zutritt zum Gelände durch Drohnen);
+
+3. Unzureichende Überwachung;
+
+4. Blitze und Überspannung (im Einklang mit den internationalen Normen der IEC 62305);
+
+5. Feuer und Rauch;
+
+6. Unerwünschtes Wasser;
+
+7. Ausfälle und/oder nicht verfügbare Telekommunikation;
+
+8. Stromausfall; und
+
+9. Unzureichende Heizung, Belüftung, Klimatisierung (HVAC) und Luftfiltration.
+
+'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_4 '04B'
+    criterion: 'Die maximal tolerierbaren Ausfallzeiten von Versorgungseinrichtungen sind geeignet, die in der Service Level-Vereinbarung enthaltenen Verfügbarkeitsanforderungen zu erfüllen.'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_5 '05B'
+    criterion: 'Wenn der Cloud-Anbieter den Cloud-Dienst in von Service-Organisationen betriebenen Rechenzentren betreibt, beschreibt das Dokument:
+
+
+1. Die von den Service-Organisationen erwarteten komplementären Kontrollen der Subservice-Organisationen (CSOC); und
+
+2. Die Maßnahmen zur Überwachung der Ausgestaltung und des Betriebs von Kontrollen bei den Service-Organisationen in Bezug auf diese CSOC (vgl. SSO-05).
+
+'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_6 '06B'
+    criterion: 'Wenn der Cloud-Anbieter den Cloud-Dienst in von Service-Organisationen betriebenen Rechenzentren betreibt, führt der Cloud-Anbieter eine Überprüfung der Implementierung geeigneter CSOC gemäß den Kriterien zur Steuerung und Überwachung von Service-Organisationen durch (vgl. SSO-05).'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Die Sicherheitsanforderungen umfassen Zeitvorgaben für den autarken Betrieb beim Eintritt außergewöhnlicher Ereignisse (z. B. länger anhaltender Stromausfall, Hitzeperioden, Niedrigwasser bei Kälteversorgung mit Flusswasser) sowie maximal tolerierbare Ausfallzeiten von Versorgungseinrichtungen.'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Die Sicherheitsanforderungen umfassen Zeitvorgaben, um bei einem Ausfall der externen Stromversorgung einen autarken Betrieb eines Standorts für mindestens 72 Stunden zu ermöglichen, oder bis alle Dienste auf einen anderen Standort übertragen sind.'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_3 '03AC'
+    criterion: 'Die Sicherheitsanforderungen für einen autarken Betrieb während einer Hitzeperiode basieren auf den höchsten Außentemperaturen, von denen vernünftigerweise geschätzt werden kann, dass sie an den Standorten der Räumlichkeiten und Gebäude innerhalb der Lebensdauer der Kühlungsversorgung auftreten können. Der Cloud-Anbieter bestimmt diese Temperaturen mit einem angemessenen Sicherheitsaufschlag.'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_4 '04AC'
+    criterion: 'Die Sicherheitsanforderungen sehen vor, dass die zulässigen Betriebs- und Umgebungsparameter der Kälteversorgung auch an mindestens 5 unmittelbar aufeinander folgenden Tagen mit diesen Außentemperaturen einschließlich Sicherheitsaufschlag eingehalten werden müssen (vgl. PS-06).'
+  - identifier: &ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_5 '05AC'
+    criterion: 'Die Sicherheitsanforderungen berücksichtigen, dass, soweit zur Klimatisierung Wasser aus einem Gewässer (z. B. Fluss oder See) entnommen wird, ermittelt wird, bei welchen Wasserständen und Wassertemperaturen die Klimatisierung wie lange aufrechterhalten werden kann.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_1
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_2
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_3
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_4
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_5
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_6
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_1
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_2
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_3
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_4
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_5
+    information_text: 'Eine fehlerhafte Planung kann die Betriebssicherheit und Verfügbarkeit der Räumlichkeiten oder Gebäude gefährden. Dies kann insbesondere aus einer falschen Bewertung elementarer Gefährdungen am Standort (z. B. Luftverkehr, Erdbeben, Hochwasser, Gefahrstoffe) sowie einer fehlerhaften Konzeptionierung der Bandbreite oder Energieversorgung resultieren.
+    
+
+Räumlichkeiten und Gebäude mit Bezug zum bereitgestellten Cloud-Dienst umfassen Rechenzentren und Serverräume, die Systemkomponenten beherbergen, mit denen Cloud-Kundendatem verarbeitet werden (einschließlich Rechenzentren für Datensicherungs- oder Redundanzzwecke) sowie die für den Betrieb dieser Systemkomponenten benötigten technischen Versorgungseinrichtungen (z. B. Stromversorgung, Kälteversorgung, Löschtechnik, Telekommunikation, Sicherheitstechnik etc.).
+
+
+Räumlichkeiten und Gebäude, in denen keine Cloud-Kundendaten verarbeitet oder gespeichert werden (z. B. Büros des Cloud-Anbieters, Serverräume mit Systemkomponenten für interne Entwicklungs- und Testsysteme), unterliegen Anforderungen, die speziell unter PS-08 behandelt werden.'
+  - applicable_criteria:
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_5
+    information_text: 'Räumlichkeiten und Gebäude, die von Dritten betrieben werden sind z. B. Serverhousing, Colocation oder IaaS.'
+  - applicable_criteria:
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Basic_3
+    information_text: 'Der Stand der Technik ist in einschlägigen Normen definiert, z. B. EN 50600 (Einrichtungen und Infrastrukturen von Rechenzentren). Hinweis für zweisprachige Leser: Die deutsche Version des C5 verwendet den Begriff *Stand der Technik* während im Englischen *established rules of technology* verwendet wird, obwohl der deutsche Leser möglicherweise den Begriff *state of the art* erwarten könnte. *State of the art* definiert ein höheres Niveau als *Stand der Technik*, daher wird im Englischen *established rules of technology* und im Deutschen *Stand der Technik* verwendet.'
+  - applicable_criteria:
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_1
+    information_text: 'Zeitvorgaben für den autarken Betrieb sowie maximal tolerierbare Ausfallzeiten von Versorgungseinrichtungen werden typischerweise im Rahmen der Business Impact Analyse erhoben (vgl. BCM-02, BCM-03).'
+  - applicable_criteria:
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_2
+    information_text: 'Der Zeitraum von 72 Stunden für einen autarken Betrieb steht im Einklang mit Leitlinien für Behörden, Unternehmen und Betreiber kritischer Anlagen (KRITIS) des Bundesamts für Bevölkerungsschutz und Katastrophenhilfe (BBK).'
+  - applicable_criteria:
+    - *ID_Criterion_Physical_Security_and_Environmental_Control_Requirements_Subcriterion_Additional_Complement_3
+    information_text: 'Eine vernünftige Schätzung der höchsten Außentemperaturen kann auf Informationen basieren, die von amtlichen Messstationen wie dem Deutschen Wetterdienst (DWD) oder anderen verlässlichen Quellen geliefert werden, wie z. B. der American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE).
+
+
+Diese Schätzungen sollten die Auswirkungen der globalen Erwärmung berücksichtigen.
+
+
+Was einen angemessene Sicherheitsaufschlag ausmacht, hängt vom Standort der Räumlichkeiten und Gebäude ab. In Deutschland können 3 Kelvin im Allgemeinen als angemessen angesehen werden.'
+  corresponding:
+- identifier: &ID_Criterion_Redundancy_Model '02'
+  name: 'Redundanzmodell'
+  basic:
+  - identifier: &ID_Criterion_Redundancy_Model_Subcriterion_Basic_1 '01B'
+    criterion: 'Die Bereitstellung des Cloud-Dienstes erfolgt aus mindestens zwei Standorten. Die Standorte entsprechen den Sicherheitsanforderungen des Cloud-Anbieters (vgl. PS-01) und weisen einen hinreichenden Abstand zueinander auf, um Betriebsredundanz und -Resilienz zu erreichen.'
+  - identifier: &ID_Criterion_Redundancy_Model_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Betriebsredundanz ist so ausgelegt, dass die in den Service Level-Vereinbarungen enthaltenen Verfügbarkeitsanforderungen eingehalten werden.'
+  - identifier: &ID_Criterion_Redundancy_Model_Subcriterion_Basic_3 '03B'
+    criterion: 'Die Wirksamkeit der Redundanz wird mindestens jährlich durch geeignete Tests und Übungen überprüft (vgl. BCM-04).'
+  additional_sharpen:
+  - identifier: &ID_Criterion_Redundancy_Model_Subcriterion_Additional_Sharpen_1 '01AS'
+    sharpened_basic_criterion: *ID_Criterion_Redundancy_Model_Subcriterion_Basic_1
+    criterion: 'Die Bereitstellung des Cloud-Dienstes erfolgt aus mehr als zwei Standorten. Die Standorte entsprechen den Sicherheitsanforderungen des Cloud-Anbieters (vgl. PS-01) und weisen einen hinreichenden Abstand zueinander auf, um Georedundanz und -Resilienz zu erreichen. Bei einem zeitgleichen Ausfall zweier Standorte steht mindestens ein dritter Standort weiterhin zur Verfügung, um einen Totalausfall zu verhindern.'
+  - identifier: &ID_Criterion_Redundancy_Model_Subcriterion_Additional_Sharpen_2 '02AS'
+    sharpened_basic_criterion: *ID_Criterion_Redundancy_Model_Subcriterion_Basic_2
+    criterion: 'Die Georedundanz ist so ausgelegt, dass die in der Service Level-Vereinbarung enthaltenen Verfügbarkeitsanforderungen eingehalten werden.'
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Redundancy_Model_Subcriterion_Basic_1
+    - *ID_Criterion_Redundancy_Model_Subcriterion_Basic_2
+    information_text: 'Eine Betriebsredundanz der Standorte zueinander im Sinne dieses Kriteriums ist gegeben, wenn auf Basis der Bewertung elementarer Gefährdungen am Standort entsprechende Abstände der Räumlichkeiten und Gebäude zu diesen Gefahren eingehalten werden. Sehr großräumige Ereignisse, die aufgrund ihres Ausmaßes gleichzeitig oder zeitnah mehrere Standorte der gleichen Redundanzgruppe betreffen könnten (z. B. Hochwasser, Erdbeben), bleiben dabei unberücksichtigt.
+    
+
+Es gibt Cloud-Anbieter, die das Thema Ausfallsicherheit des Cloud-Dienstes auf physischer Ebene nicht mehr durch Redundanz aus zwei unabhängigen Standorten, sondern durch Resilienz adressieren. Hierbei wird der Cloud-Service simultan aus mehr als zwei Standorten erbracht. Die zugrundeliegende verteilte Rechenzentrums-Architektur stellt sicher, dass der Ausfall eines Standortes oder von Komponenten eines Standortes nicht die definierten Verfügbarkeitskriterien des Cloud-Dienstes verletzt. Eine solche Architektur kann eine alternative Erfüllung (vgl. Kapitel 3.4.12) des Kriteriums darstellen. Die im Kriterium geforderten Tests und Übungen zur Funktionsfähigkeit gelten sinngemäß auch für resiliente Architekturen.'
+  - applicable_criteria:
+    - *ID_Criterion_Redundancy_Model_Subcriterion_Additional_Sharpen_1
+    - *ID_Criterion_Redundancy_Model_Subcriterion_Additional_Sharpen_2
+    information_text: 'Eine Georedundanz der Standorte zueinander im Sinne dieses Kriteriums ist gegeben, wenn ein sehr großräumiges Ereignis an einem Standort keinesfalls gleichzeitig oder zeitnah mehrere Standorte der gleichen Redundanzgruppe trifft. Die BSI-Publikation ''Kriterien für die Standortwahl von Rechenzentren'' gibt hierzu Empfehlungen.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass das vorliegende Redundanzmodell des Cloud-Anbieters und die Nachweise zur Überprüfung des Modells mit den eigenen Anforderungen zur Verfügbarkeit und Verlässlichkeit des Cloud-Dienstes konform sind.'
+- identifier: &ID_Criterion_Perimeter_Protection '03'
+  name: 'Perimeterschutz'
+  basic:
+  - identifier: &ID_Criterion_Perimeter_Protection_Subcriterion_Basic_1 '01B'
+    criterion: 'Die bauliche Hülle von Räumlichkeiten und Gebäuden mit Bezug zum bereitgestellten Cloud-Dienst sind physisch solide und durch angemessene Sicherheitsmaßnahmen geschützt, die den Sicherheitsanforderungen des Cloud-Anbieters entsprechen (vgl. PS-01).'
+  - identifier: &ID_Criterion_Perimeter_Protection_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Sicherheitsmaßnahmen sind geeignet, unberechtigte Zutritte rechtzeitig zu erkennen und zu verhindern, damit diese die Informationssicherheit des betrachteten Cloud-Dienstes nicht beeinträchtigen.'
+  - identifier: &ID_Criterion_Perimeter_Protection_Subcriterion_Basic_3 '03B'
+    criterion: 'Die äußeren Türen, Fenster und sonstigen Bauelemente weisen ein angemessenes Sicherheitsniveau auf, sodass ihre kombinierte Widerstandszeit einem Einbruchsversuch insgesamt mindestens zehn Minuten standhält. Dieser Zeitraum gilt ab dem Moment, in dem ein externer Eindringling erkannt wird (z. B. durch Perimeterüberwachung).'
+  - identifier: &ID_Criterion_Perimeter_Protection_Subcriterion_Basic_4 '04B'
+    criterion: 'Die umgebenden Wandkonstruktionen sowie die Schließeinrichtungen erfüllen die damit einhergehenden Anforderungen.'
+  - identifier: &ID_Criterion_Perimeter_Protection_Subcriterion_Basic_5 '05B'
+    criterion: 'Wenn die Bauelemente als Ganzes die damit verbundenen Anforderungen nicht vollständig erfüllen, werden kompensierende Kontrollen implementiert, um das angemessene Sicherheitsniveau wiederherzustellen.'
+  - identifier: &ID_Criterion_Perimeter_Protection_Subcriterion_Basic_6 '06B'
+    criterion: 'Das Personal des Rechenzentrums wird darin geschult, auf unbefugte Zutritts- oder Austrittsversuche wirksam zu reagieren.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Perimeter_Protection_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Die am Standort eingerichteten Sicherheitsmaßnahmen umfassen permanent anwesendes Sicherheitspersonal (mindestens zwei Personen), Videoüberwachung und Einbruchmeldeanlagen.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Perimeter_Protection_Subcriterion_Basic_2
+    information_text: 'Sicherheitsmaßnahmen zum Erkennen unbefugter Zutritte können Sicherheitspersonal, Videoüberwachung oder Einbruchmeldeanlagen sein.'
+  - applicable_criteria:
+    - *ID_Criterion_Perimeter_Protection_Subcriterion_Basic_3
+    - *ID_Criterion_Perimeter_Protection_Subcriterion_Basic_4
+    information_text: 'Die Widerstandsklasse RC4 nach DIN EN 1627 sieht vor, dass Türen, Fenster und sonstige Bauelemente einem Einbruchversuch mindestens zehn Minuten standhalten. Ein internationales Äquivalent zu dieser Norm ist der US-amerikanische Standard SD-STD-01.01 Rev.G. Die Erfüllung der Zielsetzung dieses Kriteriums impliziert jedoch nicht notwendigerweise, dass diese Normen erfüllt werden müssen.
+    
+    
+Zudem verlangt das Unterkriterium, dass alle Bauelemente als Ganzes zu einer Widerstandszeit gegen Einbruchsversuche von mindestens zehn Minuten führen. Folglich verlangt es nicht notwendigerweise, dass alle einzelnen Bauelemente diese Anforderung jeweils für sich allein erfüllen, sofern die kombinierten Maßnahmen einen externen Angriff wirksam um die erforderliche Zeit verzögern.'
+  - applicable_criteria:
+    - *ID_Criterion_Perimeter_Protection_Subcriterion_Basic_5
+    information_text: 'Kompensierende Maßnahmen können zusätzliche Sicherheitsebenen (z. B. Sicherheitsbereiche) auf dem Gelände, eine erhöhte Präsenz von Sicherheitspersonal, Videoüberwachung und Einbruchmeldesysteme umfassen.'
+  corresponding:
+- identifier: &ID_Criterion_Physical_Site_Access_Control '04'
+  name: 'Physische Zutrittskontrolle'
+  basic:
+  - identifier: &ID_Criterion_Physical_Site_Access_Control_Subcriterion_Basic_1 '01B'
+    criterion: 'Präventive und detektive physische Zutrittskontrollen in Räumlichkeiten und Gebäuden, mit Bezug zum bereitgestellten Cloud-Dienst, sind implementiert. Sie stehen im Einklang mit den Sicherheitsanforderungen des Cloud-Anbieters (vgl. PS-01) und basieren auf den in IAM-01 definierten Grundsätzen, um unbefugten Zutritt zu verhindern. Sie sind dokumentiert und gemäß SP-01 in einer Richtlinie oder einem Rahmenwerk kommuniziert und umfassen die folgenden Aspekte:
+
+
+1. Geregeltes Verfahren für die Vergabe und Änderung von Benutzerkonten und Zutrittsberechtigungen (vgl. IAM-02) auf Basis des ''Least-Privilege-Principle'' und des ''Need-to-Know-Principle'';
+
+2.  Sperrung der Zutritts-Berechtigungen, wenn diese über einen Zeitraum von zwei Monaten nicht genutzt wurden. Ausnahmen werden nur in begründeten Einzelfällen gemacht und folgen einem definierten Ausnahmeprozess gemäß SP-03;
+
+3. Authentisierung mit mindestens einem Faktor für den Zutritt zu jedem nicht öffentlichen Bereich;
+
+4. Multifaktor-Authentisierung für den Zutritt zu Bereichen, die Systemkomponenten beherbergen, mit denen Informationen der Cloud-Kunden verarbeitet werden;
+
+5. Vorhandensein und Beschaffenheit einer Protokollierung der Zutritte, die es dem Cloud-Anbieter im Sinne einer Wirksamkeitsprüfung ermöglicht, zu überprüfen, ob nur definiertes Personal die Räumlichkeiten und Gebäude mit Bezug zum bereitgestellten Cloud-Dienst betreten haben;
+
+6. Ausnahmen von der physischen Zutrittskontrolle, die im Notfall gelten, einschließlich eines Analyseverfahrens nach jeder Nutzung dieser Ausnahmen; und
+
+7. Maßnahmen für Besucher und externes Personal, die die Identifizierung und Nachverfolgung jeder einzelnen Person sicherstellen, sodass ihre Aktivitäten nachvollziehbar und – im Fall von Aktivitäten, die die Informationssicherheit beeinträchtigen – innerhalb einer angemessenen Reaktionszeit gestoppt werden können. Diese Maßnahmen sind angemessen und verhältnismäßig zur Sensibilität der Zone, in der sich Besucher oder externes Personal befinden. Der angemessene Reaktionszeitrahmen wird auf der Grundlage einer Risikobewertung bestimmt (vgl. OIS-07).
+
+'
+  - identifier: &ID_Criterion_Physical_Site_Access_Control_Subcriterion_Basic_2 '02B'
+    criterion: 'Der Cloud-Anbieter weist am Eingang jedes betroffenen nicht öffentlichen Bereichs mit einer Warnung auf dessen Grenzen und Zutrittsbedingungen hin.'
+  - identifier: &ID_Criterion_Physical_Site_Access_Control_Subcriterion_Basic_3 '03B'
+    criterion: 'Die physische Zutrittskontrolle zum Standort wird durch ein elektronisches Zutrittskontrollsystem verwaltet, das Authentisierung, Autorisierung und Protokollierung von Ein- und Austrittsereignissen unterstützt.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Physical_Site_Access_Control_Subcriterion_Basic_1
+    information_text: 'Zur Umsetzung einer Zutrittskontrolle auf der Grundlage des Need-to-Know-Prinzips kann ein Zonierungskonzept eingesetzt werden, bei dem jeder Vor-Ort-Bereich eigene Zutrittsberechtigungen hat. Wenn ein Zonierungskonzept implementiert ist, sollte jeder Vor-Ort-Bereich physisch getrennt sein und über ein eigenes Zutrittskontrollsystem verfügen. Beispiele für eine Zonierung vor Ort können sein:
+
+
+1. Grüne Zone: Öffentlicher Bereich, enthält keine Ressourcen, die für die Bereitstellung des Cloud-Dienstes relevant sind;
+
+2. Gelbe Zone: Privater Bereich, enthält Mittel zur Unterstützung des Cloud-Dienstes wie Entwicklung, Administration und Überwachung; und
+
+3. Rote Zone: Sensibler Bereich für Produktionssysteme wie die Serverräume.
+
+ Beispiele für angemessene Ausnahmen vom Entzug von Zutrittsberechtigungen nach zwei Monaten Inaktivität sind z. B. Fälle, in denen Personal mit bestimmten Rollen, wie Führungspositionen oder Aufsichtspersonen, nur gelegentlich, aber entscheidenden Zutritt benötigt. Die Begründung für die Ausnahmen sollte dokumentiert und bei der Überprüfung kritisch daraufhin bewertet werden, ob sie noch erforderlich sind.'
+  corresponding:
+- identifier: &ID_Criterion_Protection_against_Threats_from_Outside_and_from_the_Environment '05'
+  name: 'Schutz vor Bedrohungen von Außen und aus der Umgebung'
+  basic:
+  - identifier: &ID_Criterion_Protection_against_Threats_from_Outside_and_from_the_Environment_Subcriterion_Basic_1 '01B'
+    criterion: 'Räumlichkeiten und Gebäuden mit Bezug zum bereitgestellten Cloud-Dienst sind durch bauliche, technische und organisatorische Maßnahmen vor Feuer, Rauch, Blitzen und unerwünschtem Wasser geschützt, die den Sicherheitsanforderungen des Cloud-Anbieters (vgl. PS-01) entsprechen.'
+  - identifier: &ID_Criterion_Protection_against_Threats_from_Outside_and_from_the_Environment_Subcriterion_Basic_2 '02B'
+    criterion: 'Bauliche Maßnahmen umfassen die folgenden Aspekte:
+
+
+1. Einrichtung von Brandabschnitten mit einer Feuerwiderstandsdauer von mindestens 90 Minuten bei allen raumbildenden Teilen oder alternativ gleichwertige organisatorische und technische Maßnahmen, die dasselbe Schutzniveau wie raumbildende Teile mit einer Feuerwiderstandsdauer von mindestens 90 Minuten sicherstellen, oder die Einrichtung kompensierender Maßnahmen zur Eindämmung von Bränden und zur Aufrechterhaltung der Betriebsfähigkeit. Wenn kompensierende Maßnahmen berücksichtigt werden, muss der Feuerwiderstand der raumbildenden Teile mindestens 60 Minuten betragen;
+
+2. Wirksame Umsetzung von Maßnahmen zum Schutz vor Blitz- und Überspannungsschäden; und
+
+3. Wirksame Umsetzung von Maßnahmen zum Schutz vor Überflutung, es sei denn, kritische Einrichtungen befinden sich deutlich oberhalb des höchsten Hochwasserstands am Standort des Cloud-Rechenzentrums. Zusätzlich werden angemessene Maßnahmen umgesetzt, um die Auswirkungen von Starkregen zu mitigieren, es sei denn, kritische Einrichtungen befinden sich deutlich oberhalb der Rückstauebene am Standort des Cloud-Rechenzentrums.
+
+'
+  - identifier: &ID_Criterion_Protection_against_Threats_from_Outside_and_from_the_Environment_Subcriterion_Basic_3 '03B'
+    criterion: 'Technische Maßnahmen umfassen die folgenden Aspekte:
+
+
+1. Brandfrüherkennung mit automatischer Spannungsfreischaltung. Die Überwachungsbereiche sind hinreichend kleinteilig konzipiert, damit die Verhinderung einer Ausbreitung von Entstehungsbränden in einem angemessenen Verhältnis zur Aufrechterhaltung der Verfügbarkeit des bereitgestellten Cloud-Dienstes steht;
+
+2. Löschanlage oder Sauerstoffreduzierung; und
+
+3. Brandmeldeanlage mit Meldung an die örtliche Feuerwehr.
+
+'
+  - identifier: &ID_Criterion_Protection_against_Threats_from_Outside_and_from_the_Environment_Subcriterion_Basic_4 '04B'
+    criterion: 'Organisatorische Maßnahmen umfassen die folgenden Aspekte:
+
+
+1.  Regelmäßige Brandschutzbegehungen, um die Einhaltung der Brandschutzvorgaben zu prüfen; und
+
+2. Regelmäßige Brandschutzübungen.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Protection_against_Threats_from_Outside_and_from_the_Environment_Subcriterion_Basic_2
+    information_text: 'Raumbildende Teile sind Wände, Decken, Böden, Türen, Fenster und andere Öffnungen der Gebäudehülle wie Lüftungsklappen etc.
+
+
+Kompensierende Maßnahmen können Aspekte berücksichtigen wie:
+
+
+1. Unterteilung und Aufbau von Brandabschnitten;
+
+2. Löschanlagen innerhalb der Brandabschnitte;
+
+3. Maßnahmen für Brandfrüh- und Brandfrühsterkennung;
+
+4. Redundanz von Systemen und Versorgungseinrichtungen innerhalb des Geländes; und
+
+5. Zeitraum, den die Standorte und Räumlichkeiten einem Brand standhalten können, der eine Datenhalle beeinträchtigt, ohne dass eine zweite Datenhalle Feuer fängt.
+
+
+Der Cloud-Anbieter sollte die getroffenen Maßnahmen zum Schutz seiner Räumlichkeiten und Gebäude gegen Feuer als Teil der Systembeschreibung beschreiben.
+
+
+Die Lage aller kritischen Einrichtungen in Bezug auf den historisch höchsten aufgezeichneten Hochwasserstand am Standort des Cloud-Rechenzentrums oder die Rückstauebene des Standorts dient als Ausgangspunkt für die Betrachtung von Schutzmaßnahmen gegen Hochwasser und Starkregen.'
+  - applicable_criteria:
+    - *ID_Criterion_Protection_against_Threats_from_Outside_and_from_the_Environment_Subcriterion_Basic_3
+    information_text: 'Die Überwachung der Umgebungsparameter ist in PS-07 adressiert. Bei Verlassen des zulässigen Regelbereichs werden Alarmmeldungen generiert und an das dafür sachverständige Personal des Cloud-Anbieters weitergeleitet.'
+  corresponding:
+- identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks '06'
+  name: 'Schutz vor Unterbrechungen durch Stromausfälle und ähnliche Risiken für Versorgungseinrichtungen'
+  basic:
+  - identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Basic_1 '01B'
+    criterion: 'Maßnahmen zur Ausfallvorsorge der technischen Versorgungseinrichtungen, die für den Betrieb von Systemkomponenten benötigt werden, mit denen Cloud-Kundendaten verarbeitet werden, und zum Schutz von Geräten, die Cloud-Kundendaten enthalten, sind gemäß den Sicherheitsanforderungen des Cloud-Anbieters (vgl. PS-01) hinsichtlich der folgenden Aspekte dokumentiert und eingerichtet:
+    
+
+1. Betriebsredundanz (N+1) in der Strom- und Kälteversorgung;
+
+2. Einsatz angemessen dimensionierter unterbrechungsfreier Stromversorgungen (USV) und Netzersatzanlagen (NEA), die so ausgelegt sind, dass bei einem Stromausfall alle Datenbestände unbeschädigt bleiben. Die Funktionsfähigkeit von USV und NEA wird mindestens jährlich durch geeignete Tests und Übungen überprüft (vgl. BCM-04);
+
+3. Instandhaltung (Wartung, Inspektion, Instandsetzung/Reparatur) der Versorgungseinrichtungen in Übereinstimmung mit den Herstellerempfehlungen; und
+
+4. Schutz der Leitungen für Stromversorgung und Telekommunikation vor Unterbrechung, Störung, Beschädigung und Abhören.
+
+'
+  - identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Basic_2 '02B'
+    criterion: 'Unterbrechungsfreie Stromversorgungen (USV) und Netzersatzanlagen (NEA) sind so ausgelegt, dass die in der Service Level-Vereinbarung enthaltenen Verfügbarkeitsanforderungen eingehalten werden.'
+  - identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Schutz der Leitungen für Stromversorgung und Telekommunikation wird regelmäßig, mindestens aber alle zwei Jahre, sowie bei Manipulationsverdacht durch qualifiziertes Personal hinsichtlich der folgenden Aspekte überprüft:
+
+1. Spuren gewaltsamer Öffnungsversuche an geschlossenen Verteilern;
+
+2. Aktualität der im Verteiler befindlichen Dokumentation;
+
+3. Übereinstimmung der tatsächlichen Beschaltung und Rangierungen mit der Dokumentation;
+
+4. Unversehrtheit der Kurzschlüsse und Erdungen nicht benötigter Kabel und Leitungen; und
+
+5. unzulässige Einbauten und Veränderungen.
+
+'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Das Kälteversorgungssystem ist so ausgelegt, dass die zulässigen Betriebs- und Umgebungsparameter auch an mindestens fünf unmittelbar aufeinander folgenden Tagen mit den höchsten Außentemperaturen, von denen vernünftigerweise geschätzt werden kann, dass sie an den Standorten der Räumlichkeiten und Gebäude innerhalb der Lebensdauer des Kühlversorgungssystems mit einem angemessenen Sicherheitsaufschlag auftreten können, sichergestellt sind.'
+  - identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Die Anbindung an das Telekommunikationsnetz ist mit ausreichender Redundanz ausgelegt, so dass der Ausfall eines Telekommunikationsnetzes keine Beeinträchtigung der Sicherheit oder Leistungsfähigkeit des Cloud-Anbieters zur Folge hat.'
+  - identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Additional_Complement_3 '03AC'
+    criterion: 'Der Cloud-Anbieter implementiert Maßnahmen, um die Kompatibilität der Bedingungen für Installation, Wartung und Instandhaltung der zugehörigen technischen Ausrüstung (z. B. elektrische Energieversorgung, Klimatisierung, Brandschutz) mit den Verfügbarkeits- und Sicherheitsanforderungen des Cloud-Dienstes sicherzustellen.'
+  - identifier: &ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Additional_Complement_4 '04AC'
+    criterion: 'Der Cloud-Anbieter stellt sicher, dass Wartungsvereinbarungen für Geräte, die für das Hosting des Cloud-Dienstes verwendet werden, die rechtzeitige Installation von Sicherheitsupdates auf diesen Geräten ermöglichen.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Basic_1
+    information_text: 'Maßnahmen zur Ausfallvorsorge technischer Versorgungseinrichtungen sind z. B. Stromversorgung, Kälteversorgung, Löschtechnik, Telekommunikation, Sicherheitstechnik etc.
+
+
+Cloud-Anbieter können z. B. durch geordnetes Herunterfahren der Server sicherstellen, dass bei einem Stromausfall alle Datenbestände unbeschädigt bleiben.
+
+
+Leitungen für Stromversorgung und Telekommunikation können z. B. mittels unterirdischer Zuführungen über unterschiedliche Zuleitungswege vor Unterbrechung, Störung, Beschädigung und Abhören geschützt werden.'
+  - applicable_criteria:
+    - *ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Basic_3
+    information_text: 'Das Unterkriterium verlangt, dass die Überprüfung mindestens alle zwei Jahre durchgeführt wird. Wenn während des festgelegten Zeitraums einer Typ-2-Prüfung keine solche Überprüfung durchgeführt wurde, sollt der Prüfer im Prüfbericht vermerken, dass die entsprechenden Kontrollen mit zweijährigem Zyklus im hiesigen Prüfzeitraum nicht durchgeführt wurden. Für die Bewertung der Ausgestaltung der Kontrolle kann der Prüfer Nachweise über die vorherige Überprüfung einholen, auch wenn diese Überprüfung nicht innerhalb des festgelegten Zeitraums des Auftrags stattgefunden hat. Wenn zwei Jahre lang keine Überprüfung durchgeführt wurde, soll der Prüfer eine Abweichung vermerken.'
+  - applicable_criteria:
+    - *ID_Criterion_Protection_against_Interruptions_caused_by_Power_Failures_and_other_such_Risks_Subcriterion_Additional_Complement_1
+    information_text: 'Dieses Unterkriterium verlangt die Umsetzung konkreter Maßnahmen zur Erfüllung der in PS-01.03AC geforderten Richtlinie. Der Cloud-Anbieter bestimmt die höchsten Außentemperaturen, von denen vernünftigerweise geschätzt werden kann, dass sie an den Standorten der Räumlichkeiten und Gebäude innerhalb der Lebensdauer des Kühlversorgungssystems auftreten können, ebenfalls als Teil von PS-01.03AC.'
+  corresponding:
+- identifier: &ID_Criterion_Surveillance_of_Operational_and_Environmental_Parameters '07'
+  name: 'Überwachung der Betriebs- und Umgebungsparameter'
+  basic:
+  - identifier: &ID_Criterion_Surveillance_of_Operational_and_Environmental_Parameters_Subcriterion_Basic_1 '01B'
+    criterion: 'Betriebsparameter der technischen Versorgungseinrichtungen (vgl. PS-06) sowie die Umgebungsparameter der Räumlichkeiten und Gebäuden mit Bezug zum bereitgestellten Cloud-Dienst werden gemäß den Sicherheitsanforderungen des Cloud-Anbieters (vgl. PS-01) überwacht und geregelt.'
+  - identifier: &ID_Criterion_Surveillance_of_Operational_and_Environmental_Parameters_Subcriterion_Basic_2 '02B'
+    criterion: 'Bei Verlassen des zulässigen Regelbereichs wird das dafür sachverständige Personal oder die autorisierten Systemkomponenten des Cloud-Anbieters automatisch informiert, um zeitnah die erforderlichen Maßnahmen zur Rückführung in den Regelbereich einzuleiten.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Surveillance_of_Operational_and_Environmental_Parameters_Subcriterion_Basic_1
+    information_text: 'Zu diesen Maßnahmen gehören typischerweise unter anderem:
+
+
+1. Umgebungsüberwachungssysteme (z. B. Temperatur- und Feuchtigkeitssensoren);
+
+2. Feuerunterdrückungssysteme;
+
+3. Heizungs-, Lüftungs- und Klimatechnik (HVAC); und
+
+4. Leckageerkennung und -Alarme.
+
+'
+  corresponding:
+- identifier: &ID_Criterion_Workplace_Security_Requirements '08'
+  name: 'Anforderungen an die Sicherheit von Arbeitsplätzen'
+  basic:
+  - identifier: &ID_Criterion_Workplace_Security_Requirements_Subcriterion_Basic_1 '01B'
+    criterion: 'Auf der Grundlage einer Risikobewertung gemäß OIS-07 werden Sicherheitsanforderungen für Büroumgebungen dokumentiert, kommuniziert und gemäß SP-01 bereitgestellt. Die Sicherheitsanforderungen für gemietete Büros berücksichtigen Verhältnismäßigkeit und Angemessenheit und können potenziell weniger umfangreich sein als diejenigen in eigenen Büroumgebungen. Diese Sicherheitsanforderungen umfassen verschiedene Aspekte für eine sichere und geschützte Arbeitsumgebung, einschließlich mindestens:
+
+
+1. Physische Zutrittskontrollen, wie Schlüsselkarten und biometrische Scanner, für Bürogebäude;
+
+2. Verwendung von Bildschirmsperren und Sichtschutzfiltern für Arbeitsplätze;
+
+3. Keine offen sichtbaren vertraulichen Daten an vorübergehend unbeaufsichtigten Arbeitsplätzen;
+
+4. Entsorgung aller Unternehmensdokumente, die nicht mehr benötigt werden, innerhalb des Unternehmensgeländes;
+
+5. Verbot der Nutzung von Drittgeräten; und
+
+6. Sicherung der Eingänge von Büroräumlichkeiten mit Alarmsystemen und Überwachungskameras.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Workplace_Security_Requirements_Subcriterion_Basic_1
+    information_text: 'Als Ergebnis der Risikobewertung gemäß OIS-07 muss möglicherweise nicht jeder im Kriterium aufgeführte Aspekt durch entsprechende Sicherheitsanforderungen adressiert werden. Wenn sich beispielsweise in einem Bürogebäude keine Assets mit Bezug zur Entwicklung oder dem Betrieb des Cloud-Dienstes befinden, sind Alarmsysteme und Überwachungskameras möglicherweise nicht erforderlich.'
+  corresponding:

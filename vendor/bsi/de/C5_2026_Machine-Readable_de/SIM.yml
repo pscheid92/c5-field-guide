@@ -1,0 +1,161 @@
+-
+  identifier: &ID_Criterion_Policy_for_Security_Incident_Management '01'
+  name: 'Richtlinie für den Umgang mit Sicherheitsvorfällen'
+  basic:
+    -
+      identifier: &ID_Criterion_Policy_for_Security_Incident_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien, Verfahren und technische Maßnahmen sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, um eine schnelle, wirksame und ordnungsgemäße Reaktion auf alle bekannten Sicherheitsvorfälle zu gewährleisten.
+
+
+Der Cloud-Anbieter definiert Vorgaben zur Klassifizierung, Priorisierung, Eskalation und Ursachenanalysen von Sicherheitsvorfällen und schafft Schnittstellen zum Incident Management und zum Business Continuity Management.'
+    -
+      identifier: &ID_Criterion_Policy_for_Security_Incident_Management_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter hat ein ''Computer Security Incident Response Team'' (CSIRT) eingerichtet, das zur koordinierten Lösung auftretender Sicherheitsvorfälle beiträgt.'
+    -
+      identifier: &ID_Criterion_Policy_for_Security_Incident_Management_Subcriterion_Basic_3 '03B'
+      criterion: 'Kommunikationskanäle mit den Cloud-Kunden sind identifiziert und festgelegt, und von Sicherheitsvorfällen betroffene Cloud-Kunden werden zeitnah und in angemessener Weise informiert.'
+    -
+      identifier: &ID_Criterion_Policy_for_Security_Incident_Management_Subcriterion_Basic_4 '04B'
+      criterion: 'Es gibt Verfahren dazu, wie bei einem Sicherheitsvorfall die Daten eines verdächtigen Systems beweisfest gesammelt werden können.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie Benachrichtigungen des Cloud-Anbieters bezüglich sie betreffender Sicherheitsvorfälle erhalten, und dass diese Benachrichtigungen zeitnah an die für die Bearbeitung verantwortliche Stelle weitergeleitet werden, sodass eine angemessene Reaktion erfolgen kann.'
+-
+  identifier: &ID_Criterion_Incident_Response_Plans '02'
+  name: 'Pläne zur Reaktion auf Sicherheitsvorfälle'
+  basic:
+    -
+      identifier: &ID_Criterion_Incident_Response_Plans_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat einen oder mehrere Pläne zur Reaktion auf Sicherheitsvorfälle dokumentiert, genehmigt und kommuniziert. Die Pläne behandeln alle Phasen der Vorfallreaktion, einschließlich Identifizierung, Eindämmung, Beseitigung, Wiederherstellung und kontinuierlicher Verbesserung. Sie werden von sachverständigem Personal des Cloud-Anbieters genehmigt und allen relevanten Stakeholdern kommuniziert.'
+    -
+      identifier: &ID_Criterion_Incident_Response_Plans_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Pläne werden mindestens jährlich oder nach Bedarf bewertet und aktualisiert, um Änderungen in der Organisationsstruktur oder der Umgebung widerzuspiegeln.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Incident_Response_Plans_Subcriterion_Basic_1
+      information_text: 'Relevante Stakeholder im Sinne dieses Kriteriums sind diejenigen, die den Plan zur Reaktion auf Vorfälle kennen müssen, zum Beispiel aufgrund ihrer Beteiligung an seiner Ausführung oder aufgrund vertraglicher oder regulatorischer Vereinbarungen.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Processing_of_Security_Incidents '03'
+  name: 'Bearbeitung von Sicherheitsvorfällen'
+  basic:
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_1 '01B'
+      criterion: 'Sachverständiges Personal des Cloud-Anbieters führt für Ereignisse die einen Sicherheitsvorfall darstellen könnten, Klassifizierungen, Priorisierungen sowie Ursachenanalysen durch.'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Ergebnisse dieser Ursachenanalysen werden dokumentiert, mit relevanten Stakeholdern geteilt und als Teil von Bewertungs- und Lernprozessen verwendet.'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_3 '03B'
+      criterion: 'Wenn der Cloud-Anbieter feststellt, dass er externe Unterstützung für die Bearbeitung eines Sicherheitsvorfalls benötigt, wählt er einen Dienst zur Reaktion auf Vorfälle auf der Grundlage von dessen Kompetenz und Vertrauenswürdigkeit oder durch Befolgung der Empfehlungen einer nationalen Cybersicherheitsbehörde aus.'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_4 '04B'
+      criterion: 'Ein Katalog, der eine eindeutige Identifizierung von Informationssicherheitsvorfällen ermöglicht, die Cloud-Kundendaten betreffen, wird gepflegt und für die Klassifizierung von Informationssicherheitsvorfällen verwendet.'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_5 '05B'
+      criterion: 'Der Cloud-Anbieter verwendet den Mechanismus zur Klassifizierung von Vorfällen auch für die Korrelation von Informationssicherheitsereignissen und bewertet sowie klassifiziert die korrelierten Informationssicherheitsereignisse entsprechend ihrer Kritikalität.'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_6 '06B'
+      criterion: 'Alle Dokumente und Nachweise, die Einzelheiten zu Sicherheitsvorfällen im Zusammenhang mit dem Cloud-Dienst enthalten, werden im Einklang mit Kritikalität und regulatorischen Anforderungen sicher und manipulationssicher archiviert.'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_7 '07B'
+      criterion: 'Der Analyseprozess bietet eine zum Risiko und zur Auswirkung des Sicherheitsvorfalls angemessene Nachvollziehbarkeit, um Ursachen und Angriffsverlauf zu verstehen.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter simuliert das Identifizieren, Analysieren und Abwehren von Sicherheitsvorfällen und Angriffen mindestens jährlich durch geeignete Tests und Übungen (z. B. Red Team-Übungen).'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Ein integriertes Team aus Forensik-/Incident-Responder-Personal, das speziell dafür qualifiziert ist, Nachweise zu sichern und eine Beweismittelkette zu verwalten, ist eingerichtet oder für seine Dienstleistungen beauftragt.'
+    -
+      identifier: &ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Der Cloud-Anbieter verifiziert die Anwendung von Richtlinien und Verfahren des Vorfallmanagements durch Überwachung der Prozesse zur Behandlung von Informationssicherheitsvorfällen. Zeitnahe und angemessene Abhilfemaßnahmen adressieren alle bei der Überwachung festgestellten Abweichungen.'
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Processing_of_Security_Incidents_Subcriterion_Basic_6
+      information_text: 'Regulatorische Anforderungen können es erforderlich machen, eine Beweismittelkette aufrechtzuerhalten, um sicherzustellen, dass Dokumente in Gerichtsverfahren als Beweismittel herangezogen werden können.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Documentation_and_Reporting_of_Security_Incidents '04'
+  name: 'Dokumentation und Berichterstattung über Sicherheitsvorfälle'
+  basic:
+    -
+      identifier: &ID_Criterion_Documentation_and_Reporting_of_Security_Incidents_Subcriterion_Basic_1 '01B'
+      criterion: 'Nachdem ein Sicherheitsvorfall bearbeitet wurde, wird die Lösung in Übereinstimmung mit den vertraglichen Vereinbarungen dokumentiert und die Dokumentation wird den betroffenen Cloud-Kunden zur abschließenden Kenntnisnahme oder gegebenenfalls als Bestätigung zugesandt.'
+    -
+      identifier: &ID_Criterion_Documentation_and_Reporting_of_Security_Incidents_Subcriterion_Basic_2 '02B'
+      criterion: 'Informationen zu Sicherheitsvorfällen oder bestätigten Sicherheitsverstößen werden allen betroffenen Cloud-Kunden zur Verfügung gestellt.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Documentation_and_Reporting_of_Security_Incidents_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Kunde kann Lösungen entweder aktiv genehmigen oder die Lösung wird nach einer bestimmten Frist automatisch genehmigt.'
+    -
+      identifier: &ID_Criterion_Documentation_and_Reporting_of_Security_Incidents_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Zwischen Cloud-Anbieter und Cloud-Kunden ist vertraglich geregelt, welche Daten dem Cloud-Kunden bei Sicherheitsvorfällen zur eigenen Analyse zur Verfügung gestellt werden.'
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Documentation_and_Reporting_of_Security_Incidents_Subcriterion_Basic_2
+      information_text: 'Sicherheitsverletzungen im Sinne dieses Kriteriums sind Sicherheitsvorfälle, die durch unbefugten Zugriff und Kompromittierung von Cloud-Kundendaten oder der Diensterbringung infolge von Verstößen gegen Richtlinien und Verfahren oder gegen geltende gesetzliche und regulatorische Anforderungen verursacht werden (vgl. HR-04.02B).'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie Benachrichtigungen des Cloud-Anbieters bezüglich sie betreffender Sicherheitsvorfälle sowie deren Lösung erhalten, und dass diese Benachrichtigungen zeitnah an die für die Bearbeitung verantwortliche Stelle weitergeleitet werden, sodass eine angemessene Reaktion erfolgen kann.'
+-
+  identifier: &ID_Criterion_Duty_of_the_Users_to_Report_Security_Incidents_to_a_Central_Body '05'
+  name: 'Verpflichtung des Personals zur Meldung von Sicherheitsvorfällen an eine zentrale Stelle'
+  basic:
+    -
+      identifier: &ID_Criterion_Duty_of_the_Users_to_Report_Security_Incidents_to_a_Central_Body_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter informiert das Personal und externe Geschäftspartner über ihre Verpflichtungen. Falls erforderlich, stimmen sie zu oder werden vertraglich verpflichtet, alle ihnen bekannt werdenden Sicherheitsereignisse, die in direktem Zusammenhang mit dem vom Cloud-Anbieter bereitgestellten Cloud-Dienst stehen, zeitnah an eine zuvor benannte zentrale Stelle des Cloud-Anbieters zu melden.'
+    -
+      identifier: &ID_Criterion_Duty_of_the_Users_to_Report_Security_Incidents_to_a_Central_Body_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter kommuniziert, dass ''Fehlmeldungen'' von Ereignissen, die sich im Nachhinein nicht als Vorfälle herausstellen, keine negativen Folgen nach sich ziehen.'
+    -
+      identifier: &ID_Criterion_Duty_of_the_Users_to_Report_Security_Incidents_to_a_Central_Body_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Meldemechanismen für Informationssicherheitsvorfälle werden dem Personal, den Cloud-Kunden und den Service-Organisationen des Cloud-Anbieters kommuniziert.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass identifizierte Sicherheitsereignisse, die vom Cloud-Anbieter bearbeitet werden müssen, zeitnah an zuvor benanntes, verantwortliches Personal kommuniziert werden.
+
+
+Die Identifizierung solcher Sicherheitsereignisse wird durch geeignete Kontrollen unterstützt (vgl. korrespondierendes Kundenkriterium für OPS-10).'
+-
+  identifier: &ID_Criterion_Evaluation_and_Learning_Process '06'
+  name: 'Auswertung und Lernprozess'
+  basic:
+    -
+      identifier: &ID_Criterion_Evaluation_and_Learning_Process_Subcriterion_Basic_1 '01B'
+      criterion: 'Mechanismen sind vorhanden, um Art und Umfang der Sicherheitsvorfälle messen und überwachen sowie wie an unterstützende Stellen melden zu können.'
+    -
+      identifier: &ID_Criterion_Evaluation_and_Learning_Process_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter definiert, implementiert und pflegt eine Wissensdatenbank, die Folgendes enthält:
+
+    
+- Sicherheitsvorfälle;
+
+- Maßnahmen, die zur Lösung dieser Sicherheitsvorfälle ergriffen wurden; und
+
+- Informationen über die Assets, die von diesen Sicherheitsvorfällen betroffen sind. 
+
+
+Diese Informationen werden verwendet, um den Klassifizierungskatalog für Vorfälle zu ergänzen (vgl. SIM-03).'
+    -
+      identifier: &ID_Criterion_Evaluation_and_Learning_Process_Subcriterion_Basic_3 '03B'
+      criterion: 'Die aus der Überwachung von Sicherheitsvorfällen gewonnenen Informationen und die in der Wissensdatenbank gesammelten Erkenntnisse werden verwendet, um wiederkehrende Sicherheitsereignisse oder Sicherheitsvorfälle oder potenziell erhebliche Sicherheitsvorfälle zu identifizieren, den Bedarf an weitergehenden Schutzmaßnahmen zu bestimmen und diese umzusetzen.'
+    -
+      identifier: &ID_Criterion_Evaluation_and_Learning_Process_Subcriterion_Basic_4 '04B'
+      criterion: 'Der Bewertungs- und Lernprozess umfasst die Ergebnisse von Ursachenanalysen, die in Übereinstimmung mit SIM-03 durchgeführt wurden.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Evaluation_and_Learning_Process_Subcriterion_Basic_1
+      information_text: 'Unterstützende Stellen können externe Service-Organisationen oder Regierungsbehörden wie das BSI sein.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie die Erkenntnisse aus vergangenen Sicherheitsvorfällen, die Ihnen mitgeteilt wurden, und die daraus resultierenden Maßnahmen des Cloud-Anbieters in Ihr ISMS aufnehmen und bewerten, ob und wenn ja welche Maßnahmen sie auf ihrer Seite unterstützend ergreifen können.'

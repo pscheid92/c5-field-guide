@@ -1,0 +1,231 @@
+-
+  identifier: &ID_Criterion_Documentation_Communication_and_Provision_of_Policies_and_Procedures '01'
+  name: 'Dokumentation, Kommunikation und Bereitstellung von Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Documentation_Communication_and_Provision_of_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren (einschl. Rahmenwerke und Leitlinien) werden aus der Informationssicherheitsrichtlinie abgeleitet und gemäß einer einheitlichen Struktur dokumentiert. Die Richtlinien und Verfahren beschreiben mindestens die folgenden Aspekte:
+
+
+1. Ziele;
+
+2. Anwendungsbereiche;
+
+3. Rollen und Verantwortlichkeiten, einschließlich Anforderungen an die Qualifikation des Personals und das Einrichten von Vertretungsregelungen;
+
+4. Rollen und Abhängigkeiten von anderen Organisationen (insbesondere Cloud-Kunden und Subservice-Organisationen);
+
+5. Maßnahmen zur Umsetzung der Sicherheitsstrategie; und
+
+6. Anwendbare rechtliche und regulatorischer Anforderungen.
+
+'
+    -
+      identifier: &ID_Criterion_Documentation_Communication_and_Provision_of_Policies_and_Procedures_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Richtlinien und Verfahren werden allem relevanten internem und externem Personal des Cloud-Anbieters sach- und bedarfsgerecht kommuniziert und zur Verfügung gestellt.'
+    -
+      identifier: &ID_Criterion_Documentation_Communication_and_Provision_of_Policies_and_Procedures_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Richtlinien und Verfahren unterliegen einer Versionskontrolle.'
+    -
+      identifier: &ID_Criterion_Documentation_Communication_and_Provision_of_Policies_and_Procedures_Subcriterion_Basic_4 '04B'
+      criterion: 'Die Richtlinien und Verfahren werden von der obersten Leitung des Cloud-Anbieters oder einer autorisierten Stelle genehmigt.'    
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Documentation_Communication_and_Provision_of_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Richtlinien und Verfahren sind für die folgenden Basiskriterien erforderlich, in denen der Inhalt näher spezifiziert ist:
+
+
+1. Informationssicherheitsrichtlinie (OIS-02);
+
+2. Richtlinie für Risikomanagement (OIS-07);
+
+3. Richtlinie für Remote-Arbeit (HR-07);
+
+4. Rahmenwerk für Asset Management (AM-01);
+
+5. Richtlinie für die ordnungsgemäße und sichere Nutzung von Assets (AM-05);
+
+6. Sicherheitsanforderungen für Gebäude und Räumlichkeiten (PS-01);
+
+7. Physische Zutrittskontrolle (PS-04);
+
+8. Anforderungen an die Sicherheit von Arbeitsplätzen (PS-08);
+
+9. Schutz vor Malware - Richtlinien und Verfahren (OPS-04);
+
+10. Datensicherung und -wiederherstellung - Richtlinien und Verfahren (OPS-06);
+
+11. Protokollierung und Überwachung - Richtlinien und Verfahren (OPS-10);
+
+12. Protokollierung und Überwachung - Richtlinien und Verfahren für den Umgang mit abgeleiteten Cloud-Dienstdaten und Kontodaten (OPS-11);
+
+13. Umgang mit Schwachstellen - Richtlinien und Verfahren (OPS-18);
+
+14. Umgang mit Vorfällen und Abstürzen - Richtlinien und Verfahren (OPS-19);
+
+15. Umgang mit Schwachstellen - Richtlinien und Verfahren zum Patch-Management (OPS-27);
+
+16. Trennung von Datensätzen - Richtlinien und Verfahren (OPS-30);
+
+17. Confidential Computing - Richtlinien und Verfahren (OPS-32);
+
+18. Container-Management - Richtlinien und Verfahren (OPS-34);
+
+19. Richtlinie für Identitäten und Zugriffsberechtigungen (IAM-01);
+
+20. Authentisierungsmechanismen (Authentisierungsrichtlinie) (IAM-08);
+
+21. Richtlinie für die Verwendung kryptographischer Mechanismen (CRY-01);
+
+22. Technische Schutzmaßnahmen (COS-01);
+
+23. Richtlinien für die Datenübertragung (COS-08);
+
+24. Richtlinien für die Entwicklung/Beschaffung von Systemkomponenten (DEV-01);
+
+25. Richtlinien für Änderungen an Systemkomponenten (DEV-03);
+
+26. Sichere Nutzung von Hardware und Software Dritter (Richtlinien und Verfahren für die Nutzung von Drittanbieter- und Open-Source-Software) (DEV-14);
+
+27. Richtlinien und Verfahren zur Steuerung und Überwachung von Service-Organisationen (SSO-01);
+
+28. Steuerung des Austauschs mit Lieferanten funktionaler Komponenten (SSO-08);
+
+29. Richtlinie für den Umgang mit Sicherheitsvorfällen (SIM-01);
+
+30. Business Continuity- und Notfallmanagementsystem (BCM-01);
+
+31. Richtlinie für die Planung und Durchführung von Audits (COM-02); und
+
+32. Kommunikation technischer Verfahren zur Datenoffenlegung bei behördlichen Auskunfts- und Herausgabeverlangen (INQ-04).
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Documentation_Communication_and_Provision_of_Policies_and_Procedures_Subcriterion_Basic_2
+      information_text: 'Die sach- und bedarfsgerechte Kommunikation und Bereitstellung sind vor dem Hintergrund der Größe und Komplexität der Organisation des Cloud-Anbieters und der Art des angebotenen Cloud-Dienstes zu beurteilen. Mögliche Kriterien sind:
+
+
+1. Thematisierung der Richtlinien und Anweisungen in der Einarbeitung neuen Personals;
+
+2. Schulungs- und Informationskampagnen bei der Einführung neuer oder der Überarbeitung bestehender Richtlinien und Verfahren; und
+
+3. Form der Bereitstellung.
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Review_and_Approval_of_Policies_and_Procedures '02'
+  name: 'Überprüfung und Freigabe von Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Review_and_Approval_of_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Informationssicherheitsrichtlinien und -verfahren werden mindestens jährlich und im Falle wesentlicher Änderungen am Cloud-Dienst von sachverständigem Personal des Cloud-Anbieters auf Angemessenheit überprüft. Die Überprüfung hat mindestens die folgenden Aspekte zu berücksichtigen:
+
+
+1. Organisatorische und technische Änderungen in den Verfahren zur Bereitstellung des Cloud-Dienstes; und
+
+2. Gesetzliche und regulatorische Änderungen im Umfeld des Cloud-Anbieters.
+
+'
+    -
+      identifier: &ID_Criterion_Review_and_Approval_of_Policies_and_Procedures_Subcriterion_Basic_2 '02B'
+      criterion: 'Überarbeitete Richtlinien und Verfahren werden von der angemessenen Leitungsebene genehmigt, bevor sie Gültigkeit erlangen, und werden internem und externem Personal kommuniziert und zur Verfügung gestellt.'
+  additional_sharpen:
+  additional_complement: 
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Review_and_Approval_of_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Während eines ISO-27001-Zertifizierungsaudits werden die Kontrollen zu diesem Kriterium höchstwahrscheinlich ebenfalls geprüft. Handelt es sich um ein gemeinsames Audit (C5 und ISO), kann hier Effizienz im Sinne von ''audit once, certify many'' erzielt werden. Handelt es sich um ein separates Audit, kann der Prüfer des C5-Attestierungsauftrags statt einer erneuten Prüfung der Kontrolle den ISO-Bericht einsehen, sofern die vorgelegten Nachweise hinreichend schlüssig sind.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Review_and_Approval_of_Policies_and_Procedures_Subcriterion_Basic_2
+      information_text: 'Wesentliche Änderungen umfassen unter anderem alle Umstände oder Ereignisse, die den Geltungsbereich, die Wirksamkeit oder die Ziele der Informationssicherheitsrichtlinie wesentlich beeinflussen. Konkret sind wesentliche Änderungen z. B.:
+
+
+1. Größere technische oder architektonische Änderungen an der Cloud-Plattform (z. B. Einführung neuer Infrastrukturdienste, Cloud-Migration, Einführung eines neuen Serviceangebots);
+
+2. Wesentliche Aktualisierungen nationaler oder internationaler Gesetze, Vorschriften oder sektorspezifischer Standards (z. B. NIS2, DORA, DSGVO), die die Verpflichtungen zur Informationssicherheit beeinflussen;
+
+3. Reorganisation oder Fusion/Übernahme von Organisationseinheiten, welche die Führung, Entscheidungsfindung oder zentrale sicherheitsbezogene Verantwortlichkeiten betreffen;
+
+4. Wesentliche Änderungen in vertraglichen Anforderungen, Risikobewertungen, operativen Prozessen oder der Bedrohungslage (z. B. neues Threat Intelligence, das auf neu entstehende Risiken hinweist, Vorfälle in der Lieferkette);
+
+5. Größere Sicherheitsvorfälle oder -verletzungen, die eine Überarbeitung der Vorfallsbewältigung erfordern;
+
+6. Einführung oder Außerbetriebnahme von Servicekomponenten, welche die Cloud-Kundendaten oder Trust Boundaries betreffen; und
+
+7. Änderungen in der Zusammensetzung oder den Verantwortlichkeiten der obersten Leitung oder des Lenkungsausschusses für Informationssicherheit.
+
+
+Für eine effiziente Überprüfung kann der Cloud-Anbieter die Art jeder wesentlichen Änderung, die Begründung für die Überprüfung und das Ergebnis von Richtlinienanpassungen dokumentieren. Eine automatisierte Nachverfolgung von Richtlinienänderungen und eine manuelle Verifizierung des Inhalts können ebenfalls in den Überprüfungsworkflow integriert werden.
+
+
+Die oberste Leitung ist eine angemessene Leitungsebene für die Genehmigung der Informationssicherheitsrichtlinie.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures '03'
+  name: 'Ausnahmen von bestehenden Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Alle Ausnahmen von Richtlinien und Verfahren für die Informationssicherheit werden in einer Liste geführt, einschließlich auch der mit den Ausnahmen verbundenen Kontrollen.'
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_2 '02B'
+      criterion: 'Ausnahmen von den Richtlinien und Verfahren für die Informationssicherheit sowie die jeweiligen Kontrollen durchlaufen Risikomanagementverfahren gemäß OIS-07, einschließlich Genehmigung der Ausnahmen und Akzeptanz der damit einhergehenden Risiken durch die Risikoeigentümer.'
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Risikomanagementverfahren gemäß OIS-07 berücksichtigen auch das aggregierte Risiko aus einer Kombination einzelner Ausnahmen.'   
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_4 '04B'
+      criterion: 'Die Genehmigungen von Ausnahmen werden dokumentiert, mit einer festgelegten Gültigkeit versehen und mindestens jährlich von den Risikoeigentümern oder von der obersten Leitung auf Angemessenheit überprüft. Diese Überprüfung berücksichtigt ebenfalls das aggregierte Risiko aus einer Kombination einzelner Ausnahmen.'
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_5 '05B'
+      criterion: 'Ausnahmen von Richtlinien und Verfahren der Informationssicherheit, die zu einer Abweichung (vgl. 3.4.12) von einem anwendbaren C5-Kriterium innerhalb des Geltungsbereichs eines Attestierungsauftrags (vgl. 3.4.1) führen würden, sind nicht zulässig.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Die Ausnahmen von Richtlinien oder Verfahren werden von der angemessenen Leitungsebene genehmigt.'
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Der Cloud-Anbieter überwacht die Liste der Ausnahmen, um das Ablaufen genehmigter Ausnahmen zu verhindern und die Aktualität aller Überprüfungen und Genehmigungen sicherzustellen.' 
+    -
+      identifier: &ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Alle Ausnahmen, bei denen während der Überwachung Abweichungen festgestellt wurden, werden durch zeitnahe und angemessene Abhilfemaßnahmen behandelt.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Während eines ISO-27001-Zertifizierungsaudits werden die Kontrollen zu diesem Kriterium höchstwahrscheinlich ebenfalls geprüft. Handelt es sich um ein gemeinsames Audit (C5 und ISO), kann hier Effizienz im Sinne von ''audit once, certify many'' erzielt werden. Handelt es sich um ein separates Audit, kann der Prüfer des C5-Attestierungsauftrags statt einer erneuten Prüfung der Kontrolle den ISO-Bericht einsehen, sofern die vorgelegten Nachweise hinreichend schlüssig sind.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_5
+      information_text: 'Dieses Kriterium bezieht sich auf Richtlinien und Verfahren und fordert, dass auf dieser Ebene keine schriftlich niedergelegten Abweichungen von anwendbaren C5-Kriterien zulässig sind.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_1
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_2
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_3
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_4
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Basic_5
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Additional_Complement_2
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Additional_Complement_3
+      information_text: 'Ausnahmen im Sinne des Kriteriums können organisatorische oder technische Ursachen haben, wie zum Beispiel:
+
+
+1. Eine Organisationseinheit soll von vorgesehen Prozessen und Verfahren abweichen, um Anforderungen eines Cloud-Kunden zu erfüllen; und
+
+2. Einer Systemkomponente fehlen technische Eigenschaften, um sie gemäß den anwendbaren Anforderungen zu konfigurieren.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Exceptions_from_Existing_Policies_and_Procedures_Subcriterion_Additional_Complement_1
+      information_text: 'Die angemessene Leitungsebene für die Genehmigung ist in den meisten Fällen entweder die Leitungsebene, die die Richtlinien oder Verfahren genehmigt hat, oder die Leitungsebene, an die diese Aufgabe delegiert ist.'  
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie vom Cloud-Anbieter Informationen über Ausnahmen von Richtlinien und Verfahren der Informationssicherheit erhalten, um die damit verbundenen Risiken für ihre eigene Informationssicherheit zu bewerten und angemessen zu steuern.'

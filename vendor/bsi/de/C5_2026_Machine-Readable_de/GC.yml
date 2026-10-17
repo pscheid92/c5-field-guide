@@ -1,0 +1,185 @@
+-
+  id: 'GC-01'
+  name: 'Angaben zu anwendbarem Recht, Gerichtsbarkeit, Länder, Partitionen, Regionen, Zonen und Standorte'
+  condition: 'In der Systenbeschreibung des für die Entwicklung und den Betrieb des Cloud-Dienstes relevanten internen Kontrollsystems des Cloud-Anbieters und in den vertraglichen Vereinbarungen (z. B. Service Level Agreements) macht der Cloud-Anbieter nachvollziehbare und transparente Angaben zu:
+
+
+              1. Dem für ihn anwendbare Recht;
+              
+              2. Seiner Gerichtsbarkeit (Gerichte, die Streitfälle verhandeln); 
+
+              3. Dem Land, in dem die Stelle oder Stellen des Cloud-Anbieters, die die Systembeschreibung erstellt haben, als juristische Person registriert ist/sind;
+              
+              4. Dem Land, in dem der Hauptsitz des Cloud-Anbieters (oberste Muttergesellschaft) als juristische Person registriert ist;
+              
+              5. Die Partitionen, Regionen, Zonen und Standorte, die Cloud-Kunden für den Betrieb des Cloud-Dienstes bereitgestellt werden, an denen die Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten und Kontodaten verarbeitet, gespeichert und gesichert werden, basierend auf der Art des Serviceangebots (SaaS, PaaS, IaaS); und
+ 
+              6. Falls bestimmte dieser Partitionen, Regionen, Zonen und Standorte nicht in den Umfang der Prüfung einbezogen sind, einen Hinweis auf ihren Ausschluss. 
+
+
+               Die Informationen werden so aufbereitet, dass sie den gemeinsamen Bedürfnissen einer breiten Gruppe von sachverständigem Personal der Cloud-Kunden entsprechen, die Vorgaben an die Informationssicherheit machen oder umsetzen, deren Wirksamkeit validieren oder die Eignung des Cloud-Dienstes aus rechtlicher und regulatorischer Sicht beurteilen.'
+  hint: 'Für Definitionen der Begriffe Partitionen, Regionen, Zonen, Standorte und der Datentypen vgl. Abschnitt 1.2. Wenn die Verarbeitung, Sicherung und Speicherung von Cloud-Kundendaten in unterschiedlichen Partitionen, Regionen, Zonen und Standorten stattfindet, muss dies in der Systembeschreibung verständlich und transparent beschrieben werden.'
+-
+  id: 'GC-02'
+  name: 'Angaben zu Verfügbarkeit und Störungsbeseitigung im Regelbetrieb'
+  condition: 'Der Cloud-Anbieter macht in vertraglichen Vereinbarungen (z. B. Service Level Agreements) nachvollziehbare, verbindliche und transparente Angaben zur:
+
+
+              1. Verfügbarkeit des Cloud-Dienstes;
+
+              2. Kategorisierung und Priorisierung von Störungen;
+
+              3. Reaktionszeit bei Störungen im Regelbetrieb gemäß der Kategorisierung (Zeitraum bis zum Beginn der Störungsbeseitigung durch den Cloud-Anbieter nach Meldung der Störung);
+
+              4. Wiederherstellungszeit (Zeitraum bis zum Abschluss der Störungsbeseitigung); und
+
+              5. Rechtsfolgen bei Nichteinhaltung.
+
+
+              Die Angaben basieren auf Definitionen, die sachverständigem Personal der Cloud-Kunden eine Beurteilung des Cloud-Dienstes hinsichtlich geschäftlicher Anforderungen ermöglichen.
+
+              Vertragliche Vereinbarungen können auf Betriebsdokumentation (z. B. Servicedokumentation, technische Spezifikationen oder andere öffentlich zugängliche Ressourcen) verweisen, die regelmäßig aktualisiert werden kann.
+
+              Die Systembeschreibung des für die Entwicklung und den Betrieb des Cloud-Dienstes relevanten internen Kontrollsystems des Cloud-Anbieters gibt an, wo diese Angaben zu finden sind. Verweise beziehen sich konkret auf die oben genannten einzelnen Aspekte und ermöglichen es Lesern, die mit der vertraglichen Vereinbarung oder der Betriebsdokumentation nicht vertraut sind, die Angaben rechtzeitig zu finden. 
+
+
+              Soweit die Angaben zur Verfügbarkeit und Störungsbeseitigung nur Durchschnittswerte darstellen, die im Einzelfall nicht verbindlich sind, wird dies gesondert hervorgehoben.'
+  hint: 'Neben der Information in der Systembeschreibung des Cloud-Anbieters können die Angaben selbst auch optionaler Bestandteil der Berichterstattung sein, z. B. in einem Abschnitt ''Sonstige vom Cloud-Anbieter bereitgestellte Informationen''. Im letzteren Fall unterliegen diese Informationen nicht den Prüfungshandlungen des Prüfers, und dementsprechend gibt der Prüfer hierzu kein Prüfungsurteil ab.'
+
+-
+  id: 'GC-03'
+  name: 'Angaben zu Wiederanlaufparametern im Notbetrieb'
+  condition: 'Auf Anfrage von sachverständigem Personal der Cloud-Kunden stellt der Cloud-Anbieter nachvollziehbare und transparente Angaben zu folgenden Wiederanlaufparametern des Cloud-Dienstes zur Verfügung:
+
+
+              1. Maximal tolerierbare Ausfallzeit (MTPD) und Recovery Time Objective (RTO);
+
+              2. Maximal zulässiger Datenverlust / Recovery Point Objective (RPO);
+
+              3. Wiederherstellungszeit bis zur Aufnahme des Notbetriebs;
+
+              4. Notbetriebsniveau (MBCO, Kapazität bezogen auf den Regelbetrieb); und
+
+              5. Wiederherstellungszeit bis zum Regelbetrieb.
+
+
+              Die Angaben ermöglichen den Cloud-Kunden, eine Beurteilung des Cloud-Dienstes im Rahmen ihrer eigenen Business Impact Analyse durchzuführen.
+              
+              
+              Die Systembeschreibung des für die Entwicklung und den Betrieb des Cloud-Dienstes relevanten internen Kontrollsystems des Cloud-Anbieters gibt an, wo diese Informationen zu finden sind. Verweise beziehen sich präzise auf die oben genannten einzelnen Aspekte und ermöglichen es diesem sachverständigen Personal, die Informationen rechtzeitig zu finden. 
+
+
+              Soweit die Angaben zur Verfügbarkeit und Störungsbeseitigung nur Durchschnittswerte darstellen, die im Einzelfall nicht verbindlich sind, wird dies gesondert hervorgehoben.'
+  hint: 'Neben der Information in der Systembeschreibung des Cloud-Anbieters können die Angaben selbst auch optionaler Bestandteil der Berichterstattung sein, z. B. in einem Abschnitt ''Sonstige vom Cloud-Anbieter bereitgestellte Informationen''. Im letzteren Fall unterliegen diese Informationen nicht den Prüfungshandlungen des Prüfers, und dementsprechend gibt der Prüfer hierzu kein Prüfungsurteil ab.'
+
+-
+  id: 'GC-04'
+  name: 'Angaben zum Ansatz zur Sicherstellung der Dienstverfügbarkeit'
+  condition: 'Der Cloud-Anbieter stellt sachverständigem Personal von Cloud-Kunden verständliche und transparente Informationen über seinen Ansatz zur Sicherstellung der Dienstverfügbarkeit zur Verfügung, einschließlich relevanter Verfügbarkeitsmetriken und Prinzipien des Architekturdesigns sowohl für die Rechenzentrumsinfrastruktur als auch für Cloud-Dienste. Diese Informationen behandeln sowohl die physische Infrastrukturresilienz als auch die logische Dienstresilienz und ermöglichen es Cloud-Kunden, ihre eigene Business Impact Analyse wirksam durchzuführen und zu verstehen, wie der mehrschichtige Resilienzansatz des Cloud-Anbieters mit ihren eigenen Anforderungen an die Kontinuität des Geschäftsbetriebs sowohl auf Infrastruktur- als auch auf Dienstebene zusammenpasst.'
+  hint: 'Die Informationen können Resilienzfähigkeiten darstellen, wie z. B. regionale Bereitstellungsstrategien, Redundanzkonfigurationen von Rechenzentren, Zusagen auf Dienstebene, historische Leistungsdaten oder architektonische Resilienzmuster.
+        
+        
+        Eine branchenübliche Klassifizierung ist das Tier-Klassifikationssystem des Uptime Institute. Dieses sieht folgende Stufen (Tiers) für die Verfügbarkeiten und Ausfallzeiten bezogen auf ein Jahr vor:
+
+
+         1. Tier I: 99.671 %; bis zu 28.8 Stunden kumulierte Ausfallzeit pro Jahr;
+
+         2. Tier II: 99.741 %; bis zu 22.7 Stunden kumulierte Ausfallzeit pro Jahr;
+
+         3. Tier III: 99.982 %; bis zu 1.6 Stunden kumulierte Ausfallzeit pro Jahr; und
+
+         4. Tier IV: 99.995 %; bis zu 25 Minuten kumulierte Ausfallzeit pro Jahr.
+
+
+         Eine alternative Definition von Verfügbarkeitsklassen (AC) wird vom BSI im ''HV-Benchmark kompakt'' bereitgestellt:
+
+
+         1. VK 0: ohne Anforderungen an die Verfügbarkeit (~ 95 %); bis zu 438 Stunden kumulierte Ausfallzeit pro Jahr;
+
+         2. VK 1: normale Verfügbarkeit (99 %); bis zu 88 Stunden kumulierte Ausfallzeit pro Jahr;
+
+         3.  VK 2: hohe Verfügbarkeit (99,9 %); bis zu 9 Stunden kumulierte Ausfallzeit pro Jahr;
+
+         4. VK 3: sehr hohe Verfügbarkeit (99,99 %); bis zu 53 Minuten kumulierte Ausfallzeit pro Jahr;
+
+         5. VK 4: höchste Verfügbarkeit (99,999 %); bis zu 6 Minuten kumulierte Ausfallzeit pro Jahr; und
+
+         6. VK 5: Desaster-tolerant.
+         
+
+         Die Systembeschreibung des für die Entwicklung und den Betrieb des Cloud-Dienstes relevanten internen Kontrollsystems des Cloud-Anbieters gibt an, wo diese Informationen zu finden sind. Neben der Information in der Systembeschreibung des Cloud-Anbieters können die Angaben selbst auch optionaler Bestandteil der Berichterstattung sein, z. B. in einem Abschnitt ''Sonstige vom Cloud-Anbieter bereitgestellte Informationen''. Im letzteren Fall unterliegen diese Informationen nicht den Prüfungshandlungen des Prüfers, und dementsprechend gibt der Prüfer hierzu kein Prüfungsurteil ab.'
+-
+  id: 'GC-05'
+  name: 'Angaben zum Umgang mit Untersuchungsanfragen von staatlichen Stellen'
+  condition: 'Der Cloud-Anbieter macht in der Systembeschreibung des für die Entwicklung und den Betrieb des Cloud-Dienstes relevanten internen Kontrollsystems des Cloud-Anbieters nachvollziehbare und transparente Angaben wie Untersuchungsanfragen von staatlichen Stellen auf Zugriff auf oder Offenlegung von Cloud-Kundendaten behandelt werden. Die Angaben umfassen folgende Aspekte:
+  
+
+  1. Verfahren zur Verifizierung der Rechtsgrundlage solcher Anfragen;
+
+  2. Verfahren zur Information und Einbindung der betroffenen Cloud-Kunden bei Erhalt solcher Anfragen;
+
+  3. Widerspruchsmöglichkeiten der betroffenen Cloud-Kunden;
+
+  4. Ob der Cloud-Anbieter Cloud-Kundendaten oder abgeleitete Cloud-Dienstdaten unverschlüsselt speichert;
+
+  5. Ob der Cloud-Anbieter bei Cloud-Kundendaten oder abgeleiteten Cloud-Dienstdaten im Falle solcher Anfragen die Möglichkeit zur Entschlüsselung hat und wie er diese für den Zugriff oder die Offenbarung anwendet;
+
+  6. Die Anzahl der Untersuchungsanfragen zu Cloud-Kundendaten oder abgeleiteten Cloud-Dienstdaten und die Länder, aus denen diese Anfragen stammen; und
+
+  7. Wie oft diese Anfragen dazu führten, dass der Cloud-Anbieter Cloud-Kundendaten oder abgeleitete Cloud-Dienstdaten an die Regierungsbehörde weitergab.
+
+
+  Der Umfang der Angaben orientiert sich am Bedarf sachverständigen Personals der Cloud-Kunden, die Vorgaben zur Informationssicherheit machen, diese umsetzen oder die Umsetzung überprüfen und die Eignung des Cloud-Dienstes aus rechtlicher und regulatorischer Sicht beurteilen (bspw. IT, Compliance, Interne Revision).
+  
+  
+  Zusätzliche Angaben zu den technischen Verfahren für die Datenoffenlegung sind gemäß INQ-04 mit den Cloud-Kunden zu kommunizieren. Falls die Systembeschreibung des für die Entwicklung und den Betrieb des Cloud-Dienstes relevanten internen Kontrollsystems des Cloud-Anbieters mehrere Cloud-Dienste behandelt, sind Unterschiede in den technischen Verfahren zwischen den einzelnen Diensten innerhalb der bereitgestellten Angaben zu erläutern.'
+  hint: 'Die Rechtsgrundlage, auf der diese staatlichen Stellen beruhen (z. B. Strafverfolgungsbehörden, Nachrichtendienste), kann von Land zu Land unterschiedlich sein. Insbesondere ist die anwendbare Gerichtsbarkeit an den Standorten zu berücksichtigen, an denen Cloud-Kundendaten und abgeleitete Cloud-Dienstdaten verarbeitet, gespeichert und gesichert werden.
+
+
+         In Deutschland werden solche Befugnisse durch die Gesetze des Bundeskriminalamts (oder die Gesetze der jeweiligen Landesämter), verschiedene Verfahrensordnungen für Gerichte und die Gesetze für Nachrichtendienste (BNDG, BVerfSchG, jeweilige Gesetze über die Verfassungsschutzämter der Bundesländer, MADG) sowie das G10-Gesetz geregelt.
+
+
+        Weitere innerhalb der EU geltende Regelungen sind z. B. das Budapester Übereinkommen über Computerkriminalität (ETS Nr. 185), sowie die EU-Richtlinien 2023/1543 und 2023/1544 zur Schaffung eines Rechtsrahmens für die Erlangung und Sicherung elektronischer Beweismittel in Strafverfahren in den Mitgliedstaaten der EU.
+
+
+         In anderen Ländern sind andere Gesetze einschlägig und dem Cloud-Kunden ggf. nur vereinzelt aus den Medien bekannt, z. B. der CLOUD Act (''Clarifying Lawful Overseas Use of Data Act'') aus den USA oder das Cyber Security Law der Volkrepublik China. In Verbindung mit den anderen Informationen zum Cloud-Dienst soll es dem Kunden möglich sein, mit diesen Informationen eine Risikoabschätzung der eigenen Betroffenheit vorzunehmen.'
+-
+  id: 'GC-06'
+  name: 'Angaben zu Zertifizierungen oder Bescheinigungen'
+  condition: 'Der Cloud-Anbieter macht in der Systembeschreibung des für die Entwicklung und den Betrieb des Cloud-Dienstes relevanten internen Kontrollsystems des Cloud-Anbieters nachvollziehbare und transparente Angaben zu vorhandenen und gültigen Zertifizierungen oder Bescheinigungen unabhängiger Dritter in Bezug auf die folgenden Aspekte des Cloud-Dienstes:
+
+
+              1. Konformität der Managementsysteme für Informationssicherheit, Betriebskontinuität und Qualität mit anwendbaren internationalen Standards;
+
+              2. Einhaltung der europäischen Datenschutz-Grundverordnung (DSGVO);
+
+              3. Angemessenheit der Ausgestaltung oder der Wirksamkeit von Kontrollen des internen Kontrollsystems in Bezug auf die anwendbaren Kriterien;
+
+              4. Zertifizierungen oder Bescheinigungen (Prüfberichte) gemäß branchenspezifischen Anforderungen von Cloud-Kunden; und
+
+              5. Zertifizierungen oder Bescheinigungen (Prüfberichte) in Bezug auf Umwelt-, Sozial- und Unternehmensführungs-Standards (engl. Environmental, Social and Governance, ESG). 
+
+
+              Soweit für die Zertifizierung oder Bescheinigung anwendbar, werden folgende Angaben gemacht:
+
+
+              1. Ausstellungsdatum;
+
+              2. Ausstellende Organisation; 
+              
+              3. Anwendbarer Geltungsbereich; und
+
+              4. Datum oder Zeitraum der Gültigkeit oder Abdeckung.
+
+
+              Der Umfang der Angaben orientiert sich am Bedarf sachverständigen Personals der Cloud-Kunden, die Vorgaben zur Informationssicherheit machen, diese umsetzen oder die Umsetzung überprüfen und die Eignung des Cloud-Dienstes aus rechtlicher und regulatorischer Sicht beurteilen (bspw. IT, Compliance, Interne Revision).'
+  hint: 'Die Transparenz kann zusätzlich durch Offenlegung von SLAs, die auf dem ISO/IEC 19086 oder vergleichbaren Standards basieren, erhöht werden 
+
+
+         Die Konformität der Managementsysteme für Informationssicherheit, Betriebskontinuität und Qualität kann beispielsweise mit Zertifikaten gemäß ISO/IEC 27001, ISO 22301 und ISO 9001 nachgewiesen werden.
+
+
+         Beispiele für ESG-Berichterstattung sind die Berichterstattung gemäß der EU-Richtlinie zur Nachhaltigkeitsberichterstattung von Unternehmen (CSRD) und Zertifizierungen wie ISO 50001, ISO 14001 und das deutsche Umweltzeichen Blauer Engel.
+
+         
+         Die Erfüllung der Rahmenbedingung setzt nicht voraus, dass der Cloud-Anbieter zu allen genannten Aspekten eine Zertifizierung oder Bescheinigung vorhält.'

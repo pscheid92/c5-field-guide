@@ -1,0 +1,120 @@
+---
+// Page frame. Two kinds of pages:
+// - home / domain / page (start page, domain overview, Info, 404): top bar and
+//   one centred column.
+// - item (criterion, general condition): the criteria of the domain on the
+//   left for moving between siblings, the text on the right.
+// Every view is a real page (/, /iam/, /iam-06/, English under /en/); the
+// client router makes switching between them feel like one app.
+import { ClientRouter } from 'astro:transitions';
+import '@fontsource-variable/ibm-plex-sans';
+import './site.css';
+import Search from './Search.astro';
+import { GC, type Lang, groupByTheme, site, switchLang } from './data';
+
+interface Props {
+	lang: Lang;
+	title: string;
+	description?: string;
+	view: 'home' | 'domain' | 'page' | 'item';
+	domain?: string;
+	current?: string;
+}
+
+const { lang, title, description, view, domain, current } = Astro.props;
+const s = site(lang);
+const { t } = s;
+const other: Lang = lang === 'de' ? 'en' : 'de';
+const entry = domain ? s.domain(domain) : undefined;
+
+// Criteria of the domain, for the list next to the text.
+const raw =
+	view !== 'item' || !domain
+		? []
+		: domain === GC
+			? s.data.conditions.items.map((g) => ({ id: g.id, number: g.id.slice(3), name: g.name, href: g.url }))
+			: s.criteriaIn(domain).map((c) => ({ id: c.id, number: c.number, name: c.name, href: c.url }));
+const entries = groupByTheme(raw);
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<title>{title} · C5 Field Guide</title>
+		{description && <meta name="description" content={description} />}
+		<link rel="alternate" hreflang={other} href={switchLang(Astro.url.pathname, other)} />
+		<ClientRouter />
+	</head>
+	<body data-view={view}>
+		<a class="skip" href="#main">{t.skip}</a>
+		<header class="bar">
+			<a class="brand" href={s.home}>
+				<span class="brand-name">C5 Field Guide</span>
+				<span class="brand-tag">{t.unofficial}</span>
+			</a>
+			{view === 'home' ? <span /> : <Search lang={lang} />}
+			<nav class="bar-links">
+				<a href={s.info} aria-current={Astro.url.pathname === s.info ? 'page' : undefined}>{t.info}</a>
+				<a href={switchLang(Astro.url.pathname, other)} hreflang={other} lang={other}>{t.otherLang}</a>
+			</nav>
+		</header>
+
+		{
+			view === 'item' && entry ? (
+				<div class="panes">
+					<nav class="pane pane-list" aria-label={entry.title} data-pane="list" data-domain={domain}>
+						<a class="back" href={`${s.home}#${t.domainsAnchor}`}>
+							← {t.allDomains}
+						</a>
+						<a class="list-head" href={s.domainUrl(entry.code)}>
+							<span class="list-code">{entry.code}</span>
+							<span class="list-title">{entry.title}</span>
+						</a>
+						<ul class="nav-list">
+							{entries.map((e) =>
+								'theme' in e ? (
+									<li class="theme">
+										<span class="theme-title">{e.theme}</span>
+										<ul class="nav-list">
+											{e.items.map((i) => (
+												<li>
+													<a class="item" href={i.href} aria-current={i.id === current ? 'page' : undefined}>
+														<span class="item-num">{i.number}</span>
+														<span class="item-title">{i.short}</span>
+													</a>
+												</li>
+											))}
+										</ul>
+									</li>
+								) : (
+									<li>
+										<a class="item" href={e.href} aria-current={e.id === current ? 'page' : undefined}>
+											<span class="item-num">{e.number}</span>
+											<span class="item-title">{e.short}</span>
+										</a>
+									</li>
+								),
+							)}
+						</ul>
+					</nav>
+
+					<main class="reader" id="main">
+						<slot />
+					</main>
+				</div>
+			) : (
+				<main id="main">
+					<slot />
+				</main>
+			)
+		}
+
+		<script>
+			import './client';
+		</script>
+	</body>
+</html>

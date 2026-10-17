@@ -1,0 +1,213 @@
+-
+  identifier: &ID_Criterion_Business_Continuity_and_Emergency_Management_System '01'
+  name: 'Business Continuity- und Notfallmanagementsystem'
+  basic: 
+    -
+      identifier:  &ID_Criterion_Business_Continuity_and_Emergency_Management_System_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter betreibt ein Business Continuity- und Notfallmanagementsystem (BCM) gemäß ISO 22301 und/oder BSI 200-4.'
+    -
+      identifier:  &ID_Criterion_Business_Continuity_and_Emergency_Management_System_Subcriterion_Basic_2 '02B'
+      criterion: 'Richtlinien und Verfahren für das BCM des Cloud-Dienstes, einschließlich Strategie und Leitlinien, Business Impact Analysen und Plänen zur betrieblichen Kontinuität (engl. Business Continuity Plan (BCP)), sind in Bezug auf die folgenden Aspekte dokumentiert, kommuniziert und gemäß SP-01 verfügbar gemacht:
+
+
+1. Ziele des BCM;
+
+2. Rollen und Verantwortlichkeiten, Engagement des Managements;
+
+3. Festlegung des Anwendungsbereichs des BCM, Identifizierung relevanter Geschäftsprozesse;
+
+4. Schnittstellen, insbesondere zum Incident Management;
+
+5. Kommunikation mit relevanten Stellen und zuständigen Behörden;
+
+6. Methodik;
+
+7. Berücksichtigung von Risiken;
+
+8. Business Impact Analyse (BIA);
+
+9. Pläne zur betrieblichen Kontinuität;
+
+10. Ressourcenplanung (üblicherweise Teil des BCP);
+
+11. Tests von Plänen zur betrieblichen Kontinuität und regelmäßige Aktualisierungen der BCM-Dokumentation; und
+
+12. Kontinuierliche Verbesserung des BCM.
+
+'
+    -
+      identifier:  &ID_Criterion_Business_Continuity_and_Emergency_Management_System_Subcriterion_Basic_3 '03B'
+      criterion: 'Die oberste Leitung des Cloud-Anbieters (oder ein Mitglied der obersten Leitung) ist als Prozesseigentümer des Business Continuity- und Notfallmanagements benannt und trägt die Verantwortung für die Etablierung des Prozesses im Unternehmen und die Einhaltung der Richtlinien. Sie sorgt dafür, dass ausreichende Ressourcen für einen effektiven Prozess bereitgestellt werden.'
+    -
+      identifier:  &ID_Criterion_Business_Continuity_and_Emergency_Management_System_Subcriterion_Basic_4 '04B'
+      criterion: 'Personen in der Unternehmensleitung und anderen relevanten Führungspositionen demonstrieren Führung und Engagement in Bezug auf dieses Thema, indem sie beispielsweise das Personal dazu auffordern beziehungsweise ermutigen, zu der Effektivität des Business Continuity- und Notfallmanagements aktiv beizutragen.'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+          - *ID_Criterion_Business_Continuity_and_Emergency_Management_System_Subcriterion_Basic_1
+      information_text: 'Das Basiskriterium kann (muss aber nicht) durch eine Zertifizierung des BCM nach ISO/IEC 22301 erfüllt werden.'
+    -
+      applicable_criteria:
+          - *ID_Criterion_Business_Continuity_and_Emergency_Management_System_Subcriterion_Basic_2
+      information_text: 'Ein BCM kann in das Enterprise Risk Management (ERM) integriert werden, um mehr Effizienz zu erzielen und Management-Silos zu überwinden.'  
+    -
+      applicable_criteria:
+          - *ID_Criterion_Business_Continuity_and_Emergency_Management_System_Subcriterion_Basic_3
+      information_text: 'Die Verantwortung der obersten Leitung kann von der obersten Leitung an eine andere Person delegiert werden, solange diese Person den Umfang, die Verantwortlichkeiten und die Fähigkeiten hat, die Cloud-dienst-weite Business-Continuity-Strategie und -Aktivitäten genauso zu steuern, wie die oberste Leitung dies könnte.'    
+  corresponding:
+-
+  identifier: &ID_Criterion_Business_Impact_Analysis_Policies_and_Procedures '02'
+  name: 'Business Impact Analyse'
+  basic: 
+    -
+      identifier:  &ID_Criterion_Business_Impact_Analysis_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter führt eine Business Impact Analyse durch. In dieser BIA analysiert der Cloud-Anbieter die Auswirkungen der Unterbrechung von Aktivitäten auf seine Organisation in Bezug auf die Entwicklung und den Betrieb des Cloud-Dienstes gemäß den anwendbaren Richtlinien und Verfahren mit mindestens den folgenden Aspekten:
+
+
+1. Mögliche Szenarien basierend auf einer Risikobeurteilung, die Cybersicherheitsrisiken einschließt;
+
+2. Identifizierung kritischer Produkte und Dienstleistungen;
+
+3. Identifizierung von Abhängigkeiten, einschließlich Prozessen (einschließlich erforderlicher Ressourcen), Anwendungen und Service-Organisationen;
+
+4. Erfassung von Bedrohungen für kritische Produkte und Dienstleistungen;
+
+5. Ermittlung von Auswirkungen resultierend aus geplanten und ungeplanten Ausfällen, Dienstverschlechterungen und die Veränderung im Laufe der Zeit;
+
+6. Bestimmung des maximal tolerierbaren Zeitraums (MTA) von Ausfall und Dienstverschlechterung;
+
+7. Feststellung der Prioritäten zur Wiederherstellung;
+
+8. Festlegung von zeitlichen Zielvorgaben zur Wiederaufnahme kritischer Produkte und der Dienstleistung innerhalb des maximal tolerierbaren Zeitraums (d. h. RTO);
+
+9. Festlegung zeitlicher Zielvorgaben zum maximal tolerierbaren Zeitraum, in dem abgeleitete Cloud-Dienstdaten, Cloud-Anbieterdaten, Kontodaten und, sofern deren Verarbeitung vertraglich vereinbart ist, Cloud-Kundendaten verloren gehen und nicht wiederhergestellt werden können (d.h. RPO); und
+
+10. Abschätzung der zur Wiederaufnahme benötigten Ressourcen.
+
+'
+    -
+      identifier:  &ID_Criterion_Business_Impact_Analysis_Policies_and_Instructions_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Business Impact Analyse hält die anwendbaren Richtlinien und Verfahren ein und wird in regelmäßigen Abständen, mindestens einmal jährlich oder nach wesentlichen organisatorischen oder umgebungsbedingten Änderungen, überprüft.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Business_Impact_Analysis_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Zu den gemäß dem Basiskriterium zu berücksichtigenden Szenarien gehören beispielsweise der Verlust von Personal, Gebäuden, Infrastruktur und Dienstleistern.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Szenarien für einen Ausfall des Cloud-Dienstes oder des Cloud-Anbieters im Rahmen ihrer Business Impact Analyse hinreichend berücksichtigt werden.'
+-
+  identifier: &ID_Criterion_Planning_Business_Continuity '03'
+  name: 'Pläne zur betrieblichen Kontinuität'
+  basic: 
+    -
+      identifier:  &ID_Criterion_Planning_Business_Continuity_Subcriterion_Basic_1 '01B'
+      criterion: 'Auf der Grundlage der Ergebnisse der Business Impact Analyse werden Pläne zur betrieblichen Kontinuität in konsistenter Weise und gemäß den anwendbaren Richtlinien und Verfahren dokumentiert. 
+
+
+Pläne zur betrieblichen Kontinuität berücksichtigen die folgenden Aspekte:
+
+
+1. Definierter Zweck und Umfang unter Berücksichtigung der relevanten Abhängigkeiten;
+
+2. Zugänglichkeit und Verständlichkeit der Pläne für Personen, die diese Pläne ausführen sollen;
+
+3. Eigentümerschaft durch mindestens eine benannte Person, die für die Überprüfung, Aktualisierung und Genehmigung zuständig ist;
+
+4. Definierte Kommunikationskanäle, Rollen und Verantwortlichkeiten einschließlich Benachrichtigung des Cloud-Kunden;
+
+5. Wiederherstellungsverfahren, manuelle Übergangslösungen und Referenzinformationen (unter Berücksichtigung der Priorisierung bei der Wiederherstellung von Cloud-Hardwareobjekten und Diensten sowie der Abstimmung mit Cloud-Kunden);
+
+6. Methoden zur Inkraftsetzung der Pläne;
+
+7. Kontinuierlicher Verbesserungsprozess der Pläne; 
+
+8. Konsistenz über alle Standorte, Zonen, Regionen und Partitionen hinweg; und
+
+9. Schnittstellen zum Security Incident Management.
+
+'
+    -
+      identifier:  &ID_Criterion_Planning_Business_Continuity_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Pläne zur betrieblichen Kontinuität werden in regelmäßigen Abständen, mindestens einmal jährlich oder nach wesentlichen organisatorischen oder umgebungsbedingten Veränderungen, überprüft.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Planning_Business_Continuity_Subcriterion_Basic_1
+        - *ID_Criterion_Planning_Business_Continuity_Subcriterion_Basic_2
+      information_text: 'Obwohl unterschiedliche Partitionen kein gemeinsames IAM (und damit kein gemeinsames Personal für BCM) nutzen, können Pläne zur betrieblichen Kontinuität zwischen verschiedenen Partitionen geteilt werden, da dieselben Cloud-Dienste bereitgestellt werden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass bei der Planung der betrieblichen Kontinuität und des Geschäftsplans die Ergebnisse ihrer Business Impact Analyse hinreichend berücksichtigt werden, um für die Auswirkungen eines Ausfalls des Cloud-Dienstes bzw. des Cloud-Anbieters vorzusorgen.
+
+
+Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Verfügbarkeit des Cloud-Dienstes, seine Wiederherstellungszeit gemäß den Plänen zur betrieblichen Kontinuität und der Datenverlust des Cloud-Dienstes mit ihren eigenen Verfügbarkeitsanforderungen und tolerierbarem Datenverlust vereinbar sind.'
+-
+  identifier: &ID_Criterion_Testing_Business_Continuity '04'
+  name: 'Testen der betrieblichen Kontinuität'
+  basic: 
+    -
+      identifier:  &ID_Criterion_Testing_Business_Continuity_Subcriterion_Basic_1 '01B'
+      criterion: 'Pläne zur betrieblichen Kontinuität werden regelmäßig (mindestens jährlich) oder nach wesentlichen organisatorischen oder umgebungsbedingten Änderungen getestet. An den Tests sind betroffene Cloud-Kunden und relevante Dritte (z.B. Service-Organisationen) beteiligt.'
+    -
+      identifier:  &ID_Criterion_Testing_Business_Continuity_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Tests werden dokumentiert, und die Ergebnisse werden zur Überprüfung der Pläne zur betrieblichen Kontinuität und für zukünftige Business-Continuity-Maßnahmen berücksichtigt.'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier:  &ID_Criterion_Testing_Business_Continuity_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Zusätzlich zu den Tests werden auch Übungen durchgeführt, die u.a. Szenarien aus in der Vergangenheit bereits aufgetretenen Sicherheitsvorfällen hervorgegangen sind.'
+    -
+      identifier:  &ID_Criterion_Testing_Business_Continuity_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Der Cloud-Anbieter verfügt über Verfahren, um sicherzustellen, dass Cloud-Kunden rechtzeitig über geplante Aktivitäten im Zusammenhang mit Business-Continuity-Tests und -Übungen informiert werden, die die Informationssicherheit des Cloud-Dienstes beeinträchtigen könnten (z. B. hinsichtlich seiner Verfügbarkeit). Diese Informationen umfassen den geplanten Zeitrahmen für die Maßnahmen sowie eine Beschreibung der durchzuführenden Arbeiten.'
+    -
+      identifier:  &ID_Criterion_Testing_Business_Continuity_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Der Cloud-Anbieter stellt Cloud-Kunden eine Bewertung der potenziellen Auswirkungen dieser Tests und Übungen hinsichtlich der Informationssicherheit des Cloud-Dienstes sowie Angaben zur Kontaktaufnahme mit dem Cloud-Anbieter zur Verfügung.'
+    -
+      identifier:  &ID_Criterion_Testing_Business_Continuity_Subcriterion_Additional_Complement_4 '04AC'
+      criterion: 'Nach einer abgeschlossenen Übung wird der bestehende Alarm- und Benachrichtigungsplan überprüft und (falls erforderlich) angepasst.'  
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Testing_Business_Continuity_Subcriterion_Basic_1
+        - *ID_Criterion_Testing_Business_Continuity_Subcriterion_Additional_Complement_1
+      information_text: 'Tests finden in erster Linie auf operativer Ebene statt und richten sich an operative Zielgruppen. Dazu gehören z. B.:
+
+
+1. Test technischer vorsorglicher Schutzmaßnahmen;
+
+2. Funktionstests; und
+
+3. Plan-Review.
+
+
+Übungen finden zusätzlich auf taktischer und strategischer Ebene statt. Dazu gehören z. B.:
+
+
+1. Planbesprechung;
+
+2. Personalübung;
+
+3. Stabsrahmenübung;
+
+4. Kommunikations- und Alarmierungsübung;
+
+5. Simulation von Szenarien; und
+
+6. Ernstfall- oder Vollübung.
+
+
+Relevante Dritte sind insbesondere Service-Organisationen des Cloud-Anbieters, die zur Entwicklung oder zum Betrieb des Cloud-Dienstes beitragen (vgl. Basiskriterien SSO-02 und SSO-06). Ein Cloud-Kunde ist betroffen (im Sinne dieses Kriteriums), wenn der Test oder die Übung zu einer Dienstherabstufung außerhalb des im SLA definierten Niveaus führt oder wenn die Wirksamkeit der Pläne nur getestet werden kann, wenn der Cloud-Kunde Maßnahmen selbst handeln muss.'
+    - 
+      applicable_criteria:
+        - *ID_Criterion_Testing_Business_Continuity_Subcriterion_Additional_Complement_4
+      information_text: 'Der Begriff ''Alarm- und Benachrichtigungsplan'' bezieht sich auf das dokumentierte Verfahren zur Alarmierung und Benachrichtigung verantwortlicher Personen und Stakeholder im Falle von Vorfällen oder Störungen.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Maßnahmen zur Vorsorge der Auswirkungen eines Ausfalls des Cloud-Dienstes bzw. des Cloud-Anbieters regelmäßig überprüft, aktualisiert, getestet und geübt werden. Der Cloud-Anbieter wird gemäß den vertraglichen Vereinbarungen in die Tests und Übungen einbezogen.
+
+
+Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die Ergebnisse der BCM-Tests und -Übungen des Cloud-Anbieters in das eigene BCM einfließen und hinsichtlich der Sicherstellung der betrieblichen Kontinuität des Cloud-Kunden umfassend gewürdigt werden.
+
+
+Bei Tests und Übungen, die den Cloud-Kunden mit einbeziehen und daher eigene Maßnahmen auf Kundenseite bedingen, stellen Cloud-Kunden durch geeignete Kontrollen aus ihrem BCM sicher, dass die entsprechenden Maßnahmen zur Bewältigung gemäß Szenario geübt und getestet werden.'

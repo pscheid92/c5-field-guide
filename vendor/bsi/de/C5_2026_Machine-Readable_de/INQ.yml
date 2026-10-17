@@ -1,0 +1,112 @@
+-
+  identifier: &ID_Criterion_Legal_Assessment_of_Investigation_Requests '01'
+  name: 'Juristische Bewertung von behördlichen Auskunfts- und Herausgabeverlangen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Legal_Assessment_of_Investigation_Requests_Subcriterion_Basic_1 '01B'
+      criterion: 'Behördliche Auskunfts- und Herausgabeverlangen nach Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten und Kontodaten unterliegen einer dokumentierten juristischen Bewertung durch sachverständiges Personal des Cloud-Anbieters. Die Bewertung bestimmt, ob die Regierungsbehörde über eine anwendbare und rechtsgültige Rechtsgrundlage verfügt und welche weiteren Schritte für das vorliegende behördliche Auskunfts- und Herausgabeverlangen zu unternehmen sind.'
+    -
+      identifier: &ID_Criterion_Legal_Assessment_of_Investigation_Requests_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Zugriff auf oder die Offenlegung von Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten oder Kontodaten als Reaktion auf behördliche Auskunfts- und Herausgabeverlangen ist nur zulässig, wenn der Cloud-Anbieter eine juristische Beurteilung durchgeführt hat. Diese Beurteilung muss bestätigen, dass eine anwendbare und gültige Rechtsgrundlage vorliegt und dass dem behördlichen Auskunfts- und Herausgabeverlangen auf Grundlage dieser stattgegeben werden muss.'
+  additional_sharpen:
+  additional_complement: 
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Legal_Assessment_of_Investigation_Requests_Subcriterion_Basic_1
+      information_text: 'Zu Nachweiszwecken bilden alle behördlichen Auskunfts- und Herausgabeverlangen, die im festgelegten Zeitraum vollständig bearbeitet wurden, die Grundgesamtheit für die Prüfung der Wirksamkeit der Kontrollen im Betrieb zur Erfüllung der Kriterien in dieser Domäne. Alle behördlichen Auskunfts- und Herausgabeverlangen sind in die Grundgesamtheit einzubeziehen, unabhängig davon, ob sie zur Offenlegung von Cloud-Kundendaten oder abgeleiteten Cloud-Dienstdaten geführt haben.'  
+    -
+      applicable_criteria:
+        - *ID_Criterion_Legal_Assessment_of_Investigation_Requests_Subcriterion_Basic_2
+      information_text: 'Die Offenlegung von Cloud-Kundendaten an Regierungsbehörden kann die Herausgabe von Verschlüsselungsschlüsseln einschließen. In diesem Fall gilt auch das Verfahren gemäß der INQ-Kriterien. Insbesondere ist mit Verweis auf INQ-03 darauf zu achten, dass durch die Herausgabe eines Schlüssels keine anderen Cloud-Kundendaten beeinträchtigt werden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass Art und Umfang der behördlichen Auskunfts- und Herausgabeverlangen sowie die damit verbundene Offenlegung ihrer eigenen Daten in ihrem eigenen Risikomanagement behandelt wurden und dass die Nutzung des Cloud-Dienstes nur aufgenommen oder fortgeführt wird, wenn dieses Risiko als akzeptabel eingestuft wurde.'
+-
+  identifier: &ID_Criterion_Informing_Cloud_Customers_about_Investigation_Requests '02'
+  name: 'Information der Cloud-Kunden über behördliche Auskunfts- und Herausgabeverlangen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Informing_Cloud_Customers_about_Investigation_Requests_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter informiert die betroffenen Cloud-Kunden unverzüglich, es sei denn, die anwendbare Rechtsgrundlage, auf der das behördliche Auskunfts- und Herausgabeverlangen beruht, verbietet dies oder es liegen klare Anhaltspunkte für rechtswidrige Handlungen im Zusammenhang mit der Nutzung des Cloud-Dienstes vor.'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Informing_Cloud_Customers_about_Investigation_Requests_Subcriterion_Basic_1
+      information_text: 'Dies berührt keine anderen gesetzlichen oder regulatorischen Anforderungen, die eine frühere Information der Cloud-Kunden erfordern.'
+  corresponding: 'Cloud-Kunden stellen durch geeigneten Kontrollen sicher, dass derartige Meldungen entgegengenommen und gemäß eigenen Vorgaben und Möglichkeiten juristisch geprüft werden.'
+-
+  identifier: &ID_Criterion_Limiting_Access_to_or_Disclosure_of_Data_in_Investigation_Requests '03'
+  name: 'Begrenzung des Zugriffs auf oder der Offenlegung von Daten bei behördlichen Auskunfts- und Herausgabeverlangen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Limiting_Access_to_or_Disclosure_of_Data_in_Investigation_Requests_Subcriterion_Basic_1 '01B'
+      criterion: 'Die Verfahren des Cloud-Anbieters zur Gewährung des Zugriffs auf oder zur Offenlegung von Cloud-Kundendaten und abgeleitete Cloud-Dienstdaten im Zusammenhang mit behördlichen Auskunfts- und Herausgabeverlangen stellen sicher, dass die Behörden nur Zugang zu den Daten erhalten oder Einsicht in die Daten nehmen, die Gegenstand des behördlichen Auskunfts- und Herausgabeverlangens sind.'
+    -
+      identifier: &ID_Criterion_Limiting_Access_to_or_Disclosure_of_Data_in_Investigation_Requests_Subcriterion_Basic_2 '02B'
+      criterion: 'Wenn keine eindeutige Begrenzung der Cloud-Kundendaten und der abgeleiteten Cloud-Dienstdaten möglich ist, anonymisiert oder pseudonymisiert der Cloud-Anbieter diese Daten so, dass Regierungsbehörden sie nur denjenigen Cloud-Kunden zuordnen können, die Gegenstand des behördlichen Auskunfts- und Herausgabeverlangens sind.'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Limiting_Access_to_or_Disclosure_of_Data_in_Investigation_Requests_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Zugriff und die Tätigkeiten, die von oder im Namen von Ermittlern (im Rahmen des behördlichen Auskunfts- und Herausgabeverlangens) durchgeführt werden, werden vom Cloud-Anbieter überwacht, wie durch den in INQ-01 beschriebenen Prozess festgelegt.'
+    -
+      identifier: &ID_Criterion_Limiting_Access_to_or_Disclosure_of_Data_in_Investigation_Requests_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Rechtzeitige und angemessene Abhilfemaßnahmen behandeln alle Abweichungen, die während der Überwachung der von oder im Namen von Ermittlern (im Rahmen des behördlichen Auskunfts- und Herausgabeverlangens) durchgeführten Tätigkeiten festgestellt werden.'
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Communication_of_Technical_Procedures_for_Data_Disclosure_in_Investigation_Requests '04'
+  name: 'Kommunikation technischer Verfahren zur Datenoffenlegung bei behördlichen Auskunfts- und Herausgabeverlangen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Communication_of_Technical_Procedures_for_Data_Disclosure_in_Investigation_Requests_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter dokumentiert die technischen Verfahren je Dienst und sonstige technische Informationen bezüglich der Bereitstellung oder Offenlegung von Cloud-Kundendaten als Reaktion auf gültige behördliche Auskunfts- und Herausgabeverlangen und stellt sie den Cloud-Kunden zur Verfügung.'
+    -
+      identifier: &ID_Criterion_Communication_of_Technical_Procedures_for_Data_Disclosure_in_Investigation_Requests_Subcriterion_Basic_2 '02B'
+      criterion: 'Art und Umfang der den Cloud-Kunden bereitgestellten Informationen richten sich nach den Bedürfnissen ihres sachverständigen Personals zur Bewertung von Risiken für die Vertraulichkeit der Cloud-Kundendaten. Mindestens werden die folgenden Aspekte behandelt:
+
+
+1. Der Prozess für die Bereitstellung und Offenlegung von Cloud-Kundendaten als Reaktion auf berechtigte behördliche Auskunfts- und Herausgabeverlangen;
+
+2. Die technischen Fähigkeiten und Beschränkungen des Cloud-Anbieters hinsichtlich der Offenlegung von Cloud-Kundendaten;
+
+3. Protokollierungsmechanismen, die implementiert wurden, um Zugriffe für die Offenlegung von Cloud-Kundendaten aufzuzeichnen;
+
+4. Zugriffsmöglichkeiten für Cloud-Kunden zur Einsicht in solche Protokolle;
+
+5. Methoden und technische Verfahren je Dienst für den Zugriff auf und die Offenlegung von Cloud-Kundendaten; und
+
+6. Gesetze, Vorschriften oder andere rechtliche Mittel und ihre Anwendbarkeit in Bezug auf die Fähigkeit des Cloud-Anbieters, seine Cloud-Kunden über die Bereitstellung und Offenlegung von Cloud-Kundendaten zu informieren.
+  
+'
+    -
+      identifier: &ID_Criterion_Communication_of_Technical_Procedures_for_Data_Disclosure_in_Investigation_Requests_Subcriterion_Basic_3 '03B'
+      criterion: 'Das vorgenannte Dokument wird in Übereinstimmung mit SP-01 gepflegt und an den Leitlinien des Cloud-Anbieters zur Minimierung des Zugriffs auf Cloud-Kundendaten (vgl. DEV-01) ausgerichtet, um seine Relevanz und Genauigkeit für Cloud-Kunden sicherzustellen.'
+  additional_sharpen:
+  additional_complement: 
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Communication_of_Technical_Procedures_for_Data_Disclosure_in_Investigation_Requests_Subcriterion_Basic_1
+        - *ID_Criterion_Communication_of_Technical_Procedures_for_Data_Disclosure_in_Investigation_Requests_Subcriterion_Basic_2
+        - *ID_Criterion_Communication_of_Technical_Procedures_for_Data_Disclosure_in_Investigation_Requests_Subcriterion_Basic_3
+      information_text: 'Das Kriterium ist auf Cloud-Kundendaten beschränkt. Der Cloud-Anbieter hat typischerweise Zugriff auf andere Datentypen wie abgeleitete Cloud-Dienstdaten und Kontodaten, sodass eine Ausweitung des Kriteriums auf diese anderen Datentypen möglicherweise nicht zu nützlichen Informationen für das Risikomanagement der Cloud-Kunden führt. Technische Fähigkeiten und Beschränkungen beim Zugriff auf Cloud-Kundendaten umfassen Aspekte wie:
+ 
+ 
+1. Ob die Cloud-Kunden ihre Cloud-Kundendaten unverschlüsselt speichern;
+
+2. Ob der Cloud-Anbieter Cloud-Kundendaten bei der Speicherung und Übertragung verschlüsselt;
+
+3. Ob der Cloud-Anbieter die Fähigkeit hat, Cloud-Kundendaten im Falle solcher behördlichen Auskunfts- und Herausgabeverlangen zu entschlüsseln, und wie diese Fähigkeit zum Zugriff oder zur Offenlegung genutzt wird;
+
+4. Aufbewahrungsfristen für abgeleitete Cloud-Dienstdaten in Bezug zum Cloud-Kunden und ob solche Daten in verschlüsselter Form gespeichert werden;
+
+5. Möglichkeiten zur Entschlüsselung von Cloud-Kundendaten oder zur Extraktion von Cloud-Kundendaten während des Entschlüsselungsprozesses;
+
+6. Offenlegung von Benutzeridentitäten und Anmeldedaten; und
+
+7. Weitere Maßnahmen, die geschaffen wurden oder genutzt werden können, um Cloud-Kundendaten offenzulegen.
+  
+'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie eine potenzielle Offenlegung ihrer Cloud-Kundendaten minimieren. Entsprechend dem Schutzbedarf der Cloud-Kundendaten treffen die Cloud-Kunden die Entscheidung, ob der jeweilige Cloud-Dienst genutzt werden kann oder ob das Risiko einer Offenlegung zu hoch ist.'

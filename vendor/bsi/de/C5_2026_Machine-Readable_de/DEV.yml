@@ -1,0 +1,388 @@
+- identifier: &ID_Criterion_Policies_for_the_Development_Procurement_of_System_Components '01'
+  name: 'Richtlinien für die Entwicklung/Beschaffung von Systemkomponenten'
+  basic:
+  - identifier: &ID_Criterion_Policies_for_the_Development_Procurement_of_System_Components_Subcriterion_Basic_1 '01B'
+    criterion: 'Richtlinien und Verfahren mit technischen und organisatorischen Maßnahmen für die sichere Entwicklung von Systemkomponenten des Cloud-Dienstes sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt.
+
+
+Die Richtlinien und Verfahren enthalten Leitlinien für den gesamten Lebenszyklus des Cloud-Dienstes und orientieren sich hinsichtlich der folgenden Aspekte an:
+
+
+1. Sicherheit und Qualität in der Softwareentwicklung (Anforderungen, Design, Implementierung, Testen und Überprüfungen), einschließlich des Vorhandenseins eines Security-by-Design-Prinzips, das die Berücksichtigung von Anforderungen der Informationssicherheit in der Softwareentwicklungsphase durchsetzt;
+
+2. Sicherheit und Qualität bei der Softwarebereitstellung (einschließlich kontinuierlicher Bereitstellung (Continuous Delivery));
+
+3. Sicherheit und Qualität im Betrieb (Reaktion auf identifizierte Fehler und Schwachstellen); und
+
+4. Standards und Verfahren für sicheres Programmieren (Reduzierung des Einbringens von Schwachstellen in den Code).
+
+'
+  - identifier: &ID_Criterion_Policies_for_the_Development_Procurement_of_System_Components_Subcriterion_Basic_2 '02B'
+    criterion: 'Leitlinien für die sichere Entwicklung des Cloud-Dienstes definieren Grundsätze, um sicherzustellen, dass die Systemarchitektur und die vom Cloud-Anbieter innerhalb der Produktionsumgebung betriebene Software so gestaltet sind, dass der Zugriff des Cloud-Anbieters auf Cloud-Kundendaten soweit wie möglich minimiert wird.'
+  - identifier: &ID_Criterion_Policies_for_the_Development_Procurement_of_System_Components_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Cloud-Anbieter definiert Maßnahmen, um die festgelegten Standards und Leitlinien als Teil der Richtlinien und Verfahren für die sichere Entwicklung von Systemkomponenten des Cloud-Dienstes durchzusetzen.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Policies_for_the_Development_Procurement_of_System_Components_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Bei der Beschaffung werden Produkte bevorzugt, die gemäß den ''Common Criteria für die Sicherheitsevaluierung von Informationstechnik'' (kurz: Common Criteria - CC) auf dem Evaluation Assurance Level EAL 4 zertifiziert wurden. Sollen nicht zertifizierte Produkte anstelle verfügbarer zertifizierter Produkte beschafft werden, wird eine Risikobeurteilung gemäß OIS-07 durchgeführt.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Policies_for_the_Development_Procurement_of_System_Components_Subcriterion_Basic_1
+    - *ID_Criterion_Policies_for_the_Development_Procurement_of_System_Components_Subcriterion_Additional_Complement_1
+    information_text: 'Die Software-Bereitstellung kann z. B. mit Continuous Delivery-Verfahren erfolgen.
+
+
+Anerkannte Standards und Methoden für die sichere Entwicklung sind zum Beispiel:
+
+
+1. ISO/IEC 27034; und
+
+2. OWASP Secure Software Development Lifecycle (S-SDLC).
+
+
+Die Minimierung des Zugriffs auf Cloud-Kundendaten während des Betriebs kann bei der Entwicklung der Cloud-Architektur durch die Befolgung robuster Sicherheitsmodelle, wie Zero Trust, unterstützt werden. Darüber hinaus sind Aspekte wie die Begrenzung von Datenschnittstellen, API-Aufrufen und Zugriffen sowie die Sicherstellung einer Ende-zu-Ende-Verschlüsselung vom Transport bis zur Speicherung relevante Gesichtspunkte.
+
+
+Für die Qualitätssicherung in der Softwareentwicklung können die folgenden Prozesse als relevant betrachtet werden:
+
+
+1. Planung und Definition von Qualitätszielen: Definition von Qualitätsanforderungen auf Grundlage von Bedürfnissen der Cloud-Kunden und Zielen unter Berücksichtigung der Anforderungen des zu entwickelnden Cloud-Systems;
+
+2. Designphase: Durchführung von Design-Reviews und Inspektionen des Cloud-Dienstes, um sicherzustellen, dass das Design die Qualitätsanforderungen erfüllt;
+
+3. Entwicklungsphase: Einsatz von Code-Reviews und Pair Programming, um die Codequalität sicherzustellen. Einsatz statischer Analysewerkzeuge, um den Code auf potenzielle Fehler und Verstöße gegen Programmierstandards zu prüfen;
+
+4. Testphase: Durchführung (wo möglich automatisiert) verschiedener Testarten (z. B. Unit-Tests, Integrationstests, Systemtests, Abnahmetests), um die Funktionalität und Qualität der Software sicherzustellen;
+
+5. Integration und Continuous Integration (CI): Integration der verschiedenen Softwarekomponenten und kontinuierliche Überprüfung der Integrationen durch automatisierte Builds und Tests. Einsatz von CI/CD-Pipelines, um sicherzustellen, dass der Code regelmäßig integriert und getestet wird;
+
+6. Release und Bereitstellung: Vorbereitung und Umsetzung des Software-Releases gemäß definierten Qualitätsstandards; und
+
+7. Wartung und kontinuierliche Verbesserung: Überwachung der Software im Betrieb, um sicherzustellen, dass sie weiterhin die Qualitätsanforderungen erfüllt. Dies umfasst Aktivitäten nach dem Release wie Fehlerbehebungs- und Leistungsoptimierungsprozesse. Zusätzlich sollten Post-Mortem-Analysen durchgeführt werden, um aus Vorfällen zu lernen und Prozesse für zukünftige Releases zu optimieren.
+
+
+Ein anerkannter Standard und eine Methode für Qualität in Entwicklungsprozessen ist zum Beispiel Google Site Reliability Engineering (SRE).
+
+
+Der Anwendungsbereich der DEV-Kriterien und der darin enthaltenen Anforderungen umfasst nicht nur die Entwicklung von Softwareanwendungen, sondern auch Plattformen, virtuelle Infrastruktur und andere Systemkomponenten.'
+  corresponding:
+- identifier: &ID_Criterion_Outsourcing_of_the_Development '02'
+  name: 'Auslagerung der Entwicklung'
+  basic:
+  - identifier: &ID_Criterion_Outsourcing_of_the_Development_Subcriterion_Basic_1 '01B'
+    criterion: 'Im Fall der ausgelagerten Entwicklung des Cloud-Dienstes (oder einzelner Systemkomponenten) werden Spezifikationen zu den folgenden Aspekten zwischen dem Cloud-Anbieter und der Service-Organisation vertraglich vereinbart:
+
+
+1. Sicherheit in der Softwareentwicklung (Anforderungen, Design, Implementierung, Tests und Überprüfungen) gemäß anerkannten Standards und Methoden, wobei ein Sicherheitsniveau sichergestellt wird, das dem der internen Entwicklung des Cloud-Anbieters gleichwertig ist;
+
+2. Abnahmeprüfung der Qualität der erbrachten Leistungen gemäß den vereinbarten funktionalen und nicht-funktionalen Anforderungen; und
+
+3. Vorlage von Nachweisen, dass ausreichende Überprüfungen durchgeführt wurden, um das Vorhandensein bekannter Schwachstellen auszuschließen.
+
+'
+  - identifier: &ID_Criterion_Outsourcing_of_the_Development_Subcriterion_Basic_2 '02B'
+    criterion: 'Bevor die Entwicklung des Cloud-Dienstes oder von dessen Komponenten ausgelagert wird, führt der Cloud-Anbieter eine Risikobeurteilung gemäß mindestens die folgenden Aspekte berücksichtigt:
+
+
+1. Verwaltung des Quellcodes durch die Service-Organisation;
+
+2. Zugänglichkeit des Quellcodes für den Cloud-Anbieter;
+
+3. Von der Service-Organisation implementierte Personalverfahren;
+
+4. Erforderlicher Zugang zu den Entwicklungs-, Test- und Vorproduktionsumgebungen des Cloud-Anbieters; und
+
+5. Management von Unterauftragnehmern, die von der Service-Organisation eingesetzt werden.
+
+'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Outsourcing_of_the_Development_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter dokumentiert und implementiert ein Verfahren, das die Aufsicht und Kontrolle der ausgelagerten Entwicklungstätigkeit ermöglicht, um sicherzustellen, dass sie der Richtlinie des Cloud-Anbieters für sichere Entwicklung entspricht und dass das dadurch erreichte Sicherheitsniveau dem durch interne Entwicklung erreichten Sicherheitsniveau entspricht.'
+  - identifier: &ID_Criterion_Outsourcing_of_the_Development_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Wenn eine Änderung Arbeiten aus ausgelagerter Entwicklung enthält, führt das Personal des Cloud-Anbieters die Tests durch, die benötigt werden, um zu entscheiden, ob die Änderung bereitgestellt werden kann.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Outsourcing_of_the_Development_Subcriterion_Basic_1
+    - *ID_Criterion_Outsourcing_of_the_Development_Subcriterion_Basic_2
+    information_text: 'Ausgelagerte Entwicklung im Sinne des Basiskriteriums bezieht sich auf die Entwicklung von Systemkomponenten, die dediziert für den Cloud-Dienst verwendet werden, durch eine Service-Organisation des Cloud-Anbieters. Die Entwicklung erfolgt nach den Prozessen der Service-Organisation.
+
+
+Die Risiken, die entstehen könnten und berücksichtigt werden sollten, können, müssen aber nicht, die folgenden umfassen:
+
+
+1. Risiken, die daraus resultieren können, dass die Service-Organisation den Quellcode ohne angemessene Kontrollen verwaltet, einschließlich unbefugter Änderungen, unzureichender Versionskontrolle oder unzureichenden Schutzes vor Verlust oder Diebstahl geistigen Eigentums;
+
+2. Risiken, die daraus resultieren können, dass die Service-Organisation dem Cloud-Anbieter oder Drittprüfern Zugang zum Quellcode gewährt, einschließlich unbefugter Offenlegung, Verlust der Vertraulichkeit oder unzureichender Kontrollen darüber, wie ein solcher Zugang verwaltet und beschränkt wird;
+
+3. Risiken, die aus unzureichender Personalüberprüfung, unzureichenden Hintergrundprüfungen, mangelnder Schulung zum Sicherheitsbewusstsein oder hoher Personalfluktuation innerhalb der Service-Organisation resultieren können, einschließlich Insider-Bedrohungen oder unkontrolliertem Verlust sensiblen Wissens;
+
+4. Risiken, die daraus resultieren können, dass der Service-Organisation Zugang zu internen Entwicklungs-, Test- oder Vorproduktionsumgebungen gewährt wird, einschließlich übermäßiger Berechtigungen, unzureichender Zugriffskontrollen oder unzureichender Protokollierung und Überwachung eines solchen Zugangs; und
+
+5. Risiken, die daraus resultieren können, dass die Service-Organisation Teile der Leistung ohne angemessene Sicherheitskontrollen an Unterauftragnehmer vergibt, einschließlich unzureichender vertraglicher Sicherheitsanforderungen an Unterauftragnehmer oder mangelnder Transparenz hinsichtlich der Zusammensetzung der Lieferkette.
+
+
+Der Erwerb von auf dem Markt verfügbarer Software sowie die Integration externen Personals in die Prozesse des Cloud-Anbieters stellen keine Auslagerung im Sinne dieses Basiskriteriums dar.'
+  corresponding:
+- identifier: &ID_Criterion_Policies_for_Changes_to_System_Components '03'
+  name: 'Richtlinien für Änderungen an Systemkomponenten'
+  basic:
+  - identifier: &ID_Criterion_Policies_for_Changes_to_System_Components_Subcriterion_Basic_1 '01B'
+    criterion: 'Richtlinien und Verfahren mit technischen und organisatorischen Maßnahmen für das Änderungsmanagement von Systemkomponenten des Cloud-Dienstes im Rahmen der Software-Bereitstellung sind hinsichtlich der folgenden Aspekte gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt:
+
+
+1. Kriterien zur Risikobeurteilung, Kategorisierung und Priorisierung von Änderungen und damit verbundene Anforderungen an Art und Umfang durchzuführender Tests sowie erforderliche Freigaben für die Entwicklung/Implementierung der Änderung sowie der Freigaben zur Bereitstellung in der Produktionsumgebung durch autorisiertes Personal oder Systemkomponenten;
+
+2. Anforderungen an die Durchführung und Dokumentation von Tests;
+
+3. Anforderungen an die Funktionstrennung während Entwicklung, Test und Freigabe von Änderungen;
+
+4. Anforderungen zur sachgerechten Information der Cloud-Kunden über Art und Umfang der Änderung sowie daraus resultierende Mitwirkungspflichten gemäß den vertraglichen Vereinbarungen;
+
+5. Anforderungen an die Dokumentation von Änderungen in der System-, Betriebs- und Benutzerdokumentation;
+
+6. Anforderungen an die Umsetzung und Dokumentation von Notfalländerungen, sodass sie - soweit vernünftigerweise möglich - dem gleichen Sicherheitsniveau wie normale Änderungen entsprechen;
+
+7. Anforderungen an den Umgang mit unerwarteten Auswirkungen dieser Änderungen, einschließlich Korrekturmaßnahmen;
+
+8. Anforderungen an verstärkte Tests für die Entwicklung von Sicherheitsfunktionen, die technische Mechanismen und Schutzmaßnahmen implementieren; und
+
+9. Anforderungen an die Handhabung von Ausnahmen, einschließlich Notfalländerungen, um sicherzustellen, dass damit verbundene Risiken angemessen gemindert werden.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Policies_for_Changes_to_System_Components_Subcriterion_Basic_1
+    information_text: 'Änderungen im Sinne des Basiskriteriums sind solche, die zu Änderungen an der Konfiguration, Funktionalität oder Sicherheit von Systemkomponenten des Cloud-Dienstes in der Produktionsumgebung führen können. Dies umfasst sowohl Änderungen an der Infrastruktur als auch am Quellcode.
+
+
+Soweit einzelne Änderungen zur Software-Bereitstellung in einem neuen Release, Update, Patch oder einem vergleichbaren Softwareobjekt zusammengefasst werden, gilt dieses Softwareobjekt als Änderung im Sinne des Basiskriteriums, nicht aber die einzelnen darin enthaltenen Änderungen.
+
+
+Änderungen an der bestehenden Netzkonfiguration fallen ebenfalls unter dieses Kriterium und sollten ebenfalls ein festgelegtes Verfahren durchlaufen, da sie für eine wirksame Trennung der Cloud-Kunden erforderlich sind.
+
+
+Änderungen an den Containerumgebungen, einschließlich des Managements von Container-Images und -Versionen, sollten ebenfalls einen geregelten Prozess durchlaufen.
+
+
+Personal oder Systemkomponenten werden gemäß den Vorgaben für Zugangs- und Zugriffsberechtigungen (vgl. IAM-01) im Rahmen eines geregelten Verfahrens (vgl. IAM-02) für Genehmigungen und Freigaben autorisiert.
+
+
+Die Mitwirkungspflichten des Cloud-Kunden können festlegen, dass z. B. der Cloud-Kunde bestimmte Tests durchführen muss.
+
+
+Ein zentralisierter Änderungsmanagementprozess ist nicht verpflichtend. Der Cloud-Anbieter hat die Flexibilität, Änderungsmanagementverfahren anzuwenden, die am besten zu seinen betrieblichen Anforderungen passen, einschließlich agiler Methoden, solange sie die Verfahren und technischen Schutzmaßnahmen einhalten.'
+  corresponding:
+- identifier: &ID_Criterion_Safety_Training_and_Awareness_Programme_regarding_Continuous_Software_Delivery '04'
+  name: 'Programm für Sicherheitsschulungen und Sensibilisierung in Bezug auf kontinuierliche Software-Bereitstellung und zugehörige Systeme, Komponenten oder Werkzeuge'
+  basic:
+  - identifier: &ID_Criterion_Safety_Training_and_Awareness_Programme_regarding_Continuous_Software_Delivery_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter stellt ein Schulungsprogramm für regelmäßige, rollenbasierte Sicherheitsschulungen und Sensibilisierung für internes und externes Personal zu Standards und Methoden für Folgendes bereit:
+
+
+1. Sichere Softwareentwicklung und -bereitstellung sowie die Nutzung der dafür verwendeten Werkzeuge; und
+
+2. Mit Schadcode verbundene Risiken und bewährte Verfahren zur Reduzierung der Auswirkungen einer Infektion.
+
+'
+  - identifier: &ID_Criterion_Safety_Training_and_Awareness_Programme_regarding_Continuous_Software_Delivery_Subcriterion_Basic_2 '02B'
+    criterion: 'Das Programm wird regelmäßig im Hinblick auf die anwendbaren Richtlinien und Verfahren, die zugewiesenen Rollen und Verantwortlichkeiten sowie die verwendeten Werkzeuge überprüft und aktualisiert.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Safety_Training_and_Awareness_Programme_regarding_Continuous_Software_Delivery_Subcriterion_Basic_1
+    information_text: 'Dies ist ein spezialisiertes Kriterium für Programme zu Sicherheitsschulungen und Sensibilisierung für eine bestimmte Zielgruppe. In HR-03 werden allgemeine Eigenschaften solcher Schulungen und Programme definiert.'
+  corresponding:
+- identifier: &ID_Criterion_Design_Documentation_for_Security_Features '05'
+  name: 'Designdokumentation für Sicherheitsfunktionen'
+  basic:
+  - identifier: &ID_Criterion_Design_Documentation_for_Security_Features_Subcriterion_Basic_1 '01B'
+    criterion: 'Die Designdokumentation für Sicherheitsfunktionen basiert auf einer Sicherheitsanalyse der Angemessenheit und der geplanten Wirksamkeit der Funktionen. Eine Spezifikation der erwarteten Eingaben, Ausgaben und möglichen Fehler ist in der Dokumentation enthalten.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Design_Documentation_for_Security_Features_Subcriterion_Basic_1
+    information_text: 'Sicherheitsfunktionen sind typischerweise Funktionen, die Vertraulichkeit (z. B. durch die Integration von Kryptographie), Integrität (z. B. durch die Einführung von Prüfsummen oder die Validierung von Eingabedaten), Verfügbarkeit (z. B. durch Redundanz oder Resilienz), Authentisierung (z. B. durch MFA oder sicheres Session Management) und Autorisierung (z. B. durch unterschiedliche Rollen) steuern. Sie ergeben sich üblicherweise aus Bedrohungsmodellierung und Risikobeurteilung. Idealerweise sind Sicherheitsfunktionen ein integraler Bestandteil des Softwareentwicklungsprozesses und keine Ergänzungen, die erst vorgenommen werden, nachdem neue Softwarefunktionen erstellt wurden.'
+  corresponding:
+- identifier: &ID_Criterion_Risk_Assessment_Categorisation_and_Prioritisation_of_Changes '06'
+  name: 'Risikobeurteilung, Kategorisierung und Priorisierung von Änderungen'
+  basic:
+  - identifier: &ID_Criterion_Risk_Assessment_Categorisation_and_Prioritisation_of_Changes_Subcriterion_Basic_1 '01B'
+    criterion: 'Gemäß den anwendbaren Richtlinien werden Änderungen einer Risikobeurteilung unterzogen, die ihre potenziellen Auswirkungen auf den gesamten im Geltungsbereich befindlichen Cloud-Dienst bewertet. Darüber hinaus werden, wenn mehrere Änderungen gleichzeitig umgesetzt werden, auch ihre wechselseitigen Interaktionen und kumulativen Auswirkungen der Risikobeurteilung unterzogen, um potenzielle Konflikte oder Abhängigkeiten zu identifizieren. Alle identifizierten Risiken und Abhängigkeiten werden entsprechend kategorisiert und priorisiert.'
+  - identifier: &ID_Criterion_Risk_Assessment_Categorisation_and_Prioritisation_of_Changes_Subcriterion_Basic_2 '02B'
+    criterion: 'Wenn das mit einer geplanten Änderung verbundene Risiko hoch ist, werden geeignete Minderungsmaßnahmen ergriffen, bevor die Änderung in der Produktionsumgebung des Cloud-Dienstes bereitgestellt wird.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Risk_Assessment_Categorisation_and_Prioritisation_of_Changes_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Gemäß den vertraglichen Vereinbarungen werden aussagekräftige Informationen über Anlass, Zeitpunkt, Dauer, Art und Umfang der Änderung an autorisierte Stellen des Cloud-Kunden übermittelt, damit diese ihre eigene Risikobeurteilung durchführen können, bevor die Änderung in der Produktionsumgebung verfügbar gemacht wird. Unabhängig von den vertraglichen Vereinbarungen erfolgt dies bei Änderungen, die auf Grundlage ihrer Risikobeurteilung die höchste Risikokategorie haben. Dies schließt Änderungen ohne Auswirkung auf die Cloud-Dienstnutzung oder die Sicherheitslage des Cloud-Dienstes nicht ein.'
+  information:
+  corresponding:
+- identifier: &ID_Criterion_Testing_Changes '07'
+  name: 'Testen von Änderungen'
+  basic:
+  - identifier: &ID_Criterion_Testing_Changes_Subcriterion_Basic_1 '01B'
+    criterion: 'Änderungen am Cloud-Dienst werden während der Software-Entwicklung und -Bereitstellung gemäß dokumentierten Testverfahren angemessenen Tests unterzogen.'
+  - identifier: &ID_Criterion_Testing_Changes_Subcriterion_Basic_2 '02B'
+    criterion: 'Art und Umfang der Tests entsprechen der Risikobeurteilung. Die Tests werden von angemessen qualifiziertem Personal des Cloud-Anbieters oder durch automatisierte Testverfahren durchgeführt, die dem Stand der Technik entsprechen. Cloud-Kunden werden gemäß den vertraglichen Anforderungen in die Tests einbezogen.'
+  - identifier: &ID_Criterion_Testing_Changes_Subcriterion_Basic_3 '03B'
+    criterion: 'Bevor Cloud-Kundendaten für Tests verwendet werden, holt der Cloud-Anbieter zunächst die Genehmigung dieses Cloud-Kunden ein und anonymisiert die Cloud-Kundendaten. Der Cloud-Anbieter stellt die Vertraulichkeit der Cloud-Kundendaten während des gesamten Prozesses sicher.'
+  - identifier: &ID_Criterion_Testing_Changes_Subcriterion_Basic_4 '04B'
+    criterion: 'Die Sicherheitsfunktionen des Cloud-Dienstes werden Tests unterzogen, die die Spezifikation der Sicherheitsfunktionen (vgl. DEV-05), einschließlich aller spezifizierten Fehlerbedingungen, vollständig abdecken. Die Dokumentation dieser Tests umfasst mindestens die folgenden Aspekte:
+
+
+1. Eine Beschreibung des Tests;
+
+2. Die Ausgangsbedingungen;
+
+3. Das erwartete Ergebnis; und
+
+4. Verfahren zur Durchführung des Tests.
+
+'
+  - identifier: &ID_Criterion_Testing_Changes_Subcriterion_Basic_5 '05B'
+    criterion: 'Der Schweregrad der in den Tests identifizierten Fehlern und Schwachstellen, welche für die Abnahme relevant sind, wird nach definierten Kriterien beurteilt und Maßnahmen zur zeitnahen Behebung oder Mitigation eingeleitet.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Testing_Changes_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Pre-Launch-Tests werden während der Testphase des Cloud-Dienstes gemäß dem Penetrationstest-Rahmenwerk (vgl. OPS-22 Zusatzkriterium) durchgeführt. Der Schweregrad identifizierter Schwachstellen wird nach definierten Kriterien bewertet, und Maßnahmen zur zeitnahen Behebung oder Minderung werden eingeleitet.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Testing_Changes_Subcriterion_Basic_1
+    - *ID_Criterion_Testing_Changes_Subcriterion_Additional_Complement_1
+    information_text: 'Es sollten Tests verwendet werden, die sowohl zur Qualitätssicherung der Softwareentwicklung als auch zur Sicherheit des Cloud-Dienstes beitragen.
+
+
+Die in Tests identifizierten Fehler und Schwachstellen können beispielsweise nach dem Common Vulnerability Scoring System (CVSS) bewertet werden.'
+  - applicable_criteria:
+    - *ID_Criterion_Testing_Changes_Subcriterion_Basic_1
+    information_text: 'Testverfahren für Software-Assets können statisch (SAST), dynamisch (DAST) oder interaktiv (IAST) sein.'
+  corresponding: 'Soweit Änderungen gemäß den vertraglichen Vereinbarungen vor der Bereitstellung in der Produktionsumgebung von den Cloud-Kunden getestet werden sollen, stellen die Cloud-Kunden mit geeigneten Kontrollen sicher, dass die Tests angemessen durchgeführt werden, um Fehler zu identifizieren. Dies umfasst insbesondere die zeitnahe Durchführung der Tests durch qualifiziertes Personal gemäß den vom Cloud-Anbieter festgelegten Bedingungen.'
+- identifier: &ID_Criterion_Logging_of_Changes '08'
+  name: 'Protokollierung von Änderungen'
+  basic:
+  - identifier: &ID_Criterion_Logging_of_Changes_Subcriterion_Basic_1 '01B'
+    criterion: 'Systemkomponenten für Versionskontrolle und Softwarebereitstellung, die verwendet werden, um Änderungen an Systemkomponenten des Cloud-Dienstes in der Produktionsumgebung zu verwalten, unterliegen einem Rollen- und Berechtigungsrahmenwerk gemäß IAM-01 und Autorisierungsmechanismen.'
+  - identifier: &ID_Criterion_Logging_of_Changes_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Konfiguration dieser Systemkomponenten stellt sicher, dass alle vom Cloud-Anbieter an Systemkomponenten in der Produktionsumgebung vorgenommenen Änderungen aufgezeichnet werden und auf die Personen oder Systemkomponenten zurückgeführt werden können, die zu ihrer Entwicklung, Bereitstellung oder Umsetzung beigetragen haben.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Logging_of_Changes_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter setzt das Rollen- und Berechtigungsrahmenwerk durch, indem er die an Systemkomponenten des Cloud-Dienstes in der Produktionsumgebung vorgenommenen Änderungen überwacht. Zeitnahe und angemessene Abhilfemaßnahmen beheben alle bei der Überwachung identifizierten Abweichungen.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Logging_of_Changes_Subcriterion_Basic_2
+    information_text: 'Wenn die Änderung einen externen Beitrag hat (z. B. die Verwendung von Drittprodukten oder Bibliotheken), ist eine Rückverfolgung einzelner Änderungen in der Entwicklung oft nicht möglich. In diesem Fall ist es ausreichend, den externen Beitrag in der Liste der Softwarekomponenten oder der Software Bill of Materials (SBOM, vgl. DEV-13.01B) zu erfassen. Darüber hinaus können abhängig von der Art des externen Beitrags das Kriterium für die Auslagerung der Entwicklung (vgl. DEV-02) und die Kriterien für Kontrolle und Überwachung von Dienstleistern und Lieferanten (SSO) Anwendung finden.'
+  corresponding:
+- identifier: &ID_Criterion_Version_Control '09'
+  name: 'Versionskontrolle'
+  basic:
+  - identifier: &ID_Criterion_Version_Control_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter verwendet ein Versionskontrollsystem, das die Vertraulichkeit, Integrität und Authentizität des Quellcodes während aller Entwicklungsphasen angemessen sicherstellt.'
+  - identifier: &ID_Criterion_Version_Control_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Verfahren zur Versionskontrolle verfolgen Abhängigkeiten einzelner Änderungen nach und ordnen jede Änderung einzelnen Mitwirkenden zu. Die Verfahren zur Versionskontrolle sind in der Lage, betroffene Systemkomponenten in einen vorherigen Zustand zurückzuversetzen.'
+  - identifier: &ID_Criterion_Version_Control_Subcriterion_Basic_3 '03B'
+    criterion: 'Die Versionskontrolle umfasst alle intern und extern entwickelten Softwarekomponenten, Konfigurationen und kommerziellen Produkte Dritter unter der Verantwortung des Cloud-Anbieters.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Version_Control_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Die Verfahren zur Versionskontrolle sehen geeignete Schutzmaßnahmen vor, um sicherzustellen, dass die Integrität und Verfügbarkeit von Cloud-Kundendaten nicht beeinträchtigt werden, wenn Systemkomponenten in ihren vorherigen Zustand zurückversetzt werden.'
+  - identifier: &ID_Criterion_Version_Control_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Der Cloud-Anbieter führt Aufzeichnungen über alle bereitgestellten Softwareversionen und Systemkonfigurationen. Diese Aufzeichnung ermöglicht die Nachbildung einer zuvor umgesetzten Umgebung in einer Testumgebung.
+
+
+Die Aufbewahrungszeit für diese Historie ist risikobasiert (vgl. OIS-07), in der Richtlinie für Versionskontrolle definiert und am Support-Lebenszyklus des Cloud-Dienstes ausgerichtet.'
+  information:
+  corresponding:
+- identifier: &ID_Criterion_Approvals_for_Provision_in_the_Production_Environment '10'
+  name: 'Freigaben für die Bereitstellung in der Produktionsumgebung'
+  basic:
+  - identifier: &ID_Criterion_Approvals_for_Provision_in_the_Production_Environment_Subcriterion_Basic_1 '01B'
+    criterion: 'Autorisiertes Personal oder autorisierte Systemkomponenten des Cloud-Anbieters genehmigen Änderungen am Cloud-Dienst auf Grundlage definierter Kriterien (z. B. Testergebnisse und erforderliche Freigaben), bevor diese den Cloud-Kunden in der Produktionsumgebung verfügbar gemacht werden.'
+  - identifier: &ID_Criterion_Approvals_for_Provision_in_the_Production_Environment_Subcriterion_Basic_2 '02B'
+    criterion: 'Cloud-Kunden werden gemäß vertraglichen Vereinbarungen in die Freigabe einbezogen.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Approvals_for_Provision_in_the_Production_Environment_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Genehmigungsprozess wird überwacht. Zeitnahe und angemessene Abhilfemaßnahmen beheben alle bei der Überwachung identifizierten Abweichungen.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Approvals_for_Provision_in_the_Production_Environment_Subcriterion_Basic_1
+    information_text: 'Es gelten die Definitionen für Kriterium DEV-03.'
+  - applicable_criteria:
+    - *ID_Criterion_Approvals_for_Provision_in_the_Production_Environment_Subcriterion_Basic_2
+    information_text: 'Falls die vertraglichen Vereinbarungen keine Beteiligung des Cloud-Kunden an der Genehmigung vorsehen, sollte dies in den vertraglichen Vereinbarungen klar angegeben werden, um dieses Kriterium zu erfüllen.'
+  corresponding: 'Soweit Änderungen gemäß den vertraglichen Vereinbarungen vor ihrer Bereitstellung in der Produktionsumgebung von den Cloud-Kunden genehmigt werden sollen, stellen die Cloud-Kunden mit geeigneten Kontrollen sicher, dass autorisiertes und qualifiziertes Personal die bereitgestellten Informationen erhält, die Auswirkungen auf den ISMS-Rahmen bewertet und gemäß den vom Cloud-Anbieter festgelegten Bedingungen über die Genehmigung entscheidet.'
+- identifier: &ID_Criterion_Protection_of_Development_and_Test_Environments '11'
+  name: 'Schutz von Entwicklungs- und Testumgebungen'
+  basic:
+  - identifier: &ID_Criterion_Protection_of_Development_and_Test_Environments_Subcriterion_Basic_1 '01B'
+    criterion: 'Entwicklungs- und Testumgebungen unter der Verantwortung des Cloud-Anbieters werden einer Risikobeurteilung (vgl. OIS-07) unterzogen und mit angemessenen Sicherheitsmaßnahmen gegen identifizierte Risiken geschützt. Dies schließt auch die Erweiterung des Datensicherungsplans (vgl. OPS-06) auf die notwendigen Teile dieser Umgebungen ein.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Protection_of_Development_and_Test_Environments_Subcriterion_Basic_1
+    information_text: 'Den Richtlinien und Verfahren für Datensicherungen (vgl. OPS-06) geht eine Risikobeurteilung voraus, sodass diese nicht alle Elemente dieser Umgebungen umfassen, sondern nur diejenigen, die auf Grundlage der Risikobeurteilung als notwendig erachtet werden. In manchen Situationen lassen sich einige Teile leichter von Grund auf neu aufbauen, als sie zu sichern.'
+  corresponding:
+- identifier: &ID_Criterion_Separation_of_Environments '12'
+  name: 'Trennung der Umgebungen'
+  basic:
+  - identifier: &ID_Criterion_Separation_of_Environments_Subcriterion_Basic_1 '01B'
+    criterion: 'Produktionsumgebungen sind von Test- oder Entwicklungsumgebungen physisch oder logisch getrennt, um unautorisierte Zugriffe auf Cloud-Kundendaten, die Ausbreitung von Schadprogrammen oder unbeabsichtigte Änderungen an Systemkomponenten zu verhindern. Cloud-Kundendaten aus Produktionsumgebungen werden nicht in Test- oder Entwicklungsumgebungen verwendet, es sei denn, dies wurde von den Cloud-Kunden ausdrücklich genehmigt, um deren Vertraulichkeit nicht zu gefährden.'
+  - identifier: &ID_Criterion_Separation_of_Environments_Subcriterion_Basic_2 '02B'
+    criterion: 'Sofern dies nicht unvermeidbar ist, verwendet der Cloud-Anbieter die in Produktionsumgebungen verwendeten kryptographischen Geheimnisse und privaten Schlüssel sowie andere Geheimnisse nicht in anderen Nicht-Produktionsumgebungen wieder. Jede unvermeidbare Wiederverwendung kryptographischer Geheimnisse und privater Schlüssel zwischen Produktions- und Nicht-Produktionsumgebungen wird gemäß dem Prozess für die Behandlung von Ausnahmen (vgl. SP-03) und den Risikomanagementverfahren (vgl. OIS-07) dokumentiert und begründet.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+- identifier: &ID_Criterion_Transparency_about_Software_Components '13'
+  name: 'Transparenz über Softwarekomponenten'
+  basic:
+  - identifier: &ID_Criterion_Transparency_about_Software_Components_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter stellt sicher, dass im Rahmen des Softwareentwicklungsprozesses für jede entwickelte oder integrierte Softwarekomponente eine Liste von Softwarekomponenten erstellt, gepflegt und aktuell gehalten wird.'
+  - identifier: &ID_Criterion_Transparency_about_Software_Components_Subcriterion_Basic_2 '02B'
+    criterion: 'Der Cloud-Anbieter pflegt auch für integrierte Softwarekomponenten eine Liste von Softwarekomponenten, außer wenn solche Informationen nicht verfügbar sind und nicht mit vertretbarem Aufwand erstellt werden können. Das aus diesen Ausnahmen resultierende Risiko wird gemäß SP-03 behandelt.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Transparency_about_Software_Components_Subcriterion_Basic_1
+    information_text: 'Dieses Kriterium kann durch eine hinreichend detaillierte Liste von Softwarekomponenten erfüllt werden. Hinreichende Detaillierung bedeutet, dass die Liste dem Cloud-Anbieter ermöglicht, alle Cloud-Dienste zu identifizieren, die von einer gegebenen bekannten Schwachstelle betroffen sind. Dieses Kriterium kann auch durch eine Software Bill of Materials (SBOM) erfüllt werden. Der Stand der Technik hinsichtlich der Erstellung, Pflege und Nutzung von SBOMs, einschließlich ihrer Bestandteile und Formate, werden in der jeweils aktuellen Version der Technischen Richtlinie TR-03183-2 des BSI beschrieben. Automatisierte Werkzeuge zum Erzeugen, Pflegen und Validieren von Listen von Softwarekomponenten oder SBOMs werden empfohlen, um Genauigkeit und Integration in Sicherheits- und Schwachstellenmanagementprozesse sicherzustellen. Es ist möglicherweise nicht notwendig, jede Version der SBOM zu speichern - genau wie in den anderen Entwicklungsprozessen für Komponenten -, solange der Cloud-Anbieter in der Lage ist, die Änderungen nachzuverfolgen.'
+  - applicable_criteria:
+    - *ID_Criterion_Transparency_about_Software_Components_Subcriterion_Basic_2
+    information_text: 'Dieses Unterkriterium gilt nur für integrierte Softwarekomponenten. Falls integrierte Softwarekomponenten z. B. Open Source sind und dieses Kriterium über SBOMs erfüllt wird, kann es Fälle geben, in denen eine SBOM nicht verfügbar ist und nicht mit vertretbarem Aufwand erstellt werden kann. Vertretbar impliziert, dass der Austausch dieser Komponente gegen eine mit SBOM wirtschaftlich nicht machbar ist. Die Risiken aus diesen Ausnahmen werden jedoch innerhalb des Ausnahmeprozesses behandelt (vgl. SP-03).'
+  corresponding:
+- identifier: &ID_Criterion_Development_Secure_Use_Thirdparty_Hardware_Software '14'
+  name: 'Sichere Nutzung von Hardware und Software Dritter'
+  basic:
+  - identifier: &ID_Criterion_Development_Secure_Use_Thirdparty_Hardware_Software_Subcriterion_Basic_1 '01B'
+    criterion: 'Richtlinien und Verfahren für die Nutzung von Drittanbieter- und Open-Source-Software sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt.'
+  - identifier: &ID_Criterion_Development_Secure_Use_Thirdparty_Hardware_Software_Subcriterion_Basic_2 '02B'
+    criterion: 'Für die bei der Entwicklung des Cloud-Dienstes verwendeten Hardware- und Softwareprodukte (vgl. DEV-13) wird eine Liste der Abhängigkeiten zu diesen Produkten geführt.'
+  - identifier: &ID_Criterion_Development_Secure_Use_Thirdparty_Hardware_Software_Subcriterion_Basic_3 '03B'
+    criterion: 'Es werden nur vertrauenswürdige Quellen verwendet, um Software Dritter zu beziehen. Wann immer möglich, wird die Authentizität der Software verifiziert.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Development_Secure_Use_Thirdparty_Hardware_Software_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Bei der Beschaffung für die Entwicklung des Cloud-Dienstes führt der Cloud-Anbieter für jedes Hardware- und Softwareprodukt eine Risikobeurteilung gemäß OIS-07 durch.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Development_Secure_Use_Thirdparty_Hardware_Software_Subcriterion_Basic_1
+    information_text: 'Die Richtlinie sollte, soweit anwendbar, dieselben Aspekte berücksichtigen wie die Richtlinie für die ordnungsgemäße und sichere Nutzung von Assets (vgl. AM-05).'
+  corresponding:
+- identifier: &ID_Criterion_Exceptions_to_the_Change_Management_Process '15'
+  name: 'Ausnahmen vom Änderungsmanagementprozess'
+  basic:
+  - identifier: &ID_Criterion_Exceptions_to_the_Change_Management_Process_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Änderungsmanagementprozess des Cloud-Anbieters implementiert Verfahren für die Handhabung von Ausnahmen, einschließlich Notfalländerungen, um sicherzustellen, dass damit verbundene Risiken angemessen gemindert werden.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Exceptions_to_the_Change_Management_Process_Subcriterion_Basic_1
+    information_text: 'Dieses Kriterium bezieht sich hauptsächlich auf den in SP-03 geforderten Ausnahmeprozess, obwohl hier alle Ausnahmen vom Standardverfahren für Änderungen gemeint sind.'
+  corresponding:

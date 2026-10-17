@@ -1,0 +1,283 @@
+- identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness '01'
+  name: 'Überprüfung der Qualifikation und Vertrauenswürdigkeit'
+  basic:
+  - identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter identifiziert für die Produktionsumgebung, welche Rollen innerhalb der Organisation auf Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten, Cloud-Anbieterdaten, Kontodaten oder Systemkomponenten unter der Verantwortung des Cloud-Anbieters zugreifen können.'
+  - identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Qualifikation und Vertrauenswürdigkeit des gesamten internen und externen Personals, dem diese Rollen zugewiesen sind, wird vor der Beschäftigung überprüft. Die Überprüfung berücksichtigt die folgenden Maßnahmen, soweit dies nach lokaler Gesetzgebung und Regulierung zulässig ist und vom Cloud-Anbieter als angemessen angesehen wird, um Risiken im Zusammenhang mit unangemessenem Zugriff auf den jeweiligen Datentyp zu mitigieren:
+
+
+1. Überprüfung der Identität der Person anhand des Personalausweises oder Reisepasses;
+
+2. Überprüfung der Berufserfahrung anhand des Lebenslaufs;
+
+3. Überprüfung akademischer Titel und Abschlüsse;
+
+4. Anforderung eines Führungszeugnisses, einer polizeilichen Unbedenklichkeitsbescheinigung oder anderer nationaler Äquivalente; und
+
+5. Bewertung der Erpressbarkeit.
+
+'
+  - identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Cloud-Anbieter berücksichtigt Änderungen der Rollen des Personals oder des Beschäftigungsstatus, die sich auf Zugriffsrechte, Verantwortlichkeiten oder die Risikoexposition auswirken können, und identifiziert und mitigiert damit verbundene Risiken.'
+  - identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_4 '04B'
+    criterion: 'Der Cloud-Anbieter klassifiziert sicherheitssensible Positionen entsprechend ihrem Risikoniveau, einschließlich IT-Administrationsrollen und aller Positionen mit Zugriff auf Cloud-Kundendaten oder auf Systemkomponenten, die zur Bereitstellung des Cloud-Dienstes in der Produktionsumgebung verwendet werden.'
+  - identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_5 '05B'
+    criterion: 'Der Cloud-Anbieter beurteilt die Qualifikation und Vertrauenswürdigkeit seines Personals vor einer Versetzung oder Beförderung in eine Rolle mit höherer Risikoklassifizierung.'
+  - identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_6 '06B'
+    criterion: 'Die Intensität der in diesem Kriterium definierten Beurteilung steht im Verhältnis zum geschäftlichen Kontext, zur Sensibilität der Informationen, auf die das Personal zugreifen wird, und zu den damit verbundenen Risiken.'
+  additional_sharpen:
+  additional_complement:
+  - identifier: &ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter definiert in der Personalrichtlinie Positionen mit Stufen und Risikoklassifizierung, die eine regelmäßige Beurteilung von Qualifikation und Vertrauenswürdigkeit erfordern. Der Cloud-Anbieter überprüft jährlich seine Beurteilung der Qualifikation und Vertrauenswürdigkeit für Personal, das den definierten Positionen angehört.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_1
+    information_text: 'Dieses Kriterium gilt sowohl für bestehendes als auch für neu eingestelltes Personal. Rollen mit Zugriff auf diese Datentypen oder Systemkomponenten können abhängig von ihren Zugriffsrechten unter anderem die folgenden umfassen:
+
+
+1. Cloud-Software-Ingenieure und -entwickler;
+
+2. Cloud-Architekten und Cloud-Infrastruktur-Ingenieure;
+
+3. Cloud-Plattform-Ingenieure und DevOps-Ingenieure;
+
+4. Ingenieure und Manager für den Cloud-Systembetrieb;
+
+5. Cloud-Dienstingenieure und -manager;
+
+6. Cloud-Netzwerkingenieure und Leitende Architekten;
+
+7. Cloud-Sicherheitsingenieure, -Administratoren und -Sicherheitsarchitekten;
+
+8. Spezialisten und Analysten für Cloud-Sicherheitsbetrieb;
+
+9. Speicher- und Datenbank-Ingenieure;
+
+10. Technische Account Manager und Customer Account Manager;
+
+11. Kundensupport-Ingenieure;
+
+12. IAM-Administratoren und Spezialisten für Zugriffs- und Berechtigungsmanagement;
+
+13. Cloud-Compliance-Manager sowie Risiko- und Compliance-Analysten; und
+
+14. Informationssicherheitsbeauftragte und Datenschutzbeauftragte.
+
+
+Der Begriff Personal bezieht sich sowohl auf internes als auch auf externes Personal.'
+  - applicable_criteria:
+    - *ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Basic_2
+    information_text: 'Dieses Kriterium gilt sowohl für bestehendes als auch für neu eingestelltes Personal. Externes Personal im Sinne des Kriteriums ist solches, das Tätigkeiten in Übereinstimmung mit den Prozessen und Verfahren des Cloud-Anbieters ausführt und potenziellen Zugriff auf Cloud-Kundendaten oder abgeleitete Cloud-Dienstdaten hat. Personal von Service-Organisationen, das Tätigkeiten nach den eigenen Prozessen und Verfahren der Service-Organisation ausführt, wird von diesem Kriterium nicht erfasst.
+    
+
+Zulässige Überprüfungen von Qualifikation und Vertrauenswürdigkeit richten sich nach den jeweils geltenden lokalen Gesetzen und den Rollen des Personals. In einigen Rechtsordnungen ist die Erhebung, Verarbeitung oder Offenlegung solcher Informationen grundsätzlich eingeschränkt oder sogar verboten, was bedeutet, dass sie möglicherweise überhaupt nicht oder nur in sehr eingeschränkter Form erlangt werden können. Soweit zulässig, kann je nach Art und Umfang der Prüfungen die ausdrückliche Einwilligung des Personals erforderlich sein. Diese rechtlichen Beschränkungen gelten auch für sämtliche Analysen in Bezug auf Erpressbarkeit.
+
+
+Die Überprüfung der Qualifikation und Vertrauenswürdigkeit kann durch einen spezialisierten Dienstleister unterstützt werden oder auf freiwilliger Selbstauskunft des Personals beruhen. Je nach nationaler Gesetzgebung sind auch nationale Pendants des deutschen Führungszeugnisses zulässig. Die Beurteilung der Erpressbarkeit potenziellen Personals kann die Bewertung seiner Kreditwürdigkeit umfassen. Diese Beurteilung kann jedoch abhängig von lokalen Regelungen nur für Positionen mit erheblicher finanzieller Verantwortung rechtlich zulässig sein.
+
+
+Risiken im Zusammenhang mit unangemessenem Zugriff auf Cloud-Kundendaten können durch den Einsatz von Verschlüsselung oder die Überwachung von Systemzugriffen auf verdächtige Ereignisse mitigiert werden. Obwohl solche Maßnahmen die oben genannten Verifikationsmaßnahmen nicht vollständig ersetzen sollen, kann der Umfang dieser Verifikationsmaßnahmen reduziert werden.'
+  - applicable_criteria:
+    - *ID_Criterion_Verification_of_Qualification_and_Trustworthiness_Subcriterion_Additional_Complement_1
+    information_text: 'Cloud-Anbieter können verschiedene Methoden umsetzen, um Qualifikation und Vertrauenswürdigkeit von Personal in Hochrisikopositionen zu beurteilen, wie zum Beispiel:
+
+
+1. Selbstauskunft über wesentliche finanzielle Interessen zur Feststellung von Interessenkonflikten und Erpressbarkeit;
+
+2. Regelmäßige Prüfung von Führungszeugnissen, polizeilichen Unbedenklichkeitsbescheinigungen oder anderen nationalen Äquivalenten;
+
+3. Regelmäßige Selbsterklärung der Verpflichtung gegenüber geltenden Richtlinien und Verpflichtungen;
+
+4. Durchsetzung regelmäßiger Ethik- und Compliance-Schulungen, einschließlich Zertifizierung und Überprüfung des Verständnisses des Personals für geltende Anforderungen und Richtlinien;
+
+5. Durchsetzung der regelmäßigen Teilnahme an Assessment-Centern zur Bewertung der Qualifikation und Vertrauenswürdigkeit des Personals; und
+
+6. Regelmäßige Überprüfung des Personals anhand nationaler und internationaler Sanktionslisten.
+
+'
+  corresponding:
+- identifier: &ID_Criterion_Employment_Terms_and_Conditions '02'
+  name: 'Beschäftigungs- und Vertragsbedingungen'
+  basic:
+  - identifier: &ID_Criterion_Employment_Terms_and_Conditions_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter stellt sicher, dass die Beschäftigungs- und Vertragsbedingungen die geltenden gesetzlichen und regulatorischen Anforderungen gemäß SP-01 widerspiegeln.'
+  - identifier: &ID_Criterion_Employment_Terms_and_Conditions_Subcriterion_Basic_2 '02B'
+    criterion: 'Das interne und externe Personal des Cloud-Anbieters werden in den Beschäftigungs- und Vertragsbedingungen auf die Einhaltung des Verhaltenskodex und der Informationssicherheitsrichtlinie sowie der darauf basierenden Richtlinien, Verfahren und Anweisungen verpflichtet.'
+  - identifier: &ID_Criterion_Employment_Terms_and_Conditions_Subcriterion_Basic_3 '03B'
+    criterion: 'Der Cloud-Anbieter stellt sicher, dass eine Geheimhaltungsklausel in die Bedingungen für sämtliches internes und externes Personal aufgenommen wird. Die Geheimhaltungsklausel umfasst sämtliche Informationen, einschließlich anonymisierter und pseudonymisierter Informationen, die das Personal im Rahmen des Cloud-Dienstes erhält oder erzeugt.'
+  - identifier: &ID_Criterion_Employment_Terms_and_Conditions_Subcriterion_Basic_4 '04B'
+    criterion: 'Der Cloud-Anbieter weist sein Personal vor der Gewährung eines Zugriffs auf Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten oder auf Systemkomponenten unter der Verantwortung des Cloud-Anbieters, die zur Bereitstellung des Cloud-Dienstes in der Produktionsumgebung verwendet werden, in den Verhaltenskodex und die Informationssicherheitsrichtlinie sowie die darauf basierenden Richtlinien, Verfahren und Anweisungen ein.'
+  - identifier: &ID_Criterion_Employment_Terms_and_Conditions_Subcriterion_Basic_5 '05B'
+    criterion: 'Zusätzlich verlangt der Cloud-Anbieter, dass der Verhaltenskodex und die Informationssicherheitsrichtlinie sowie die darauf basierenden Richtlinien, Verfahren und Anweisungen vom internen und externen Personal in dokumentierter Form anerkannt werden, bevor Zugriff auf eine der vorgenannten Daten oder Systemkomponenten gewährt wird.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Employment_Terms_and_Conditions_Subcriterion_Basic_3
+    information_text: 'Diese Vereinbarungen werden in HR-06 näher geregelt.'
+  corresponding:
+- identifier: &ID_Criterion_Security_Training_and_Awareness_Programme '03'
+  name: 'Programm zur Sicherheitsausbildung und Sensibilisierung'
+  basic:
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter betreibt ein zielgruppenorientiertes Sensibilisierungs- und Schulungsprogramm für Sicherheit.'
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Basic_2 '02B'
+    criterion: 'Das gesamte interne und externe Personal des Cloud-Anbieters durchläuft regelmäßig und bei Änderung der Tätigkeit ein rollenbasiertes Schulungsprogramm, wobei mindestens die Risikoklassifizierung und die technischen Verantwortlichkeiten der Position des jeweiligen Personals berücksichtigt werden.'
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Basic_3 '03B'
+    criterion: 'Das Programm wird, ausgehend von Änderungen an Richtlinien und Verfahren sowie der aktuellen Bedrohungslage, regelmäßig aktualisiert und umfasst, soweit sie für die Rolle des jeweiligen Personals anwendbar sind, die folgenden Aspekte:
+
+
+1. Umgang mit Systemkomponenten, die zur Bereitstellung des Cloud-Dienstes in der Produktionsumgebung verwendet werden, gemäß den anwendbaren Richtlinien und Verfahren;
+
+2. Umgang mit Cloud-Kundendaten, abgeleiteten Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten gemäß den anwendbaren Richtlinien und Verfahren sowie den geltenden gesetzlichen und regulatorischen Anforderungen;
+
+3. Information über die aktuelle Bedrohungslage;
+
+4. Richtiges Verhalten bei Sicherheitsvorfällen;
+
+5. Sicherheits-Best-Practices; und
+
+6. Sichere Entwicklung.
+
+'
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Basic_4 '04B'
+    criterion: 'Die durch das Sensibilisierungs- und Schulungsprogramm erzielten Lernerfolge werden gemessen und ausgewertet.'
+  additional_sharpen:
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Additional_Sharpen_2 '02AS'
+    sharpened_basic_criterion: *ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Basic_2
+    criterion: 'Das gesamte interne und externe Personal des Cloud-Anbieters durchläuft mindestens jährlich und bei Änderung der Tätigkeit ein rollenbasiertes Schulungsprogramm, wobei mindestens die Risikoklassifizierung und die technischen Verantwortlichkeiten seiner Position berücksichtigt werden.'
+  additional_complement:
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Additional_Complement_1 '01AC'
+    criterion: 'Der Cloud-Anbieter überwacht den Abschluss des Sensibilisierungs- und Schulungsprogramms für Sicherheit.'
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Additional_Complement_2 '02AC'
+    criterion: 'Zeitnahe und angemessene Maßnahmen zur Behebung aller während der Überwachung identifizierten Abweichungen.'
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Additional_Complement_3 '03AC'
+    criterion: 'Die durch das Sensibilisierungs- und Schulungsprogramm erzielten Lernerfolge werden zielgruppenbezogen gemessen und ausgewertet.'
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Additional_Complement_4 '04AC'
+    criterion: 'Die Messungen umfassen quantitative und qualitative Aspekte.'
+  - identifier: &ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Additional_Complement_5 '05AC'
+    criterion: 'Die Ergebnisse fließen in die Verbesserung des Sensibilisierungs- und Schulungsangebots ein.'
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Basic_1
+    information_text: 'Die Zielgruppen können unter Berücksichtigung der Tätigkeit, der Position und der damit verbundenen Risikoklassifizierung definiert werden. Zielgruppen dienen der Vereinfachung und Systematisierung des Sensibilisierungs- und Schulungsprogramms für Sicherheit.'
+  - applicable_criteria:
+    - *ID_Criterion_Security_Training_and_Awareness_Programme_Subcriterion_Additional_Complement_3
+    information_text: 'Die Messung und Bewertung von Lernergebnissen auf zielgruppenbezogener Weise, wie durch das Zusatz-Unterkriterium festgelegt, erfordert keine Bewertung jedes einzelnen Mitglieds des Personals. Stattdessen können Bewertungen auf aggregierter Ebene durchgeführt werden, wobei der Schwerpunkt auf der Gesamteffektivität des Schulungsprogramms für bestimmte Zielgruppen liegt. Dieser Ansatz ermöglicht die Identifizierung von Trends und Verbesserungsbereichen innerhalb des Programms unter Wahrung der Datenschutzanforderungen des Personals.'
+  corresponding:
+- identifier: &ID_Criterion_Disciplinary_Measures '04'
+  name: 'Maßregelungsprozess'
+  basic:
+  - identifier: &ID_Criterion_Disciplinary_Measures_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter stellt sicher, dass die Richtlinien und Verfahren zum Maßregelungsprozess die geltenden gesetzlichen und regulatorischen Anforderungen gemäß SP-01 widerspiegeln.'
+  - identifier: &ID_Criterion_Disciplinary_Measures_Subcriterion_Basic_2 '02B'
+    criterion: 'Im Falle von Verstößen gegen Richtlinien und Verfahren oder gegen geltende gesetzliche und regulatorische Anforderungen werden Disziplinarmaßnahmen in Übereinstimmung mit einer definierten Richtlinie ergriffen, die die folgenden Aspekte umfasst:
+
+
+1. Prüfung, ob ein Verstoß vorliegt; und
+
+2. Berücksichtigung der Art und Schwere des Verstoßes sowie dessen Auswirkungen.
+
+'
+  - identifier: &ID_Criterion_Disciplinary_Measures_Subcriterion_Basic_3 '03B'
+    criterion: 'Das interne und externe Personal des Cloud-Anbieters wird über mögliche Disziplinarmaßnahmen informiert.'
+  - identifier: &ID_Criterion_Disciplinary_Measures_Subcriterion_Basic_4 '04B'
+    criterion: 'Der Einsatz von Disziplinarmaßnahmen wird in geeigneter Weise dokumentiert.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Disciplinary_Measures_Subcriterion_Basic_4
+    information_text: 'Hinsichtlich des Einsatzes von Disziplinarmaßnahmen ist die Vorlage anonymisierter Nachweise zulässig und impliziert nicht, dass das Basiskriterium nicht vollständig erfüllt ist.'
+  corresponding:
+- identifier: &ID_Criterion_Responsibilities_in_the_Event_of_Termination_or_Change_of_Employment '05'
+  name: 'Verantwortlichkeiten bei Beendigung oder Änderung der Beschäftigung'
+  basic:
+  - identifier: &ID_Criterion_Responsibilities_in_the_Event_of_Termination_or_Change_of_Employment_Subcriterion_Basic_1 '01B'
+    criterion: 'Internes und externes Personal ist nachweislich darüber informiert, wie lange welche Verantwortlichkeiten, die sich aus den Beschäftigungs- und Vertragsbedingungen mit Bezug zur Informationssicherheit ergeben, auch bei Beendigung oder Änderung der Beschäftigung bestehen bleiben.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+- identifier: &ID_Criterion_Confidentiality_Agreements '06'
+  name: 'Vertraulichkeitsvereinbarungen'
+  basic:
+  - identifier: &ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_1 '01B'
+    criterion: 'Die mit internem Personal und Service-Organisationen des Cloud-Anbieters zu vereinbarenden Geheimhaltungs- oder Vertraulichkeitsvereinbarungen basieren auf den vom Cloud-Anbieter identifizierten Anforderungen zum Schutz vertraulicher Informationen und betrieblicher Details.'
+  - identifier: &ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_2 '02B'
+    criterion: 'Die Vereinbarungen sind mit Service-Organisationen bei Vertragsabschluss zu schließen.'
+  - identifier: &ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_3 '03B'
+    criterion: 'Die Vereinbarungen sind mit internem Personal des Cloud-Anbieters zu schließen, bevor die Berechtigung zum Zugriff auf Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten, Cloud-Anbieterdaten und Kontodaten erteilt wird.'
+  - identifier: &ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_4 '04B'
+    criterion: 'Die Anforderungen sind zu dokumentieren sowie in regelmäßigen Abständen (mindestens jährlich) und bei wesentlichen Änderungen des Cloud-Dienstes zu überprüfen. Soweit sich aus der Überprüfung ergibt, dass die Anforderungen anzupassen sind, werden die Geheimhaltungs- oder Vertraulichkeitsvereinbarungen aktualisiert.'
+  - identifier: &ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_5 '05B'
+    criterion: 'Der Cloud-Anbieter informiert das interne Personal und die Service-Organisationen hierüber und schließt mit diesen die aktualisierten Geheimhaltungs- oder Vertraulichkeitsvereinbarungen.'
+  - identifier: &ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_6 '06B'
+    criterion: 'In Fällen, in denen eine Einigung über die Aktualisierungen nicht erzielt werden kann, beurteilt der Cloud-Anbieter die daraus resultierenden Risiken für die Informationssicherheit gemäß OIS-07.'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_1
+    information_text: 'Eine Vertraulichkeitsvereinbarung (engl. Non-Disclosure Agreement, NDA) ist ein rechtliches Dokument und enthält Informationen, die von beiden Parteien zum Schutz vertraulicher Informationen benötigt werden. Prozesse und Verfahren im Zusammenhang mit dem Umgang mit Medien können separat außerhalb des NDA verwaltet werden. Ein NDA sollte Folgendes abdecken:
+
+
+1. Welche Informationen oder Datentypen vertraulich behandelt werden müssen;
+
+2. Für welchen Zeitraum diese Vertraulichkeitsvereinbarung gilt;
+
+3. Welche Aktionen bei Beendigung dieser Vereinbarung vorgenommen werden müssen, z. B. Vernichtung oder Rückgabe von Datenträgern;
+
+4. Wie die Eigentumsrechte an Informationen geregelt sind;
+
+5. Welche Regelungen für den Gebrauch und die Weitergabe von vertraulichen Informationen an weitere Partner gelten, falls dies notwendig ist;
+
+6. Welche Konsequenzen bei Verletzung der Vereinbarung eintreten..
+
+
+Diese Vereinbarungen werden allgemein in HR-02 beschrieben.'
+  - applicable_criteria:
+    - *ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_2
+    - *ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_3
+    - *ID_Criterion_Confidentiality_Agreements_Subcriterion_Basic_5
+    information_text: 'Geheimhaltungs- oder Vertraulichkeitsvereinbarungen sollten, soweit dies rechtsverbindlich ist, mittels einer elektronischen Signatur unterschrieben werden.'
+  corresponding:
+- identifier: &ID_Criterion_Policy_for_Remote_Working '07'
+  name: 'Remote-Arbeit - Richtlinie'
+  basic:
+  - identifier: &ID_Criterion_Policy_for_Remote_Working_Subcriterion_Basic_1 '01B'
+    criterion: 'Richtlinien und Verfahren zum Schutz von Informationen, wenn Personal remote arbeitet, werden in Übereinstimmung mit SP-01 dokumentiert, kommuniziert und bereitgestellt und behandeln die folgenden Aspekte:
+
+
+1. Festlegung von Leitlinien für das Personal zum sicheren Umgang mit und zur sicheren Speicherung von sensiblen Informationen und Datentypen;
+
+2. Definition von Sicherheitsanforderungen für den Remote-Zugriff;
+
+3. Nutzung sicherer Kommunikationsmethoden und Durchsetzung einer sicheren Netzwerknutzung (z. B. VPN-Nutzung, Endpunktschutz, Multi-Faktor-Authentifizierung, sichere Kommunikationskanäle); und
+
+4. Bereitstellung von Ausstattung, die von der Organisation genehmigt ist und Verbot unregulierter persönlicher Geräte.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Policy_for_Remote_Working_Subcriterion_Basic_1
+    information_text: 'Bitte beachten: Dieses Kriterium bezieht sich auf Arbeitsplätze außerhalb des Standorts, während PS-08.01B Sicherheitsanforderungen für Büroarbeitsplätze vor Ort behandelt.
+
+
+Die Leitlinien für das Personal zum sicheren Umgang mit und zur sicheren Speicherung von sensiblen Informationen und Datentypen beziehen sich auf organisatorische Maßnahmen, zu deren Einhaltung das Personal verpflichtet ist. Sicherheitsanforderungen für den Remote-Zugriff beziehen sich auf technische Maßnahmen wie z. B. MFA und VPN sowie auch auf Regeln für den jeweiligen Arbeitsplatz, die sich aus allgemeinen Erwägungen zum Arbeiten ergeben, z. B. an öffentlichen Orten, an denen der Bildschirm ausgespäht werden kann.'
+  corresponding:
+- identifier: &ID_Criterion_Implementation_Remote_Working '08'
+  name: 'Remote-Arbeit - Umsetzung'
+  basic:
+  - identifier: &ID_Criterion_Implementation_Remote_Working_Subcriterion_Basic_1 '01B'
+    criterion: 'Der Cloud-Anbieter konzipiert, implementiert und unterhält die technischen und organisatorischen Maßnahmen, die erforderlich sind, damit sein Personal die Richtlinien und Verfahren für Remote-Arbeit einhalten kann (vgl. HR-07).'
+  additional_sharpen:
+  additional_complement:
+  information:
+  - applicable_criteria:
+    - *ID_Criterion_Implementation_Remote_Working_Subcriterion_Basic_1
+    information_text: 'Bitte beachten: Dieses Kriterium bezieht sich auf Arbeitsplätze außerhalb des Standorts, während PS-08.01B Sicherheitsanforderungen für Büroarbeitsplätze vor Ort behandelt.'
+  corresponding:

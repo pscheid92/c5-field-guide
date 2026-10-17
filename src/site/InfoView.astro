@@ -1,0 +1,139 @@
+---
+// About the site: what it is, how BSI text and our commentary are kept apart,
+// licence and source, keyboard use, contributing.
+import Layout from './Layout.astro';
+import { type Lang, site } from './data';
+
+interface Props {
+	lang: Lang;
+}
+
+const s = site(Astro.props.lang);
+const de = site('de').data.version;
+const en = site('en').data.version;
+const license = s.lang === 'en' ? 'https://creativecommons.org/licenses/by-nd/4.0/' : 'https://creativecommons.org/licenses/by-nd/4.0/deed.de';
+const source =
+	s.lang === 'en'
+		? 'https://www.bsi.bund.de/EN/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/C5_2025/C5_2025_node.html'
+		: 'https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Empfehlungen-nach-Angriffszielen/Cloud-Computing/Kriterienkatalog-C5/C5_2025/C5_2025_node.html';
+---
+
+<Layout lang={s.lang} view="page" title={s.t.info}>
+	<div class="page">
+	<article class="doc prose">
+		{
+			s.lang === 'en' ? (
+				<>
+					<h1>About this site</h1>
+					<h2>What this is</h2>
+					<p>
+						An unofficial guide to the BSI <strong>C5:2026</strong> Cloud Computing Compliance Criteria Catalogue. Every
+						criterion has its own page with a stable address, for example <code>/en/iam-06/</code>, and every
+						sub-criterion its own anchor, for example <code>/en/iam-06/#iam-06-02b</code>, so you can paste it into a
+						design review or a chat thread.
+					</p>
+					<h2>Two kinds of content, kept apart</h2>
+					<ul>
+						<li>
+							<strong>BSI text</strong>: criterion text, supplementary information, complementary customer criteria and
+							General Conditions. Reproduced unchanged from BSI's machine-readable edition; only formatting (paragraphs,
+							numbered lists) and cross-reference links are added.
+						</li>
+						<li>
+							<strong>Commentary</strong> (coming later, marked in blue as unofficial): our own reading in engineering
+							terms. It is not BSI guidance and not legal or audit advice.
+						</li>
+					</ul>
+					<h2>Licence and source</h2>
+					<p>
+						C5:2026 © Federal Office for Information Security (BSI) 2026, licensed under <a href={license}>CC BY-ND 4.0</a>.
+						Source: <a href={source}>BSI C5:2026</a>.
+					</p>
+					<p>
+						The German edition (v{de}) contains corrections that the English edition (v{en}) does not have yet, so the
+						two languages can differ in details. For example, the sub-criteria of AM-01 and AM-02 are numbered
+						differently, so a link to a specific sub-criterion may point to different text after switching language.
+						German is this site's primary language.
+					</p>
+					<p>This site is not affiliated with or endorsed by BSI.</p>
+					<h2>Keyboard</h2>
+					<ul>
+						<li>
+							<code>/</code> or <code>Ctrl/⌘ K</code>: search; <code>↑</code> <code>↓</code> and <code>Enter</code> to open
+							a result, <code>Esc</code> to close.
+						</li>
+						<li>
+							<code>↑</code> <code>↓</code> move through the domain and criteria lists.
+						</li>
+					</ul>
+					<h2>Contributing</h2>
+					<ul>
+						<li>
+							Commentary: <code>commentary/en/&lt;ID&gt;.md</code> (German: <code>commentary/de/</code>), for example{' '}
+							<code>commentary/en/IAM-06.md</code>
+						</li>
+						<li>BSI source data: <code>vendor/bsi/</code>. Never edited by hand; updated by importing a new BSI release.</li>
+					</ul>
+				</>
+			) : (
+				<>
+					<h1>Info</h1>
+					<h2>Was das ist</h2>
+					<p>
+						Ein inoffizieller Leitfaden zum BSI-Kriterienkatalog <strong>C5:2026</strong> (Cloud Computing Compliance
+						Criteria Catalogue). Jedes Kriterium hat eine eigene Seite mit stabiler Adresse, zum Beispiel{' '}
+						<code>/iam-06/</code>, und jedes Unterkriterium einen eigenen Anker, zum Beispiel{' '}
+						<code>/iam-06/#iam-06-02b</code>. So lässt sich eine Stelle in ein Design-Review oder einen Chat-Thread
+						einfügen.
+					</p>
+					<h2>Zwei Arten von Inhalten, klar getrennt</h2>
+					<ul>
+						<li>
+							<strong>BSI-Text</strong>: Kriterientext, ergänzende Informationen, korrespondierende Kriterien für Kunden
+							und Rahmenbedingungen. Unverändert aus der maschinenlesbaren Fassung des BSI übernommen; ergänzt sind nur
+							Formatierung (Absätze, nummerierte Listen) und Querverweis-Links.
+						</li>
+						<li>
+							<strong>Kommentar</strong> (folgt später, blau markiert und als inoffiziell gekennzeichnet): unsere eigene
+							Lesart aus Engineering-Sicht. Er ist keine Vorgabe des BSI und keine Rechts- oder Prüfungsberatung.
+						</li>
+					</ul>
+					<h2>Lizenz und Quelle</h2>
+					<p>
+						C5:2026 © Bundesamt für Sicherheit in der Informationstechnik (BSI) 2026, lizenziert unter{' '}
+						<a href={license}>CC BY-ND 4.0</a>. Quelle: <a href={source}>BSI C5:2026</a>.
+					</p>
+					<p>
+						Die deutsche Fassung (v{de}) enthält Korrekturen, die in der englischen Fassung (v{en}) noch fehlen. Die
+						beiden Sprachen können daher in Details voneinander abweichen. So sind etwa die Unterkriterien von AM-01 und
+						AM-02 unterschiedlich nummeriert: Ein Link auf ein bestimmtes Unterkriterium kann nach dem Sprachwechsel auf
+						einen anderen Text zeigen.
+					</p>
+					<p>Diese Website steht in keiner Verbindung zum BSI und wird nicht vom BSI unterstützt.</p>
+					<h2>Tastatur</h2>
+					<ul>
+						<li>
+							<code>/</code> oder <code>Strg/⌘ K</code>: Suche; mit <code>↑</code> <code>↓</code> und{' '}
+							<code>Enter</code> einen Treffer öffnen, mit <code>Esc</code> schließen.
+						</li>
+						<li>
+							<code>↑</code> <code>↓</code> bewegen sich durch die Bereichs- und Kriterienlisten.
+						</li>
+					</ul>
+					<h2>Beitragen</h2>
+					<ul>
+						<li>
+							Kommentare: <code>commentary/&lt;sprache&gt;/&lt;ID&gt;.md</code>, zum Beispiel{' '}
+							<code>commentary/de/IAM-06.md</code>
+						</li>
+						<li>
+							BSI-Quelldaten: <code>vendor/bsi/</code>. Nie von Hand bearbeiten; Aktualisierung nur durch Import einer
+							neuen BSI-Veröffentlichung.
+						</li>
+					</ul>
+				</>
+			)
+		}
+	</article>
+	</div>
+</Layout>

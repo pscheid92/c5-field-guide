@@ -1,0 +1,68 @@
+title: "Task path: building a new admin API"
+label: Building a new admin API
+order: 1
+description: The C5:2026 criteria to check when you design, build and run an API that changes configuration or touches customer data.
+intro: |
+  You are designing an API that lets someone administer the service: change configuration, manage users, or read customer data. These are the criteria an auditor is likely to look at, grouped by the question they answer.
+
+  The path covers the provider side (your staff and automation call the API) and the product side (your customers call it). Skip the section that does not apply.
+
+  This path is a curated reading list, not a complete control mapping. Each step links to the full, unmodified criterion text.
+sections:
+  - title: Who calls it on the provider side?
+    intro: If your own staff, on-call engineers or automation use the API.
+    steps:
+      - id: IAM-06
+        why: The core criterion. Privileged access must be personalised, time-limited and logged with automated misuse detection, and admin interfaces need MFA.
+        focus: [02B, 03B, 09B, 03AC, 04AC]
+      - id: IAM-08
+        why: MFA for all access to production, for human users and for automated processes. Accounts lock after repeated failed attempts.
+        focus: [02B, 06B, 07B]
+      - id: COS-05
+        why: Admin traffic belongs on a separate administration network, protected by MFA.
+        focus: [01B]
+      - id: CRY-04
+        why: Remote access to production uses state-of-the-art cryptography, including personnel authentication.
+        focus: [02B]
+      - id: IAM-07
+        why: If the API can read or write customer data, access may have to be disclosed to the customer within 72 hours, or require their prior consent under the additional criteria.
+        focus: [03B, 05B, 03AS]
+  - title: Who calls it on the product side?
+    intro: If the API is part of the service's management plane for your customers.
+    steps:
+      - id: PSS-05
+        why: Customers must be able to enforce MFA at every access point, including the API.
+        focus: [01B, 02B]
+      - id: PSS-08
+        why: The API exposes a roles and rights framework that supports least privilege and segregation of duties.
+        focus: [01B, 02B, 03B]
+      - id: PSS-09
+        why: Authorisation checks are validated before each new function ships and whenever the authorisation logic changes.
+        focus: [01B, 02B]
+      - id: PSS-06
+        why: Sessions are protected against known attacks and invalidated after inactivity.
+        focus: [01B, 02B]
+      - id: IAM-07
+        why: Customer admin interfaces and end-user interfaces are separated and use different access paths.
+        focus: [04AC]
+  - title: How do you design and test it?
+    steps:
+      - id: DEV-05
+        why: The security features need design documentation based on a security analysis, including expected inputs, outputs and errors.
+        focus: [01B]
+      - id: DEV-07
+        why: Tests must fully cover the security features' specification, including error conditions. The additional criteria require a pre-launch pentest.
+        focus: [04B, 01AC]
+  - title: What do you log?
+    steps:
+      - id: OPS-10
+        why: Your logging policy defines which events matter, and time sources must be synchronised.
+        focus: [01B]
+      - id: OPS-15
+        why: Logs must identify which user accessed what in which tenant, carry timestamps and support forensics.
+        focus: [01B, 02B, 03B]
+      - id: PSS-04
+        why: Customers get audit logs of who did what on their side, including all management plane actions.
+        focus: [03B, 06B]
+outro: |
+  Missing something? Task paths live in `paths/<lang>/*.yml` and are reviewed like code.

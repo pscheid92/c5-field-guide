@@ -1,0 +1,77 @@
+---
+// Start page: the search as the main entry, then all domains as an index.
+import Layout from './Layout.astro';
+import Search from './Search.astro';
+import { type Lang, site } from './data';
+
+interface Props {
+	lang: Lang;
+}
+
+const s = site(Astro.props.lang);
+const { t } = s;
+const subs = s.data.criteria.reduce((n, c) => n + c.subs.length, 0);
+const en = s.lang === 'en';
+---
+
+<Layout
+	lang={s.lang}
+	view="home"
+	title={en ? 'Criteria catalogue' : 'Kriterienkatalog'}
+	description={en
+		? 'An unofficial, searchable reference to the BSI C5:2026 cloud criteria catalogue.'
+		: 'Ein inoffizieller, durchsuchbarer Zugang zum BSI-Kriterienkatalog C5:2026.'}
+>
+	<section class="hero">
+		<h1>{en ? 'C5:2026 criteria catalogue' : 'C5:2026 Kriterienkatalog'}</h1>
+		<p class="hero-lead">
+			{
+				en
+					? `All ${s.data.criteria.length} criteria and ${subs} sub-criteria of BSI's cloud catalogue, each with its own address you can link to.`
+					: `Alle ${s.data.criteria.length} Kriterien und ${subs} Unterkriterien des BSI-Cloud-Katalogs, jedes mit eigener Adresse zum Verlinken.`
+			}
+		</p>
+		<Search lang={s.lang} variant="hero" />
+		<p class="hero-hint">
+			{
+				en ? (
+					<>
+						For example <button class="example" type="button" data-query="IAM-06">IAM-06</button>, <button class="example" type="button" data-query="key rotation">key rotation</button> or <button class="example" type="button" data-query="penetration test">penetration test</button>.
+						{' '}
+						<span class="key-hint">
+							Press <kbd>/</kbd> to search from any page.
+						</span>
+					</>
+				) : (
+					<>
+						Zum Beispiel <button class="example" type="button" data-query="IAM-06">IAM-06</button>, <button class="example" type="button" data-query="Schlüsselrotation">Schlüsselrotation</button> oder <button class="example" type="button" data-query="Penetrationstest">Penetrationstest</button>.
+						{' '}
+						<span class="key-hint">
+							Mit <kbd>/</kbd> suchst du von jeder Seite aus.
+						</span>
+					</>
+				)
+			}
+		</p>
+	</section>
+
+	<section class="index" aria-labelledby={t.domainsAnchor}>
+		<h2 id={t.domainsAnchor}>{t.domains}</h2>
+		<ul class="index-grid">
+			{
+				s.domains.map((d) => (
+					<li>
+						<a href={s.domainUrl(d.code)}>
+							<span class="index-code">{d.code}</span>
+							<span class="index-title">{d.title}</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<footer class="footer">
+		<p set:html={s.data.attribution} />
+	</footer>
+</Layout>

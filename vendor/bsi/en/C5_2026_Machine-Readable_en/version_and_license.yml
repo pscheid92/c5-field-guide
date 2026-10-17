@@ -1,0 +1,26 @@
+version: '1.0.1'
+document_history:
+  -
+    version: '1.0.0'
+    date: '07.04.2026'
+    description: 'Initial Publication'
+source: 'Federal Office for Information Security
+
+
+P.O. Box 20 03 63
+
+
+53133 Bonn
+
+
+Tel.: +49 22899 9582-0
+
+
+E-Mail: cloudsecurity@bsi.bund.de
+
+
+Internet: https://www.bsi.bund.de
+
+
+© Federal Office for Information Security 2026'
+license: 'This work is licensed under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0). To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/4.0/'

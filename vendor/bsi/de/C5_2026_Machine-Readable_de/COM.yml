@@ -1,0 +1,171 @@
+-
+  identifier: &ID_Criterion_Identification_of_Requirements '01'
+  name: 'Identifizierung anwendbarer gesetzlicher, regulatorischer, selbst auferlegter oder vertraglicher Anforderungen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Identification_of_Requirements_Subcriterion_Basic_1 '01B'
+      criterion: 'Die für die Informationssicherheit des Cloud-Dienstes relevanten gesetzlichen, regulatorischen, selbstauferlegten und vertraglichen Anforderungen sowie die Verfahren des Cloud-Anbieters zur Einhaltung dieser Anforderungen sind ausdrücklich definiert und dokumentiert.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Identification_of_Requirements_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter stellt dem Cloud-Kunden auf Anfrage einen Überblick über die im Basiskriterium beschriebenen Verfahren zur Verfügung.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Identification_of_Requirements_Subcriterion_Basic_1
+      information_text: 'Die Dokumentation des Cloud-Anbieters kann sich unter anderem auf die folgenden Anforderungen beziehen:
+
+
+1. Anforderungen an den Schutz personenbezogener Daten (z. B. EU-Datenschutz-Grundverordnung);
+
+2. Anforderungen hinsichtlich des Stands der Informationssicherheit des Cloud-Anbieters (z. B. NIS-2-Richtlinie, BSIG soweit auf KRITIS anwendbar);
+
+3. Compliance-Anforderungen aufgrund vertraglicher Verpflichtungen mit Cloud-Kunden (z. B. ISO/IEC 27001, SOC 2, PCI-DSS); und
+
+4. Anforderungen hinsichtlich des Austauschs und der Nutzung von Daten (z. B. EU Data Act).
+
+
+Die Dokumentation der identifizierten Anforderungen und der Verfahren zur Einhaltung dieser Anforderungen kann sich auf mehrere Dokumente verteilen und muss nicht zwingend in einem einzigen Register oder Verzeichnis festgehalten sein.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Policy_for_Planning_and_Conducting_Audits '02'
+  name: 'Richtlinie für die Planung und Durchführung von Audits'
+  basic: 
+    -
+      identifier: &ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter dokumentiert und implementiert ein mehrjähriges Auditprogramm, das den Umfang und die Häufigkeit der Audits festlegt. Das Auditprogramm berücksichtigt das Änderungsmanagement, Richtlinien und die Ergebnisse der Risikobeurteilung (vgl. OIS-07).'
+    -
+      identifier: &ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Basic_2 '02B'
+      criterion: 'Risikobasierte Richtlinien und Verfahren mit Vorgaben für die Planung und Durchführung von Audits sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt und adressieren folgende Aspekte, um nachteilige Auswirkungen des Audits auf den Betrieb des Cloud-Dienstes zu verhindern:
+
+
+1. Beschränkung auf reinen Lesezugriff für Systemkomponenten gemäß der vereinbarten Auditplanung und wie es für die Durchführung der Aktivitäten notwendig ist;
+
+2. Aktivitäten, die zu Ausfällen, Verschlechterungen des Cloud-Dienstes oder Verletzungen gegen vertragliche Anforderungen führen können, werden während der planmäßigen Wartungsfester oder außerhalb der Zeiten von Lastspitzen durchgeführt;
+
+3. Protokollierung und Überwachung der Aktivitäten;
+
+4. Überprüfung der Konfigurationen von Server- und Netzkomponenten, die in der Verantwortung des Cloud-Anbieters liegen;
+
+5. Penetrationstests für externe Zugangspunkte; und
+
+6. Quellcodeprüfungen intern entwickelter Sicherheitsfunktionen.
+
+'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Basic_1
+      criterion: 'Der Cloud-Anbieter dokumentiert und implementiert ein dreijähriges Auditprogramm, das den Umfang und die Häufigkeit der Audits festlegt. Das Auditprogramm berücksichtigt das Änderungsmanagement, Richtlinien und die Ergebnisse der Risikobeurteilung (vgl. OIS-07).'
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter gewährt seinen Cloud-Kunden vertraglich zugesicherte Informations- und Auditrechte. Diese Rechte können einzeln oder im Rahmen von Gruppenaudits ausgeübt werden.'
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Basic_1
+        - *ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Additional_Sharpen_1 
+      information_text: 'Ein Audit ist ein systematischer, unabhängiger und dokumentierter Prozess zur Erlangung objektiver Nachweise und zu deren objektiver Bewertung, um festzustellen, inwieweit die Auditkriterien erfüllt sind. Audits können als interne Audits durchgeführt werden, manchmal auch als ''First-Party Audits'', die von oder im Auftrag des Cloud-Anbieters selbst durchgeführt werden. Sie können auch als externe Audits durchgeführt werden, allgemein als ''Second-Party-'' oder ''Third-Party-Audits'' bezeichnet. Second-Party-Audits werden von Parteien durchgeführt, die ein Interesse an dem Cloud-Anbieter haben, wie z. B. Cloud-Kunden, oder von anderen Personen in deren Auftrag. Third-Party-Audits werden von unabhängigen Auditorganisationen durchgeführt.
+
+
+Ein Auditprogramm umfasst Regelungen für eine Reihe von einem oder mehreren Audits, die für einen bestimmten Zeitraum geplant und auf einen bestimmten Zweck ausgerichtet sind. Das Auditprogramm kann beispielsweise einen Zeitraum von drei Jahren umfassen und interne und externe Audits beinhalten.
+
+
+COM-02 ist vollständig auf virtuelle Infrastruktur und ''Infrastructure as Code'' anwendbar. Auditaktivitäten können den Betrieb in einer virtuellen Umgebung dennoch beeinträchtigen. Überprüfungen von Konfigurationen könnten beispielsweise im Rahmen von Codeprüfungen durchgeführt werden.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_Planning_and_Conducting_Audits_Subcriterion_Basic_2
+      information_text: 'Siehe DEV-05 für weitere Erläuterungen zu Sicherheitsfunktionen.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass auf Ausfälle und Verschlechterungen des Cloud-Dienstes durch solche Audits angemessen reagiert wird.
+
+
+Soweit vertraglich vereinbarte Informations- und Auditrechte vorliegen, stellen Cloud-Kunden mit geeigneten Kontrollen sicher, dass diese Rechte gemäß eigenen Anforderungen ausgestaltet und wahrgenommen werden.'
+-
+  identifier: &ID_Criterion_Internal_Audits_of_the_ISMS '03'
+  name: 'Interne Audits des Informationssicherheitsmanagementsystems'
+  basic: 
+    -
+      identifier: &ID_Criterion_Internal_Audits_of_the_ISMS_Subcriterion_Basic_1 '01B'
+      criterion: 'Sachverständiges Personal überprüft in regelmäßigen Abständen, mindestens jährlich, in internen Audits die Compliance des Informationssicherheitsmanagementsystems mit den relevanten und anwendbaren gesetzlichen, regulatorischen, selbstauferlegten oder vertraglichen Anforderungen (vgl. COM-01). Dies umfasst Prüfungen hinsichtlich:
+
+
+1. Einhaltung der Richtlinien und Verfahren (vgl. SP-01) innerhalb ihres Verantwortungsbereichs (vgl. OIS-01); und
+
+2. Wirksamkeit organisatorischer und betrieblicher Maßnahmen zur Steuerung der Risiken, die für die Sicherheit von Netz- und Informationssystemen bestehen (vgl. OIS-07).
+
+'
+    -
+      identifier: &ID_Criterion_Internal_Audits_of_the_ISMS_Subcriterion_Basic_2 '02B'
+      criterion: 'Sachverständiges Personal, das interne Audits durchführt, stehen nicht in der Weisungslinie des Personals des überprüften Bereichs. Wenn die Größe des Cloud-Anbieters eine solche Trennung der Weisungslinie nicht zulässt, werden alternative Maßnahmen umgesetzt, um die Unparteilichkeit der Compliance-Prüfungen zu gewährleisten.'
+    -
+      identifier: &ID_Criterion_Internal_Audits_of_the_ISMS_Subcriterion_Basic_3 '03B'
+      criterion: 'Identifizierte Schwachstellen und Abweichungen sowie Nichtkonformitäten mit den anwendbaren gesetzlichen, regulatorischen, selbst auferlegten und vertraglichen Anforderungen, die für die Informationssicherheit des Cloud-Dienstes relevant sind, werden gemäß dem Risikomanagementverfahren (vgl. OIS-07) einer Risikobeurteilung unterzogen. Folgemaßnahmen werden definiert und nachverfolgt (vgl. OPS-18).'
+    
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Internal_Audits_of_the_ISMS_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Auf Grundlage einer Risikobeurteilung (vgl. OIS-07) und der technischen Machbarkeit entscheidet der Cloud-Anbieter, in welchem Umfang interne Audits durch Verfahren ergänzt werden, um anwendbare Anforderungen von Richtlinien und Verfahren in Bezug auf die folgenden Aspekte automatisch zu überwachen:
+
+
+1. Konfiguration von Systemkomponenten zur Bereitstellung des Cloud-Dienstes innerhalb des Verantwortungsbereichs des Cloud-Anbieters;
+
+2. Leistung und Verfügbarkeit dieser Systemkomponenten;
+
+3. Reaktionszeit auf Vorfälle und Sicherheitsvorfälle; und
+
+4. Wiederherstellungszeit (Zeitraum bis zum Abschluss der Fehlerbehandlung).
+
+'
+    -
+      identifier: &ID_Criterion_Internal_Audits_of_the_ISMS_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Identifizierte Schwachstellen und Abweichungen werden automatisch an das dafür zuständige Personal oder die dafür zuständigen Systemkomponenten des Cloud-Anbieters berichtet, um diese umgehend einer Beurteilung zu unterziehen und erforderliche Maßnahmen einzuleiten.'
+    -
+      identifier: &ID_Criterion_Internal_Audits_of_the_ISMS_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Der Cloud-Anbieter stellt Cloud-Kunden Schnittstellen zur Verfügung, damit diese die Einhaltung ausgewählter vertraglicher Vereinbarungen in Echtzeit prüfen können.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Internal_Audits_of_the_ISMS_Subcriterion_Basic_1
+      information_text: 'Sachverständiges Personal sind beispielsweise in der Internen Revision des Cloud-Anbieters tätig oder sind vom Cloud-Anbieter beauftragte fachkundige Dritte, wie etwa Prüfungsgesellschaften, und können über einschlägige Zertifizierungen wie ''Certified Internal Auditor (CIA)'' verfügen.
+
+
+Bezüglich Compliance des ISMS vgl. Abschnitt 9.2 der ISO/IEC 27001, der die Anforderungen an die Durchführung interner Audits eines Informationssicherheitsmanagementsystems (ISMS) und an die Einrichtung eines internen Auditprogramms darlegt. Bei der Einrichtung des/der internen Auditprogramme(s) sollte der Cloud-Anbieter den Umfang und die Kriterien unter Berücksichtigung der Bedeutung der betreffenden Prozesse und der Ergebnisse früherer Audits festlegen. Dieser Ansatz ermöglicht es Cloud-Anbietern, den Auditumfang auf Grundlage der Kritikalität der Einhaltung relevanter gesetzlicher, regulatorischer oder vertraglicher Anforderungen (vgl. COM-01) sowie interner Richtlinien und Verfahren (vgl. SP-01) festzulegen, ohne bei jedem Auditzyklus eine umfassende Überprüfung aller Anforderungen zu verlangen.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Information_on_IS_Performance_and_Management_Assessment_of_the_ISMS '04'
+  name: 'Informationen über die Informationssicherheitsleistung und Managementbewertung des ISMS'
+  basic: 
+    -
+      identifier: &ID_Criterion_Information_on_IS_Performance_and_Management_Assessment_of_the_ISMS_Subcriterion_Basic_1 '01B'
+      criterion: 'Die oberste Leitung des Cloud-Anbieters wird regelmäßig über die Informationssicherheitsleistung im Anwendungsbereichs des ISMS informiert, um dessen fortdauernde Eignung, Angemessenheit und Wirksamkeit sicherzustellen. Die Informationen werden in die Managementbewertung des ISMS einbezogen. Diese Managementbewertung wird mindestens einmal jährlich durchgeführt.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Information_on_IS_Performance_and_Management_Assessment_of_the_ISMS_Subcriterion_Additional_1 '01AC' 
+      criterion: 'Der Cloud-Anbieter definiert und implementiert technische und betriebliche Kennzahlen, die mit seinen Geschäftszielen, seinen Sicherheitsanforderungen und Compliance-Verpflichtungen im Einklang stehen. Diese Kennzahlen werden dokumentiert und in die Managementbewertung des ISMS einbezogen, um ihre fortdauernde Eignung, Angemessenheit und Wirksamkeit sicherzustellen.'
+    -
+      identifier: &ID_Criterion_Information_on_IS_Performance_and_Management_Assessment_of_the_ISMS_Subcriterion_Additional_2 '02AC' 
+      criterion: 'Die verantwortlichen Geschäftsbereiche des Cloud-Anbieters berichten der obersten Leitung mindestens jährlich über den Status und die Wirksamkeit der Richtlinien und Verfahren, die für die Managementbewertung des Informationssicherheitsmanagementsystems durch die oberste Leitung relevant sind. Diese Berichterstattung umfasst mindestens:
+
+
+1. Umgesetzte Änderungen zur Behandlung von Cybersicherheitsrisiken für das in der Richtlinie oder im Verfahren behandelte Thema;
+
+2. Informationssicherheitsvorfälle für das in der Richtlinie oder im Verfahren behandelte Thema und die Nachverfolgung;
+
+3. Leistung der internen Kontrollen hinsichtlich der Informationssicherheit für das in der Richtlinie oder im Verfahren behandelte Thema; und
+
+4. Geplante Änderungen für das in der Richtlinie oder im Verfahren behandelte Thema zur Behandlung von Cybersicherheitsrisiken sowie der Informationssicherheit und Cybersicherheit.
+
+'  
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Information_on_IS_Performance_and_Management_Assessment_of_the_ISMS_Subcriterion_Basic_1
+      information_text: 'Die oberste Geschäftsleitung ist eine natürliche Person oder Personengruppe, die die endgültige Entscheidung für die Organisation trifft und für diese Entscheidung verantwortlich ist.
+
+
+Die in der Managementbewertung des ISMS zu behandelnden Aspekte sind in Abschnitt 9.3 der ISO / IEC 27001 aufgeführt.'
+  corresponding:

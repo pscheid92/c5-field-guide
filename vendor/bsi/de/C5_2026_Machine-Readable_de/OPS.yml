@@ -1,0 +1,1413 @@
+-
+  identifier: &ID_Criterion_Capacity_Management_Planning '01'
+  name: 'Kapazitätsmanagement - Planung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Capacity_Management_Planning_Subcriterion_Basic_1 '01B'
+      criterion: 'Die Planung von Kapazitäten und Ressourcen (Personal und Systemkomponenten) folgt einem etablierten Verfahren, um mögliche Kapazitätsengpässe zu vermeiden.'   
+    -
+      identifier: &ID_Criterion_Capacity_Management_Planning_Subcriterion_Basic_2 '02B'
+      criterion: 'Zu den Verfahren gehört die Prognose zukünftiger Kapazitätsanforderungen, um Nutzungstrends zu erkennen und Systemüberlastungen zu bewältigen.'
+    -
+      identifier: &ID_Criterion_Capacity_Management_Planning_Subcriterion_Basic_3 '03B'
+      criterion: 'Der Cloud-Anbieter stellt durch geeignete Maßnahmen sicher, dass er bei Kapazitätsengpässen oder Ausfällen hinsichtlich Personal und Systemkomponenten die mit den Cloud-Kunden vereinbarten Anforderungen an die Bereitstellung des Cloud-Dienstes, gemäß der jeweiligen Vereinbarungen weiterhin erfüllt. Dies gilt insbesondere hinsichtlich der dedizierten Nutzung von Systemkomponenten gemäß den jeweiligen Vereinbarungen.'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Capacity_Management_Planning_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Die Prognosen werden in Abstimmung mit der Service Level-Vereinbarung zur Planung und Vorbereitung der Provisionierung berücksichtigt.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Capacity_Management_Planning_Subcriterion_Basic_1
+        - *ID_Criterion_Capacity_Management_Planning_Subcriterion_Basic_2
+        - *ID_Criterion_Capacity_Management_Planning_Subcriterion_Basic_3
+        - *ID_Criterion_Capacity_Management_Planning_Subcriterion_Additional_Complement_1
+      information_text: 'Aus Wirtschaftlichkeitsgründen streben Cloud-Anbieter typischerweise eine hohe Auslastung der Systemkomponenten (CPU, Arbeitsspeicher, Speicherplatz, Netz) an. In Multi-Mandanten-Umgebungen sollten die vorhandenen Ressourcen zwischen den Cloud-Kunden (Mandanten) trotzdem so aufgeteilt werden, dass die Service Level-Vereinbarungen eingehalten werden. Insoweit sind die angemessene Planung und Überwachung von IT-Ressourcen kritisch für die Verfügbarkeit und Wettbewerbsfähigkeit des Cloud-Dienstes. Soweit die Verfahren nicht dokumentiert sind oder als Betriebsgeheimnis des Cloud-Anbieters einer höheren Vertraulichkeit unterliegen, sollte der Cloud-Anbieter die Verfahren im Rahmen dieser Prüfung mindestens mündlich erläutern können.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Capacity_Management_Planning_Subcriterion_Basic_1
+      information_text: 'Kapazitätsengpässe sind Beschränkungen der Ressourcen des Cloud-Anbieters, die zu Störungen des Cloud-Dienstes führen oder die Einhaltung vertraglicher Vereinbarungen und Servicelevel beeinträchtigen.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass der vom Cloud-Anbieter abzudeckende Kapazitäts- und Ressourcenbedarf geplant und in der Service Level-Vereinbarung (SLA) mit dem Cloud-Anbieter abgebildet wird. Die Anforderungen werden regelmäßig überprüft und die SLA-Anpassung entsprechend eingefordert.'
+-
+  identifier: &ID_Criterion_Capacity_Management_Monitoring '02'
+  name: 'Kapazitätsmanagement - Überwachung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Capacity_Management_Monitoring_Subcriterion_Basic_1 '01B'
+      criterion: 'Verfahren und technische Maßnahmen zur Überwachung und Provisionierung bzw. De-Provisionierung von Cloud-Dienstleistungen sind definiert. Der Cloud-Anbieter stellt sicher, dass die Ressourcen wie vertraglich mit den Cloud-Kunden vereinbart bereitgestellt werden. Der Cloud-Anbieter stellt die Einhaltung der Service Level-Vereinbarungen sicher.'
+    -
+      identifier: &ID_Criterion_Capacity_Management_Monitoring_Subcriterion_Basic_2 '02B'
+      criterion: 'Kapazitätsengpässe, die zu Verstößen gegen vertragliche Pflichten führen, sind Cloud-Kunden gemäß OPS-24 zu melden.'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Capacity_Management_Monitoring_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Zur Überwachung der vom Cloud-Kunden verwalteten Kapazität und Verfügbarkeit stehen dem Cloud-Kunden die relevanten Informationen in einem Self-Service-Portal zur Verfügung.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Capacity_Management_Monitoring_Subcriterion_Basic_1
+      information_text: 'Zu den Verfahren und technischen Maßnahmen gehören typischerweise:
+
+
+1. Einsatz von Monitoring Tools mit Alarmierungsfunktion beim Überschreiten definierter Schwellwerte;
+
+2. Prozess zum Korrelieren von Events und Schnittstelle zum Vorfallsmanagement;
+
+3. Eine durchgängige Überwachung der Systeme durch qualifiziertes Personal; und
+
+4. Redundanzen in den IT-Systemen.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Capacity_Management_Monitoring_Subcriterion_Basic_2
+      information_text: 'Cloud-Anbieter stellen dem Cloud-Kunden möglicherweise ein Health Dashboard zur Verfügung. Dieses Unterkriterium kann durch die Bereitstellung eines solchen Health Dashboards erfüllt werden, wenn das Health Dashboard den Cloud-Kunden über Verstöße gegen vertragliche Pflichten, wie z. B. Service Level-Vereinbarungen (SLAs), informiert.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass die mit dem Cloud-Anbieter getroffenen vertraglichen Vereinbarungen zur Bereitstellung von Ressourcen oder Diensten überwacht werden können. Bei Abweichungen wird durch entsprechende Kontrollen sichergestellt, dass der Cloud-Anbieter informiert wird, sodass dieser entsprechende Maßnahmen ergreifen kann.'
+-
+  identifier: &ID_Criterion_Capacity_Management_Controlling_of_Resources '03'
+  name: 'Kapazitätsmanagement - Steuerung von Ressourcen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Capacity_Management_Controlling_of_Resources_Subcriterion_Basic_1 '01B'
+      criterion: 'Entsprechend den Möglichkeiten des jeweiligen Service-Modells ist der Cloud-Kunde in der Lage die Aufteilung der ihm zur Verwaltung/Nutzung zugeordneten Systemressourcen zu steuern und zu überwachen, um eine Überbelegung der Ressourcen zu vermeiden und eine hinreichende Performance zu erreichen.'
+    -
+      identifier: &ID_Criterion_Capacity_Management_Controlling_of_Resources_Subcriterion_Basic_2 '02B'
+      criterion: 'Ergeben sich bei den im Rahmen des Cloud-Diensts bereitgestellten und dem Cloud-Kunden zugeordneten Systemkomponenten wesentliche oder geplante wesentliche Sicherheitsänderungen, informiert der Cloud-Anbieter den Cloud-Kunden hierüber.'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Capacity_Management_Controlling_of_Resources_Subcriterion_Basic_1
+      information_text: 'Zu den dem Cloud-Kunden zugeordneten und von diesem zu steuernden Systemkomponenten können entsprechend den Möglichkeiten des Service-Modells gehören:
+
+
+1. Rechenkapazität;
+
+2. Speicherkapazität;
+
+3. Konfiguration der Netzeigenschaften;
+
+4.  Application Programming Interfaces (APIs); und
+
+5. Datenbanken.
+
+
+Bei der Zuweisung von Systemkomponenten muss möglicherweise die in den Service-Modellen verwendete Container-basierte Infrastruktur berücksichtigt werden.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Capacity_Management_Controlling_of_Resources_Subcriterion_Basic_2
+      information_text: 'Wesentliche Sicherheitsänderungen in diesem Zusammenhang können die Änderung eines Sicherheitsmerkmals selbst sein, beispielsweise bei der Änderung der Dienstarchitektur. Zu den nicht wesentliche Änderungen kann die Änderung der Implementierung eines Sicherheitsmerkmals in einer Weise gehören, die seine Funktionalität nicht verändert oder sein Sicherheitsniveau nicht verringert, beispielsweise wenn ein verwendetes kryptographisches Primitiv durch ein anderes, gleichwertiges ersetzt wird.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass sie die Systemressourcen in ihrem Verantwortungsbereich steuern und überwachen.'
+-
+  identifier: &ID_Criterion_Protection_Against_Malware_Policies_and_Procedures '04'
+  name: 'Schutz vor Malware - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren mit Vorgaben zum Schutz vor Malware sind hinsichtlich der folgenden Aspekte gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt:
+
+
+1. Nutzung systemspezifischer Schutzmechanismen;
+
+2. Betrieb von Schutzprogrammen auf Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters;
+
+3. Betrieb von Schutzprogrammen für Endgeräte des Personals; und
+
+4. Betrieb von Schutzprogrammen für Datenströme, die über Endgeräte des Cloud-Anbieters eingehen, sowie für alle anderen eingehenden Datenströme.
+
+'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Protection_Against_Malware_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Schutzprogramme für Endgeräten des Personal können beispielsweise serverbasierte Schutzprogramme sein, bei denen Dateien in Anhängen auf dem Server geprüft werden oder der Netzverkehr gefiltert wird.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Protection_Against_Malware_Implementation '05'
+  name: 'Schutz vor Malware - Umsetzung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Basic_1 '01B'
+      criterion: 'Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters, die zum Betrieb des Cloud-Dienstes in der Produktionsumgebung verwendet werden, werden gemäß den Richtlinien und Verfahren mit Malware-Schutz konfiguriert.' 
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Basic_2 '02B'
+      criterion: 'Soweit Schutzprogramme mit einer signatur- und/oder verhaltensbasierten Detektion und Entfernung von Malware eingerichtet sind, werden diese Schutzprogramme regelmäßig, mindestens täglich, mit den neuesten Malware-Definitionen aktualisiert, sobald diese verfügbar sind.'
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Basic_3 '03B'
+      criterion: 'Der Cloud-Anbieter erstellt regelmäßige Berichte über die durchgeführten Überprüfungen der betriebenen Schutzprogramme, die von autorisierten Personen, Teams oder Gremien überprüft und analysiert werden.' 
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Additional_Sharpen_2 '02AS'
+      sharpened_basic_criterion: *ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Basic_2
+      criterion: 'Soweit Schutzprogramme mit einer signatur- und/oder verhaltensbasierten Detektion und Entfernung von Malware eingerichtet sind, werden diese Schutzprogramme regelmäßig, mit der höchsten Häufigkeit, die der bzw. die Anbieter gegebenenfalls anbieten, mit den neuesten Malware-Definitionen aktualisiert, sobald diese verfügbar sind.'
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Richtlinien und Verfahren beschreiben die technischen Maßnahmen, die ergriffen werden, um die Managementkonsole (sowohl den Self-Service des Cloud-Kunden als auch die Cloud-Administration des Cloud-Anbieter) sicher zu konfigurieren und zu überwachen, um sie vor Malware zu schützen.'
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Die Konfiguration der Schutzmechanismen wird automatisch überwacht.'   
+    -
+      identifier: &ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Abweichungen von den Vorgaben werden automatisch an das dafür sachverständige Personal berichtet, um diese umgehend einer Beurteilung zu unterziehen und erforderliche Maßnahmen einzuleiten.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Basic_1
+        - *ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Basic_2
+        - *ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Additional_Sharpen_2
+      information_text: 'Der Schutz vor Malware kann durch betriebssystemspezifische Schutzmechanismen oder explizite Schutzprogramme (z. B. zur signatur- und verhaltensbasierten Detektion und Entfernung von Malware) umgesetzt.
+      
+
+Betreibt der Cloud-Anbieter zur Bereitstellung des Cloud-Dienstes Schadsoftware-geschützte Container oder virtuelle Maschinen, sollte der Schadsoftware-Schutz containerspezifische Maßnahmen umfassen. Dies kann beispielsweise die Überwachung der Container-Images und der Container-Laufzeit sowie aufgrund des häufigen Startens und Stoppens der Container auch Echtzeit-Scans und -Überwachungsprozesse umfassen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Protection_Against_Malware_Implementation_Subcriterion_Basic_1
+      information_text: 'Für Endgeräte, die vom Personal des Cloud-Anbieters verwendet werden, wird die Anwendbarkeit dieses Unterkriteriums auf der Grundlage der gemäß AM-08 durchgeführten Risikobeurteilung bestimmt.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass die Schichten des Cloud-Dienstes, für die sie verantwortlich sind, über Sicherheitsprodukte zur Detektion und Entfernung von Schadsoftware verfügen.'
+-
+  identifier: &ID_Criterion_Data_Backup_and_Recovery_Policies_and_Procedures '06'
+  name: 'Datensicherung und -wiederherstellung - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren für die regelmäßige Sicherung oder Replikation und regelmäßige Wiederherstellung von Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten und Cloud-Anbieterdaten entsprechend der Sensibilität der Daten sind hinsichtlich der folgenden Aspekte gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt:
+
+
+1. Umfang und Häufigkeit der Datensicherung sowie die Dauer der Datenaufbewahrung stehen im Einklang mit den vertraglichen Vereinbarungen mit den Cloud-Kunden und den Anforderungen des Cloud-Anbieters an die Betriebskontinuität für Recovery Time Objective (RTO) und Recovery Point Objective (RPO);
+
+2. Die Datensicherung erfolgt in verschlüsselter, dem Stand der Technik entsprechender Form;
+
+3. Sichere Aufbewahrung, Übertragung, Verwaltung und Entsorgung von Daten aus der Datensicherung;
+
+4. Der Zugriff auf die gesicherten Daten und die Durchführung von Wiederherstellungen erfolgt nur durch autorisierte Personen;
+
+5. Tests der Datenwiederherstellungsverfahren durch den Cloud-Anbieter (vgl. OPS-08); und
+
+6. Sofern Bestandteil der vertraglichen Vereinbarung: Durchführung tatsächlicher Datenwiederherstellungsanfragen oder Wiederherstellungstests, die vom Cloud-Kunden initiiert wurden.
+
+
+Die Richtlinien und Verfahren enthalten Bedingungen für diejenigen Teile der Cloud-Anbieterdaten, die keine Sicherung erfordern. Für diese Teile der Cloud-Anbieterdaten ist dieses Unterkriterium nicht anwendbar.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Policies_and_Procedures_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Data_Backup_and_Recovery_Policies_and_Procedures_Subcriterion_Basic_1
+      criterion: 'Richtlinien und Verfahren für die mindestens tägliche Sicherung oder Replikation und regelmäßige Wiederherstellung von Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten und Cloud-Anbieterdaten entsprechend der Sensibilität der Daten sind hinsichtlich der folgenden Aspekte gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt:
+
+
+1. Umfang und Häufigkeit der Datensicherung sowie die Dauer der Datenaufbewahrung stehen im Einklang mit den vertraglichen Vereinbarungen mit den Cloud-Kunden und den Anforderungen des Cloud-Anbieters an die Betriebskontinuität für Recovery Time Objective (RTO) und Recovery Point Objective (RPO);
+
+2. Die Datensicherung erfolgt in verschlüsselter, dem Stand der Technik entsprechender Form;
+
+3. Sichere Aufbewahrung, Übertragung, Verwaltung und Entsorgung von Daten aus der Datensicherung;
+
+4. Der Zugriff auf die gesicherten Daten und die Durchführung von Wiederherstellungen erfolgt nur durch autorisierte Personen;
+
+5. Tests der Datenwiederherstellungsverfahren durch den Cloud-Anbieter (vgl. OPS-08); und
+
+6. Sofern Bestandteil der vertraglichen Vereinbarung: Durchführung tatsächlicher Datenwiederherstellungsanfragen oder Wiederherstellungstests, die vom Cloud-Kunden initiiert wurden.
+
+
+Die Richtlinien und Verfahren enthalten Bedingungen für diejenigen Teile der Cloud-Anbieterdaten, die keine Sicherung erfordern. Für diese Teile der Cloud-Anbieterdaten gilt dieses Unterkriterium nicht.'
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Policies_and_Procedures_Subcriterion_Basic_1
+        - *ID_Criterion_Data_Backup_and_Recovery_Policies_and_Procedures_Subcriterion_Additional_Sharpen_1 
+      information_text: 'Insbesondere bei IaaS- und PaaS-Dienstmodellen liegt die Verantwortung für die Sicherung und Wiederherstellung von Cloud-Kundendaten häufig beim Cloud-Kunden und ist daher nicht Teil der vertraglichen Vereinbarungen zwischen Cloud-Anbieter und Cloud-Kunde.
+      
+
+Ist die Datensicherung von Cloud-Kundendaten nicht Vertragsbestandteil, gilt dieses Kriterium nicht für Cloud-Kundendaten, wohl aber für abgeleitete Cloud-Dienstdaten und Cloud-Anbieterdaten. Inwieweit das Kriterium auf den Cloud-Dienst anwendbar ist, wird in der Systembeschreibung dargestellt. 
+      
+
+Die Datensicherungsrichtlinien und -verfahren legen fest, welche Art der Datensicherung durchgeführt werden soll (z. B. Umfang, Häufigkeit und Dauer) und legen fest, welche Daten in Sonderfällen (z. B. reine Nutzung von Rechenknoten ohne Datenspeicherung) zusätzlich gesichert werden sollen. Bei der Sicherung von Daten muss zwischen *Backups* und *Snapshots* virtueller Maschinen unterschieden werden. Snapshots ersetzen keine Backups, können aber Teil der Datensicherungs-Strategie zur Erreichung von Recovery Point Objectives (RPO) sein, wenn sie zusätzlich außerhalb des ursprünglichen Datenspeicherorts gespeichert werden. Die geschäftlichen Anforderungen des Cloud-Anbieters an Umfang, Häufigkeit und Dauer der Datensicherung ergeben sich aus der Business-Impact-Analyse (vgl. BCM-02) für Entwicklungs- und Betriebsprozesse des Cloud-Dienstes. Sofern für Cloud-Kundendaten und Cloud-Anbieterdaten unterschiedliche Datensicherungs- und -wiederherstellungsverfahren bestehen, sind beide Varianten Gegenstand der Prüfungen von Kontrollen nach diesem Kriterienkatalog.
+      
+
+Bestehende vertragliche Vereinbarungen vor einer C5-Attestierung müssen nicht aktualisiert werden, um die in diesem Kriterium genannten Anforderungen zu berücksichtigen. Stattdessen sollten neue vertragliche Vereinbarungen so gestaltet werden, dass bestimmte Anforderungen klar definiert und mit Cloud-Kunden vereinbart werden.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Teile der Cloud-Anbieterdaten, für die keine Sicherung erforderlich ist, umfassen unter anderem Teile von Cloud-Anbieterdaten, die ohne Sicherung von Grund auf neu erstellt werden können.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass die mit dem Cloud-Anbieter getroffenen vertraglichen Vereinbarungen über Umfang, Häufigkeit und Dauer der Datenspeicherung den geschäftlichen Anforderungen entsprechen. Die Geschäftsanforderungen werden im Rahmen der Business-Impact-Analyse (vgl. BCM-02) beurteilt.'
+-
+  identifier: &ID_Criterion_Data_Backup_and_Recovery_Monitoring '07'
+  name: 'Datensicherung und -wiederherstellung - Überwachung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Monitoring_Subcriterion_Basic_1 '01B'
+      criterion: 'Die Durchführung von Datensicherungen von Cloud-Kundendaten, abgeleitete Cloud-Dienstdaten und Cloud-Anbieterdaten wird durch technische und organisatorische Maßnahmen überwacht, die gemäß den Richtlinien und Verfahren für Datensicherung und -wiederherstellung dokumentiert und umgesetzt werden (vgl. OPS-06).'     
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Monitoring_Subcriterion_Basic_2 '02B'
+      criterion: 'Vorfälle werden von qualifiziertem Personal untersucht und zeitnah behoben, um die Einhaltung vertraglicher Verpflichtungen gegenüber Cloud-Kunden bzw. der Geschäftsanforderungen des Cloud-Anbieters hinsichtlich Umfang und Häufigkeit der Datensicherung sowie der Speicherdauer sicherzustellen.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Monitoring_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Zur Überwachung der Datensicherung stehen dem Cloud-Kunden die relevanten Protokolldaten oder die zusammengefassten Ergebnisse in einem Self-Service Portal zur Verfügung.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Monitoring_Subcriterion_Basic_1
+        - *ID_Criterion_Data_Backup_and_Recovery_Monitoring_Subcriterion_Basic_2
+        - *ID_Criterion_Data_Backup_and_Recovery_Monitoring_Subcriterion_Additional_Complement_1
+      information_text: 'Sofern die Datensicherung von Cloud-Kundendaten nicht Bestandteil des zwischen dem Cloud-Anbieter und dem Cloud-Kunden geschlossenen Vertrages ist, gilt dieses Kriterium nicht für Cloud-Kundendaten, wohl aber für abgeleitete Cloud-Dienstdaten und Cloud-Anbieterdaten. Inwieweit das Kriterium auf den Cloud-Dienst anwendbar ist, wird in der Systembeschreibung dargestellt.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass die Sicherung der Daten in ihrem Verantwortungsbereich durch technische und organisatorische Maßnahmen überwacht wird.'
+-
+  identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing '08'
+  name: 'Datensicherung und -wiederherstellung - Regelmäßige Tests'
+  basic: 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_1 '01B'
+      criterion: 'Wiederherstellungsverfahren werden regelmäßig, mindestens jährlich, getestet. Die Tests umfassen Cloud-Anbieterdaten und, sofern vertraglich vereinbart, Cloud-Kundendaten und abgeleitete Cloud-Dienstdaten.' 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Tests ermöglichen eine Beurteilung, ob die vertraglichen Vereinbarungen sowie die Vorgaben zur maximal tolerierbaren Ausfallzeit (Recovery Time Objective, RTO) und zum maximal zulässigen Datenverlust (Recovery Point Objective, RPO) eingehalten werden (vgl. BCM-02).'
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_3 '03B'
+      criterion: 'Cloud-Kundendaten werden nur in Umgebungen wiederhergestellt, die denselben Zugriffsbeschränkungen unterliegen wie die Produktionsumgebung.' 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_4 '04B'
+      criterion: 'Durchgeführte Wiederherstellungstests werden ausführlich dokumentiert. Dazu gehört auch die Dokumentation der sicheren Entsorgung der wiederhergestellten Daten.'
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_5 '05B'
+      criterion: 'Abweichungen von den Vorgaben werden an das dafür zuständige Personal oder die dafür zuständigen Systemkomponenten beim Cloud-Anbieter berichtet, damit diese die Abweichungen zeitnah beurteilen und erforderliche Maßnahmen einleiten können.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Auf Wunsch des Cloud-Kunden informiert der Cloud-Anbieter den Cloud-Kunden über die Ergebnisse der Wiederherstellungstests.' 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Wiederherstellungstests sind im Business Continuity Management des Cloud-Anbieters enthalten.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_1
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_2
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_3
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_4
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_5
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Additional_Complement_2
+      information_text: 'Sofern die Datensicherung nicht vertraglich zwischen dem Cloud-Anbieter und dem Cloud-Kunden vereinbart wurde, ist dieses Kriterium nicht anwendbar. Dieser Sachverhalt ist vom Cloud-Anbieter in der Systembeschreibung transparent darzustellen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_1
+      information_text: 'Die im Basiskriterium beschriebene Nutzung von Cloud-Kundendaten bei Sicherungs- und Wiederherstellungsverfahren stellt eine wohlüberlegte Ausnahme dar. Diese Ausnahme erstreckt sich nicht auf allgemeine Softwareentwicklungs- oder andere Testumgebungen und die Verwendung von Cloud-Kundendaten für Tests ist speziell auf Sicherungs- und Wiederherstellungsverfahren beschränkt.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Regular_Testing_Subcriterion_Basic_3
+      information_text: 'Wenn Cloud-Kundendaten in einer Umgebung mit unterschiedlichen Zugriffsbeschränkungen wiederhergestellt werden, kann die Vertraulichkeit der Daten beeinträchtigt werden.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass sie aktiv Informationen über die Ergebnisse von Wiederherstellungstests beim Cloud-Anbieter anfordern. Cloud-Kunden bewerten die Wirksamkeit angewandter Datenwiederherstellungsstrategien und integrieren Erkenntnisse in ihre eigenen Notfallpläne im Einklang mit ihren Geschäftsanforderungen und Sicherheitsstandards.'
+-
+  identifier: &ID_Criterion_Data_Backup_and_Recovery_Storage '09'
+  name: 'Datensicherung und -wiederherstellung - Aufbewahrung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter überträgt die Cloud-Anbieterdaten und, sofern vertraglich vereinbart, die Cloud-Kundendaten und die abgeleiteten Cloud-Dienstdaten zur Sicherung an einen entfernten Standort oder transportiert diese auf Sicherungsmedien an einen entfernten Standort.' 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Schutzbedarfe, die sich aus der Datenklassifizierung der Originaldaten ergeben (z. B. Verschlüsselung, Zugriffskontrolle), gelten auch für Datensicherungen.' 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_3 '03B'
+      criterion: 'Soweit die Datensicherung über ein Netz zum Remote-Standort übertragen wird, erfolgt die Datensicherung oder die Übertragung der Daten in einer verschlüsselten Form, die dem Stand der Technik entspricht (vgl. CRY-04).' 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_4 '04B'
+      criterion: 'Die Entfernung zum Hauptstandort wird unter ausreichender Berücksichtigung der Faktoren Wiederherstellungszeiten und Auswirkungen von Katastrophen auf beide Standorte gewählt.' 
+    -
+      identifier: &ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_5 '05B'
+      criterion: 'Die Maßnahmen zur physischen und umgebungsbezogenen Sicherheit am Remote-Standort entsprechen denen am Hauptstandort.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_1
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_2
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_3
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_4
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_5
+      information_text: 'Sofern die Datensicherung nicht vertraglich zwischen dem Cloud-Anbieter und dem Cloud-Kunden vereinbart wurde, entfällt dieses Kriterium. Der Cloud-Anbieter stellt diesen Sachverhalt in der Systembeschreibung transparent dar.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_1
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_3
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_4
+        - *ID_Criterion_Data_Backup_and_Recovery_Storage_Subcriterion_Basic_5
+      information_text: 'Ein entfernter Standort kann z.B. ein weiteres Rechenzentrum des Cloud-Anbieters sein.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Policies_and_Procedures '10'
+  name: 'Protokollierung und Überwachung - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter hat Richtlinien und Verfahren festgelegt, die die Protokollierung und Überwachung von Ereignissen auf Systemkomponenten in seinem Verantwortungsbereich regeln. Diese Richtlinien und Verfahren werden gemäß SP-01 in Bezug auf die folgenden Aspekte dokumentiert, kommuniziert und bereitgestellt:
+
+
+1. Definition von Ereignissen, die zu einer Verletzung der Schutzziele führen könnten;
+
+2. Vorgaben zum Aktivieren, Stoppen und Pausieren der verschiedenen Protokolldaten;
+
+3. Informationen über den Zweck und die Aufbewahrungsfrist der Protokolldaten;
+
+4. Definition von Rollen, Verantwortlichkeiten und Befugnissen für die Einrichtung und Überwachung der Protokollierung;
+
+5. Definition der Protokolldaten, die zur Übertragung an Cloud-Kunden zugelassen sind, und technische Anforderungen einer solchen Übertragung;
+
+6. Informationen zu Zeitstempeln, die bei der Ereigniserstellung verwendet werden;
+
+7. Zeitsynchronisation von Systemkomponenten mit mindestens einer zugelassenen Zeitquelle, die der Cloud-Anbieter aufgrund definierter Kriterien als zuverlässig erachtet. Werden mehrere Zeitquellen verwendet, sind diese miteinander konsistent. Die Zeitquellen können auch mit mehreren externen zuverlässigen Quellen synchronisiert werden, außer bei Verwendung für isolierte Netze; und
+
+8. Einhaltung gesetzlicher und regulatorischer Rahmenbedingungen.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Logging_and_Monitoring_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Zu den im Basiskriterium genannten Protokolldaten gehören abgeleitete Cloud-Dienstdaten und Cloud-Anbieterdaten.
+      
+      Gesetzliche und regulatorische Rahmenbedingungen können z.B. gesetzliche Vorgaben zu Aufbewahrungsfristen und zur Löschung von Daten festlegen.'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass eine angemessene Protokollierung und Überwachung von Ereignissen, die die Sicherheit und Verfügbarkeit des Cloud-Dienstes beeinträchtigen können (z. B. Administratoraktivitäten, Systemausfälle, Authentifizierungsprüfungen, Datenlöschungen usw.), für die in ihrem Verantwortungsbereich liegenden Schichten des Cloud-Dienstes erfolgt.'
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Metadata_Management_Policies_and_Procedures '11'
+  name: 'Protokollierung und Überwachung - Richtlinien und Verfahren für den Umgang mit abgeleiteten Cloud-Dienstdaten und Kontodaten'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Metadata_Management_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren für den sicheren Umgang mit abgeleiteten Cloud-Dienstdaten und Kontodaten werden gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, und zwar im Hinblick auf mindestens die folgenden Aspekte:
+
+
+1. Abgeleitete Cloud-Dienstdaten und Kontodaten werden ausschließlich zur Verwaltung und zum Betrieb des Cloud-Dienstes erfasst und verwendet, einschließlich Zwecken im Zusammenhang mit der Implementierung von Sicherheitskontrollen.
+
+2. Keine kommerzielle Nutzung über den oben genannten Zweck zur Verwaltung und zum Betrieb des Cloud-Dienstes hinaus;
+
+3. Aufbewahrung für einen festgelegten Zeitraum, der im angemessenen Verhältnis zu den Zwecken der Erhebung steht;
+
+4. Die Vertraulichkeit und Integrität der Protokolldaten wird durch geeignete Sicherheitskontrollen geschützt;
+
+5. Soweit technisch möglich, werden anonymisierte, abgeleitete Cloud-Dienstdaten nur in einer Weise genutzt, dass keine Rückschlüsse auf das Nutzungsverhalten einzelner Nutzer des Cloud-Kunden möglich sind;
+
+6. Abgeleitete Cloud-Dienstdaten, die vollständig anonymisiert sind und nicht auf einzelne Cloud-Kunden zurückgeführt werden können, dürfen weiterverarbeitet und aufbewahrt werden, sofern keine vertraglichen oder gesetzlichen Beschränkungen bestehen, andernfalls sofortige Löschung, wenn die Zwecke der Erhebung erfüllt sind und eine weitere Aufbewahrung nicht mehr erforderlich ist; und
+
+7. Bereitstellung an Cloud-Kunden gemäß vertraglicher Vereinbarung.
+
+'
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Metadata_Management_Policies_and_Procedures_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter legt in den vertraglichen Vereinbarungen mit Cloud-Kunden alle Zwecke fest, für die abgeleitete Cloud-Dienstdaten erhoben und verwendet werden, mit Ausnahme derjenigen Zwecke, die dem allgemeinen Betrieb aller Cloud-Dienste innewohnen.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Metadata_Management_Policies_and_Procedures_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Personenbezogene Daten werden vor der Verarbeitung durch den Cloud-Anbieter automatisch aus den Protokolldaten entfernt, soweit dies technisch möglich ist. Die Entfernung erfolgt in einer Weise, die es dem Cloud-Anbieter ermöglicht, die Protokolldaten weiterhin für den Zweck zu verwenden, für den sie erfasst wurden.'
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Metadata_Management_Policies_and_Procedures_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Abgeleitete Cloud-Dienstdaten, insbesondere Protokolldaten, werden in die Bewertung der Einhaltung gesetzlicher Vorschriften einbezogen.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Logging_and_Monitoring_Metadata_Management_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Die Erhebung und Nutzung der abgeleiteten Cloud-Dienstdaten und Kontodaten für die Verwaltung und den Betrieb des Cloud-Dienstes umfasst auch die Auswertung der vorgenannten Daten zum Zweck der Verbesserung des bereitgestellten Cloud-Dienstes, es sei denn, diese Verbesserung dient ausschließlich wirtschaftlichen Interessen des Cloud-Anbieters.
+      
+Wenn der Cloud-Anbieter als Cloud-Vermittler fungiert, sollten die Richtlinien und Verfahren die Komplexität der Handhabung von abgeleiteten Cloud-Dienstdaten und Kontodaten im Rahmen dieser Rolle besonders berücksichtigen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Logging_and_Monitoring_Metadata_Management_Policies_and_Procedures_Subcriterion_Basic_2
+      information_text: 'Mit dem allgemeinen Betrieb vieler Cloud-Dienste verbundene Zwecke sind:
+
+
+1. Kapazitätsplanung und Ressourcenmanagement;
+
+2. Sicherheitsüberwachung und Reaktion auf Vorfälle;
+
+3. Einhaltung regulatorischer Anforderungen; und
+
+4. Serviceleistung und Zuverlässigkeit.
+
+'
+  corresponding: 'Cloud-Kunden stellen durch geeignete Kontrollen sicher, dass ihre Verträge mit dem Cloud-Anbieter die zulässigen Nutzungen der abgeleiteten Cloud-Dienstdaten klar regeln. Cloud-Kunden vergewissern sich, dass die Datenverarbeitung den vertraglichen oder gesetzlichen Beschränkungen entspricht und nehmen zur Kenntnis, dass der Anbieter verpflichtet ist, Daten zu löschen, wenn sie für seine ursprünglichen Zwecke nicht mehr erforderlich sind, sofern nichts anderes vereinbart wurde.'
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Access_Retention_and_Deletion '12'
+  name: 'Protokollierung und Überwachung - Zugriff, Aufbewahrungsfristen und Löschung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Access_Retention_and_Deletion_Subcriterion_Basic_1 '01B'
+      criterion: 'Die Vorgaben zur Protokollierung und Überwachung von Ereignissen sowie zum sicheren Umgang mit abgeleiteten Cloud-Dienstdaten und Cloud-Anbieterdaten (vgl. OPS-10, OPS-11) werden durch technisch gestützte Verfahren hinsichtlich der folgender Beschränkungen umgesetzt:
+
+
+1.	Zugriff nur für autorisierte Benutzer und Systeme;
+
+2.	Aufbewahrung für den festgelegten Zeitraum; und
+
+3.	Löschung, wenn weitere Aufbewahrung für den Zweck der Erhebung nicht mehr erforderlich ist. 
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Identification_of_Events '13'
+  name: 'Protokollierung und Überwachung - Sicherheitsinformations- und Ereignismanagement'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Identification_of_Events_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter integriert relevante Protokolldaten (vom Cloud-Dienst abgeleitete Daten und Cloud-Anbieterdaten) in ein SIEM-System (Security Information and Event Management), um eine nahtlose Verbindung zwischen Protokollierung, Überwachung und Sicherheitsvorfallmanagement herzustellen.' 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Identification_of_Events_Subcriterion_Basic_2 '02B'
+      criterion: 'Das SIEM-System wird innerhalb der Cloud-Umgebung oder extern bereitgestellt und umfasst die folgenden Funktionen:
+
+
+1. Standardisierung von Protokolldaten;
+
+2. Automatisierte Analyse zur Identifizierung und Korrelation potenzieller Sicherheitsvorfälle;
+
+3. Fähigkeiten zur Detektion ungewöhnlichen Verhaltens und potenzieller Bedrohungen;
+
+4. Echtzeit-Alarmierung, um das Incident-Response-Team über kritische Ereignisse zu informieren; 
+
+5. Meldung an das Incident-Response-Team, falls neue, für ein Ereignis relevante Informationen verfügbar werden; und
+
+6. Automatisierte Reaktionsmechanismen zur Bewältigung von Sicherheitsvorfällen.
+
+'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Identification_of_Events_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter validiert den korrekten Betrieb der Ereigniserkennungsprozesse auf den entsprechenden Assets. Die Angemessenheit der Assets wird gemäß dem Asset-Klassifizierungsschema (vgl. AM-09) ermittelt.' 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Identification_of_Events_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Bei der Validierung festgestellte Abweichungen werden durch zeitnahe und angemessene Maßnahmen zur Behebung adressiert.'
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Identification_of_Events_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Wenn ein Ereignis identifiziert wird, das zu Sicherheitsvorfällen führen kann, werden unverzüglich Maßnahmen zur Vorfallbehandlung durch den Cloud-Anbieter ausgelöst.'
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Retention_of_the_Logging_Data '14'
+  name: 'Protokollierung und Überwachung - Aufbewahrung der Protokolldaten'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Retention_of_the_Logging_Data_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter bewahrt die erstellten Protokolldaten, einschließlich SIEM-Protokolldaten, unabhängig von der Quelle dieser Daten, geeignet und unveränderlich aggregiert auf, sodass eine zentrale, autorisierte Auswertung der Daten möglich ist.' 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Retention_of_the_Logging_Data_Subcriterion_Basic_2 '02B'
+      criterion: 'Protokolldaten werden gelöscht, wenn sie zur Erreichung des Zwecks nicht mehr erforderlich sind.'
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Retention_of_the_Logging_Data_Subcriterion_Basic_3 '03B'
+      criterion: 'Zwischen Protokollierungsservern und den zu protokollierenden Assets sind Authentisierung-Maßnahmen vorhanden, um die Integrität und Authentizität der übertragenen und gespeicherten Informationen zu schützen. Die Übertragung erfolgt nach einer dem Stand der Technik entsprechenden Verschlüsselung oder über ein eigenes Administrationsnetz (Out-of-Band-Management).'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie festlegen, ob sie Zugriff auf den kundenspezifischen Teil der abgeleiteten Cloud-Dienstdaten, bestehend aus Protokolldaten, benötigen und diesen gegebenenfalls aktiv anfordern.'
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Accountability '15'
+  name: 'Protokollierung und Überwachung - Zurechenbarkeit'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Accountability_Subcriterion_Basic_1 '01B'
+      criterion: 'Die erstellten Protokolldaten - die sowohl abgeleitete Cloud-Dienstdaten als auch Cloud-Anbieterdaten umfassen - ermöglichen eine eindeutige Identifizierung des Benutzerzugriffs auf Mandantenebene und unterstützen so eine effektive forensische Analyse im Falle eines Sicherheitsvorfalls.' 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Accountability_Subcriterion_Basic_2 '02B'
+      criterion: 'Jedes protokollierte Ereignis enthält einen Zeit-/Datumsstempel, um genaue und nachvollziehbare Aufzeichnungen zu gewährleisten.'
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Accountability_Subcriterion_Basic_3 '03B'
+      criterion: 'Der Cloud-Anbieter ist in der Lage, die forensische Analyse von Vorfällen zu unterstützen und eine Beweiskette aufzubewahren. Dies bedeutet, dass der Cloud-Anbieter den Zustand von Hardwareobjekten und Netzkommunikation bei Sicherheitsereignissen erfasst.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Accountability_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter stellt auf Anfrage des Cloud-Kunden die ihn betreffenden Protokolldaten in angemessener Form und zeitnah zur Verfügung, damit dieser die ihn betreffenden Vorfälle selbst untersuchen kann.'   
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Accountability_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Die oben genannten Protokolldaten werden mithilfe von Kontrollen und Prozessen gesammelt und verwaltet, die ihre Integrität und Zuverlässigkeit für Sicherheitsüberwachungs- und Vorfalluntersuchungszwecke wahren. Dies impliziert, ist aber nicht beschränkt auf:
+
+
+1. Die Aufzeichnungen sind vollständig und wurden in keiner Weise manipuliert.
+
+2. Protokollierungssysteme sind taktsynchron, Protokolldaten enthalten genaue Zeitstempel;
+
+3. Kopien elektronischer Beweismittel sind nachweislich mit den Originalen identisch; und
+
+4. Jedes Informationssystem, aus dem Beweise gesammelt wurden, funktionierte zum Zeitpunkt der Beweisaufnahme ordnungsgemäß.
+
+'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Logging_and_Monitoring_Accountability_Subcriterion_Additional_Complement_1
+      information_text: 'Das Zusatzkriterium bezieht sich auch auf Protokolldaten von Systemkomponenten, die im Verantwortungsbereich des Cloud-Anbieters liegen und auf die der Cloud-Kunde grundsätzlich keinen Zugriff hat, sofern diese Protokolldaten für die Analyse von Sicherheitsvorfällen und für die Identifizierung von Zugriffen auf Cloud-Kundendaten relevant sind (vgl. IAM-07 und INQ-03). Zur Protokollierung von Systemkomponenten im Verantwortungsbereich des Cloud-Kundens vgl. PSS-04.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass eindeutige Benutzerkennungen vergeben werden, die im Falle eines Vorfalls eine entsprechende Analyse zulassen.'
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Configuration '16'
+  name: 'Protokollierung und Überwachung - Konfiguration'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Configuration_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Zugriff auf Systemkomponenten zur Protokollierung und Überwachung im Verantwortungsbereich des Cloud-Anbieters ist auf autorisierte Benutzer beschränkt und erfordert eine Authentisierung mit zwei oder mehr Faktoren.' 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Configuration_Subcriterion_Basic_2 '02B'
+      criterion: 'Änderungen an der Konfiguration erfolgen gemäß den anwendbaren Richtlinien (vgl. DEV-03).'
+  additional_sharpen:
+  additional_complement:
+  information:
+  corresponding:
+-
+  identifier: &ID_Criterion_Logging_and_Monitoring_Availability_of_the_Monitoring_Software '17'
+  name: 'Protokollierung und Überwachung - Verfügbarkeit der Überwachungssoftware'
+  basic: 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Availability_of_the_Monitoring_Software_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter überwacht die Verfügbarkeit der Systemkomponenten zur Protokollierung und Überwachung in seinem Verantwortungsbereich.' 
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Availability_of_the_Monitoring_Software_Subcriterion_Basic_2 '02B'
+      criterion: 'Ausfälle werden automatisch und zeitnah an das dafür zuständige Personal oder die dafür zuständigen Systemkomponenten des Cloud-Anbieters berichtet, sodass diese die Ausfälle beurteilen und erforderliche Maßnahmen einleiten können.'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Availability_of_the_Monitoring_Software_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter sorgt für Ausfallsicherheit der Protokolldaten und der zugehörigen Infrastruktur, indem er Maßnahmen zum Schutz ihrer Integrität, Verfügbarkeit und Vertraulichkeit definiert, dokumentiert und implementiert.'
+    -
+      identifier: &ID_Criterion_Logging_and_Monitoring_Availability_of_the_Monitoring_Software_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Die Systemkomponenten zur Protokollierung und Überwachung sind so konzipiert, dass bei Ausfällen einzelner Komponenten die Funktionalität insgesamt nicht eingeschränkt ist.'
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Logging_and_Monitoring_Availability_of_the_Monitoring_Software_Subcriterion_Additional_Complement_2
+      information_text: 'Einzelne Komponenten, die die Funktionalität ingesamt einschränken können, sind Single Points of Failure. Solche Einschränkungen können vermieden werden, indem potenzielle einzelne Fehlerquellen identifiziert und durch Redundanz oder den Entwurf und die Implementierung einer ausfallsicheren Architektur behoben werden.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures '18'
+  name: 'Umgang mit Schwachstellen - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren mit technischen und organisatorischen Maßnahmen sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, um das zeitnahe Identifizieren und Adressieren von Schwachstellen der Systemkomponenten, die für die Bereitstellung des Cloud-Dienstes verwendet werden, zu regeln. Diese Richtlinien und Verfahren enthalten Vorgaben zu folgenden Aspekten:
+
+
+1. Regelmäßige (proaktive) Identifizierung von Schwachstellen durch geeignete Maßnahmen, einschließlich Schwachstellenscans und Penetrationstests, unter Berücksichtigung typischer Schwachstellenklassen und gemeinsamer Schwachstellen (Common Weaknesses, CWEs);
+
+2. Beurteilung des Schweregrads identifizierter Schwachstellen mithilfe des Common Vulnerability Scoring System (CVSS);
+
+3. Priorisierung und Umsetzung von Maßnahmen unter Berücksichtigung bestehender Standards zur zeitnahen Behebung und/oder Mitigation identifizierter Schwachstellen basierend auf dem Schweregrad gemäß definierter Zeitrahmen und unter Bezugnahme auf häufig verwendete Bewertungssysteme wie das Exploit Prediction Scoring System (EPSS) und die Stakeholder-Specific Vulnerability Categorization (SSVC);
+
+4. Bereitstellung von Sicherheitspatches;
+
+5. Umgang mit Systemkomponenten, für die basierend auf einer Risikobeurteilung keine Maßnahmen zur zeitnahen Behebung oder Mitigation der Schwachstellen eingeleitet werden;
+
+6. Schnittstellen zum Vorfallsmanagement für den Fall, dass Schwachstellen zu Vorfällen werden;
+
+7. Sofern KI-basierte Tools zur Durchführung von Schwachstellenscans oder Penetrationstests eingesetzt werden, Anforderungen an die verständliche (nachvollziehbare, transparente) Dokumentation des Einsatzes dieser Tools und dass diese Tools zur Unterstützung der Fachexperten des Cloud-Anbieters eingesetzt werden und nicht als deren Ersatz; und
+
+8. Bereitstellung von Informationen über die Konfiguration von Systemkomponenten und Cloud-Diensten, die bestehenden Schwachstellen und die verfügbaren Patches und/oder Maßnahmen zur Behebung unter Verwendung weit verbreiteter, vorzugsweise automatisierter Formate.
+
+'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Richtlinien und Verfahren für die zeitnahe Identifizierung und Behebung von Schwachstellen legen fest, dass bei als ''kritisch'' eingestuften Schwachstellen zeitnah nach der Identifizierung mit dem Umgang mit diesen begonnen werden muss, auch wenn dies außerhalb der regulären Arbeitszeiten geschieht. Sie definieren auch, wie mit einer solchen Sicherheitslücke umgegangen wird.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_3 '03B'
+      criterion: 'In den Richtlinien und Verfahren zur zeitnahen Identifizierung und Behebung von Schwachstellen ist außerdem festgelegt, dass bei als ''hoch'' eingestuften Schwachstellen der Umgang mit diesen innerhalb eines Arbeitstags nach ihrer Identifizierung beginnen muss. Sie definieren auch, wie mit einer solchen Sicherheitslücke umgegangen wird.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_4 '04B'
+      criterion: 'Der Umgang mit einer Schwachstelle gemäß den Richtlinien und Verfahren zur zeitnahen Identifizierung und Behebung von Schwachstellen umfasst die regelmäßige Nachverfolgung der Schwachstelle bis zu ihrer Behebung.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_5 '05B'
+      criterion: 'Basierend auf einer Risikobeurteilung (vgl. OIS-07) kann der Cloud-Anbieter entscheiden, identifizierte Schwachstellen nicht zu beheben oder zu mitigieren. Eine solche Risikobeurteilung und die kompensierenden oder mitigierende Maßnahmen werden regelmäßig und bei wesentlichen Änderungen des Cloud-Dienstes überprüft.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Geeignete Maßnahmen zur Identifizierung von Schwachstellen umfassen die Implementierung von RFC 9116 in Verbindung mit einer CVD-Richtlinie (Coordinated Vulnerability Disclosure) gemäß etablierten Richtlinien wie ISO/IEC TR 5895:2022 und ISO/IEC 29147:2018 sowie Community-Standards wie der Project Zero Vulnerability Disclosure Policy von Google.
+
+
+Das Common Vulnerability Scoring System (CVSS) ist ein technischer Standard, der zur Bewertung des Schweregrads identifizierter Schwachstellen verwendet werden kann. Die Bewertungen werden auf der Grundlage einer Formel mit mehreren Metriken berechnet, die die Leichtigkeit und Auswirkung eines Exploits abschätzen. In CVSS Version 4.0 können die Scores wie folgt auf qualitative Bewertungen abgebildet werden:
+
+
+1. Niedrig: 0,1 - 3,9;
+
+2. Mittel: 4,0 - 6,9;
+
+3. Hoch: 7,0 - 8,9; und
+
+4. Kritisch: 9,0 - 10,0.
+
+
+Zu den weit verbreiteten Formaten zur Konfiguration von Systemkomponenten und Cloud-Diensten, den bestehenden Schwachstellen und den verfügbaren Patches und/oder Mitigationsmaßnahmen gehören unter anderem:
+
+
+1. Software Bill of Materials (SBOM),
+
+2. Common Vulnerabilities and Exposures (CVE) oder European Vulnerability Database (EUVD),
+
+3. Vulnerability, Exploitability eXchange (VEX); und
+
+4. Common Security Advisory Frameworks (CSAF).
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_1
+        - *ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_2
+        - *ID_Criterion_Managing_Vulnerabilities_Policies_and_Procedures_Subcriterion_Basic_3
+      information_text: 'ISO/IEC 30111:2019 stellt Anforderungen und Empfehlungen für die Priorisierung und Umsetzung von Maßnahmen bereit, um die zeitnahe Behebung oder Minderung identifizierter Schwachstellen sicherzustellen.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie Systemkomponenten in ihrem Verantwortungsbereich regelmäßig auf Schwachstellen überprüfen und diese durch geeignete Maßnahmen adressieren.'
+-
+  identifier: &ID_Criterion_Managing_Incidents_and_Crashes_Policies_and_Procedures '19'
+  name: 'Umgang mit Vorfällen und Abstürzen - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Incidents_and_Crashes_Policies_and_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren mit technischen und organisatorischen Maßnahmen sind gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, um das zeitnahe Identifizieren und Bewältigen von Vorfällen und Abstürzen in den Systemkomponenten, die zur Bereitstellung des Cloud-Dienstes verwendet werden, oder von Teilen oder dem gesamten Cloud-Dienst zu regeln. Diese Richtlinien und Verfahren enthalten Vorgaben zu folgenden Aspekten: 
+
+
+1. Klassifizierung und Priorisierung von Vorfällen und Abstürzen;
+
+2. Standardisierte Verfahren zur Behandlung von Vorfällen zur Behebung bekannter Probleme;
+
+3. Eskalationsregeln und -verfahren, einschließlich Kriterien für die Auslösung von Sicherheitsvorfallsmanagement-Prozessen (SIM-Prozessen) gemäß SIM-02 oder internen Vorfallsmanagement-Verfahren;
+
+4. Wissensquellen für Vorfälle und Abstürze;
+
+5. Kriterien zur Bestimmung, wann Abstürze als Vorfälle eingestuft werden und wann sie Vorfallsmanagement-Prozesse auslösen;
+
+6. Mechanismen, die sicherstellen, dass der Zugriff auf Absturzabbild-Dateien (engl. ''Crash Dumps'') nur autorisiertem Personal vorbehalten ist;
+
+7. Schutzmaßnahmen, um die Offenlegung sensibler, persönlicher oder vertraulicher Daten in Absturzabbild-Dateien zu verhindern;
+
+8. Verschlüsselung von Absturzabbild-Dateien zur Aufbewahrung und während der Übertragung;
+
+9. Zugriffsverwaltungs-, Protokollierungs- und Überprüfungsprozesse für Zugriffsprotokolldaten von Absturzabbild-Dateien; und
+
+10. Aufbewahrungsfristen und sichere Löschprozesse für Absturzabbild-Dateien, sobald sie nicht mehr benötigt werden.
+
+'
+  additional_sharpen:
+  additional_complement:
+  information:
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Incidents_and_Crashes_Policies_and_Procedures_Subcriterion_Basic_1
+      information_text: 'Ein Absturz ist ein Vorfall, der zu einem plötzlichen und vollständigen Ausfall eines Systems oder einer Systemkomponente führt. Dies kann ein Hinweis auf ein größeres Problem sein, beispielsweise auf einen versuchten DDoS-Angriff oder eine vollständige Schwachstelle. 
+
+
+Eine Absturzdatei ist ein Dump des Ausführungsstatus eines Systems, normalerweise einschließlich des Inhalts seines Speichers oder seiner Register zum Zeitpunkt des Absturzes (z. B. Speicherdump).
+
+
+Zu den Kriterien zur Bestimmung, wann ein Vorfall oder Absturz die Sicherheitsvorfallsmanagement-Prozesse (SIM-Prozesse) auslöst, können unter anderem folgende Vorfälle oder Abstürze zählen, die zu einem oder mehreren der folgenden Ereignisse führen:
+
+
+1. Nichteinhaltung interner Sicherheitsrichtlinien, vertraglicher Vereinbarungen oder relevanter gesetzlicher und behördlicher Anforderungen; 
+
+2. Unbefugter Zugriff auf Cloud-Kundendaten oder Systemkomponenten, die zur Bereitstellung des Cloud-Dienstes in der Produktionsumgebung verwendet werden;
+
+3. Verlust oder Exfiltration von Cloud-Kundendaten;
+
+4. Unerlaubte Änderungen an Systemkomponenten, die zur Bereitstellung des Cloud-Dienstes in der Produktionsumgebung verwendet werden; und
+
+5. Nichteinhaltung der in der Service Level-Vereinbarung enthaltenen Verfügbarkeitsanforderungen.
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Managing_Incidents '20'
+  name: 'Umgang mit Vorfällen - Umsetzung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Incidents_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter identifiziert, erfasst, klassifiziert, priorisiert und behandelt Vorfälle gemäß den Richtlinien und Verfahren zur Identifizierung und Behandlung von Vorfällen und Abstürzen (vgl. OPS-19).'
+  additional_sharpen:
+  additional_complement:
+  information: 
+  corresponding:
+-
+  identifier: &ID_Criterion_Managing_Crashes '21'
+  name: 'Umgang mit Abstürzen - Implementierung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Crashes_Subcriterion_Basic_1 '01B'
+      criterion: 'Abstürze von Systemkomponenten, Teilen oder dem gesamten Cloud-Dienst unter der Verantwortung des Cloud-Anbieters werden gemäß den Richtlinien und Verfahren zur Identifizierung und Behandlung von Vorfällen und Abstürzen (vgl. OPS-19) identifiziert, aufgezeichnet und behandelt.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+  corresponding:
+-
+  identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests '22'
+  name: 'Umgang mit Schwachstellen, Vorfällen und Abstürzen - Penetrationstests'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter führt mindestens jährlich und bei wesentlichen Änderungen am Cloud-Dienst gemäß den Richtlinien zum Schwachstellenmanagement (vgl. OPS-18) Penetrationstests durch qualifiziertes internes Personal oder externe Penetrationstester durch.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_2 '02B'
+      criterion: 'Penetrationstests werden gemäß eines dokumentierten Rahmenwerks für Penetrationstests durchgeführt, das die Anzahl und Art der durchzuführenden Penetrationstests sowie die Anforderungen an die Qualifikation und Kompetenz des Personals zur Durchführung solcher Tests umreißt. Die Anzahl und Art der durchzuführenden Penetrationstests werden auf Basis einer Risikobeurteilung festgelegt (vgl. OIS-07).' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_3 '03B'
+      criterion: 'Penetrationstests zielen auf die für die Bereitstellung des Cloud-Dienstes relevanten Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters ab. In einer Risikobeurteilung werden die anzugreifenden Systemkomponenten identifiziert.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_4 '04B'
+      criterion: 'Penetrationstests werden in Übereinstimmung mit Testplänen durchgeführt, die alle relevanten Systemkomponenten abdecken und festlegen, welche Systemkomponenten getestet werden sollen.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_5 '05B'
+      criterion: 'Erfolgen Penetrationstests in Übereinstimmung mit mehrjährigen Testplänen, wird jede relevante Systemkomponente innerhalb eines Zeitraums von maximal drei Jahren mindestens einem Penetrationstest unterzogen.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_6 '06B'
+      criterion: 'Der Cloud-Anbieter beurteilt den Schweregrad der identifizierten Schwachstellen nach dem Common Vulnerability Scoring System (CVSS) in der zum Zeitpunkt der Beurteilung aktuellen Fassung.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_7 '07B'
+      criterion: 'Maßnahmen zur Behebung oder Mitigation werden in Übereinstimmung mit den Zeitrahmen ergriffen, die in den Richtlinien für den Umgang mit Schwachstellen definiert sind (vgl. OPS-18).'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_8 '08B'
+      criterion: 'Die durch Penetrationstests entdeckten Schwachstellen werden einer Ursachenanalyse unterzogen. Die Ursachenanalyse ermöglicht eine Einschätzung, inwieweit ähnliche Schwachstellen im Cloud-Dienst vorhanden sein können.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_1
+      criterion: 'Der Cloud-Anbieter führt mindestens alle sechs Monate und bei wesentlichen Änderungen am Cloud-Dienst gemäß den Richtlinien zum Schwachstellenmanagement (vgl. OPS-18) Penetrationstests durch unabhängige externe Penetrationstester durch. Der Einsatz externer Penetrationstester erfolgt nur dann, wenn das für die Durchführung des Tests vorgesehene Personal nachweislich die Qualifikations- und Kompetenzanforderungen des Cloud-Anbieters erfüllt. Internes Personal für Penetrationstests kann das externe Personal unterstützen.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_2 '02AS'
+      sharpened_basic_criterion: *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_2
+      criterion: 'Pre-Launch- und Post-Launch-Penetrationstests werden gemäß eines dokumentierten Rahmenwerks für Penetrationstests durchgeführt, der die Anzahl und Art der durchzuführenden Penetrationstests sowie die Anforderungen an die Qualifikation und Kompetenz des Personals zur Durchführung solcher Tests umreißt. Die Anzahl und Art der durchzuführenden Penetrationstests werden auf Basis einer Risikobeurteilung festgelegt (vgl. OIS-07).'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_3 '03AS'
+      sharpened_basic_criterion: *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_3
+      criterion: 'Penetrationstests zielen auf für die Bereitstellung des Cloud-Dienstes relevante Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters ab. In einer Risikobeurteilung, gegebenenfalls unter Einbeziehung einer Bedrohungsmodellierung, werden die anzugreifenden Systemkomponenten identifiziert.'
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Penetrationstests werden auf der Grundlage von Überprüfungen der Architektur und Konfiguration der Systemkomponenten sowie des Quellcodes des Cloud-Anbieters durchgeführt.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Der Cloud-Anbieter entwirft einen mehrjährigen Testplan für seine Penetrationstestaktivitäten.'       
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_3 '03AC'
+      criterion: 'Der Cloud-Anbieter überprüft die Wirksamkeit von Penetrationstests an Systemkomponenten mindestens jährlich und bei wesentlichen Änderungen am Cloud-Dienst.'
+    - 
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_4 '04AC'
+      criterion: 'Der Cloud-Anbieter verwendet den Bedrohungsmodellierungsprozess, um Systemkomponenten mit der höchsten Risikoexposition für Penetrationstests zu priorisieren, indem er Cloud-Komponenten, Dienste, Datenflüsse, Trust Boundaries und für den Cloud-Dienst kritische Assets systematisch analysiert, um potenzielle Bedrohungen, Schwachstellen und Angriffsvektoren aufzulisten.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_5 '05AC'
+      criterion: 'Der Cloud-Anbieter korreliert die möglichen Ausnutzungen entdeckter Schwachstellen mit früheren Informationssicherheitsvorfällen, um festzustellen, ob die Schwachstelle möglicherweise bereits vor ihrer Entdeckung ausgenutzt wurde.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_1
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_2
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_3
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_4
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_5
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_6
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_7
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_8
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_1
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_2
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_3
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_1
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_2
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_3
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_4
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_5
+      information_text: 'Siehe Abschnitt „1.2 Definitionen“ für die Begriffe „Penetrationstest“ und „wesentliche Änderung“.
+
+
+Im Gegensatz zu Schwachstellenscans, die Code analysieren, zielen Penetrationstests im Sinne dieses Kriteriums hauptsächlich darauf ab, das Live-System zu untersuchen, um reale Schwachstellen oder Schwächen aufzudecken, die sich nur im tatsächlichen Betrieb des Cloud-Dienstes zeigen, und stellen so den Bezug zum Kriterium OPS-18 her.
+
+
+Es gibt drei Arten von Penetrationstests: 
+
+
+1. Black-Box-Tests: Tests, die ohne vorherige Kenntnis der internen Struktur/des Designs/der Implementierung des zu testenden Objekts durchgeführt werden;
+
+2. Grey-Box-Tests: Tests, die mit teilweiser Kenntnis der internen Struktur/des Designs/der Implementierung des zu testenden Objekts durchgeführt werden; und
+
+3. White-Box-Tests: Tests werden mit Kenntnis der internen Struktur/des Designs/der Implementierung des zu testenden Objekts durchgeführt.
+      
+
+Es kann weiter unterschieden werden zwischen
+
+
+1. Pre-Launch-Penetrationstests: Tests, die bereits im Rahmen des Softwareentwicklungsprozesses während der Testphase des Cloud-Dienstes durchgeführt werden (vgl. DEV-07); und
+
+2. Post-Launch-Penetrationstests: Tests, die während des regulären Betriebs des Cloud-Dienstes durchgeführt werden.
+
+
+Zu den wesentlichen Änderungen können unter anderem die folgenden Ereignisse gehören:
+
+
+1. Ersetzen zentraler Cloud-Infrastrukturtechnologien oder Durchführen größerer Versions-Upgrades;
+
+2. Wechsel zwischen Service-Organisationen, z. B. Wechsel zu einem neuen IaaS- oder Rechenzentrumsanbieter;
+
+3. Wesentliche Änderungen in der Art und Weise, wie Cloud-Kundendaten verarbeitet und aufbewahrt werden, wie z. B. neue Datensicherungstechniken oder neue Regionen, von denen aus der Dienst betrieben wird;
+
+4. Ersetzen oder Durchführen größerer Upgrades von Sicherheitstechnologien wie Authentisierungsworkflows, Netzsicherheitsmechanismen oder Überwachungsmechanismen; und
+
+5. Wesentliche Änderungen am Cloud-Servicemodell oder an der Funktionalität, die dem Cloud-Kunden zur Verfügung gestellt wird.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_1
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_1
+      information_text: 'Die Qualifikation und Kompetenz des Personals für Penetrationstests kann anhand professioneller Zertifizierungen, z.B. als BSI-zertifizierter IS-Penetrationstester oder CREST-zertifizierter Cyber Security Professional, nachgewiesen werden.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_2
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_2
+      information_text: 'Wie viele Penetrationstests innerhalb eines Jahres durchgeführt werden sollten, hängt von Faktoren wie der Größe und Komplexität des bereitgestellten Cloud-Dienstes ab. Wenn Penetrationstests mehrjährigen Testplänen folgen, sollten diese bei der Festlegung der Anzahl und Art der innerhalb eines Jahres durchzuführenden Penetrationstests berücksichtigt werden.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_3
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Sharpen_3
+      information_text: 'Mithilfe der Risikobeurteilung sollen die Systemkomponenten identifiziert werden, die für die Bereitstellung des Cloud-Dienstes am kritischsten bzw. für Penetrationstests am relevantesten sind.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_3
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Basic_5
+      information_text: 'Für die Bereitstellung des Cloud-Dienstes relevante Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters können solche Systemkomponenten sein, die am externen Perimeter des Netzes exponiert sind, oder Komponenten, die nur von innerhalb des Netzes zugänglich sind.' 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Penetration_Tests_Subcriterion_Additional_Complement_4
+      information_text: 'Dieses Unterkriterium ist nur anwendbar, wenn auch das Unterkriterium OPS-22.03AS angewendet wird.
+      
+
+Das risikobasierte Scoping stellt sicher, dass sich Penetrationstests auf die Bereiche konzentrieren, die am anfälligsten für Sicherheitsbedrohungen sind, verbessert die geschäftliche Ausrichtung und Zusammenarbeit und liefert klare technische Erkenntnisse darüber, welche Komponenten Tests erfordern, die über die standardmäßige Risikobeurteilung hinausgehen.
+
+
+Für den Bedrohungsmodellierungsprozess können ein strukturierter Bedrohungsmodellierungsansatz wie STRIDE, DREAD, PASTA oder hybride Methoden verwendet werden, die auf Cloud-Umgebungen zugeschnitten sind.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Managing_VulnerabilitiesIncidents_and_Crashes_Measurements_Analyses_and_Assessments_of_Procedures '23'
+  name: 'Umgang mit Schwachstellen, Vorfällen und Abstürzen - Messungen, Analysen und Bewertungen von Abläufen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Measurements_Analyses_and_Assessments_of_Procedures_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter misst, analysiert und beurteilt regelmäßig die Verfahren, mit denen Schwachstellen und Vorfälle behandelt werden, um deren fortdauernde Eignung, Angemessenheit und Wirksamkeit zu überprüfen.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Measurements_Analyses_and_Assessments_of_Procedures_Subcriterion_Basic_2 '02B'
+      criterion: 'Ergebnisse werden mindestens quartalsweise von verantwortlichen Personen oder Gruppen des Cloud-Anbieters in dokumentierter Form beurteilt, um Maßnahmen zur fortlaufenden Verbesserung zu initiieren oder deren Wirksamkeit zu überprüfen.'
+  additional_sharpen:
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Measurements_Analyses_and_Assessments_of_Procedures_Subcriterion_Basic_1
+      information_text: 'Die Beurteilung der Eignung, Angemessenheit und Wirksamkeit von Verfahren zur Behandlung von Schwachstellen und Vorfällen kann auf folgenden Informationen basieren:
+
+
+1. Regelmäßige Berichterstattung über KPIs (Key Performance Indicators), die volumen-, zeit- oder auflösungs-/qualitätsbasiert sind;
+
+2. Cloud-Kundenbeschwerden oder Ergebnisse von Cloud-Kundenbefragungen über deren Zufriedenheit mit den Verfahren; und
+
+3. Ergebnisse interner oder externer Audits.
+
+
+Zu den KPIs für Schwachstellen zählen beispielsweise:
+
+1. Mean Time to Detect (MTTD, durchschnittliche Zeit, die benötigt wird, um eine Schwachstelle von ihrer Offenlegung oder Entstehung zu entdecken);
+
+2. Mean Time to Remediate (MTTR, durchschnittliche Zeit, die zum Beheben oder Patchen einer Schwachstelle benötigt wird, nachdem diese erkannt wurde);
+
+3. Anzahl offener Schwachstellen je Schweregrad; und
+
+4. Prozentsatz der Schwachstellen, die innerhalb eines festgelegten Zeitraums behoben wurden.
+
+
+Zu den KPIs für Vorfälle zählen beispielsweise:
+
+1. Anzahl der über einen bestimmten Zeitraum gemeldeten Vorfälle und wie sich diese im Laufe der Zeit entwickelt haben;
+
+2. Durchschnittliche Reaktions- und Lösungszeit;
+
+3. Prozentsatz der Vorfälle, die im Rahmen der vereinbarten Service Level-Vereinbarung gelöst wurden; und
+
+4. Prozentsatz der Vorfälle, die beim ersten Lösungsversuch gelöst wurden. 
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Involvement_of_Cloud_Customers_in_the_Event_of_Incidents '24'
+  name: 'Einbindung des Cloud-Kunden bei Vorfällen'
+  basic: 
+    -
+      identifier: &ID_Criterion_Involvement_of_Cloud_Customers_in_the_Event_of_Incidents_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter informiert den Cloud-Kunden regelmäßig und in angemessener Form, die den vertraglichen Vereinbarungen entspricht, über den Status der den Cloud-Kunden betreffenden Vorfälle und bindet diesen, soweit angemessen und erforderlich, in die Behebung ein.'
+    -
+      identifier: &ID_Criterion_Involvement_of_Cloud_Customers_in_the_Event_of_Incidents_Subcriterion_Basic_2 '02B'
+      criterion: 'Sobald ein Vorfall aus Sicht des Cloud-Anbieters behoben wurde, wird der Cloud-Kunde gemäß den vertraglichen Vereinbarungen über die getroffenen Maßnahmen informiert.'
+  additional_sharpen:
+  additional_complement:
+     -
+      identifier: &ID_Criterion_Involvement_of_Cloud_Customers_in_the_Event_of_Incidents_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter definiert und dokumentiert Verfahren in vertraglichen Vereinbarungen mit Cloud-Kunden, die die Beteiligung des Cloud-Kunden an der Bestätigung, dass eine Lösung die Grundursache eines Vorfalls wirksam behoben hat, innerhalb eines bestimmten Zeitraums festlegen.' 
+  information:
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass sie Benachrichtigungen des Cloud-Anbieters bezüglich sie betreffender Vorfälle erhalten, und dass diese Benachrichtigungen zeitnah an die für die Bearbeitung verantwortliche Stelle weitergeleitet werden, damit entsprechende Maßnahmen ergriffen werden können.'
+-
+  identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans '25'
+  name: 'Umgang mit Schwachstellen, Vorfällen und Abstürzen - Schwachstellenscans'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Basic_1 '01B'
+      criterion: 'Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters für die Bereitstellung des Cloud-Dienstes werden gemäß den Richtlinien zum Umgang mit Schwachstellen (vgl. OPS-18) mindestens monatlich einem Schwachstellenscan unterzogen. Diese Schwachstellenscans umfassen einen Vergleich von Softwarekomponentendaten mit aktuellen Schwachstellendatenbanken (z. B. CVE, EUVD usw.), um bekannte Schwachstellen zu identifizieren.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter beurteilt den Schweregrad von Schwachstellen anhand definierter Kriterien.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Basic_3 '03B'
+      criterion: 'Maßnahmen zur zeitnahen Behebung oder Mitigation werden innerhalb definierter Zeitfenster eingeleitet.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Basic_4 '04B'
+      criterion: 'Die Ergebnisse der Schwachstellenscans werden verwendet, um die SIEM-Systemregeln (vgl. OPS-13) des Cloud-Anbieters zu aktualisieren, sodass das System erkennen kann, wenn bekannte Schwachstellen aktiv ausgenutzt werden.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Additional_Sharpen_1 '01AS'
+      sharpened_basic_criterion: *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Basic_1
+      criterion: 'Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters für die Bereitstellung des Cloud-Dienstes werden gemäß den Richtlinien zum Umgang mit Schwachstellen (vgl. OPS-18) mindestens täglich einem Schwachstellenscan unterzogen. Diese Schwachstellenscans umfassen einen Vergleich von Softwarekomponentendaten mit aktuellen Schwachstellendatenbanken (z. B. CVE, EUVD usw.), um bekannte Schwachstellen zu identifizieren.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Additional_Sharpen_2 '02AS'
+      sharpened_basic_criterion: *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Basic_2
+      criterion: 'Der Cloud-Anbieter beurteilt den Schweregrad von Schwachstellen anhand der zum Zeitpunkt der Bewertung aktuellsten Version des Common Vulnerability Scoring System (CVSS).'
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Zeitrahmen für die Einleitung von Behebungs- oder Minderungsbemühungen nach der Identifizierung einer Schwachstelle werden gemäß einem risikobasierten Klassifizierungsrahmenwerks definiert und überwacht. Dieses Rahmenwerk berücksichtigt unter anderem den CVSS-Schweregrad von Schwachstellen.'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Basic_1
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Additional_Sharpen_1
+      information_text: 'Im Gegensatz zu Penetrationstests (vgl. OPS-22), die manuell und nach einem individuellen Schema durchgeführt werden, erfolgt die Prüfung auf offene Schwachstellen automatisch mithilfe sogenannter Schwachstellenscanner. 
+      
+
+Definitionen der Begriffe ''CVE'' und ''EUVD'' sowie anderer Begriffe mit Bezug zu Schwachstellen befinden sich in den ergänzenden Informationen zum Kriterium OPS-18.01B.
+
+
+Die Daten der Softwarekomponenten, die mit aktuellen Schwachstellendatenbanken abgeglichen werden sollen, können, müssen aber nicht, mithilfe einer Software Bill of Materials (SBOM) ermittelt werden.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Vulnerability_Scans_Subcriterion_Additional_Complement_1
+      information_text: 'Ein Beispiel für ein Rahmenwerk zur risikobasierten Klassifizierung und Definition von Zeitrahmen kann sein:
+
+
+1. Kritisch (CVSS = 9,0 - 10,0): 24 - 48 Stunden;
+
+2. Hoch (CVSS = 7,0 - 8,9): 48 - 72 Stunden;
+
+3. Mittel (CVSS = 4,0 - 6,9): 5 Tage; und
+
+4. Niedrig (CVSS = 0,1 - 3,9): 1 Monat.
+
+'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass in ihrem Verantwortungsbereich liegende Systemkomponenten regelmäßig auf Schwachstellen überprüft werden und sie diese durch geeignete Maßnahmen mitigieren. Wenn Cloud-Kunden virtuelle Maschinen oder Container mit dem Cloud-Dienst betreiben, umfasst dies auch die Durchführung von Schwachstellenscans, um sicherzustellen, dass sichere Images (sog. Golden Images) verwendet werden, die entweder vom Cloud-Anbieter oder vom Cloud-Kunden selbst bereitgestellt werden.'
+-
+  identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening '26'
+  name: 'Umgang mit Schwachstellen, Vorfällen und Abstürzen - Systemhärtung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_1 '01B'
+      criterion: 'Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters, die für die Bereitstellung des Cloud-Dienstes in der Produktionsumgebung verwendet werden, sind gemäß allgemein anerkannten Branchenstandards gehärtet.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_2 '02B'
+      criterion: 'Die je Systemkomponente anzuwendenden Vorgaben zur Härtung sind dokumentiert.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_3 '03B'
+      criterion: 'Soweit nicht veränderliche (''immutable'') Images eingesetzt werden, wird die Einhaltung der Vorgaben zur Härtung in einem konsistenten Verfahren überprüft.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_4 '04B'
+      criterion: 'Konfigurations- und Protokolldaten (Cloud-Anbieterdaten) bezüglich der kontinuierlichen Bereitstellung dieser Images werden aufbewahrt.'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_5 '05B'
+      criterion: 'Der Cloud-Anbieter implementiert Überwachungsmaßnahmen, um sicherzustellen, dass Systemkomponenten den Vorgaben zur Härtung entsprechen.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_6 '06B'
+      criterion: 'Erkannte Abweichungen von diesen Vorgaben werden zeitnah an die zuständigen Abteilungen gemeldet, damit diese umgehend beurteilt und Maßnahmen ergriffen werden können.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Additional_Sharpen_5 '05AS'
+      sharpened_basic_criterion: *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_5
+      criterion: 'Systemkomponenten im Verantwortungsbereich des Cloud-Anbieters werden automatisch auf Einhaltung der Vorgaben zur Härtung überwacht.'
+  additional_complement:
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_1
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_5
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Additional_Sharpen_5
+      information_text: 'Systemkomponenten im Sinne des Kriteriums sind die für die Informationssicherheit des Cloud-Dienstes während der Erstellung, Verarbeitung, Speicherung, Übertragung, Löschung oder Zerstörung von Informationen benötigten Objekte im Verantwortungsbereich des Cloud-Anbieters, z.B. Firewalls, Loadbalancer, Webserver, Anwendungsserver und Datenbankserver. Diese Systemkomponenten bestehen wiederum aus Hardware- und Softwareobjekten. Dieses Kriterium beschränkt sich auf Softwareobjekte, z.B Hypervisor, Betriebssysteme, Datenbanken, Programmierschnittstellen (APIs), Images (z. B. für virtuelle Maschinen und Container) und Anwendungen zur Protokollierung und Überwachung sicherheitsrelevanter Ereignisse.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_1
+      information_text: 'Allgemein anerkannte Branchenstandards sind beispielsweise der Security Configuration Benchmark des Center for Internet Security (CIS) oder die entsprechenden Module im BSI IT-Grundschutz-Kompendium.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_4
+      information_text: 'Die Konfigurations- und Protokolldaten bezüglich nicht veränderlicher Images beinhalten beispielsweise:
+
+
+1. Konfiguration der eingesetzten Images bezüglich umgesetzter Vorgaben zur Härtung; 
+
+2. Vorgaben inklusive Versionshistorie; und
+
+3. Protokolldaten bezüglich der  Datei-Integritätsüberwachung der im produktiven Einsatz befindlichen Images.
+
+'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Basic_5
+        - *ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_System_Hardening_Subcriterion_Additional_Sharpen_5
+      information_text: 'Die Einhaltung der Vorgaben zur Härtung kann z.B. durch eine Datei-Integritätsüberwachung überwacht werden.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass jene Ebenen des Cloud-Dienstes, die unter ihrer Verantwortung stehen, gemäß allgemein etablierter und akzeptierter Branchenstandards zu härten. Die angewendeten Härtungsmaßnahmen resultieren aus einer Risikobeurteilung der geplanten Nutzung des Cloud-Dienstes.'
+- 
+  identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management '27'
+  name: 'Umgang mit Schwachstellen - Richtlinien und Verfahren zum Patch-Management'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren mit technischen und organisatorischen Maßnahmen werden gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, um sicherzustellen, dass Systemkomponenten, die in der Verantwortung des Cloud-Anbieters liegen, innerhalb eines angemessenen Zeitrahmens gepatcht werden, abhängig von vertraglichen Vereinbarungen und identifizierten Schwachstellen oder Exploits. Diese Richtlinien und Verfahren enthalten Vorgaben zu folgenden Aspekten:
+
+
+1. Die Software wird auf dem neuesten Stand gehalten, einschließlich der zeitnahen Bereitstellung von Sicherheitspatches.
+
+2. Patches werden gegebenenfalls innerhalb der Wartungsfenster geplant, um Dienstunterbrechungen zu minimieren; und
+
+3. Patches werden in Nicht-Produktionsumgebungen getestet, bevor sie in der Produktionsumgebung bereitgestellt werden, vorausgesetzt, der Test war erfolgreich. Es sind Mechanismen vorhanden, um bei unerwarteten Problemen auf frühere Softwareversionen zurückgreifen zu können.
+
+'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_2 '02B'
+      criterion: 'Patch-Management-Verfahren sind mit dem gesamten Software-Change-Management-Prozess des Cloud-Anbieters abgestimmt (vgl. DEV-03).'
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_3 '03B'
+      criterion: 'Gemäß den Maßnahmen und Verfahren des gesamten Änderungsmanagement werden von Dritten bereitgestellte Patches identifiziert, getestet und bereitgestellt.' 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_4 '04B'
+      criterion: 'Systeme werden nach der Anwendung von Patches gescannt, um sicherzustellen, dass Schwachstellen und Exploits behoben werden und keine bekannten oder nicht behobenen Schwachstellen oder Exploits eingesetzt werden.'
+  additional_sharpen:
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Additional_Sharpen_3 '03AS'
+      sharpened_basic_criterion: *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_3
+      criterion: 'Gemäß den Maßnahmen und Verfahren des gesamten Änderungsmanagements werden von Dritten bereitgestellte Patches identifiziert, getestet und automatisiert bereitgestellt. Für Patches, bei denen ein manueller Eingriff erforderlich ist, wird ein Ausnahmebehandlungsprozess für manuelles Patchen definiert.'
+  additional_complement: 
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_1
+        - *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_2
+        - *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_3
+        - *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_4    
+        - *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Additional_Sharpen_3            
+      information_text: 'Unter Patches versteht man Software-Updates für Systemkomponenten mit dem Ziel, die Sicherheit durch Behebung von Problemen, Schwachstellen oder Exploits zu erhöhen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_1
+      information_text: 'Was als zeitnah im Sinne dieses Unterkriteriums gilt, hängt von der Kritikalität des gepatchten Problems, der Schwachstelle oder des Exploits ab.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Managing_Vulnerabilities_Patch_Management_Subcriterion_Basic_4
+      information_text: 'Die nach der Anwendung eines Patches durchgeführten Scans können, müssen aber nicht, auf die Systemkomponenten beschränkt sein, auf die der Patch angewendet wurde.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management_Implementation '28'
+  name: 'Umgang mit Schwachstellen - Implementierung des Patch-Managements'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Patch_Management_Implementation_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter entwirft, implementiert und pflegt technische und organisatorische Maßnahmen für die Bereitstellung von Patches auf den Systemen und Anwendungen unter seiner Verantwortung gemäß den Patch-Management-Richtlinien und -Verfahren (vgl. OPS-27).'
+  additional_sharpen:
+  additional_complement:
+  information: 
+  corresponding:
+-
+  identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Externally_sourced_components '29'
+  name: 'Umgang mit Schwachstellen, Vorfällen und Abstürzen - extern bezogene Komponenten'
+  basic: 
+    -
+      identifier: &ID_Criterion_Managing_Vulnerabilities_Incidents_and_Crashes_Externally_sourced_components_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter entwirft, implementiert und pflegt technische und organisatorische Maßnahmen zum Management von Aktualisierungen der Systemkomponenten, die zur Bereitstellung des Cloud-Dienstes verwendet werden und Bibliotheken Dritter oder Open-Source-Bibliotheken einbinden. Dazu gehört:
+
+
+1. Regelmäßige Identifizierung verfügbarer Updates und bekannter Schwachstellen in Bibliotheken von Drittanbietern oder Open-Source-Bibliotheken, die in Anwendungen verwendet werden;
+
+2. Bewertung der potenziellen Auswirkungen identifizierter Updates und Schwachstellen auf die Anwendungen und die allgemeine Sicherheitslage;
+
+3. Rechtzeitige Implementierung notwendiger Updates und Patches, um identifizierte Schwachstellen zu beheben; und
+
+4. Kontinuierliche Überwachung von Anwendungen, um sicherzustellen, dass Updates effektiv angewendet werden und keine bekannten oder nicht behobenen Schwachstellen entstehen.
+
+'
+  additional_sharpen:
+  additional_complement: 
+  information: 
+  corresponding: 
+-
+  identifier: &ID_Criterion_Policy_for_separation_of_cloud_user_data '30'
+  name: 'Trennung von Datensätzen - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Policy_for_separation_of_cloud_user_data_Subcriterion_Basic_1 '01B'
+      criterion: 'Basierend auf einer Risikobeurteilung (vgl. OIS-07) hat der Cloud-Anbieter Richtlinien und Verfahren mit technischen und organisatorischen Maßnahmen festgelegt, um die Trennung von Cloud-Kundendaten zwischen verschiedenen Cloud-Kunden sowie zwischen Cloud-Kunden und dem Cloud-Anbieter sicherzustellen. Diese Richtlinien und Verfahren werden gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt und enthalten Spezifikationen zur Mandantentrennung auf der Grundlage eines dokumentierten Cloud-Schichten-Modells und umfassen Folgendes:
+
+
+1. Darstellung, welche Cloud-Schichten für den jeweiligen Cloud-Dienst verwendet werden. Die verwendeten Cloud-Schichten sollten geeignet sein, eine Mandantentrennung zu ermöglichen;
+
+2. Maßnahmen zur Trennung von Cloud-Kundendaten entlang der verwendeten Cloud-Schichten. Diese Maßnahmen werden nach den Schutzzielen Vertraulichkeit, Integrität und Verfügbarkeit kategorisiert und danach, ob es sich um präventive, detektive oder reaktive Maßnahmen handelt;
+
+3. Überwachung und Einhaltung dieser Maßnahmen; und
+
+4. Einleitung geeigneter Maßnahmen bei Abweichungen.
+
+'
+  additional_sharpen:
+  additional_complement:   
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_separation_of_cloud_user_data_Subcriterion_Basic_1
+      information_text: 'Die Richtlinien und Verfahren dieser Kriterien sollen als übergeordnete Richtlinie für alle Cybersicherheitsmaßnahmen gegen alle Bedrohungen dienen, die aus der gemeinsamen Nutzung physischer oder virtueller Ressourcen resultieren und zu einem Verlust der Trennung von Datensätzen führen. Idealerweise hat der Cloud-Anbieter die Trennung der Datensätze zwischen verschiedenen Cloud-Kunden sowie zwischen Cloud-Kunden und Cloud-Anbieter bereits über alle anderen Richtlinien, Verfahren und die entsprechenden Maßnahmen sichergestellt. Der systematische Ansatz der in diesem Kriterium behandelten Richtlinien und Verfahren stellt sicher, dass kein Aspekt dieser Trennung übersehen wird. Außerdem bietet es eine gute Grundlage, um dem Cloud-Kunden die Cybersicherheit des Cloud-Dienstes ansprechend zu erklären (vgl. PSS-01).
+      
+      
+Cloud-Schichten im Sinne dieses Kriteriums finden sich in der *CISA Cloud Security Technical Reference Architecture*. Die in Version 2.0 dieses Dokuments bereitgestellten Schichten umfassen Identitäts-, Anmeldeinformations- und Zugriffsverwaltung, Daten, Netz, Anwendungen, Laufzeit, Middleware, Betriebssysteme, Virtualisierung, Server, Speicher und physische Sicherheit. Der Cloud-Anbieter kann je nach bereitgestelltem Cloud-Dienst seine eigene Kategorisierung von Cloud-Schichten verwenden. 
+      
+
+Es gibt neun Kombinationen für Vertraulichkeit, Integrität und Verfügbarkeit mit Prävention, Detektion und Reaktion. Die Anwendung auf jede Cloud-Schicht kann zu einer großen Anzahl von Kombinationen führen. Je nach Cloud-Dienst kann es jedoch akzeptabel sein, dass nicht für jede mögliche Kombination aus Prävention, Detektion und Reaktion sowie Vertraulichkeit, Integrität und Verfügbarkeit aussagekräftige Informationen in der Richtlinie bereitgestellt werden können. Diese Fälle sollten in den Richtlinien und Verfahren nachvollziehbar dokumentiert werden.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Separation_of_Datasets_in_the_Cloud_Infrastructure '31'
+  name: 'Trennung von Datensätzen - Implementierung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Separation_of_Datasets_in_the_Cloud_Infrastructure_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter entwirft, implementiert und pflegt Maßnahmen und Verfahren gegen Bedrohungen der Trennung von Datensätzen gemäß den Richtlinien und Verfahren von OPS-30. Die Maßnahmen zielen auf die Prävention, Detektion und Reaktion auf trennungswidrige Vorkommnisse ab.'
+    -
+      identifier: &ID_Criterion_Separation_of_Datasets_in_the_Cloud_Infrastructure_Subcriterion_Basic_2 '02B'
+      criterion: 'Auf gemeinsam genutzten virtuellen und physischen Ressourcen gespeicherte und verarbeitete Cloud-Kundendaten sind gemäß eines dokumentierten Ansatzes, auf Basis einer Risikobeurteilung nach OIS-07 und den Richtlinien zur Kryptographie (vgl. CRY-01) folgend sicher und strikt getrennt, um die Vertraulichkeit und Integrität dieser Daten zu gewährleisten.'
+    -
+      identifier: &ID_Criterion_Separation_of_Datasets_in_the_Cloud_Infrastructure_Subcriterion_Basic_3 '03B'
+      criterion: 'Die Risikobeurteilung wird bei Bedarf, insbesondere bei Änderungen an der Architektur des Cloud-Dienstes, mindestens jedoch jährlich überprüft. Maßnahmen werden gegebenenfalls angepasst oder verbessert, um sicherzustellen, dass sie den Risiken angemessen bleiben.'    
+  additional_sharpen:
+  additional_complement:   
+  information:
+    -
+      applicable_criteria: 
+        - *ID_Criterion_Separation_of_Datasets_in_the_Cloud_Infrastructure_Subcriterion_Basic_2
+      information_text: 'Zu den gemeinsam genutzten Ressourcen gehören CPU, RAM, Speicherplatz und Netze. Die Trennung von Cloud-Kundendaten auf gemeinsam genutzten Ressourcen kann beispielsweise gemäß den in der *CISA Cloud Security Technical Reference Architecture* beschriebenen Cloud-Schichten erfolgen. Die Trennung auf jeder gemeinsam genutzten Ressource wird auf der Grundlage der durchgeführten Risikobeurteilung so umgesetzt, dass sie als angemessen erachtet wird. Dazu kann auch gehören, dass für bestimmte gemeinsam genutzte Ressourcen keine kryptographische Trennung implementiert wird.
+
+
+Wenn die Angemessenheit und Wirksamkeit der Trennung nicht mit hinreichender Sicherheit beurteilt werden kann (z. B. aufgrund einer komplexen Implementierung), kann der Nachweis auch durch die Ergebnisse von Expertenprüfungen Dritter erbracht werden (z. B. Penetrationstests zur Validierung der Richtlinien und Verfahren).
+
+
+Die Trennung der übertragener Daten ist Gegenstand des Kriteriums COS-06.'
+  corresponding: 'Cloud-Kunden stellen mit geeigneten Kontrollen sicher, dass die vom Cloud-Dienst bereitgestellten Funktionen zur Trennung gemeinsam genutzter virtueller und physischer Ressourcen so genutzt werden, dass Risiken mit Bezug zur Trennung entsprechend dem Schutzbedarf der Daten hinreichend adressiert werden.'
+-
+  identifier: &ID_Criterion_Confidential_Computing '32'
+  name: 'Confidential Computing - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Confidential_Computing_Subcriterion_Basic_1 '01B'
+      criterion: 'Wenn der Cloud-Dienst Funktionen für Confidential Computing umfasst, werden Richtlinien und Verfahren sowie technische Sicherheitsmaßnahmen gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt, in dem die folgenden Aspekte beschrieben werden:
+
+
+1. Zweck und Umfang, einschließlich der Frage, welche Cyberssicherheitsrisiken auf Seiten des Cloud-Anbieters durch den Einsatz von Confidential Computing mitigiert werden sollen (vgl. OIS-07) und wie die Cloud-Kunden die bereitgestellten Funktionen nutzen können, um Cybersicherheitsrisiken auf ihrer Seite zu steuern;
+
+2. Verfügbare Confidential Computing Techniken;
+
+3. Bestimmung, welche Teile des Cloud-Stacks mit welcher Technologie geschützt sind und wo ein Zugriff Dritter möglich ist;
+
+4. Auflistung der beteiligten Lieferanten/Service-Organisationen; und
+
+5. Nutzung von Trusted Execution Environments (TEEs) oder sicheren Enklaven.
+
+'
+    -
+      identifier: &ID_Criterion_Confidential_Computing_Subcriterion_Basic_2 '02B'
+      criterion: 'Der Cloud-Anbieter stellt seinen Cloud-Kunden Informationen zu den in OPS-32.01B genannten Aspekten gemäß PSS-01 zur Verfügung.'
+    -
+      identifier: &ID_Criterion_Confidential_Computing_Subcriterion_Basic_3 '03B'
+      criterion: 'Zu den weiteren Aspekten, die in den Richtlinien und Verfahren zum Confidential Computing behandelt werden und nicht unbedingt in den den Cloud-Kunden bereitgestellten Informationen enthalten sind, gehören:
+
+
+1. Verantwortlichkeiten für die Umsetzung und Überwachung von Confidential Computing Maßnahmen;
+
+2. Sicherheitsanforderungen zur Gewährleistung der Vertraulichkeit, Integrität und Authentizität der Daten während der Verarbeitung; und
+
+3. Relevante rechtliche und behördliche Anforderungen an Confidential Computing.
+
+
+Zu diesen Sicherheitsanforderungen zur Gewährleistung der Vertraulichkeit, Integrität und Authentizität der Daten während der Verarbeitung gehören:
+  
+
+1. Weder der Cloud-Anbieter noch eine andere unbefugte Stelle darf auf die Cloud-Kundendaten oder die zum Schutz dieser Daten verwendeten Schlüssel zugreifen; und
+
+2. Es werden kryptographische Algorithmen verwendet, die der Richtlinie des Cloud-Anbieters zur Nutzung kryptographischer Mechanismen (vgl. CRY-01) entsprechen.
+
+'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Confidential_Computing_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter dokumentiert und implementiert ein technisches Rahmenwerk für Confidential Computing und zeigt, wie bestimmte Cybersicherheitsrisiken mitigiert werden (vgl. OIS-07). Das Rahmenwerk umfasst mindestens die folgenden Verfahren und technischen Schutzmaßnahmen:
+
+
+1. Nutzung von Trusted Execution Environments (TEEs) oder sicheren Enklaven zur Verarbeitung sensibler Daten während der Nutzung (engl. ''data in use'') in einer geschützten Umgebung;
+
+2. Dokumentation aller zugehörigen Schnittstellen;
+
+3. Berücksichtigung vorhandener Hardware-Nachweise;
+
+4. Einsatz von Verschlüsselungstechniken zur Sicherung der Daten während der Verarbeitung, einschließlich sicherer Schlüsselverwaltung;
+
+5. Remote-Attestierung zur Überprüfung der Identität und des gemessenen Zustands des TEE sowie des im TEE ausgeführten Codes;
+
+6. Implementierung von Überwachungs- und Protokollierungsmechanismen zur Detektion und Reaktion auf Sicherheitsvorfälle;
+
+7. Durchführung von Sicherheitsüberprüfungen und Penetrationstests (vgl. OPS-22) regelmäßig sowie anlassbezogen, um die Wirksamkeit Confidential Computing Maßnahmen zu überprüfen; und
+
+8. Regelmäßige Aktualisierungen der Trusted Computing Base des TEE durchführen.
+
+'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Confidential_Computing_Subcriterion_Basic_1
+        - *ID_Criterion_Confidential_Computing_Subcriterion_Basic_2
+        - *ID_Criterion_Confidential_Computing_Subcriterion_Basic_3
+        - *ID_Criterion_Confidential_Computing_Subcriterion_Additional_Complement_1
+      information_text: 'Confidential Computing im Sinne des Confidential Computing Consortium und im Sinne dieses Kriteriums ist der Schutz von Daten während der Nutzung (engl. ''data in use'') durch die Durchführung von Berechnungen in einem hardwarebasierten, zertifizierten Trusted Execution Environment (TEE). 
+      
+
+Ein TEE stellt einen isolierten Teil innerhalb eines Systems dar, der eine besonders geschützte Laufzeitumgebung bereitstellt. Der TEE kann Teil des Hauptprozessors (CPU) oder Teil des System-on-Chip (SoC) sein. Im Allgemeinen erzwingt ein TEE, dass nur autorisierter Code innerhalb des TEE ausgeführt werden kann und die von diesem Code verwendeten Daten nicht von Code außerhalb des TEE gelesen oder manipuliert werden können. Die Attestierung des TEE und der innerhalb des TEE laufenden Anwendung dient der Validierung der Vertrauenswürdigkeit der Verarbeitung.
+
+
+Zu den Confidential Computing Maßnahmen gehört die Implementierung und Überwachung technischer und organisatorischer Kontrollen, um den sicheren Einsatz und Betrieb der Confidential Computing-Technik zu gewährleisten. Zu diesen Maßnahmen können die Validierung von TEE-Konfigurationen, kontinuierliche Attestierungsprozesse, die Überwachung auf nicht autorisierte Codeänderungen und die Lebenszyklusverwaltung zertifizierter Umgebungen gehören.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Confidential_Computing_Remote_Attestation '33'
+  name: 'Confidential Computing - Remote-Attestierung'
+  basic: 
+    -
+      identifier: &ID_Confidential_Computing_Remote_Attestation_Subcriterion_Basic_1 '01B'
+      criterion: 'Wenn der Cloud-Dienst Funktionen für Confidential Computing umfasst, bietet der Cloud-Anbieter Remote-Attestierungsfunktionen zum Schutz der genutzten Daten an.'
+    -
+      identifier: &ID_Confidential_Computing_Remote_Attestation_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Funktionen der Remote-Attestierung basieren auf kryptographischen Mitteln, die in vertrauenswürdiger Hard- und Software verankert sind.' 
+    -
+      identifier: &ID_Confidential_Computing_Remote_Attestation_Subcriterion_Basic_3 '03B'
+      criterion: 'Remote-Attestierungsfunktionen umfassen eine Schnittstelle, die es dem Cloud-Kunden ermöglicht, die Integrität der Remote-Attestierung zu überprüfen.'
+  additional_sharpen:
+  additional_complement: 
+    -
+      identifier: &ID_Criterion_Confidential_Computing_Remote_Attestation_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Der Cloud-Anbieter definiert, dokumentiert und kommuniziert klar die verfügbaren Attestierungsstufen.' 
+    -
+      identifier: &ID_Criterion_Confidential_Computing_Remote_Attestation_Subcriterion_Additional_Complement_2 '02AC'
+      criterion: 'Die Informationen sind Teil der Richtlinien und Empfehlungen zur sicheren Nutzung des bereitgestellten Cloud-Dienstes (vgl. PSS-01).'
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Confidential_Computing_Remote_Attestation_Subcriterion_Basic_3
+      information_text: 'Die Schnittstelle zur Remote-Attestierung ermöglicht es Cloud-Kunden, Attestierungsnachweise sicher aus der Confidential Computing-Umgebung abzurufen. Die Überprüfung dieser Nachweise kann durch den Cloud-Kunden oder durch vertrauenswürdige Drittanbieter erfolgen.'
+    -
+      applicable_criteria:
+        - *ID_Criterion_Confidential_Computing_Remote_Attestation_Subcriterion_Additional_Complement_1
+      information_text: 'Die Remote-Attestierung kann an verschiedenen Stellen und mit unterschiedlichen Vertrauensstufen durchgeführt werden:
+
+
+1. Cloud-Kunden rufen Nachweise von TEEs ab und führen die Verifizierung in einer Umgebung durch, der sie völlig vertrauen. Es wird allgemein davon ausgegangen, dass dieses Szenario eine sehr starke Attestierung darstellt;
+
+2. Cloud-Anbieter rufen Nachweise von TEEs ab, führen Überprüfungen in von ihnen kontrollierten Überprüfungsdiensten durch und stellen dem Cloud-Kunden Überprüfungsergebnisse und Nachweise zur Verfügung. Cloud-Kunden überprüfen den Nachweis in einer Umgebung, der sie voll und ganz vertrauen. Es wird allgemein davon ausgegangen, dass dieses Szenario eine sehr starke Attestierung darstellt;
+
+3. Cloud-Kunden rufen Nachweise von TEEs ab und senden sie an einen Nachweisverifizierungsdienst, dem sie vertrauen. Es wird allgemein davon ausgegangen, dass dieses Szenario eine starke Attestierung darstellt; und
+
+4. Cloud-Anbieter rufen Nachweise von TEEs ab, senden sie an einen Verifizierungsdienst unter ihrer Kontrolle und geben nur die Verifizierungsergebnisse an Cloud-Kunden zurück. Es wird allgemein davon ausgegangen, dass dieses Szenario eine schwache Attestierung liefert.
+
+'
+  corresponding:
+-
+  identifier: &ID_Criterion_Policy_for_Container_Management '34'
+  name: 'Container-Management - Richtlinien und Verfahren'
+  basic: 
+    -
+      identifier: &ID_Criterion_Policy_for_Container_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Richtlinien und Verfahren mit technischen und organisatorischen Maßnahmen zur Planung und Verwaltung von Containern werden gemäß SP-01 dokumentiert, kommuniziert und bereitgestellt. Diese Richtlinien und Verfahren enthalten Vorgaben für den gesamten Container-Lebenszyklus, die mindestens folgende Aspekte betreffen:
+
+
+1. Image-Erstellung, -Test und -Validierung;
+
+2. Image-Aufbewahrung und -Abruf;
+
+3. Containerbereitstellung und -verwaltung;
+
+4. Containerbetrieb; und
+
+5. Außerbetriebnahme von Images und Containern.
+
+'
+    -
+      identifier: &ID_Criterion_Policy_for_Container_Management_Subcriterion_Basic_2 '02B'
+      criterion: 'Die Richtlinien und Verfahren beschreiben Maßnahmen entlang des Lebenszyklus von Containern und adressieren mindestens folgende Aspekte:
+
+
+1. Container werden nach einem dokumentierten Prozess inventarisiert (vgl. AM-02, AM-03, AM-09);
+
+2. Der Bedarf an Malware-Schutz wird beurteilt und ggf. sichergestellt (vgl. OPS-05);
+
+3. Die Protokollierung und Überwachung von Ereignissen erfolgt entlang des Container-Lebenszyklus und wird gemäß einem definierten Protokollierungsrahmenwerks durchgeführt (vgl. OPS-10, OPS-12);
+
+4. Cloud-Kundendaten werden auf der Grundlage einer Risikobeurteilung getrennt (vgl. OPS-30);
+
+5. Der Zugriff auf den Container-Host sollte gemäß einem Rollen- und Rechterahmenwerk und einer Richtlinie zur Verwaltung des Zugriffs und der Zugriffsberechtigungen erfolgen (vgl. IAM-01, IAM-06);
+
+6. Auf Containern gespeicherte Daten und Daten im Transport sollten vom Anbieter soweit möglich gemäß der Verschlüsselungsrichtlinie (vgl. CRY-01) verschlüsselt werden;
+
+7. Maßnahmen zur Gewährleistung der Netzsicherheit werden festgelegt. Dazu gehören beispielsweise Maßnahmen zur Detektion von Netzanomalien (vgl. COS-01 und COS-03) wie unerwartete Datenflüsse innerhalb des Netzes oder unerwünschte Zugriffsversuche;
+
+8. Änderungen an Containern und Images erfolgen nach einem geregelten Prozess (vgl. DEV-03); und
+
+9. Härtungsprozesse werden nach allgemeinen Branchenstandards durchgeführt, um sicherzustellen, dass keine unnötigen Systemdienste ausgeführt werden (vgl. PSS-11).
+
+'
+  additional_sharpen:
+  additional_complement:
+    -
+      identifier: &ID_Criterion_Policy_for_Container_Management_Subcriterion_Additional_Complement_1 '01AC'
+      criterion: 'Darüber hinaus beschreiben die Richtlinien und Verfahren Maßnahmen entlang des Lebenszyklus von Containern, die mindestens folgende Aspekte adressieren:
+        
+
+1. Container-Images werden kryptographisch signiert und der Signaturschlüssel sicher gespeichert (vgl. CRY-10), um ihre Authentizität und Integrität sicherzustellen;
+
+2. Das Containerverhalten wird mithilfe von Laufzeitsicherheitskontrollen überwacht und eingeschränkt; und
+
+3. Softwareprodukte, die für die Bereitstellung von Container-Images verwendet werden, werden, soweit möglich, regelmäßig auf bekannte Schwachstellen oder schädliche Komponenten in Container-Images und Abhängigkeiten überprüft.  
+        
+'   
+  information: 
+    -
+      applicable_criteria:
+        - *ID_Criterion_Policy_for_Container_Management_Subcriterion_Additional_Complement_1         
+      information_text: 'Im Falle von Drittanbieter- und Open-Source-Softwareprodukten, die für die Bereitstellung von Container-Images verwendet werden, entsprechen die Scanverfahren den in DEV-14 definierten Richtlinien und Verfahren.'
+  corresponding:
+-
+  identifier: &ID_Criterion_Implementation_for_Container_Management '35'
+  name: 'Containermanagement - Implementierung'
+  basic: 
+    -
+      identifier: &ID_Criterion_Implementation_for_Container_Management_Subcriterion_Basic_1 '01B'
+      criterion: 'Der Cloud-Anbieter entwirft, implementiert und pflegt technische und organisatorische Maßnahmen zur Planung und Verwaltung von Containern entlang ihres Lebenszyklus gemäß den Container-Management-Richtlinien und -Verfahren (vgl. OPS-34).'
+  additional_sharpen:
+  additional_complement:
+  information: 
+  corresponding:

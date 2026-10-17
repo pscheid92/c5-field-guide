@@ -1,0 +1,259 @@
+---
+// Reading pane for one criterion: BSI text grouped into basic and additional
+// sub-criteria, supplementary information under the sub-criterion it belongs
+// to, customer criteria, our commentary (if any), related criteria and
+// previous/next within the domain.
+import { getCollection, render } from 'astro:content';
+import type { Criterion, Site, Sub } from './data';
+
+interface Props {
+	site: Site;
+	criterion: Criterion;
+}
+
+const { site: s, criterion: c } = Astro.props;
+const { t } = s;
+const domain = s.domain(c.domain)!;
+const siblings = s.criteriaIn(c.domain);
+const index = siblings.indexOf(c);
+const prev = siblings[index - 1];
+const next = siblings[index + 1];
+const basic = c.subs.filter((sub) => sub.kind === 'basic');
+const additional = c.subs.filter((sub) => sub.kind !== 'basic');
+const anchorOf = (subId: string) => `${c.id.toLowerCase()}-${subId.toLowerCase()}`;
+const kindLabel = (sub: Sub) => (sub.kind === 'basic' ? t.basic : sub.kind === 'sharpen' ? t.sharpens : t.complement);
+
+// Look up via the (cached) collection rather than getEntry, which warns for
+// every criterion that has no commentary yet.
+const commentary = (await getCollection('commentary')).find((e) => e.id === `${s.lang}/${c.id.toLowerCase()}`);
+const Commentary = commentary ? (await render(commentary)).Content : null;
+
+const byIds = (ids: string[]) => ids.map((id) => s.criteriaById.get(id)).filter((x) => x !== undefined);
+const curated = commentary?.data.related ?? [];
+const relatedGroups = [
+	{ head: t.relCurated, list: byIds(curated) },
+	{ head: t.relOut, list: byIds(c.related.out.filter((id) => !curated.includes(id))) },
+	{
+		head: t.relIn(c.id),
+		list: byIds(c.related.in.filter((id) => !curated.includes(id) && !c.related.out.includes(id))),
+	},
+].filter((g) => g.list.length);
+
+const chevron = '<svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="14"><path d="M6 3.5 10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+---
+
+<article class="doc">
+	<p class="crumb"><a href={s.domainUrl(c.domain)}>{domain.code} · {domain.title}</a></p>
+	<h1>{c.id} {c.name}</h1>
+	<p class="doc-meta">
+		{t.subMeta(c.subs.length, basic.length, additional.length)}{c.customerHtml && <>, <a href={`#${t.customerAnchor}`}>{t.withCustomer}</a></>}
+	</p>
+	{commentary?.data.summary && <p class="doc-summary">{commentary.data.summary}</p>}
+
+	{
+		c.subs.length > 1 && (
+			<nav class="jump" aria-label={t.subCriteria}>
+				<div class="jump-group">
+					<span class="jump-label">{t.basic}</span>
+					{basic.map((sub) => (
+						<a href={`#${sub.anchor}`}>{sub.id}</a>
+					))}
+				</div>
+				{additional.length > 0 && (
+					<div class="jump-group">
+						<span class="jump-label">{t.additionalShort}</span>
+						{additional.map((sub) => (
+							<a class={`jump-${sub.kind}`} href={`#${sub.anchor}`}>
+								{sub.id}
+							</a>
+						))}
+					</div>
+				)}
+			</nav>
+		)
+	}
+
+	{
+		c.generalInfo.map((html) => (
+			<details class="info general">
+				<summary>
+					<Fragment set:html={chevron} />
+					{t.infoAll}
+				</summary>
+				<div class="info-body" set:html={html} />
+			</details>
+		))
+	}
+
+	{
+		[
+			{ label: t.groupBasic, subs: basic },
+			{ label: t.groupAdditional, subs: additional },
+		]
+			.filter((g) => g.subs.length)
+			.map((g) => (
+				<section>
+					<h2>{g.label}</h2>
+					{g.subs.map((sub) => (
+						<section class="sub">
+							<div class="sub-head">
+								<h3 id={sub.anchor}>
+									<a href={`#${sub.anchor}`}>
+										{c.id}.{sub.id}
+									</a>
+								</h3>
+								{sub.kind !== 'basic' && (
+									<span class={`kind kind-${sub.kind}`}>
+										{kindLabel(sub)}
+										{sub.sharpens && <a href={`#${anchorOf(sub.sharpens)}`}>{sub.sharpens}</a>}
+									</span>
+								)}
+								<button
+									class="copy"
+									type="button"
+									data-anchor={sub.anchor}
+									data-copied={t.copied}
+									aria-label={t.copyLabel(`${c.id}.${sub.id}`)}
+								>
+									{t.copy}
+								</button>
+							</div>
+							<div class="text" set:html={sub.html} />
+							{sub.info.map((info) => (
+								<details class="info">
+									<summary>
+										<Fragment set:html={chevron} />
+										{t.infoSummary}
+									</summary>
+									<div class="info-body">
+										{info.also.length > 0 && (
+											<p class="info-also">
+												{t.alsoFor}{' '}
+												{info.also.map((a, i) => (
+													<>
+														{i > 0 && ', '}
+														<a href={`#${anchorOf(a)}`}>{a}</a>
+													</>
+												))}
+											</p>
+										)}
+										<Fragment set:html={info.html} />
+									</div>
+								</details>
+							))}
+						</section>
+					))}
+				</section>
+			))
+	}
+
+	{
+		c.customerHtml && (
+			<section>
+				<h2 id={t.customerAnchor}>{t.customer}</h2>
+				<p class="customer-note">{t.customerNote}</p>
+				<div class="panel text" set:html={c.customerHtml} />
+			</section>
+		)
+	}
+
+	{
+		Commentary && (
+			<section class="commentary">
+				<p class="commentary-label">
+					{t.commentary}
+					{commentary?.data.status && <span>, {commentary.data.status}</span>}
+				</p>
+				<div class="commentary-body">
+					<Commentary />
+				</div>
+			</section>
+		)
+	}
+
+	{
+		relatedGroups.length > 0 && (
+			<section>
+				<h2 id={t.relatedAnchor}>{t.related}</h2>
+				{relatedGroups.map((g) => (
+					<>
+						<p class="related-head">{g.head}</p>
+						<ul class="related">
+							{g.list.map((r) => (
+								<li>
+									<a href={r.url}>
+										<span class="related-id">{r.id}</span>
+										<span>{r.name}</span>
+									</a>
+								</li>
+							))}
+						</ul>
+					</>
+				))}
+			</section>
+		)
+	}
+
+	<nav class="pager" aria-label={t.paging}>
+		{
+			prev && (
+				<a href={prev.url}>
+					<span>← {t.previous}</span>
+					{prev.id} {prev.name}
+				</a>
+			)
+		}
+		{
+			next && (
+				<a class="next" href={next.url}>
+					<span>{t.next} →</span>
+					{next.id} {next.name}
+				</a>
+			)
+		}
+	</nav>
+
+	<p class="attribution" set:html={s.data.attribution} />
+</article>
+
+<!-- Wide windows: sub-criteria outline next to the text, marks the current one. -->
+<aside class="outline" aria-label={t.onThisPage}>
+	<p class="outline-title">{t.onThisPage}</p>
+	{
+		[
+			{ label: t.groupBasic, subs: basic },
+			{ label: t.groupAdditional, subs: additional },
+		]
+			.filter((g) => g.subs.length)
+			.map((g) => (
+				<>
+					<p class="outline-group">{g.label}</p>
+					<ul class="outline-grid">
+						{g.subs.map((sub) => (
+							<li>
+								<a class={`jump-${sub.kind}`} href={`#${sub.anchor}`}>
+									{sub.id}
+								</a>
+							</li>
+						))}
+					</ul>
+				</>
+			))
+	}
+	{
+		(c.customerHtml || relatedGroups.length > 0) && (
+			<ul class="outline-more">
+				{c.customerHtml && (
+					<li>
+						<a href={`#${t.customerAnchor}`}>{t.customerShort}</a>
+					</li>
+				)}
+				{relatedGroups.length > 0 && (
+					<li>
+						<a href={`#${t.relatedAnchor}`}>{t.related}</a>
+					</li>
+				)}
+			</ul>
+		)
+	}
+</aside>
