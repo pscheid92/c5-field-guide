@@ -2,7 +2,9 @@
 // https://llmstxt.org): one file per criterion and General Condition, the
 // whole catalogue per language, and the llms.txt index. BSI text is passed
 // through unchanged; only line structure becomes Markdown (paragraphs, "1."
-// and "-" lists).
+// and "-" lists). The whole-catalogue file ends with the site's AI
+// compilations (topics, values) as compact lists, in a section of their own
+// that says they are not BSI text.
 
 const LABELS = {
 	de: {
@@ -43,6 +45,12 @@ const LABELS = {
 			'Die Kriterien nach technischen Themen statt nach BSI-Bereichen. KI-Zuordnung (Claude): Themen, Zuordnung und Einleitungen stammen nicht vom BSI; ein Kriterium kann zu mehreren Themen gehören. Verbindlich ist der Kriterientext.',
 		topicCount: (criteria, domains) => `${criteria} Kriterien aus ${domains} Bereichen`,
 		onlySubs: (subs, total) => `nur ${subs.join(', ')} von ${total} Unterkriterien`,
+		only: (subs) => `nur ${subs.join(', ')}`,
+		supplement: 'Ergänzungen dieser Website (KI-Zusammenstellung, kein BSI-Text)',
+		supplementNote: (topicsDate, valuesDate) =>
+			`Claude (KI, Anthropic) hat die Kriterien technischen Themen zugeordnet (Stand ${topicsDate}) und die konkreten Zeiten und Werte aus dem Kriterientext zusammengestellt (Stand ${valuesDate}). Beim Erstellen der Website wird geprüft, dass jede genannte Kriterien- und Unterkriterien-ID existiert und jeder Wert in einem wörtlichen Zitat aus dem genannten Unterkriterium oder seiner ergänzenden Information steht; die Zitate stehen auf der Werte-Seite. Bezeichnungen, Zuordnung und Einordnung stammen nicht vom BSI. Verbindlich ist allein der Kriterientext oben.`,
+		topicCriteria: 'Kriterien',
+		date: (iso) => iso.split('-').reverse().join('.'),
 		source: (version) =>
 			`Quelle: BSI C5:2026, maschinenlesbare Fassung v${version}, © Bundesamt für Sicherheit in der Informationstechnik (BSI) 2026, unverändert wiedergegeben unter CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/deed.de). Änderungshinweise: BSI C5:2026 Änderungshistorie, © BSI 2026, CC BY-ND 4.0. Inoffizielle Darstellung, ohne Verbindung zum BSI.`,
 	},
@@ -84,6 +92,12 @@ const LABELS = {
 			"The criteria by technical topic instead of BSI domain. AI assignment (Claude): topics, assignment and introductions are not BSI's; a criterion can belong to several topics. The criterion text is authoritative.",
 		topicCount: (criteria, domains) => `${criteria} criteria from ${domains} domains`,
 		onlySubs: (subs, total) => `only ${subs.join(', ')} of ${total} sub-criteria`,
+		only: (subs) => `only ${subs.join(', ')}`,
+		supplement: 'Additions by this site (AI compilation, not BSI text)',
+		supplementNote: (topicsDate, valuesDate) =>
+			`Claude (AI, Anthropic) assigned the criteria to technical topics (as of ${topicsDate}) and compiled the concrete times and values from the criterion text (as of ${valuesDate}). Building the site checks that every criterion and sub-criterion ID named here exists and that every value appears in a verbatim quote from the cited sub-criterion or its supplementary information; the quotes are on the values page. Labels, assignment and grouping are not BSI's. Only the criterion text above is authoritative.`,
+		topicCriteria: 'Criteria',
+		date: (iso) => iso,
 		source: (version) =>
 			`Source: BSI C5:2026, machine-readable edition v${version}, © Federal Office for Information Security (BSI) 2026, reproduced unchanged under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/). Change notes: BSI C5:2026 Changelog, © BSI 2026, CC BY-ND 4.0. Unofficial presentation, not affiliated with BSI.`,
 	},
@@ -294,6 +308,40 @@ export function buildMarkdown({ lang, version, criteria, conditions, domainTitle
 	}
 	parts.push(heading(1, L.conditions), ...conditions.map((g) => condition(g, 2)));
 
+	// The site's AI compilations, after all BSI text. Criteria are named by ID
+	// only: their text is above in the same file.
+	const tag = (v) => [v.sub, v.kind !== 'basic' ? L.additionalTag : '', v.example ? L.exampleTag : ''].filter(Boolean).join(', ');
+	parts.push(
+		heading(1, L.supplement),
+		L.supplementNote(L.date(topics.generated), L.date(values.generated)),
+		heading(2, L.topicsTitle),
+		...topics.topics.map((t) =>
+			[
+				heading(3, t.name),
+				t.intro,
+				[
+					`- ${L.topicCriteria}: ${t.domains
+						.flatMap((d) => d.criteria)
+						.map((c) => (c.partial ? `${c.id} (${L.only(c.subs)})` : c.id))
+						.join(', ')}`,
+					`- ${L.page}: ${abs(topicUrl(t))}`,
+				].join('\n'),
+			].join('\n\n'),
+		),
+		heading(2, L.valuesTitle),
+		`- ${L.page}: ${abs(paths.values)}`,
+		...values.groups.map((g) =>
+			[
+				heading(3, g.title),
+				g.lead,
+				g.buckets
+					.flatMap((b) => b.values)
+					.map((v) => `- **${v.value}**: ${v.label} (${tag(v)})`)
+					.join('\n'),
+			].join('\n\n'),
+		),
+	);
+
 	const llms = buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, topics, abs });
 	return { items, changes, customers, values: valuesPage, topicsIndex, topicPages, full: `${parts.join('\n\n')}\n`, llms };
 }
@@ -347,7 +395,7 @@ ${topicList}
 
 ## Optional
 
-- [Gesamter Katalog](${abs(paths.full)}): alle Kriterien, ergänzenden Informationen, Kundenkriterien und Rahmenbedingungen in einer Datei (rund 0,5 MB)
+- [Gesamter Katalog](${abs(paths.full)}): alle Kriterien, ergänzenden Informationen, Kundenkriterien und Rahmenbedingungen in einer Datei, am Ende die Themen und Werte dieser Website als gekennzeichnete KI-Zusammenstellung (rund 0,5 MB)
 `;
 	}
 	return `# C5 Field Guide (English)
@@ -381,6 +429,6 @@ ${topicList}
 
 ## Optional
 
-- [Complete catalogue](${abs(paths.full)}): all criteria, supplementary information, customer criteria and General Conditions in one file (about 0.5 MB)
+- [Complete catalogue](${abs(paths.full)}): all criteria, supplementary information, customer criteria and General Conditions in one file, ending with this site's topics and values as a marked AI compilation (about 0.5 MB)
 `;
 }
