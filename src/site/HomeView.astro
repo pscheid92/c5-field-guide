@@ -1,5 +1,6 @@
 ---
 // Start page: the search as the main entry, then all domains as an index.
+import Attribution from './Attribution.astro';
 import Layout from './Layout.astro';
 import Search from './Search.astro';
 import { type Lang, site } from './data';
@@ -88,6 +89,6 @@ const withCustomer = s.data.criteria.filter((c) => c.customerHtml);
 	</section>
 
 	<footer class="footer">
-		<p set:html={s.data.attribution} />
+		<Attribution lang={s.lang} />
 	</footer>
 </Layout>

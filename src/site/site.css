@@ -894,6 +894,12 @@ p.changes {
 .overview-theme .overview {
 	margin-top: 0.6rem !important;
 }
+.overview-label {
+	display: block;
+	margin-bottom: 0.1rem;
+	font-size: 0.875rem;
+	color: var(--muted);
+}
 .overview li {
 	margin: 0 !important;
 	border-bottom: 1px solid var(--line);
@@ -1149,9 +1155,13 @@ p.changes {
 	column-gap: 2rem;
 }
 .index-grid li {
+	display: flex;
 	border-top: 1px solid var(--line);
 }
+/* Every entry fills its grid row, so hover highlights in a row match in
+   height whether the title takes one line or two. */
 .index-grid a {
+	flex: 1;
 	display: block;
 	padding: 1rem 0.5rem 1.1rem;
 	margin: 0 -0.5rem;

@@ -1,0 +1,29 @@
+---
+// Credit under every page: whose text it is, the licence, and that the site is
+// unofficial, in one line. The full details are on the Info page.
+import { type Lang, site } from './data';
+
+interface Props {
+	lang: Lang;
+}
+
+const s = site(Astro.props.lang);
+const de = s.lang === 'de';
+const license = de ? 'https://creativecommons.org/licenses/by-nd/4.0/deed.de' : 'https://creativecommons.org/licenses/by-nd/4.0/';
+---
+
+<p class="attribution">
+	{
+		de ? (
+			<>
+				Texte des BSI aus C5:2026 und der Änderungshistorie: © Bundesamt für Sicherheit in der Informationstechnik 2026, unverändert unter{' '}
+				<a href={license}>CC BY-ND 4.0</a>. Inoffizielle Website ohne Verbindung zum BSI. <a href={`${s.info}#lizenz`}>Lizenz und Quellen</a>
+			</>
+		) : (
+			<>
+				BSI text from C5:2026 and its changelog: © Federal Office for Information Security 2026, reproduced unchanged under{' '}
+				<a href={license}>CC BY-ND 4.0</a>. Unofficial site, not affiliated with BSI. <a href={`${s.info}#licence`}>Licence and sources</a>
+			</>
+		)
+	}
+</p>

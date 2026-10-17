@@ -1,5 +1,6 @@
 ---
 // Reading pane for one General Condition (GC-01 … GC-06).
+import Attribution from './Attribution.astro';
 import { type Condition, GC, type Site } from './data';
 
 interface Props {
@@ -52,5 +53,5 @@ const next = items[index + 1];
 		}
 	</nav>
 
-	<p class="attribution" set:html={s.data.attribution} />
+	<Attribution lang={s.lang} />
 </article>

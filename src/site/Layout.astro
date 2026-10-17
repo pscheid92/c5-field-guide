@@ -10,7 +10,7 @@ import { ClientRouter } from 'astro:transitions';
 import '@fontsource-variable/ibm-plex-sans';
 import './site.css';
 import Search from './Search.astro';
-import { GC, type Lang, base, groupByTheme, site, switchLang } from './data';
+import { GC, type Lang, base, groupByTheme, prefix, site, switchLang } from './data';
 
 interface Props {
 	lang: Lang;
@@ -21,9 +21,11 @@ interface Props {
 	current?: string;
 	/** Target of the language switch, for pages without a counterpart (404). */
 	otherLangUrl?: string;
+	/** Markdown version of the page, for AI tools (llms.txt convention). */
+	markdown?: string;
 }
 
-const { lang, title, description, view, domain, current, otherLangUrl } = Astro.props;
+const { lang, title, description, view, domain, current, otherLangUrl, markdown } = Astro.props;
 const s = site(lang);
 const { t } = s;
 const other: Lang = lang === 'de' ? 'en' : 'de';
@@ -50,6 +52,8 @@ const entries = groupByTheme(raw);
 		<title>{title} · C5 Field Guide</title>
 		{description && <meta name="description" content={description} />}
 		<link rel="alternate" hreflang={other} href={otherUrl} />
+		{markdown && <link rel="alternate" type="text/markdown" href={markdown} />}
+		<link rel="describedby" href={`${prefix(lang)}/llms.txt`} />
 		<ClientRouter />
 	</head>
 	<body data-view={view}>

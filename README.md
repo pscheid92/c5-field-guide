@@ -31,6 +31,9 @@ BASE_PATH=/c5catalogue npx astro preview   # http://localhost:4321/c5catalogue/
 | Changes since C5:2020 | `/aenderungen/` | `/en/changes/` |
 | All customer criteria | `/kundenkriterien/` | `/en/customer-criteria/` |
 | About | `/info/` | `/en/info/` |
+| llms.txt for AI tools ([llmstxt.org](https://llmstxt.org)) | `/llms.txt` | `/en/llms.txt` |
+| Markdown version of a page | `/iam-06/index.html.md`, `/iam/index.html.md` | `/en/iam-06/index.html.md` |
+| Whole catalogue as Markdown | `/llms-full.txt` | `/en/llms-full.txt` |
 
 ## How it fits together
 

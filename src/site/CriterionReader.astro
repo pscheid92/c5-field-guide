@@ -4,6 +4,7 @@
 // to, customer criteria, our commentary (if any), related criteria and
 // previous/next within the domain. Under the title: what changed since
 // C5:2020, from BSI's change log.
+import Attribution from './Attribution.astro';
 import { getCollection, render } from 'astro:content';
 import { type Criterion, type Site, type Sub, predecessors } from './data';
 
@@ -288,8 +289,7 @@ const chevron = '<svg aria-hidden="true" viewBox="0 0 16 16" width="14" height="
 		}
 	</nav>
 
-	<p class="attribution" set:html={s.data.attribution} />
-	<p class="attribution attribution-more" set:html={changelog.attribution} />
+	<Attribution lang={s.lang} />
 </article>
 
 <!-- Wide windows: sub-criteria outline next to the text, marks the current one. -->

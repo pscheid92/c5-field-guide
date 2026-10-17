@@ -8,6 +8,7 @@
 // Outputs (generated, not committed):
 //   src/generated/catalog.<lang>.json   criteria with rendered BSI text, references
 //   src/generated/search.<lang>.json    plain-text search index
+//   src/generated/markdown.<lang>.json  llms.txt and Markdown versions of the pages (llmstxt.org)
 //
 // German is served at the site root, English under /en/. URLs: /iam/ (domain),
 // /iam-06/ (criterion), /iam-06/#iam-06-02b (sub-criterion), /gc-01/ (general
@@ -20,16 +21,24 @@ import { fileURLToPath } from 'node:url';
 import { basePath } from './lib/base.mjs';
 import { loadCatalog, loadDomains, findReferences } from './lib/catalog.mjs';
 import { loadChangelog } from './lib/changelog.mjs';
+import { buildMarkdown } from './lib/markdown.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const r = (...p) => path.join(root, ...p);
 
 const domains = loadDomains(r('data/domains.yml'));
+
+// Addresses written into the Markdown files and llms.txt: absolute when the
+// deploy workflow provides the site URL, root-relative otherwise.
+const siteUrl = process.env.SITE_URL || '';
+const abs = (p) => (siteUrl ? new URL(p, siteUrl).href : p);
 const codes = Object.keys(domains).sort((a, b) => b.length - a.length);
 
 const LOCALES = {
 	de: {
 		prefix: basePath,
+		// Same addresses as changesPath / customersPath in src/site/data.ts.
+		pages: { changes: 'aenderungen', customers: 'kundenkriterien' },
 		bsiDir: r('vendor/bsi/de/C5_2026_Machine-Readable_de'),
 		domainTitle: (d) => d.title_de,
 		sourceUrl:
@@ -37,28 +46,16 @@ const LOCALES = {
 		gcTitle: 'Rahmenbedingungen',
 		gcNote:
 			'Getrennt von den Kriterien aufgeführt. Die Rahmenbedingungen (GC) beschreiben Angaben, die der Cloud-Anbieter in seiner Systembeschreibung und seinen vertraglichen Vereinbarungen macht.',
-		attribution: (v, url) =>
-			`Kriterientext, ergänzende Informationen und korrespondierende Kriterien für Kunden: ` +
-			`BSI C5:2026 (maschinenlesbare Fassung v${v}), ` +
-			`© Bundesamt für Sicherheit in der Informationstechnik (BSI) 2026, unverändert wiedergegeben unter ` +
-			`<a href="https://creativecommons.org/licenses/by-nd/4.0/deed.de">CC BY-ND 4.0</a>. ` +
-			`Formatierung und Querverweis-Links ergänzt. Diese Website steht in keiner Verbindung zum BSI und wird nicht vom BSI unterstützt. ` +
-			`<a href="${url}">Offizielle Quelle</a>.`,
 		// BSI publishes the change log in English only so far; a German edition
 		// is announced. Point this at it (lang: 'de') once it exists.
 		changelog: {
 			file: r('vendor/bsi/C5_2026_changelog.xlsx'),
 			lang: 'en',
-			attribution: (basis) =>
-				`Änderungen gegenüber C5:2020 und Wortlaut aus C5:2020: BSI C5:2026 Änderungshistorie (engl.), ` +
-				`© Bundesamt für Sicherheit in der Informationstechnik (BSI) 2026, unverändert wiedergegeben unter ` +
-				`<a href="https://creativecommons.org/licenses/by-nd/4.0/deed.de">CC BY-ND 4.0</a>. ` +
-				`Grundlage laut BSI: <span lang="en">„${basis}“</span> ` +
-				`<a href="https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/CloudComputing/Anforderungskatalog/2026/C5_2026_Aenderungshistorie.html">Offizielle Quelle</a>.`,
 		},
 	},
 	en: {
 		prefix: `${basePath}/en`,
+		pages: { changes: 'changes', customers: 'customer-criteria' },
 		bsiDir: r('vendor/bsi/en/C5_2026_Machine-Readable_en'),
 		domainTitle: (d) => d.title,
 		sourceUrl:
@@ -66,22 +63,9 @@ const LOCALES = {
 		gcTitle: 'General Conditions',
 		gcNote:
 			'Listed separately from the criteria. General Conditions (GC) describe information the cloud service provider discloses in its system description and contractual agreements.',
-		attribution: (v, url) =>
-			`Criterion text, supplementary information and complementary customer criteria: ` +
-			`BSI C5:2026 (machine-readable edition v${v}), ` +
-			`© Federal Office for Information Security (BSI) 2026, reproduced unchanged under ` +
-			`<a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>. ` +
-			`Formatting and cross-reference links added. This site is not affiliated with or endorsed by BSI. ` +
-			`<a href="${url}">Official source</a>.`,
 		changelog: {
 			file: r('vendor/bsi/C5_2026_changelog.xlsx'),
 			lang: 'en',
-			attribution: (basis) =>
-				`Changes since C5:2020 and C5:2020 wording: BSI C5:2026 Changelog, ` +
-				`© Federal Office for Information Security (BSI) 2026, reproduced unchanged under ` +
-				`<a href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND 4.0</a>. ` +
-				`Basis according to BSI: “${basis}” ` +
-				`<a href="https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/CloudComputing/ComplianceControlsCatalogue/2026/C5_2026_changelog.html">Official source</a>.`,
 		},
 	},
 };
@@ -207,11 +191,7 @@ function generate(lang) {
 		JSON.stringify({
 			lang,
 			version: meta.version,
-			attribution: loc.attribution(esc(String(meta.version)), loc.sourceUrl),
-			changelog: {
-				lang: loc.changelog.lang,
-				attribution: loc.changelog.attribution(esc(changelog.basis)),
-			},
+			changelog: { lang: loc.changelog.lang },
 			domains: Object.values(domains).map((d) => ({
 				code: d.code,
 				title: loc.domainTitle(d),
@@ -299,10 +279,35 @@ function generate(lang) {
 		),
 	);
 
+	// For AI tools (llmstxt.org): this language's llms.txt and a Markdown
+	// version of every criterion, domain and cross-domain page.
+	const other = Object.entries(LOCALES).find(([l]) => l !== lang)[1];
+	const markdown = buildMarkdown({
+		lang,
+		version: meta.version,
+		criteria,
+		conditions,
+		domainTitle: (code) => loc.domainTitle(domains[code]),
+		changelog,
+		urlFor,
+		paths: {
+			domain: (code) => `${loc.prefix}/${slug(code)}/`,
+			changes: `${loc.prefix}/${loc.pages.changes}/`,
+			customers: `${loc.prefix}/${loc.pages.customers}/`,
+			full: `${loc.prefix}/llms-full.txt`,
+			otherLlms: `${other.prefix}/llms.txt`,
+			example: urlFor('IAM-06'),
+		},
+		sourceUrl: loc.sourceUrl,
+		abs,
+	});
+	write(r('src/generated', `markdown.${lang}.json`), JSON.stringify(markdown));
+
 	const statuses = [...changelog.byId.values()].reduce((n, ch) => ({ ...n, [ch.status]: (n[ch.status] ?? 0) + 1 }), {});
 	console.log(
 		`[${lang}] ${criteria.length} criteria, ${conditions.length} general conditions (BSI catalogue v${meta.version}); ` +
-			`since C5:2020: ${statuses.new} new, ${statuses.changed} changed, ${statuses.unchanged} unchanged`,
+			`since C5:2020: ${statuses.new} new, ${statuses.changed} changed, ${statuses.unchanged} unchanged; ` +
+			`${Object.keys(markdown.items).length + 2} Markdown pages, llms.txt ${(markdown.llms.length / 1024).toFixed(1)} KB`,
 	);
 }
 

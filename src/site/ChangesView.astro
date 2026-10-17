@@ -2,6 +2,7 @@
 // What changed between C5:2020 and C5:2026, from BSI's change log: every
 // criterion by domain with its status, then every C5:2020 ID and where it
 // went. The details (BSI's notes, old wording) are on the criterion pages.
+import Attribution from './Attribution.astro';
 import Layout from './Layout.astro';
 import { GC, type Lang, predecessors, site } from './data';
 
@@ -26,7 +27,7 @@ const oldIds = [...byOld.keys()].sort((a, b) => {
 });
 ---
 
-<Layout lang={s.lang} view="page" title={t.changesTitle} otherLangUrl={other.changes}>
+<Layout lang={s.lang} view="page" title={t.changesTitle} otherLangUrl={other.changes} markdown={`${s.changes}index.html.md`}>
 	<div class="page">
 		<article class="doc">
 			<h1>{t.changesTitle}</h1>
@@ -95,8 +96,7 @@ const oldIds = [...byOld.keys()].sort((a, b) => {
 				</dl>
 			</section>
 
-			<p class="attribution" set:html={s.data.changelog.attribution} />
-			<p class="attribution attribution-more" set:html={s.data.attribution} />
+			<Attribution lang={s.lang} />
 		</article>
 	</div>
 </Layout>

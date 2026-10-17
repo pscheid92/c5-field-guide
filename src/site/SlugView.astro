@@ -1,5 +1,6 @@
 ---
 // Domain, criterion or general-condition page, in either language.
+import Attribution from './Attribution.astro';
 import ConditionReader from './ConditionReader.astro';
 import CriterionReader from './CriterionReader.astro';
 import Layout from './Layout.astro';
@@ -29,30 +30,15 @@ const { t } = s;
 							(c.changes.status === 'new' ? `, ${t.newInC5}` : '');
 						return { id: c.id, name: c.name, href: c.url, meta };
 					});
-			// Themed criteria under their theme; runs of other criteria in one list.
-			type Row = (typeof rows)[number] & { short: string };
-			const blocks: { theme: string; items: Row[] }[] = [];
-			for (const g of groupByTheme(rows)) {
-				const last = blocks.at(-1);
-				if ('theme' in g) blocks.push({ theme: g.theme, items: g.items });
-				else if (last && !last.theme) last.items.push(g);
-				else blocks.push({ theme: '', items: [g] });
-			}
+			// One continuous list. Criteria that share a theme in BSI's titles
+			// ("Kapazitätsmanagement - Planung") show the theme as a small label
+			// above their short title, so every row is built the same way.
+			const list = groupByTheme(rows).flatMap((g) => ('theme' in g ? g.items.map((i) => ({ ...i, theme: g.theme })) : [{ ...g, theme: '' }]));
 			const basic = criteria.reduce((n, c) => n + c.subs.filter((x) => x.kind === 'basic').length, 0);
 			const additional = criteria.reduce((n, c) => n + c.subs.filter((x) => x.kind !== 'basic').length, 0);
-			const row = (r: Row) => (
-				<li>
-					<a href={r.href}>
-						<span class="overview-id">{r.id}</span>
-						<span>
-							<span class="overview-title">{r.short}</span>
-							{r.meta && <span class="overview-meta">{r.meta}</span>}
-						</span>
-					</a>
-				</li>
-			);
+
 			return (
-				<Layout lang={props.lang} title={entry.title} view="domain" domain={props.code}>
+				<Layout lang={props.lang} title={entry.title} view="domain" domain={props.code} markdown={`${s.domainUrl(props.code)}index.html.md`}>
 					<div class="page">
 						<article class="doc">
 							<p class="crumb">
@@ -63,17 +49,21 @@ const { t } = s;
 							<p class="doc-meta">
 								{isGc ? s.data.conditions.note : `${t.criteria(criteria.length)}, ${t.subCounts(basic, additional)}`}
 							</p>
-							{blocks.map((b) =>
-								b.theme ? (
-									<section class="overview-theme">
-										<h2>{b.theme}</h2>
-										<ul class="overview">{b.items.map(row)}</ul>
-									</section>
-								) : (
-									<ul class="overview">{b.items.map(row)}</ul>
-								),
-							)}
-							<p class="attribution" set:html={s.data.attribution} />
+							<ul class="overview">
+								{list.map((r) => (
+									<li>
+										<a href={r.href}>
+											<span class="overview-id">{r.id}</span>
+											<span>
+												{r.theme && <span class="overview-label">{r.theme}</span>}
+												<span class="overview-title">{r.short}</span>
+												{r.meta && <span class="overview-meta">{r.meta}</span>}
+											</span>
+										</a>
+									</li>
+								))}
+							</ul>
+							<Attribution lang={props.lang} />
 						</article>
 					</div>
 				</Layout>
@@ -86,7 +76,7 @@ const { t } = s;
 		(() => {
 			const c = s.criteriaById.get(props.id)!;
 			return (
-				<Layout lang={props.lang} title={`${c.id} ${c.name}`} view="item" domain={c.domain} current={c.id}>
+				<Layout lang={props.lang} title={`${c.id} ${c.name}`} view="item" domain={c.domain} current={c.id} markdown={`${c.url}index.html.md`}>
 					<CriterionReader site={s} criterion={c} />
 				</Layout>
 			);
@@ -98,7 +88,7 @@ const { t } = s;
 		(() => {
 			const g = s.data.conditions.items.find((x) => x.id === props.id)!;
 			return (
-				<Layout lang={props.lang} title={`${g.id} ${g.name}`} view="item" domain={GC} current={g.id}>
+				<Layout lang={props.lang} title={`${g.id} ${g.name}`} view="item" domain={GC} current={g.id} markdown={`${g.url}index.html.md`}>
 					<ConditionReader site={s} condition={g} />
 				</Layout>
 			);
