@@ -1,0 +1,9 @@
+---
+// /themen/protokollierung/: one topic page.
+import TopicView from '../../../site/TopicView.astro';
+import topics from '../../../generated/topics.de.json';
+
+export const getStaticPaths = () => topics.topics.map((t) => ({ params: { topic: t.slug }, props: { id: t.id } }));
+---
+
+<TopicView lang="de" id={Astro.props.id} />

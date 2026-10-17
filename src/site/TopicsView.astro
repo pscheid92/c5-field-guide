@@ -1,0 +1,44 @@
+---
+// Topic overview: every technical topic with its introduction and how many
+// criteria and domains it draws from (data/ai/topics.yml, AI-assigned).
+import topicsDe from '../generated/topics.de.json';
+import topicsEn from '../generated/topics.en.json';
+import Attribution from './Attribution.astro';
+import Layout from './Layout.astro';
+import { type Lang, site } from './data';
+
+interface Props {
+	lang: Lang;
+}
+
+const s = site(Astro.props.lang);
+const { t } = s;
+const other = site(s.lang === 'de' ? 'en' : 'de');
+const data = s.lang === 'de' ? topicsDe : topicsEn;
+---
+
+<Layout lang={s.lang} view="page" title={t.topicsTitle} otherLangUrl={other.topics} markdown={`${s.topics}index.html.md`}>
+	<div class="page">
+		<article class="doc">
+			<h1>{t.topicsTitle}</h1>
+			<p class="changes-intro">{t.topicsLead}</p>
+			<aside class="ai-notice">
+				<p class="ai-notice-label">{t.topicsAiLabel}</p>
+				<p>{t.topicsNotice}</p>
+			</aside>
+			<ul class="topic-list">
+				{
+					data.topics.map((x) => (
+						<li>
+							<a href={`${s.topics}${x.slug}/`}>{x.name}</a>
+							<p>{x.intro}</p>
+							<span>{t.topicCount(x.criteriaCount, x.domains.length)}</span>
+						</li>
+					))
+				}
+			</ul>
+			<p class="attribution">{t.topicsAttribution(data.generated, site('de').data.version, site('en').data.version)}</p>
+			<Attribution lang={s.lang} />
+		</article>
+	</div>
+</Layout>

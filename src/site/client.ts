@@ -351,6 +351,55 @@ function openTarget() {
 }
 window.addEventListener('hashchange', openTarget);
 
+/* ------------------------------------------------------------ view switch (ViewSwitch.astro) */
+
+// Shows one panel: domains or topics on the start page, deadlines, intervals
+// or limits on the values page. The address keeps the choice (/#themen)
+// without a new history entry, so coming back shows the same view; the first
+// panel needs no hash. Without JavaScript all panels show.
+const panelsOf = (root: HTMLElement) => [...root.querySelectorAll<HTMLElement>('[data-view-panel]')];
+function showView(root: HTMLElement, view: string) {
+	root.dataset.active = view;
+	for (const panel of panelsOf(root)) panel.hidden = panel.dataset.viewPanel !== view;
+	for (const tab of root.querySelectorAll<HTMLElement>('[data-view-tab]')) {
+		const on = tab.dataset.viewTab === view;
+		tab.setAttribute('aria-selected', String(on));
+		tab.tabIndex = on ? 0 : -1;
+	}
+}
+function viewFromHash() {
+	const hash = decodeURIComponent(location.hash.slice(1));
+	for (const root of document.querySelectorAll<HTMLElement>('[data-views]')) {
+		const panels = panelsOf(root);
+		const panel = panels.find((p) => p.dataset.viewHash === hash) ?? panels[0];
+		if (panel) showView(root, panel.dataset.viewPanel ?? '');
+	}
+}
+document.addEventListener('click', (e) => {
+	const tab = (e.target as Element).closest<HTMLElement>('[data-view-tab]');
+	const root = tab?.closest<HTMLElement>('[data-views]');
+	if (!tab || !root) return;
+	const panels = panelsOf(root);
+	const panel = panels.find((p) => p.dataset.viewPanel === tab.dataset.viewTab);
+	if (!panel) return;
+	showView(root, panel.dataset.viewPanel ?? '');
+	history.replaceState(history.state, '', panel === panels[0] ? location.pathname + location.search : `#${panel.dataset.viewHash}`);
+});
+// Arrow keys move between the tabs, as in any tab list.
+document.addEventListener('keydown', (e) => {
+	const tab = (e.target as Element).closest?.<HTMLElement>('[data-view-tab]');
+	if (!tab || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
+	const tabs = [...tab.parentElement!.querySelectorAll<HTMLElement>('[data-view-tab]')];
+	const i = tabs.indexOf(tab);
+	const next =
+		e.key === 'Home' ? tabs[0] : e.key === 'End' ? tabs[tabs.length - 1] : tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+	e.preventDefault();
+	next.focus();
+	next.click();
+});
+window.addEventListener('hashchange', viewFromHash);
+document.addEventListener('astro:after-swap', viewFromHash);
+
 /* ------------------------------------------------------------ outline: mark the sub-criterion being read */
 
 function updateOutline() {
@@ -422,4 +471,5 @@ document.addEventListener('astro:page-load', () => {
 	revealCurrent();
 	updateOutline();
 	openTarget();
+	viewFromHash();
 });

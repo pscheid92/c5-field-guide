@@ -1,0 +1,25 @@
+---
+// One row of the values page: Claude's label, the sub-criterion with its topic,
+// and BSI's quote. The value itself is the heading above the row.
+import { type Lang, site } from './data';
+
+interface Props {
+	lang: Lang;
+	v: { sub: string; url: string; kind: string; example: boolean; topic: string; label: string; quote: string };
+}
+
+const { lang, v } = Astro.props;
+const { t } = site(lang);
+const kindTag = v.kind === 'sharpen' ? t.sharpens : v.kind === 'complement' ? t.complement : '';
+---
+
+<li>
+	<p class="value-label">{v.label}</p>
+	<p class="value-meta">
+		<a href={v.url}>{v.sub}</a>
+		{kindTag && <span class={`kind kind-${v.kind}`}>{kindTag}</span>}
+		{v.example && <span class="kind">{t.exampleTag}</span>}
+		<span class="value-topic">{v.topic}</span>
+	</p>
+	<q class="value-quote">{v.quote}</q>
+</li>

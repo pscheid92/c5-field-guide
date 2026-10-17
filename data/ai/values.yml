@@ -1,0 +1,623 @@
+# Deadlines, intervals and limits in C5:2026 that engineers schedule or
+# configure, collected from all criteria.
+#
+# AI-generated. Claude (Anthropic) compiled this file from the BSI C5:2026
+# criterion text (DE v1.1.0, EN v1.0.1). Sections, values as written here and
+# labels are Claude's wording. Every `quote` is BSI text, copied verbatim from
+# the cited sub-criterion; scripts/lib/ai.mjs fails the build if a quote is not
+# in that sub-criterion or if the value (or `term`, its wording in the quote)
+# is not in the quote. The criterion text is authoritative.
+#
+# Scope: binding values from criterion text, plus the one example BSI gives in
+# supplementary information (marked `example`). Values that only apply under an
+# additional criterion are shown as such on the page (from the sub-criterion
+# kind).
+#
+# The page is ordered by time, not by these sections: `type` puts each value
+# under deadlines (how long something may take or stay valid), intervals (how
+# often something runs) or limits (minimums for sites, buildings and supply).
+# Deadlines sort by duration and intervals group by cadence, both read from the
+# German value; a value the build cannot read fails it. The sections become the
+# topic shown on each row and order values of the same duration, so
+# organisational reviews (policies, risk process, suppliers, audits) come last.
+
+generated: 2026-10-17
+
+sections:
+  - id: zugriff
+    title: { de: "Zugriff und Identitäten", en: "Access and identities" }
+    values:
+      - sub: IAM-04.02B
+        type: deadline
+        value: { de: "48 Stunden", en: "48 hours" }
+        label:
+          de: "Privilegierte Zugriffsrechte anpassen oder entziehen, wenn sich das Aufgabengebiet ändert"
+          en: "Adjust or revoke privileged access rights when job responsibilities change"
+        quote:
+          de: "Privilegierte Zugriffsberechtigungen werden spätestens 48 Stunden nach Inkrafttreten der Änderung angepasst oder entzogen."
+          en: "Privileged access rights are adjusted or revoked within 48 hours after the change taking effect."
+      - sub: IAM-04.03B
+        type: deadline
+        value: { de: "14 Tage", en: "14 days" }
+        term: { de: "14 Tagen" }
+        label:
+          de: "Alle übrigen Zugriffsrechte anpassen oder entziehen"
+          en: "Adjust or revoke all other access rights"
+        quote:
+          de: "Alle anderen Zugriffsberechtigungen werden spätestens nach 14 Tagen angepasst oder entzogen."
+          en: "All other access rights are adjusted or revoked within 14 days."
+      - sub: IAM-05.03B
+        type: deadline
+        value: { de: "7 Tage", en: "7 days" }
+        term: { de: "sieben Tage", en: "seven days" }
+        label:
+          de: "Abweichungen beheben, die bei der Überprüfung von Zugriffsrechten auffallen"
+          en: "Fix deviations found when reviewing access rights"
+        quote:
+          de: "Identifizierte Abweichungen werden zeitnah, spätestens aber sieben Tage nach ihrer Feststellung"
+          en: "Identified deviations are dealt with timely, but no later than seven days after their detection"
+      - sub: IAM-01.01AC
+        type: interval
+        value: { de: "monatlich", en: "monthly" }
+        term: { de: "jeden Monat", en: "every month" }
+        label:
+          de: "Zugriffsprotokolle auf unbefugte Zugriffe und verdächtige Muster prüfen"
+          en: "Review access logs for unauthorised access and suspicious patterns"
+        quote:
+          de: "Zugriffsprotokolle werden mindestens jeden Monat überprüft, um Versuche unbefugten Zugriffs oder verdächtige Zugriffsmuster zu erkennen."
+          en: "Access logs are reviewed at least every month in order to detect attempts of unauthorised access or suspicious access patterns."
+      - sub: IAM-05.01AC
+        type: interval
+        value: { de: "6 Monate", en: "6 months" }
+        term: { de: "sechs Monate", en: "six months" }
+        label:
+          de: "Privilegierte Zugriffsrechte überprüfen"
+          en: "Review privileged access rights"
+        quote:
+          de: "Privilegierte Zugriffsberechtigungen werden mindestens alle sechs Monate sowie bei wesentlichen Änderungen am Cloud-Dienst überprüft."
+          en: "Privileged access rights are reviewed at least every six months, and in case of significant changes to the cloud service."
+      - sub: IAM-06.02AC
+        type: interval
+        value: { de: "6 Monate", en: "6 months" }
+        term: { de: "sechs Monate", en: "six months" }
+        label:
+          de: "Liste der Verantwortlichen für nicht-menschliche Identitäten (Dienstkonten) überprüfen"
+          en: "Review the list of owners of non-human identities (service accounts)"
+        quote:
+          de: "Diese Liste wird alle sechs Monate und bei wesentlichen Änderungen am Cloud-Dienst überprüft."
+          en: "This list is reviewed every six months and in case of significant changes to the cloud service."
+      - sub: IAM-05.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { en: "once a year" }
+        label:
+          de: "Alle Identitäten und Zugriffsrechte überprüfen, auch die von Systemkomponenten"
+          en: "Review all identities and access rights, including those of system components"
+        quote:
+          de: "werden mindestens jährlich und bei wesentlichen Änderungen am Cloud-Dienst daraufhin überprüft, ob diese noch dem tatsächlichen Aufgaben- bzw. Einsatzgebiet entsprechen"
+          en: "are reviewed at least once a year and in case of significant changes to the cloud service to ensure that they still correspond to the actual area of use"
+      - sub: IAM-07.05B
+        type: deadline
+        value: { de: "72 Stunden", en: "72 hours" }
+        label:
+          de: "Cloud-Kunden informieren, wenn das Personal des Anbieters auf ihre Daten zugegriffen hat"
+          en: "Inform customers when the provider's personnel accessed their data"
+        quote:
+          de: "Die Information wird gemäß den vertraglichen Vereinbarungen, jedoch spätestens 72 Stunden ab Einleitung des Zugriffs bereitgestellt."
+          en: "The information is provided in accordance with the contractual agreements, but no later than 72 hours from the initiation of the access."
+
+  - id: passwoerter
+    title: { de: "Passwörter", en: "Passwords" }
+    values:
+      - sub: IAM-09.07B
+        type: deadline
+        value: { de: "24 Stunden", en: "24 hours" }
+        label:
+          de: "Gültigkeit eines Passwort-Resets für die eigenen Systeme des Anbieters"
+          en: "Validity of a password reset for the provider's own systems"
+        quote:
+          de: "Passwort-Zurücksetzungsverfahren sind höchstens 24 Stunden gültig."
+          en: "Password reset procedures are valid for at most 24 hours."
+      - sub: IAM-09.03B
+        type: deadline
+        value: { de: "14 Tage", en: "14 days" }
+        term: { de: "14 Tagen" }
+        label:
+          de: "Gültigkeit eines vorgegebenen Initialpassworts für die eigenen Systeme des Anbieters"
+          en: "Validity of an initial password for the provider's own systems"
+        quote:
+          de: "Ein initial vorgegebenes Passwort verliert nach maximal 14 Tagen seine Gültigkeit"
+          en: "An initial password loses its validity after a maximum of 14 days"
+      - sub: PSS-07.01B
+        type: deadline
+        value: { de: "48 Stunden", en: "48 hours" }
+        label:
+          de: "Gültigkeit eines Passwort-Resets im Cloud-Dienst, also für die Nutzer der Kunden"
+          en: "Validity of a password reset in the cloud service, i.e. for customers' users"
+        quote:
+          de: "Verfahren zum Zurücksetzen von Passwörtern sind höchstens 48 Stunden gültig."
+          en: "Password reset procedures are valid for at most 48 hours."
+      - sub: PSS-07.01B
+        type: deadline
+        value: { de: "14 Tage", en: "14 days" }
+        term: { de: "14 Tagen" }
+        label:
+          de: "Gültigkeit eines Initialpassworts im Cloud-Dienst, also für die Nutzer der Kunden"
+          en: "Validity of an initial password in the cloud service, i.e. for customers' users"
+        quote:
+          de: "Ein Initialpasswort verliert nach maximal 14 Tagen seine Gültigkeit"
+          en: "An initial password loses its validity after a maximum of 14 days"
+
+  - id: schwachstellen
+    title: { de: "Schwachstellen und Tests", en: "Vulnerabilities and testing" }
+    values:
+      - sub: OPS-25.01B
+        type: interval
+        value: { de: "monatlich", en: "monthly" }
+        term: { en: "once a month" }
+        label:
+          de: "Schwachstellenscans aller Systemkomponenten"
+          en: "Vulnerability scans of all system components"
+        quote:
+          de: "mindestens monatlich einem Schwachstellenscan unterzogen"
+          en: "are subject to vulnerability scans at least once a month"
+      - sub: OPS-25.01AS
+        type: interval
+        value: { de: "täglich", en: "daily" }
+        term: { en: "once a day" }
+        label:
+          de: "Schwachstellenscans aller Systemkomponenten, statt monatlich"
+          en: "Vulnerability scans of all system components, instead of monthly"
+        quote:
+          de: "mindestens täglich einem Schwachstellenscan unterzogen"
+          en: "are subject to vulnerability scans at least once a day"
+      - sub: OPS-25.01AC
+        type: deadline
+        example: true
+        value: { de: "24 Stunden bis 1 Monat", en: "24 hours to 1 month" }
+        term: { de: "24 - 48 Stunden", en: "24 - 48 hours" }
+        label:
+          de: "Schwachstellen nach CVSS-Schweregrad beheben: kritisch 24–48 Stunden, hoch 48–72 Stunden, mittel 5 Tage, niedrig 1 Monat"
+          en: "Fix vulnerabilities by CVSS severity: critical 24–48 hours, high 48–72 hours, medium 5 days, low 1 month"
+        quote:
+          de: "Ein Beispiel für ein Rahmenwerk zur risikobasierten Klassifizierung und Definition von Zeitrahmen kann sein: Kritisch (CVSS = 9,0 - 10,0): 24 - 48 Stunden; Hoch (CVSS = 7,0 - 8,9): 48 - 72 Stunden; Mittel (CVSS = 4,0 - 6,9): 5 Tage; und Niedrig (CVSS = 0,1 - 3,9): 1 Monat."
+          en: "An example of a framework for risk-based classification and definition of time frames can be: Critical (CVSS = 9.0 - 10.0): 24 - 48 hours; High (CVSS = 7.0 - 8.9): 48 - 72 hours; Medium (CVSS = 4.0 - 6.9): 5 days; and Low (CVSS = 0.1 - 3.9): 1 month."
+      - sub: PSS-03.05B
+        type: interval
+        value: { de: "täglich", en: "daily" }
+        label:
+          de: "Schwachstellenmeldungen der Lieferanten und Service-Organisationen abrufen"
+          en: "Check vulnerability information from suppliers and service organisations"
+        quote:
+          de: "Der Cloud-Anbieter konsultiert mindestens täglich die Schwachstelleninformationen seiner Lieferanten und Service-Organisationen."
+          en: "The cloud service provider consults the vulnerability information of its suppliers and service organisations at least daily."
+      - sub: OPS-05.02B
+        type: interval
+        value: { de: "täglich", en: "daily" }
+        label:
+          de: "Malware-Signaturen der Schutzprogramme aktualisieren"
+          en: "Update the malware definitions of protection programmes"
+        quote:
+          de: "mindestens täglich, mit den neuesten Malware-Definitionen aktualisiert"
+          en: "updated with the latest malware definitions when they are available, at least on a daily basis"
+      - sub: OPS-23.02B
+        type: interval
+        value: { de: "quartalsweise", en: "quarterly" }
+        label:
+          de: "Kennzahlen zum Umgang mit Schwachstellen, Vorfällen und Abstürzen auswerten"
+          en: "Evaluate metrics on handling vulnerabilities, incidents and crashes"
+        quote:
+          de: "Ergebnisse werden mindestens quartalsweise von verantwortlichen Personen oder Gruppen des Cloud-Anbieters in dokumentierter Form beurteilt"
+          en: "Results are evaluated at least quarterly in a documented form by responsible individuals or groups of the cloud service provider"
+      - sub: OPS-22.01AS
+        type: interval
+        value: { de: "6 Monate", en: "6 months" }
+        term: { de: "sechs Monate", en: "six months" }
+        label:
+          de: "Penetrationstests durch unabhängige externe Tester, statt jährlich"
+          en: "Penetration tests by independent external testers, instead of annually"
+        quote:
+          de: "Der Cloud-Anbieter führt mindestens alle sechs Monate und bei wesentlichen Änderungen am Cloud-Dienst gemäß den Richtlinien zum Schwachstellenmanagement (vgl. OPS-18) Penetrationstests durch unabhängige externe Penetrationstester durch."
+          en: "The cloud service provider performs penetration tests at least every six months and in case of significant changes to the cloud service by independent external penetration testers"
+      - sub: OPS-22.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { en: "once a year" }
+        label:
+          de: "Penetrationstests, außerdem nach wesentlichen Änderungen am Dienst"
+          en: "Penetration tests, also after significant changes to the service"
+        quote:
+          de: "Der Cloud-Anbieter führt mindestens jährlich und bei wesentlichen Änderungen am Cloud-Dienst gemäß den Richtlinien zum Schwachstellenmanagement (vgl. OPS-18) Penetrationstests durch qualifiziertes internes Personal oder externe Penetrationstester durch."
+          en: "The cloud service provider performs penetration tests by qualified internal personnel or external penetration testers at least once a year and in case of significant changes to the cloud service"
+      - sub: OPS-22.03AC
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Wirksamkeit der Penetrationstests überprüfen"
+          en: "Review the effectiveness of penetration tests"
+        quote:
+          de: "Der Cloud-Anbieter überprüft die Wirksamkeit von Penetrationstests an Systemkomponenten mindestens jährlich"
+          en: "The cloud service provider reviews the effectiveness of penetration tests on system components at least annually"
+      - sub: PSS-02.01AC
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { de: "jährliche", en: "annual" }
+        label:
+          de: "Code-Reviews oder Penetrationstests der Software durch qualifizierte externe Dritte"
+          en: "Code reviews or penetration tests of the software by qualified external third parties"
+        quote:
+          de: "Die Verfahren zur Indentifikation solcher Schwachstellen umfassen außerdem jährliche Code-Reviews oder Sicherheits-Penetrationstests durch qualifizierte externe Dritte."
+          en: "The procedures for identifying such vulnerabilities also include annual code reviews or security penetration tests by qualified external third parties."
+      - sub: OPS-22.05B
+        type: interval
+        value: { de: "3 Jahre", en: "3 years" }
+        term: { de: "drei Jahren", en: "three years" }
+        label:
+          de: "Bei mehrjährigen Testplänen: jede relevante Systemkomponente mindestens einmal per Penetrationstest prüfen"
+          en: "With multi-year test plans: cover every relevant system component with at least one penetration test"
+        quote:
+          de: "wird jede relevante Systemkomponente innerhalb eines Zeitraums von maximal drei Jahren mindestens einem Penetrationstest unterzogen"
+          en: "each relevant system component is subjected to at least one penetration test within a maximum period of three years"
+
+  - id: backup
+    title: { de: "Datensicherung und Redundanz", en: "Backup and redundancy" }
+    values:
+      - sub: OPS-06.01AS
+        type: interval
+        value: { de: "täglich", en: "daily" }
+        term: { de: "tägliche", en: "daily" }
+        label:
+          de: "Daten sichern oder replizieren"
+          en: "Back up or replicate data"
+        quote:
+          de: "Richtlinien und Verfahren für die mindestens tägliche Sicherung oder Replikation"
+          en: "Policies and procedures for at least daily backup or replication and at least daily restore"
+      - sub: OPS-08.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Wiederherstellung aus der Datensicherung testen"
+          en: "Test restoring from backups"
+        quote:
+          de: "Wiederherstellungsverfahren werden regelmäßig, mindestens jährlich, getestet."
+          en: "Restore procedures are tested regularly, at least annually."
+      - sub: PS-02.01B
+        type: limit
+        value: { de: "2 Standorte", en: "2 locations" }
+        term: { de: "zwei Standorten", en: "two locations" }
+        label:
+          de: "Den Cloud-Dienst aus mehreren Standorten mit ausreichendem Abstand betreiben"
+          en: "Run the cloud service from several locations at an adequate distance"
+        quote:
+          de: "Die Bereitstellung des Cloud-Dienstes erfolgt aus mindestens zwei Standorten."
+          en: "The cloud service is provided from at least two locations."
+      - sub: PS-02.03B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Testen, ob die Redundanz zwischen den Standorten wirkt"
+          en: "Test that the redundancy between locations works"
+        quote:
+          de: "Die Wirksamkeit der Redundanz wird mindestens jährlich durch geeignete Tests und Übungen überprüft"
+          en: "The effectiveness of the redundancy is checked at least annually by suitable tests and exercises"
+      - sub: BCM-04.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Notfallpläne testen, mit betroffenen Cloud-Kunden und Dritten"
+          en: "Test business continuity plans, with affected customers and third parties"
+        quote:
+          de: "Pläne zur betrieblichen Kontinuität werden regelmäßig (mindestens jährlich) oder nach wesentlichen organisatorischen oder umgebungsbedingten Änderungen getestet."
+          en: "Business continuity plans are tested on a regular basis (at least annually) or after significant organisational or environmental changes."
+
+  - id: netz
+    title: { de: "Netz und Mandantentrennung", en: "Network and tenant separation" }
+    values:
+      - sub: COS-03.03B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Netzkonfiguration gegen die definierten Sicherheitsanforderungen prüfen"
+          en: "Check the network configuration against the defined security requirements"
+        quote:
+          de: "Der Cloud-Anbieter überprüft mindestens jährlich und im Falle wesentlicher Änderungen am Cloud-Dienst den Entwurf und die Umsetzung der Konfiguration der Verbindungen"
+          en: "The cloud service provider reviews at least annually and in case of significant changes to the cloud service the design and implementation of the configuration of the connections"
+      - sub: COS-07.04B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { de: "einmal pro Jahr", en: "once a year" }
+        label:
+          de: "Dokumentation der Netztopologie überprüfen"
+          en: "Review the network topology documentation"
+        quote:
+          de: "Die Dokumentation der Netztopologie wird mindestens einmal pro Jahr überprüft."
+          en: "The network topology documentation is reviewed at least once a year."
+      - sub: OPS-31.03B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Risikobeurteilung zur Trennung der Kundendaten überprüfen"
+          en: "Review the risk assessment for separating customer data"
+        quote:
+          de: "Die Risikobeurteilung wird bei Bedarf, insbesondere bei Änderungen an der Architektur des Cloud-Dienstes, mindestens jedoch jährlich überprüft."
+          en: "The risk assessment is reviewed as needed, especially in case of changes to the architecture of the cloud service, and at least annually."
+
+  - id: krypto
+    title: { de: "Kryptographie", en: "Cryptography" }
+    values:
+      - sub: CRY-03.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Verschlüsselung, Authentisierung und Schlüsselmanagement überprüfen, außerdem nach Vorfällen mit kryptographischen Komponenten"
+          en: "Review encryption, authentication and key management, also after incidents involving cryptographic components"
+        quote:
+          de: "Mindestens werden Überprüfungen jährlich und unmittelbar nach Sicherheitsvorfällen durchgeführt, an denen kryptographische Komponenten beteiligt sind."
+          en: "At a minimum, reviews are performed annually and immediately following security incidents involving cryptographic components."
+      - sub: CRY-01.03AC
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Strategie für Post-Quanten-Kryptographie und ihr Verzeichnis überprüfen"
+          en: "Review the post-quantum cryptography strategy and its inventory"
+        quote:
+          de: "Die PQC-Strategie, einschließlich des Verzeichnisses und der Risikobeurteilung, wird mindestens jährlich"
+          en: "The PQC strategy, including the inventory and risk assessment, is reviewed at least annually"
+
+  - id: vorfaelle
+    title: { de: "Sicherheitsvorfälle", en: "Security incidents" }
+    values:
+      - sub: SIM-03.01AC
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { en: "once a year" }
+        label:
+          de: "Erkennen und Abwehren von Angriffen üben, etwa mit Red-Team-Übungen"
+          en: "Exercise detecting and defending against attacks, for example with red team exercises"
+        quote:
+          de: "Der Cloud-Anbieter simuliert das Identifizieren, Analysieren und Abwehren von Sicherheitsvorfällen und Angriffen mindestens jährlich"
+          en: "The cloud service provider simulates the identification, analysis and defence of security incidents and attacks at least once a year"
+      - sub: SIM-02.02B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Pläne zur Reaktion auf Sicherheitsvorfälle bewerten und aktualisieren"
+          en: "Evaluate and update incident response plans"
+        quote:
+          de: "Die Pläne werden mindestens jährlich oder nach Bedarf bewertet und aktualisiert"
+          en: "The plans are evaluated and updated at least annually or as necessary"
+
+  - id: rechenzentrum
+    title: { de: "Rechenzentrum", en: "Data centre" }
+    values:
+      - sub: PS-01.02AC
+        type: limit
+        value: { de: "72 Stunden", en: "72 hours" }
+        label:
+          de: "Autarker Betrieb eines Standorts bei Ausfall der externen Stromversorgung"
+          en: "Self-sufficient operation of a location when the external power supply fails"
+        quote:
+          de: "einen autarken Betrieb eines Standorts für mindestens 72 Stunden zu ermöglichen"
+          en: "to provide self-sufficient operation of a location for at least 72 hours in the event of a failure of the external power supply"
+      - sub: PS-06.01B
+        type: limit
+        value: { de: "N+1", en: "N+1" }
+        label:
+          de: "Redundanz der Strom- und Kälteversorgung"
+          en: "Redundancy of power and cooling supply"
+        quote:
+          de: "Betriebsredundanz (N+1) in der Strom- und Kälteversorgung"
+          en: "Operational redundancy (N+1) in power and cooling supply"
+      - sub: PS-06.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label:
+          de: "Unterbrechungsfreie Stromversorgung und Netzersatzanlagen testen"
+          en: "Test uninterruptible and emergency power supplies"
+        quote:
+          de: "Die Funktionsfähigkeit von USV und NEA wird mindestens jährlich durch geeignete Tests und Übungen überprüft"
+          en: "The functionality of UPSes and EPSes is checked at least annually by suitable tests and exercises"
+      - sub: PS-06.01AC
+        type: limit
+        value: { de: "5 Tage", en: "5 days" }
+        term: { de: "fünf unmittelbar aufeinander folgenden Tagen", en: "five consecutive days" }
+        label:
+          de: "Kälteversorgung für die heißesten zu erwartenden Außentemperaturen auslegen"
+          en: "Design cooling for the hottest outside temperatures to be expected"
+        quote:
+          de: "auch an mindestens fünf unmittelbar aufeinander folgenden Tagen mit den höchsten Außentemperaturen"
+          en: "are also ensured on at least five consecutive days with the highest outside temperatures"
+      - sub: PS-05.02B
+        type: limit
+        value: { de: "90 Minuten", en: "90 minutes" }
+        label:
+          de: "Feuerwiderstand der Brandabschnitte; 60 Minuten, wenn kompensierende Maßnahmen bestehen"
+          en: "Fire resistance of fire sections; 60 minutes where compensating measures exist"
+        quote:
+          de: "Einrichtung von Brandabschnitten mit einer Feuerwiderstandsdauer von mindestens 90 Minuten"
+          en: "Establishment of fire sections with a fire resistance duration of at least 90 minutes"
+      - sub: PS-03.03B
+        type: limit
+        value: { de: "10 Minuten", en: "10 minutes" }
+        term: { de: "zehn Minuten", en: "ten minutes" }
+        label:
+          de: "Einbruchswiderstand von Türen, Fenstern und Außenhülle zusammen"
+          en: "Combined break-in resistance of doors, windows and outer shell"
+        quote:
+          de: "sodass ihre kombinierte Widerstandszeit einem Einbruchsversuch insgesamt mindestens zehn Minuten standhält"
+          en: "so that their combined resistance time withstand a break-in attempt for at least ten minutes in total"
+      - sub: PS-04.01B
+        type: deadline
+        value: { de: "2 Monate", en: "2 months" }
+        term: { de: "zwei Monaten", en: "two months" }
+        label:
+          de: "Ungenutzte Zutrittsberechtigungen sperren"
+          en: "Revoke unused physical access authorisations"
+        quote:
+          de: "Sperrung der Zutritts-Berechtigungen, wenn diese über einen Zeitraum von zwei Monaten nicht genutzt wurden"
+          en: "Revocation of access authorisations if they have not been used for a period of two months"
+      - sub: PS-06.03B
+        type: interval
+        value: { de: "2 Jahre", en: "2 years" }
+        term: { de: "zwei Jahre", en: "two years" }
+        label:
+          de: "Strom- und Telekommunikationsleitungen auf Manipulation prüfen"
+          en: "Inspect power and telecommunication lines for tampering"
+        quote:
+          de: "Der Schutz der Leitungen für Stromversorgung und Telekommunikation wird regelmäßig, mindestens aber alle zwei Jahre"
+          en: "The protection of power supply and telecommunications lines is checked regularly, but at least every two years"
+      - sub: PS-01.01B
+        type: limit
+        value: { de: "2 Bereiche", en: "2 areas" }
+        term: { de: "zwei Sicherheitsbereiche", en: "two security areas" }
+        label:
+          de: "Sicherheitsbereiche festlegen: mindestens einen sensiblen und einen öffentlichen"
+          en: "Define security areas: at least one sensitive and one public"
+        quote:
+          de: "Der Cloud-Anbieter definiert und dokumentiert mindestens zwei Sicherheitsbereiche, mit mindestens einem sensiblen Bereich und einem öffentlichen Bereich."
+          en: "The cloud service provider defines and documents at least two security areas, with at least one sensitive area and one public area."
+      - sub: PS-03.01AC
+        type: limit
+        value: { de: "2 Personen", en: "2 people" }
+        term: { de: "zwei Personen", en: "two individuals" }
+        label:
+          de: "Ständig anwesendes Sicherheitspersonal am Standort"
+          en: "Permanently present security personnel on site"
+        quote:
+          de: "permanent anwesendes Sicherheitspersonal (mindestens zwei Personen)"
+          en: "permanently present security personnel (at least two individuals)"
+
+  - id: organisation
+    title: { de: "Organisatorische Überprüfungen", en: "Organisational reviews" }
+    values:
+      - sub: SP-02.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Sicherheitsrichtlinien und -verfahren überprüfen", en: "Review security policies and procedures" }
+        quote:
+          de: "Informationssicherheitsrichtlinien und -verfahren werden mindestens jährlich und im Falle wesentlicher Änderungen am Cloud-Dienst von sachverständigem Personal des Cloud-Anbieters auf Angemessenheit überprüft."
+          en: "Information security policies and procedures are reviewed for adequacy by the cloud service provider's subject matter experts at least annually, and in case of significant changes to the cloud service."
+      - sub: SP-03.04B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Genehmigte Ausnahmen von Richtlinien überprüfen", en: "Review approved exceptions to policies" }
+        quote:
+          de: "Die Genehmigungen von Ausnahmen werden dokumentiert, mit einer festgelegten Gültigkeit versehen und mindestens jährlich von den Risikoeigentümern oder von der obersten Leitung auf Angemessenheit überprüft."
+          en: "The approvals of exceptions are documented, with a defined validity and reviewed for appropriateness at least annually by the risk owners or by the top management."
+      - sub: OIS-08.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Risikomanagementprozess durchführen", en: "Run the risk management process" }
+        quote:
+          de: "Der Cloud-Anbieter führt den in OIS-07 definierten Risikomanagementprozess anlassbezogen und mindestens jährlich durch."
+          en: "The cloud service provider performs the risk management process specified by OIS-07 as needed and at least annually."
+      - sub: OIS-08.06B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Risikoanalyse, -bewertung und -behandlung überprüfen", en: "Review risk analysis, evaluation and treatment" }
+        quote:
+          de: "wird von den Risikoeigentümern mindestens jährlich auf Angemessenheit überprüft"
+          en: "is reviewed by the risk owners for adequacy at least annually"
+      - sub: AM-09.02B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Klassifizierungsstufen für Assets überprüfen", en: "Review asset classification levels" }
+        quote:
+          de: "Klassifizierungsstufen werden mindestens jährlich und bei wesentlichen Änderungen am Cloud-Dienst überprüft."
+          en: "Classification levels are reviewed at least annually and in case of significant changes to the cloud service."
+      - sub: HR-03.02AS
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Rollenbasierte Sicherheitsschulung für das gesamte Personal", en: "Role-based security training for all personnel" }
+        quote:
+          de: "Das gesamte interne und externe Personal des Cloud-Anbieters durchläuft mindestens jährlich und bei Änderung der Tätigkeit ein rollenbasiertes Schulungsprogramm"
+          en: "All internal and external personnel of the cloud service provider undergoes a role-based training programme at least annually and when changing job function"
+      - sub: HR-01.01AC
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Beurteilung von Qualifikation und Vertrauenswürdigkeit für risikoreiche Positionen überprüfen", en: "Review competence and integrity assessments for high-risk positions" }
+        quote:
+          de: "Der Cloud-Anbieter überprüft jährlich seine Beurteilung der Qualifikation und Vertrauenswürdigkeit für Personal, das den definierten Positionen angehört."
+          en: "The cloud service provider annually reviews their assessment of competence and integrity for personnel belonging to the defined positions."
+      - sub: HR-06.04B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Anforderungen an Vertraulichkeitsvereinbarungen überprüfen", en: "Review requirements for confidentiality agreements" }
+        quote:
+          de: "Die Anforderungen sind zu dokumentieren sowie in regelmäßigen Abständen (mindestens jährlich) und bei wesentlichen Änderungen des Cloud-Dienstes zu überprüfen."
+          en: "The requirements are documented and reviewed at regular intervals (at least annually), as well as in case of significant changes to the cloud service."
+      - sub: SSO-02.02B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Risikobeurteilung der Service-Organisationen überprüfen", en: "Review the risk assessment of service organisations" }
+        quote:
+          de: "Die Angemessenheit der Risikobeurteilung wird während des Leitungsbezugs regelmäßig, mindestens jährlich, durch qualifiziertes Personal des Cloud-Anbieters überprüft."
+          en: "The adequacy of the risk assessment is reviewed regularly, at least annually, by qualified personnel of the cloud service provider during service usage."
+      - sub: SSO-04.02B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Verzeichnis der Service-Organisationen überprüfen", en: "Review the inventory of service organisations" }
+        quote:
+          de: "Das Verzeichnis wird mindestens jährlich auf Vollständigkeit, Genauigkeit und Gültigkeit der Informationen überprüft."
+          en: "The inventory is reviewed at least annually for completeness, accuracy and validity of the information."
+      - sub: SSO-05.07B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { de: "einmal pro Jahr", en: "once per year" }
+        label: { de: "Vertraulichkeitsanforderungen an Service-Organisationen überprüfen", en: "Review confidentiality requirements for service organisations" }
+        quote:
+          de: "die Überprüfung wird mindestens einmal pro Jahr durchgeführt"
+          en: "the review is conducted at least once per year"
+      - sub: SSO-07.02B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Angaben zu Service-Organisationen und Datenflüssen überprüfen", en: "Review information on service organisations and data flows" }
+        quote:
+          de: "Der Cloud-Anbieter dokumentiert diese Informationen und überprüft mindestens jährlich ihre Vollständigkeit, Genauigkeit und Aktualität."
+          en: "The cloud service provider documents this information and reviews its completeness, accuracy and validity at least annually."
+      - sub: PI-02.01AC
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { de: "einmal im Jahr", en: "once a year" }
+        label: { de: "Rechtliche Anforderungen an die Datenherausgabe bei Vertragsende prüfen", en: "Check legal requirements for returning data at contract end" }
+        quote:
+          de: "Der Cloud-Anbieter identifiziert die Anforderungen regelmäßig, mindestens einmal im Jahr, prüft diese auf Aktualität und passt die vertraglichen Vereinbarungen entsprechend an."
+          en: "The cloud service provider identifies the requirements regularly, at least once a year, and checks these for actuality and adjusts the contractual agreements accordingly."
+      - sub: BCM-02.02B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { de: "einmal jährlich", en: "once a year" }
+        label: { de: "Business Impact Analyse überprüfen", en: "Review the business impact analysis" }
+        quote:
+          de: "mindestens einmal jährlich oder nach wesentlichen organisatorischen oder umgebungsbedingten Änderungen, überprüft"
+          en: "at least once a year, or after significant organisational or environment-related changes"
+      - sub: BCM-03.02B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { de: "einmal jährlich", en: "once a year" }
+        label: { de: "Notfallpläne überprüfen", en: "Review business continuity plans" }
+        quote:
+          de: "Die Pläne zur betrieblichen Kontinuität werden in regelmäßigen Abständen, mindestens einmal jährlich oder nach wesentlichen organisatorischen oder umgebungsbedingten Veränderungen, überprüft."
+          en: "The business continuity plans are reviewed at regular intervals, at least once a year, or after significant organisational or environment-related changes."
+      - sub: COM-03.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Interne Audits des ISMS", en: "Internal audits of the ISMS" }
+        quote:
+          de: "Sachverständiges Personal überprüft in regelmäßigen Abständen, mindestens jährlich, in internen Audits die Compliance des Informationssicherheitsmanagementsystems"
+          en: "Subject matter experts check the compliance of the information security management system at regular intervals, at least annually"
+      - sub: COM-04.01B
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        term: { de: "einmal jährlich", en: "once a year" }
+        label: { de: "Managementbewertung des ISMS", en: "Management review of the ISMS" }
+        quote:
+          de: "Diese Managementbewertung wird mindestens einmal jährlich durchgeführt."
+          en: "This management review is performed at least once a year."
+      - sub: COM-04.02AC
+        type: interval
+        value: { de: "jährlich", en: "annually" }
+        label: { de: "Der obersten Leitung über Status und Wirksamkeit der Richtlinien berichten", en: "Report the status and effectiveness of policies to top management" }
+        quote:
+          de: "Die verantwortlichen Geschäftsbereiche des Cloud-Anbieters berichten der obersten Leitung mindestens jährlich über den Status und die Wirksamkeit der Richtlinien und Verfahren"
+          en: "The responsible business units of the cloud service provider report at least annually to the top management on the the status and effectiveness of the policies and procedures"

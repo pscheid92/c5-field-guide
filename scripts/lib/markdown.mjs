@@ -33,6 +33,16 @@ const LABELS = {
 		changesIntro: 'Status jedes Kriteriums laut BSI-Änderungshistorie. Die Änderungshinweise im Einzelnen stehen in der Markdown-Fassung des jeweiligen Kriteriums.',
 		customersTitle: 'Korrespondierende Kriterien für Kunden',
 		customersIntro: 'Was Cloud-Kunden auf ihrer Seite umsetzen, aus allen Kriterien gesammelt.',
+		valuesTitle: 'Fristen, Intervalle und Grenzwerte',
+		valuesIntro:
+			'KI-Zusammenstellung (Claude): alle konkreten Zeiten und Werte aus den Kriterien, die Engineering-Teams einplanen oder konfigurieren. Bezeichnungen und Einordnung stammen nicht vom BSI; jedes Zitat ist BSI-Text und wird beim Bauen der Seite gegen den Katalog geprüft. Verbindlich ist der Kriterientext.',
+		additionalTag: 'Zusatzkriterium',
+		exampleTag: 'Beispiel aus der ergänzenden Information, nicht verbindlich',
+		topicsTitle: 'Themen',
+		topicsIntro:
+			'Die Kriterien nach technischen Themen statt nach BSI-Bereichen. KI-Zuordnung (Claude): Themen, Zuordnung und Einleitungen stammen nicht vom BSI; ein Kriterium kann zu mehreren Themen gehören. Verbindlich ist der Kriterientext.',
+		topicCount: (criteria, domains) => `${criteria} Kriterien aus ${domains} Bereichen`,
+		onlySubs: (subs, total) => `nur ${subs.join(', ')} von ${total} Unterkriterien`,
 		source: (version) =>
 			`Quelle: BSI C5:2026, maschinenlesbare Fassung v${version}, © Bundesamt für Sicherheit in der Informationstechnik (BSI) 2026, unverändert wiedergegeben unter CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/deed.de). Änderungshinweise: BSI C5:2026 Änderungshistorie, © BSI 2026, CC BY-ND 4.0. Inoffizielle Darstellung, ohne Verbindung zum BSI.`,
 	},
@@ -64,6 +74,16 @@ const LABELS = {
 		changesIntro: "Status of every criterion according to BSI's changelog. The change notes themselves are in each criterion's Markdown version.",
 		customersTitle: 'Complementary customer criteria',
 		customersIntro: 'What cloud service customers implement on their side, collected from all criteria.',
+		valuesTitle: 'Deadlines, intervals and limits',
+		valuesIntro:
+			"AI compilation (Claude): every concrete time and value in the criteria that engineering teams schedule or configure. Labels and grouping are not BSI's; every quote is BSI text and is checked against the catalogue when the site is built. The criterion text is authoritative.",
+		additionalTag: 'additional criterion',
+		exampleTag: 'example from the supplementary information, not binding',
+		topicsTitle: 'Topics',
+		topicsIntro:
+			"The criteria by technical topic instead of BSI domain. AI assignment (Claude): topics, assignment and introductions are not BSI's; a criterion can belong to several topics. The criterion text is authoritative.",
+		topicCount: (criteria, domains) => `${criteria} criteria from ${domains} domains`,
+		onlySubs: (subs, total) => `only ${subs.join(', ')} of ${total} sub-criteria`,
 		source: (version) =>
 			`Source: BSI C5:2026, machine-readable edition v${version}, © Federal Office for Information Security (BSI) 2026, reproduced unchanged under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/). Change notes: BSI C5:2026 Changelog, © BSI 2026, CC BY-ND 4.0. Unofficial presentation, not affiliated with BSI.`,
 	},
@@ -102,7 +122,7 @@ const md = (url) => `${url}index.html.md`;
  * written into the files (absolute when the site URL is known). `paths` gives
  * the language's page addresses: domain(code), changes, customers, full, llms.
  */
-export function buildMarkdown({ lang, version, criteria, conditions, domainTitle, changelog, urlFor, paths, sourceUrl, abs }) {
+export function buildMarkdown({ lang, version, criteria, conditions, domainTitle, changelog, urlFor, paths, sourceUrl, values, topics, abs }) {
 	const L = LABELS[lang];
 	const domainLine = (code) => `${code} – ${domainTitle(code)}`;
 
@@ -212,14 +232,70 @@ export function buildMarkdown({ lang, version, criteria, conditions, domainTitle
 		].join('\n\n'),
 	);
 
+	const valueLines = (list) =>
+		list
+			.map((v) => {
+				const tags = [v.kind !== 'basic' ? L.additionalTag : '', v.example ? L.exampleTag : ''].filter(Boolean);
+				const ref = `[${v.sub}](${abs(md(urlFor(v.sub.split('.')[0])))})${tags.length ? ` (${tags.join(', ')})` : ''}`;
+				return `- **${v.value}** (${v.topic}): ${v.label}. ${ref}. BSI: "${v.quote}"`;
+			})
+			.join('\n');
+	const valuesPage = withSource(
+		[
+			heading(1, L.valuesTitle),
+			`- ${L.page}: ${abs(paths.values)}`,
+			L.valuesIntro,
+			...values.groups.map((g) =>
+				[
+					heading(2, `${g.title} (${g.count})`),
+					g.lead,
+					...g.buckets.flatMap((b) => [heading(3, `${b.title} (${b.values.length})`), valueLines(b.values)]),
+				].join('\n\n'),
+			),
+		].join('\n\n'),
+	);
+
+	const topicUrl = (t) => `${paths.topics}${t.slug}/`;
+	const topicsIndex = withSource(
+		[
+			heading(1, L.topicsTitle),
+			`- ${L.page}: ${abs(paths.topics)}`,
+			L.topicsIntro,
+			topics.topics
+				.map((t) => `- [${t.name}](${abs(md(topicUrl(t)))}): ${t.intro} (${L.topicCount(t.criteriaCount, t.domains.length)})`)
+				.join('\n'),
+		].join('\n\n'),
+	);
+	const topicPages = Object.fromEntries(
+		topics.topics.map((t) => [
+			t.slug,
+			withSource(
+				[
+					heading(1, t.name),
+					`- ${L.page}: ${abs(topicUrl(t))}`,
+					`${t.intro} ${L.topicCount(t.criteriaCount, t.domains.length)}.`,
+					L.topicsIntro,
+					...t.domains.map((d) =>
+						[
+							heading(2, `${d.code} – ${d.title}`),
+							d.criteria
+								.map((c) => `- [${c.id} ${c.name}](${abs(md(urlFor(c.id)))})${c.partial ? `: ${L.onlySubs(c.subs, c.subsTotal)}` : ''}`)
+								.join('\n'),
+						].join('\n\n'),
+					),
+				].join('\n\n'),
+			),
+		]),
+	);
+
 	const parts = [heading(1, L.catalogue), source];
 	for (const code of codes) {
 		parts.push(heading(1, domainLine(code)), ...criteria.filter((c) => c.domain === code).map((c) => criterion(c, 2)));
 	}
 	parts.push(heading(1, L.conditions), ...conditions.map((g) => condition(g, 2)));
 
-	const llms = buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, abs });
-	return { items, changes, customers, full: `${parts.join('\n\n')}\n`, llms };
+	const llms = buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, topics, abs });
+	return { items, changes, customers, values: valuesPage, topicsIndex, topicPages, full: `${parts.join('\n\n')}\n`, llms };
 }
 
 /**
@@ -227,7 +303,8 @@ export function buildMarkdown({ lang, version, criteria, conditions, domainTitle
  * with the detail behind the links. Each language has its own file covering
  * its path (/llms.txt, /en/llms.txt); they point to each other.
  */
-function buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, abs }) {
+function buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, topics, abs }) {
+	const topicList = topics.topics.map((t) => `- [${t.name}](${abs(md(`${paths.topics}${t.slug}/`))}): ${t.intro}`).join('\n');
 	const count = (code) => criteria.filter((c) => c.domain === code).length;
 	const domainList = codes
 		.map((code) => `- [${domainLine(code)}](${abs(md(paths.domain(code)))}): ${lang === 'de' ? `${count(code)} Kriterien` : `${count(code)} criteria`}`)
@@ -256,10 +333,17 @@ Hinweise zum Katalog:
 
 ${domainList}
 
+## Themen
+
+Die Kriterien nach technischen Themen statt nach BSI-Bereichen (KI-Zuordnung):
+
+${topicList}
+
 ## Bereichsübergreifend
 
 - [Änderungen gegenüber C5:2020](${abs(md(paths.changes))}): Status jedes Kriteriums (neu, geändert, unverändert) mit früherer ID
 - [Korrespondierende Kriterien für Kunden](${abs(md(paths.customers))}): was Cloud-Kunden selbst umsetzen, aus allen Kriterien gesammelt
+- [Fristen, Intervalle und Grenzwerte](${abs(md(paths.values))}): alle konkreten Zeiten und Werte aus den Kriterien, etwa 48 Stunden für das Entziehen privilegierter Rechte; KI-Zusammenstellung mit geprüften BSI-Zitaten
 
 ## Optional
 
@@ -283,10 +367,17 @@ Notes on the catalogue:
 
 ${domainList}
 
+## Topics
+
+The criteria by technical topic instead of BSI domain (AI assignment):
+
+${topicList}
+
 ## Across all domains
 
 - [Changes since C5:2020](${abs(md(paths.changes))}): status of every criterion (new, changed, unchanged) with its former ID
 - [Complementary customer criteria](${abs(md(paths.customers))}): what cloud service customers implement themselves, collected from all criteria
+- [Deadlines, intervals and limits](${abs(md(paths.values))}): every concrete time and value in the criteria, such as 48 hours for revoking privileged access; AI compilation with checked BSI quotes
 
 ## Optional
 

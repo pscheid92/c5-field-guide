@@ -717,6 +717,132 @@ p.changes {
 	margin-top: 0.75rem !important;
 	font-size: 0.9375rem;
 }
+/* Values page and other AI compilations. The AI notice says what is Claude's
+   and what is BSI's; quotes sit in quotation marks next to their source. */
+.ai-notice {
+	margin-top: 1.25rem !important;
+	padding: 0.9rem 1.1rem;
+	border-left: 3px solid var(--accent);
+	border-radius: 0 0.5rem 0.5rem 0;
+	background: var(--bg-panel);
+	font-size: 0.9375rem;
+	line-height: 1.55;
+}
+.ai-notice > * + * {
+	margin-top: 0.3rem !important;
+}
+.ai-notice-label {
+	font-weight: 650;
+	color: var(--text);
+}
+.values-views {
+	margin-top: 2.5rem;
+}
+.values-section h2 {
+	margin-top: 0;
+	font-size: 1.375rem;
+	line-height: 1.25;
+}
+.values {
+	list-style: none;
+	margin-top: 1rem !important;
+	padding: 0 !important;
+	border-top: 1px solid var(--line);
+}
+.values > li {
+	margin: 0 !important;
+	padding: 1rem 0.25rem;
+	border-bottom: 1px solid var(--line);
+}
+.values > li > * + * {
+	margin-top: 0.35rem !important;
+}
+.value-label {
+	font-size: 1.0625rem;
+	line-height: 1.45;
+	color: var(--text);
+}
+.value-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem 0.6rem;
+	font-size: 0.9375rem;
+}
+.value-meta > a {
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
+	text-decoration: none;
+}
+.value-meta > a:hover {
+	text-decoration: underline;
+}
+.value-quote {
+	display: block;
+	font-size: 0.9375rem;
+	line-height: 1.55;
+	color: var(--muted);
+}
+.value-topic {
+	color: var(--muted);
+}
+.values-count {
+	margin-left: 0.3rem;
+	font-weight: 400;
+	color: var(--muted);
+}
+.values-lead {
+	margin-top: 0.4rem !important;
+	color: var(--muted);
+}
+/* Each value or cadence ("48 Stunden", "Jährlich") heads its rows. */
+.values-bucket h3 {
+	margin: 2rem 0 0;
+	font-size: 1.0625rem;
+	font-variant-numeric: tabular-nums;
+}
+.values-bucket .values {
+	margin-top: 0.6rem !important;
+}
+
+/* Topic overview and the "more topics" list at the end of a topic page. */
+.topic-list {
+	list-style: none;
+	margin-top: 2rem !important;
+	padding: 0 !important;
+	border-top: 1px solid var(--line);
+}
+.topic-list > li {
+	margin: 0 !important;
+	padding: 1.1rem 0.25rem;
+	border-bottom: 1px solid var(--line);
+}
+.topic-list a {
+	font-size: 1.1875rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.topic-list a:hover {
+	text-decoration: underline;
+}
+.topic-list p {
+	margin-top: 0.35rem !important;
+	font-size: 1rem;
+	line-height: 1.55;
+}
+.topic-list span {
+	display: block;
+	margin-top: 0.3rem;
+	font-size: 0.9375rem;
+	color: var(--muted);
+}
+.topics-more {
+	margin-top: 3.5rem;
+}
+.topics-more h2 {
+	margin-bottom: 0.75rem;
+}
+
 /* Customer criteria page: domain headings clearly above the criterion
    headings (code as on the domain pages, larger title, more room). */
 .jump-stacked {
@@ -1157,6 +1283,83 @@ p.changes {
 	font-weight: 650;
 	letter-spacing: 0.02em;
 	color: var(--accent);
+}
+/* View switch (ViewSwitch.astro): domains or topics on the start page,
+   deadlines, intervals or limits on the values page. Without JavaScript there
+   is no data-active, so all panels show with their headings and no switch. */
+.view-tabs {
+	display: none;
+	gap: 0.2rem;
+	margin-bottom: 1.25rem;
+	padding: 0.2rem;
+	border: 1px solid var(--line-strong);
+	border-radius: 0.6rem;
+}
+.view-tabs button {
+	padding: 0.35rem 1rem;
+	font: inherit;
+	font-size: 1.0625rem;
+	font-weight: 600;
+	color: var(--muted);
+	background: none;
+	border: 0;
+	border-radius: 0.4rem;
+	cursor: pointer;
+}
+.view-tabs button:hover {
+	color: var(--text);
+	background: var(--bg-hover);
+}
+.view-tabs button:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+.view-tabs button[aria-selected='true'] {
+	color: var(--text);
+	background: var(--bg-current);
+}
+[data-views][data-active] .view-tabs {
+	display: inline-flex;
+}
+/* On a phone the switch spans the column and the tabs share it equally, so
+   three German labels fit in 360px. */
+@media (max-width: 599px) {
+	[data-views][data-active] .view-tabs {
+		display: flex;
+	}
+	.view-tabs button {
+		flex: 1;
+		padding: 0.35rem 0.5rem;
+	}
+}
+[data-views][data-active] .view-heading {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+[data-views]:not([data-active]) [data-view-panel] + [data-view-panel] {
+	margin-top: 2.5rem;
+}
+.views {
+	scroll-margin-top: var(--bar-h);
+}
+.index-meta {
+	display: block;
+	margin-top: 0.3rem;
+	font-size: 0.9375rem;
+	color: var(--muted);
+}
+.view-note {
+	max-width: 44rem;
+	margin: 1.25rem 0 0;
+	padding-top: 1rem;
+	border-top: 1px solid var(--line);
+	font-size: 0.9375rem;
+	line-height: 1.55;
+	color: var(--muted);
 }
 .crosscut {
 	padding-top: 0;

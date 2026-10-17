@@ -1,0 +1,261 @@
+# Topic pages: the criteria by technical area instead of BSI domain, for
+# engineering teams that own one part of their system.
+#
+# AI-generated. Claude (Anthropic) chose the topics, assigned the criteria and
+# wrote the introductions, from the BSI C5:2026 criterion text (DE v1.1.0,
+# EN v1.0.1). Assignment is per criterion; `subs` restricts a criterion to the
+# sub-criteria that belong to the topic where it is mixed. A criterion can be
+# in several topics. scripts/lib/ai.mjs checks that every criterion and
+# sub-criterion exists in both languages. The criterion text is authoritative.
+#
+# Rule for a topic: it draws from at least three BSI domains (otherwise the
+# domain page already covers it) and is named in engineering terms.
+#
+# Reviewed on 2026-10-18 against the full German text of every assigned
+# criterion and of every criterion in no topic.
+
+generated: 2026-10-18
+
+topics:
+  - id: logging
+    slug: { de: protokollierung, en: logging }
+    name: { de: "Protokollierung und Monitoring", en: "Logging and monitoring" }
+    intro:
+      de: "Welche Ereignisse protokolliert und überwacht werden, wie lange Protokolle aufbewahrt werden und wer sie auswertet, von der SIEM-Anbindung über die Protokollierung privilegierter Zugriffe bis zu den Protokollen, die Kunden selbst erhalten."
+      en: "What is logged and monitored, how long logs are kept and who reviews them, from SIEM integration and logging privileged access to the logs customers get themselves."
+    criteria:
+      - { id: AM-01, subs: [01AC] }
+      - { id: AM-09, subs: [03AC, 04AC] }
+      - OPS-10
+      - OPS-11
+      - OPS-12
+      - OPS-13
+      - OPS-14
+      - OPS-15
+      - OPS-16
+      - OPS-17
+      - { id: IAM-01, subs: [01AC] }
+      - { id: IAM-03, subs: [01AC] }
+      - { id: IAM-06, subs: [04B, 05B, 06B, 08B] }
+      - { id: COS-03, subs: [02B] }
+      - { id: DEV-08, subs: [02B, 01AC] }
+      - PSS-04
+
+  - id: identity
+    slug: { de: identitaeten, en: identities }
+    name: { de: "Identitäten, Zugriff und MFA", en: "Identities, access and MFA" }
+    intro:
+      de: "Wie Identitäten und Zugriffsrechte vergeben, überprüft und entzogen werden, wie sich Nutzer authentisieren und was der Cloud-Dienst seinen Kunden dafür bieten muss."
+      en: "How identities and access rights are granted, reviewed and revoked, how users authenticate, and what the cloud service must offer its customers for this."
+    criteria:
+      - OIS-04
+      - { id: AM-02, subs: [05B] }
+      - IAM-01
+      - IAM-02
+      - IAM-03
+      - IAM-04
+      - IAM-05
+      - IAM-06
+      - IAM-08
+      - IAM-09
+      - PSS-05
+      - PSS-06
+      - PSS-07
+      - PSS-08
+      - PSS-09
+
+  - id: crypto
+    slug: { de: verschluesselung, en: encryption }
+    name: { de: "Verschlüsselung, Schlüssel und Secrets", en: "Encryption, keys and secrets" }
+    intro:
+      de: "Verschlüsselung bei Übertragung und Speicherung, der gesamte Lebenszyklus kryptographischer Schlüssel, der Schutz von Anmeldeinformationen und anderen Secrets sowie Confidential Computing."
+      en: "Encryption in transit and at rest, the full lifecycle of cryptographic keys, protecting credentials and other secrets, and confidential computing."
+    criteria:
+      - OPS-32
+      - OPS-33
+      - { id: IAM-09, subs: [01B, 02B, 03B, 06B] }
+      - { id: DEV-12, subs: [02B] }
+      - CRY-01
+      - CRY-02
+      - CRY-03
+      - CRY-04
+      - CRY-05
+      - CRY-06
+      - CRY-07
+      - CRY-08
+      - CRY-09
+      - CRY-10
+      - CRY-11
+      - CRY-12
+      - CRY-13
+      - CRY-14
+      - CRY-15
+      - CRY-16
+      - CRY-17
+      - CRY-18
+      - CRY-19
+      - COS-08
+
+  - id: containers
+    slug: { de: container, en: containers }
+    name: { de: "Container und Images", en: "Containers and images" }
+    intro:
+      de: "Container und VM-Images von der Erstellung über Härtung und Inventarisierung bis zum Betrieb, einschließlich privilegierter Zugriffe und getrennter Netze für die Orchestrierung."
+      en: "Containers and VM images from build through hardening and inventory to operation, including privileged access and separate networks for orchestration."
+    criteria:
+      - { id: OPS-26, subs: [03B, 04B] }
+      - OPS-34
+      - OPS-35
+      - { id: IAM-06, subs: [08B] }
+      - { id: COS-05, subs: [02B] }
+      - PSS-11
+
+  - id: development
+    slug: { de: entwicklung, en: development }
+    name: { de: "Entwicklung, Änderungen und Deployment", en: "Development, changes and deployment" }
+    intro:
+      de: "Wie Änderungen vom Code in die Produktion kommen: Entwicklungsrichtlinien, Versionskontrolle, Tests und Code-Analysen, Bewertung und Freigabe von Änderungen und Patches, getrennte Umgebungen und Ausnahmen vom Änderungsprozess."
+      en: "How changes get from code to production: development policies, version control, testing and code analysis, rating and approving changes and patches, separate environments, and exceptions to the change process."
+    criteria:
+      - { id: OPS-27, subs: [03B, 03AS] }
+      - CRY-02
+      - DEV-01
+      - DEV-03
+      - DEV-04
+      - DEV-05
+      - DEV-06
+      - DEV-07
+      - DEV-08
+      - DEV-09
+      - DEV-10
+      - DEV-11
+      - DEV-12
+      - DEV-15
+      - { id: PSS-02, subs: [01B, 02B, 01AC] }
+
+  - id: supply-chain
+    slug: { de: lieferkette, en: supply-chain }
+    name: { de: "Software-Lieferkette und SBOM", en: "Software supply chain and SBOM" }
+    intro:
+      de: "Was über die eingesetzte Software bekannt und nachweisbar sein muss: Softwarelisten und SBOM, Drittanbieter- und Open-Source-Komponenten, Beschaffung, ausgelagerte Entwicklung und der Austausch mit Lieferanten von Komponenten."
+      en: "What must be known and demonstrable about the software in use: component lists and SBOMs, third-party and open-source components, procurement, outsourced development and exchanges with component suppliers."
+    criteria:
+      - AM-04
+      - OPS-29
+      - { id: DEV-01, subs: [01AC] }
+      - DEV-02
+      - DEV-13
+      - DEV-14
+      - SSO-08
+      - { id: PSS-02, subs: [02B] }
+      - { id: PSS-03, subs: [03B, 05B] }
+
+  - id: vulnerabilities
+    slug: { de: schwachstellen, en: vulnerabilities }
+    name: { de: "Schwachstellen, Patches und Härtung", en: "Vulnerabilities, patching and hardening" }
+    intro:
+      de: "Schwachstellen finden, bewerten, beheben und Kunden darüber informieren: Scans, Penetrationstests, Patch-Management, Härtung, Malware-Schutz und Threat Intelligence."
+      en: "Finding, rating and fixing vulnerabilities and informing customers about them: scans, penetration tests, patch management, hardening, malware protection and threat intelligence."
+    criteria:
+      - OIS-05
+      - OPS-04
+      - OPS-05
+      - OPS-18
+      - OPS-22
+      - OPS-23
+      - OPS-25
+      - OPS-26
+      - OPS-27
+      - OPS-28
+      - OPS-29
+      - { id: DEV-07, subs: [04B, 05B, 01AC] }
+      - PSS-02
+      - PSS-03
+
+  - id: resilience
+    slug: { de: backup, en: backup }
+    name: { de: "Backup, Wiederherstellung und Ausfallsicherheit", en: "Backup, recovery and resilience" }
+    intro:
+      de: "Damit der Dienst und seine Daten Ausfälle überstehen: Kapazitätsplanung, Datensicherung und Wiederherstellungstests, Redundanz über Standorte und Notfallmanagement."
+      en: "Keeping the service and its data through outages: capacity planning, backups and restore tests, redundancy across locations and business continuity."
+    criteria:
+      - PS-02
+      - OPS-01
+      - OPS-02
+      - OPS-03
+      - OPS-06
+      - OPS-07
+      - OPS-08
+      - OPS-09
+      - CRY-16
+      - BCM-01
+      - BCM-02
+      - BCM-03
+      - BCM-04
+
+  - id: network
+    slug: { de: netz, en: network }
+    name: { de: "Netz und Mandantentrennung", en: "Network and tenant separation" }
+    intro:
+      de: "Netzsegmentierung und Sicherheitsgateways, Schutz vor Angriffen über das Netz und bei der Datenübertragung, Überwachung von Verbindungen, Administrationsnetze, Trennung der Mandanten und der Umgebungen sowie Software-defined Networking."
+      en: "Network segmentation and security gateways, protection against attacks over the network and in transit, monitoring connections, administration networks, separating tenants and environments, and software-defined networking."
+    criteria:
+      - OPS-30
+      - OPS-31
+      - { id: IAM-07, subs: [01B, 02B] }
+      - COS-01
+      - COS-02
+      - COS-03
+      - COS-04
+      - COS-05
+      - COS-06
+      - COS-07
+      - COS-08
+      - { id: DEV-12, subs: [01B] }
+      - PSS-10
+
+  - id: incidents
+    slug: { de: vorfaelle, en: incidents }
+    name: { de: "Umgang mit Vorfällen", en: "Incident handling" }
+    intro:
+      de: "Vom Erkennen bis zur Auswertung: Reaktionspläne, Bearbeitung und Meldung von Vorfällen und Abstürzen, Forensik, Einbindung der Kunden sowie kompromittierte Schlüssel und Anmeldeinformationen."
+      en: "From detection to lessons learned: response plans, handling and reporting incidents and crashes, forensics, involving customers, and compromised keys and credentials."
+    criteria:
+      - { id: OPS-15, subs: [03B] }
+      - OPS-19
+      - OPS-20
+      - OPS-21
+      - OPS-23
+      - OPS-24
+      - { id: IAM-03, subs: [03B, 04B, 03AS] }
+      - CRY-13
+      - SIM-01
+      - SIM-02
+      - SIM-03
+      - SIM-04
+      - SIM-05
+      - SIM-06
+
+  - id: customer-data
+    slug: { de: kundendaten, en: customer-data }
+    name: { de: "Kundendaten: Speicherort, Zugriff, Export und Löschung", en: "Customer data: location, access, export and deletion" }
+    intro:
+      de: "Wo und von wem Kundendaten verarbeitet werden, wann das Personal des Anbieters und Behörden darauf zugreifen dürfen, wofür abgeleitete Daten genutzt werden, wie Kunden ihre Daten exportieren und wie sie gelöscht werden."
+      en: "Where and by whom customer data is processed, when the provider's personnel and authorities may access it, what derived data may be used for, how customers export their data and how it is deleted."
+    criteria:
+      - { id: AM-07, subs: [02B, 01AC] }
+      - OPS-11
+      - IAM-07
+      - { id: CRY-05, subs: [01AC] }
+      - { id: DEV-07, subs: [03B] }
+      - { id: DEV-12, subs: [01B] }
+      - { id: PI-01, subs: [01B, 02B] }
+      - PI-02
+      - PI-03
+      - SSO-03
+      - SSO-07
+      - INQ-01
+      - INQ-02
+      - INQ-03
+      - INQ-04
+      - PSS-12

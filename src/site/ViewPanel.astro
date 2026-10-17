@@ -1,0 +1,17 @@
+---
+// One panel of a ViewSwitch. `hash` is its address (/#themen); the heading in
+// the slot (class "view-heading") is only visible without JavaScript, when
+// all panels show at once.
+
+interface Props {
+	name: string;
+	hash: string;
+	class?: string;
+}
+
+const { name, hash, class: className } = Astro.props;
+---
+
+<div class={className} id={`panel-${name}`} role="tabpanel" aria-labelledby={`tab-${name}`} data-view-panel={name} data-view-hash={hash}>
+	<slot />
+</div>

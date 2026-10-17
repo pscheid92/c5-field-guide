@@ -1,0 +1,65 @@
+---
+// Deadlines, intervals and limits: every concrete value in the criteria that
+// engineering teams schedule or configure (data/ai/values.yml), ordered by
+// time. A ViewSwitch shows one of the three groups (/werte/#intervalle). An AI
+// compilation, marked as such: labels, types and topics are Claude's, each
+// quote is BSI's and is checked against the catalogue when the site is built.
+import valuesDe from '../generated/values.de.json';
+import valuesEn from '../generated/values.en.json';
+import Attribution from './Attribution.astro';
+import Layout from './Layout.astro';
+import ValueRow from './ValueRow.astro';
+import ViewPanel from './ViewPanel.astro';
+import ViewSwitch from './ViewSwitch.astro';
+import { type Lang, site } from './data';
+
+interface Props {
+	lang: Lang;
+}
+
+const s = site(Astro.props.lang);
+const { t } = s;
+const other = site(s.lang === 'de' ? 'en' : 'de');
+const data = s.lang === 'de' ? valuesDe : valuesEn;
+---
+
+<Layout lang={s.lang} view="page" title={t.valuesTitle} otherLangUrl={other.values} markdown={`${s.values}index.html.md`}>
+	<div class="page">
+		<article class="doc">
+			<h1>{t.valuesTitle}</h1>
+			<p class="doc-meta">{t.valuesSummary(data.count, data.additional)}</p>
+			<p class="changes-intro">{t.valuesLead}</p>
+			<aside class="ai-notice">
+				<p class="ai-notice-label">{t.aiLabel}</p>
+				<p>{t.valuesNotice}</p>
+			</aside>
+			<ViewSwitch class="values-views" label={t.valuesTitle} views={data.groups.map((g) => ({ name: g.id, label: g.title }))}>
+				{
+					data.groups.map((g) => (
+						<ViewPanel name={g.id} hash={g.id} class="values-section">
+							<h2 class="view-heading">
+								{g.title} <span class="values-count">{g.count}</span>
+							</h2>
+							<p class="values-lead">{g.lead}</p>
+							{g.buckets.map((b) => (
+								<section class="values-bucket">
+									<h3 id={b.id}>
+										{b.title} <span class="values-count">{b.values.length}</span>
+									</h3>
+									<ul class="values">
+										{b.values.map((v) => (
+											<ValueRow lang={s.lang} v={v} />
+										))}
+									</ul>
+								</section>
+							))}
+						</ViewPanel>
+					))
+				}
+			</ViewSwitch>
+
+			<p class="attribution">{t.valuesAttribution(data.generated, site('de').data.version, site('en').data.version)}</p>
+			<Attribution lang={s.lang} />
+		</article>
+	</div>
+</Layout>

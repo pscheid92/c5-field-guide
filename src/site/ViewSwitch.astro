@@ -1,0 +1,55 @@
+---
+// A switch that shows one of several panels (ViewPanel) at a time: domains or
+// topics on the start page, deadlines, intervals or limits on the values page.
+// The first panel is the default; the others are kept in the address
+// (/#themen) so links and coming back show the same view. Without JavaScript
+// there is no switch and all panels show one after the other, each with its
+// heading. The inline script picks the panel before the page is drawn;
+// client.ts handles clicks, arrow keys and navigation.
+
+interface Props {
+	label: string;
+	views: { name: string; label: string }[];
+	id?: string;
+	class?: string;
+}
+
+const { label, views, id, class: className } = Astro.props;
+---
+
+<section class:list={['views', className]} id={id} data-views>
+	<div class="view-tabs" role="tablist" aria-label={label}>
+		{
+			views.map((v, i) => (
+				<button
+					type="button"
+					role="tab"
+					id={`tab-${v.name}`}
+					aria-controls={`panel-${v.name}`}
+					aria-selected={i === 0 ? 'true' : 'false'}
+					tabindex={i === 0 ? undefined : '-1'}
+					data-view-tab={v.name}
+				>
+					{v.label}
+				</button>
+			))
+		}
+	</div>
+	<slot />
+	<script is:inline>
+		// Mirrors showView() in client.ts, run here so the right panel is drawn first.
+		{
+			const root = document.currentScript.closest('[data-views]');
+			const panels = [...root.querySelectorAll('[data-view-panel]')];
+			const hash = decodeURIComponent(location.hash.slice(1));
+			const active = panels.find((p) => p.dataset.viewHash === hash) ?? panels[0];
+			root.dataset.active = active.dataset.viewPanel;
+			for (const p of panels) p.hidden = p !== active;
+			for (const t of root.querySelectorAll('[data-view-tab]')) {
+				const on = t.dataset.viewTab === root.dataset.active;
+				t.setAttribute('aria-selected', String(on));
+				t.tabIndex = on ? 0 : -1;
+			}
+		}
+	</script>
+</section>

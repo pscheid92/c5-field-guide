@@ -1,9 +1,16 @@
 ---
 // Start page: a short intro with example searches (the search box itself is in
-// the top bar, as on every page), then all domains as an index, then the pages
+// the top bar, as on every page), then all domains or all topics as an index
+// (a ViewSwitch, the choice kept in the address as /#themen), then the pages
 // that cut across domains.
 import Attribution from './Attribution.astro';
 import Layout from './Layout.astro';
+import ViewPanel from './ViewPanel.astro';
+import ViewSwitch from './ViewSwitch.astro';
+import topicsDe from '../generated/topics.de.json';
+import topicsEn from '../generated/topics.en.json';
+import valuesDe from '../generated/values.de.json';
+import valuesEn from '../generated/values.en.json';
 import { type Lang, site } from './data';
 
 interface Props {
@@ -16,6 +23,15 @@ const subs = s.data.criteria.reduce((n, c) => n + c.subs.length, 0);
 const en = s.lang === 'en';
 const changed = (status: string) => s.data.criteria.filter((c) => c.changes.status === status).length;
 const withCustomer = s.data.criteria.filter((c) => c.customerHtml);
+const topics = (en ? topicsEn : topicsDe).topics;
+const values = en ? valuesEn : valuesDe;
+// Criteria in no topic, and the domains most of them come from.
+const inTopic = new Set(topics.flatMap((x) => x.domains.flatMap((d) => d.criteria.map((c) => c.id))));
+const uncovered = s.data.criteria.filter((c) => !inTopic.has(c.id));
+const perDomain = uncovered.reduce<Record<string, number>>((n, c) => ({ ...n, [c.domain]: (n[c.domain] ?? 0) + 1 }), {});
+const uncoveredCodes = Object.keys(perDomain)
+	.sort((a, b) => perDomain[b] - perDomain[a])
+	.slice(0, 4);
 ---
 
 <Layout
@@ -58,25 +74,57 @@ const withCustomer = s.data.criteria.filter((c) => c.customerHtml);
 		</p>
 	</section>
 
-	<section class="index" aria-labelledby={t.domainsAnchor}>
-		<h2 id={t.domainsAnchor}>{t.domains}</h2>
-		<ul class="index-grid">
-			{
-				s.domains.map((d) => (
-					<li>
-						<a href={s.domainUrl(d.code)}>
-							<span class="index-code">{d.code}</span>
-							<span class="index-title">{d.title}</span>
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	<ViewSwitch
+		class="index"
+		id={t.domainsAnchor}
+		label={t.viewsLabel}
+		views={[
+			{ name: 'domains', label: t.domains },
+			{ name: 'topics', label: t.topicsTitle },
+		]}
+	>
+		<ViewPanel name="domains" hash={t.domainsAnchor}>
+			<h2 class="view-heading">{t.domains}</h2>
+			<ul class="index-grid">
+				{
+					s.domains.map((d) => (
+						<li>
+							<a href={s.domainUrl(d.code)}>
+								<span class="index-code">{d.code}</span>
+								<span class="index-title">{d.title}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</ViewPanel>
+		<ViewPanel name="topics" hash={t.topicsAnchor}>
+			<h2 class="view-heading">{t.topicsTitle}</h2>
+			<ul class="index-grid">
+				{
+					topics.map((x) => (
+						<li>
+							<a href={`${s.topics}${x.slug}/`}>
+								<span class="index-title">{x.name}</span>
+								<span class="index-meta">{t.topicCount(x.criteriaCount, x.domains.length)}</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+			<p class="view-note">
+				{t.topicsHomeNote(uncovered.length, s.data.criteria.length, uncoveredCodes)} <a href={s.topics}>{t.topicsAll}</a>
+			</p>
+		</ViewPanel>
+	</ViewSwitch>
 
 	<section class="index crosscut" aria-labelledby="crosscut">
 		<h2 id="crosscut">{t.crosscut}</h2>
 		<ul class="crosscut-list">
+			<li>
+				<a href={s.values}>{t.valuesTitle}</a>
+				<span>{t.valuesHome(values.count)}</span>
+			</li>
 			<li>
 				<a href={s.changes}>{t.changesTitle}</a>
 				<span>{t.changesSummary(changed('new'), changed('changed'), changed('unchanged'))}</span>

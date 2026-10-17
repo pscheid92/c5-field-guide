@@ -1,0 +1,9 @@
+---
+// /en/topics/logging/: one topic page.
+import TopicView from '../../../../site/TopicView.astro';
+import topics from '../../../../generated/topics.en.json';
+
+export const getStaticPaths = () => topics.topics.map((t) => ({ params: { topic: t.slug }, props: { id: t.id } }));
+---
+
+<TopicView lang="en" id={Astro.props.id} />

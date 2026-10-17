@@ -47,6 +47,8 @@ export function site(lang: Lang) {
 		info: `${p}/info/`,
 		changes: `${p}/${strings[lang].changesPath}/`,
 		customers: `${p}/${strings[lang].customersPath}/`,
+		values: `${p}/${strings[lang].valuesPath}/`,
+		topics: `${p}/${strings[lang].topicsPath}/`,
 		domainUrl: (code: string) => `${p}/${code.toLowerCase()}/`,
 		searchIndex: `${p}/search.json`,
 	};
@@ -143,6 +145,33 @@ const strings = {
 		customersSummary: (n: number, d: number) => `${n} Kriterien in ${d} Bereichen`,
 		allCustomer: 'Alle Kundenkriterien im Überblick',
 		crosscut: 'Bereichsübergreifend',
+		valuesPath: 'werte',
+		valuesTitle: 'Fristen, Intervalle und Grenzwerte',
+		valuesLead: 'Alle konkreten Zeiten und Werte aus den Kriterien, die Engineering-Teams einplanen oder konfigurieren: vom Entzug privilegierter Rechte bis zum Takt der Schwachstellenscans.',
+		valuesSummary: (n: number, additional: number) => `${n} Werte, davon ${additional} nur in Zusatzkriterien`,
+		valuesHome: (n: number) => `${n} Werte zum Einplanen und Konfigurieren`,
+		aiLabel: 'KI-Zusammenstellung',
+		valuesNotice:
+			'Claude (KI) hat diese Werte aus dem Kriterientext zusammengestellt. Bezeichnungen und Einordnung stammen nicht vom BSI. Die Zitate sind BSI-Text: Beim Erstellen der Seite wird geprüft, dass jedes Zitat wörtlich im genannten Unterkriterium steht und den Wert enthält. Verbindlich ist allein der Kriterientext.',
+		exampleTag: 'Beispiel, nicht verbindlich',
+		topicsPath: 'themen',
+		topicsTitle: 'Themen',
+		topicsLead: 'Die Kriterien nach technischen Themen statt nach BSI-Bereichen, für Teams, die einen Teil ihres Systems verantworten.',
+		topicsAiLabel: 'KI-Zuordnung',
+		topicsNotice:
+			'Claude (KI) hat die Themen gewählt, die Kriterien zugeordnet und die Einleitungen geschrieben. Die Kriterien und ihre Texte sind die des BSI. Ein Kriterium kann zu mehreren Themen gehören; verbindlich ist allein der Kriterientext.',
+		topicCount: (criteria: number, domains: number) => `${criteria} Kriterien aus ${domains} Bereichen`,
+		topicsAnchor: 'themen',
+		viewsLabel: 'Ansicht',
+		topicsHomeNote: (n: number, total: number, codes: string[]) =>
+			`KI-Zuordnung: Claude hat die Kriterien den Themen zugeordnet, verbindlich ist der Kriterientext. ${n} der ${total} Kriterien gehören zu keinem Thema, vor allem aus ${codes.slice(0, -1).join(', ')} und ${codes.at(-1)}.`,
+		topicsAll: 'Alle Themen mit Einleitung',
+		onlySubs: (subs: string[], total: number) => `nur ${subs.join(', ')} von ${total} Unterkriterien`,
+		otherTopics: 'Weitere Themen',
+		topicsAttribution: (date: string, de: string, en: string) =>
+			`Themen, Zuordnung und Einleitungen: KI-Auswertung (Claude, Anthropic) vom ${date.split('-').reverse().join('.')} aus BSI C5:2026 (Deutsch v${de}, Englisch v${en}). Kein BSI-Text.`,
+		valuesAttribution: (date: string, de: string, en: string) =>
+			`Zusammenstellung, Bezeichnungen und Einordnung: KI-Auswertung (Claude, Anthropic) vom ${date.split('-').reverse().join('.')} aus BSI C5:2026 (Deutsch v${de}, Englisch v${en}). Kein BSI-Text.`,
 	},
 	en: {
 		langName: 'English',
@@ -226,6 +255,33 @@ const strings = {
 		customersSummary: (n: number, d: number) => `${n} criteria in ${d} domains`,
 		allCustomer: 'All customer criteria in one place',
 		crosscut: 'Across all domains',
+		valuesPath: 'values',
+		valuesTitle: 'Deadlines, intervals and limits',
+		valuesLead: 'Every concrete time and value in the criteria that engineering teams schedule or configure, from revoking privileged access to how often to run vulnerability scans.',
+		valuesSummary: (n: number, additional: number) => `${n} values, ${additional} of them in additional criteria only`,
+		valuesHome: (n: number) => `${n} values to schedule and configure`,
+		aiLabel: 'AI compilation',
+		valuesNotice:
+			"Claude (AI) compiled these values from the criterion text. Labels and grouping are not BSI's. The quotes are BSI text: building the site checks that every quote appears word for word in the cited sub-criterion and contains the value. Only the criterion text is authoritative.",
+		exampleTag: 'example, not binding',
+		topicsPath: 'topics',
+		topicsTitle: 'Topics',
+		topicsLead: 'The criteria by technical topic instead of BSI domain, for teams that own one part of their system.',
+		topicsAiLabel: 'AI assignment',
+		topicsNotice:
+			"Claude (AI) chose the topics, assigned the criteria and wrote the introductions. The criteria and their text are BSI's. A criterion can belong to several topics; only the criterion text is authoritative.",
+		topicCount: (criteria: number, domains: number) => `${criteria} criteria from ${domains} domains`,
+		topicsAnchor: 'topics',
+		viewsLabel: 'View',
+		topicsHomeNote: (n: number, total: number, codes: string[]) =>
+			`AI assignment: Claude assigned the criteria to the topics; only the criterion text is authoritative. ${n} of the ${total} criteria belong to no topic, mostly from ${codes.slice(0, -1).join(', ')} and ${codes.at(-1)}.`,
+		topicsAll: 'All topics with introductions',
+		onlySubs: (subs: string[], total: number) => `only ${subs.join(', ')} of ${total} sub-criteria`,
+		otherTopics: 'More topics',
+		topicsAttribution: (date: string, de: string, en: string) =>
+			`Topics, assignment and introductions: AI analysis (Claude, Anthropic) of ${date}, from BSI C5:2026 (German v${de}, English v${en}). Not BSI text.`,
+		valuesAttribution: (date: string, de: string, en: string) =>
+			`Compilation, labels and grouping: AI analysis (Claude, Anthropic) of ${date}, from BSI C5:2026 (German v${de}, English v${en}). Not BSI text.`,
 	},
 };
 

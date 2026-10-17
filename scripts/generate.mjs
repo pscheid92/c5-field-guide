@@ -5,9 +5,13 @@
 //   vendor/bsi/<lang>/C5_2026_Machine-Readable_<lang>/*.yml   BSI catalogue (unchanged)
 //   data/domains.yml                                          domain titles + order
 //   vendor/bsi/C5_2026_changelog.xlsx                         changes since C5:2020 (English only so far)
+//   data/ai/values.yml                                        deadlines and limits (AI-compiled, quotes checked)
+//   data/ai/topics.yml                                        criteria by technical topic (AI-assigned, IDs checked)
 // Outputs (generated, not committed):
 //   src/generated/catalog.<lang>.json   criteria with rendered BSI text, references
 //   src/generated/search.<lang>.json    plain-text search index
+//   src/generated/values.<lang>.json    deadlines, intervals and limits for the values page
+//   src/generated/topics.<lang>.json    topic pages
 //   src/generated/markdown.<lang>.json  llms.txt and Markdown versions of the pages (llmstxt.org)
 //
 // German is served at the site root, English under /en/. URLs: /iam/ (domain),
@@ -20,6 +24,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { basePath } from './lib/base.mjs';
 import { loadCatalog, loadDomains, findReferences } from './lib/catalog.mjs';
+import { loadTopics, loadValues } from './lib/ai.mjs';
 import { loadChangelog } from './lib/changelog.mjs';
 import { buildMarkdown } from './lib/markdown.mjs';
 
@@ -38,7 +43,7 @@ const LOCALES = {
 	de: {
 		prefix: basePath,
 		// Same addresses as changesPath / customersPath in src/site/data.ts.
-		pages: { changes: 'aenderungen', customers: 'kundenkriterien' },
+		pages: { changes: 'aenderungen', customers: 'kundenkriterien', values: 'werte', topics: 'themen' },
 		bsiDir: r('vendor/bsi/de/C5_2026_Machine-Readable_de'),
 		domainTitle: (d) => d.title_de,
 		sourceUrl:
@@ -55,7 +60,7 @@ const LOCALES = {
 	},
 	en: {
 		prefix: `${basePath}/en`,
-		pages: { changes: 'changes', customers: 'customer-criteria' },
+		pages: { changes: 'changes', customers: 'customer-criteria', values: 'values', topics: 'topics' },
 		bsiDir: r('vendor/bsi/en/C5_2026_Machine-Readable_en'),
 		domainTitle: (d) => d.title,
 		sourceUrl:
@@ -279,6 +284,33 @@ function generate(lang) {
 		),
 	);
 
+	// Deadlines, intervals and limits (AI-compiled; every quote and value is
+	// checked against this language's BSI text).
+	const subsById = new Map(
+		criteria.flatMap((c) =>
+			c.subs.map((s) => [
+				`${c.id}.${s.id}`,
+				{
+					text: s.text,
+					info: c.information.filter((i) => i.appliesTo.includes(s.id)).map((i) => i.text),
+					kind: s.kind,
+					url: `${urlFor(c.id)}#${anchorFor(c.id, s.id)}`,
+				},
+			]),
+		),
+	);
+	const values = loadValues(r('data/ai/values.yml'), lang, (id) => subsById.get(id));
+	write(r('src/generated', `values.${lang}.json`), JSON.stringify(values));
+
+	// Topic pages (AI-assigned; every criterion and sub-criterion checked).
+	const topics = loadTopics(r('data/ai/topics.yml'), lang, {
+		criteria,
+		domainTitle: (code) => loc.domainTitle(domains[code]),
+		urlFor,
+		anchorFor,
+	});
+	write(r('src/generated', `topics.${lang}.json`), JSON.stringify(topics));
+
 	// For AI tools (llmstxt.org): this language's llms.txt and a Markdown
 	// version of every criterion, domain and cross-domain page.
 	const other = Object.entries(LOCALES).find(([l]) => l !== lang)[1];
@@ -294,11 +326,15 @@ function generate(lang) {
 			domain: (code) => `${loc.prefix}/${slug(code)}/`,
 			changes: `${loc.prefix}/${loc.pages.changes}/`,
 			customers: `${loc.prefix}/${loc.pages.customers}/`,
+			values: `${loc.prefix}/${loc.pages.values}/`,
+			topics: `${loc.prefix}/${loc.pages.topics}/`,
 			full: `${loc.prefix}/llms-full.txt`,
 			otherLlms: `${other.prefix}/llms.txt`,
 			example: urlFor('IAM-06'),
 		},
 		sourceUrl: loc.sourceUrl,
+		values,
+		topics,
 		abs,
 	});
 	write(r('src/generated', `markdown.${lang}.json`), JSON.stringify(markdown));
