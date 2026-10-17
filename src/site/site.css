@@ -1067,9 +1067,6 @@ p.changes {
 	max-width: 72rem;
 	margin: 0 auto;
 }
-.hero > * {
-	max-width: 44rem;
-}
 .hero h1 {
 	margin: 0;
 	font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
@@ -1080,7 +1077,6 @@ p.changes {
 }
 .hero-lead {
 	margin: 0.75rem 0 0;
-	max-width: 38rem;
 	font-size: 1.1875rem;
 	line-height: 1.55;
 	color: var(--muted);
