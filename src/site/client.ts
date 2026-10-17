@@ -275,14 +275,56 @@ document.addEventListener('click', (e) => {
 	input.dispatchEvent(new Event('input'));
 });
 
-/* ------------------------------------------------------------ copy link */
+/* ------------------------------------------------------------ copy link or quote */
+
+// Plain-text form of rendered BSI text: paragraphs separated by blank lines,
+// list items on lines of their own, so it pastes cleanly into Markdown, Jira
+// or a chat.
+function plainText(body: Element) {
+	const clean = (el: Element) => (el.textContent ?? '').replace(/\s+/g, ' ').trim();
+	return [...body.children]
+		.map((el) =>
+			el instanceof HTMLOListElement
+				? [...el.children].map((li, i) => `${(el.start || 1) + i}. ${clean(li)}`).join('\n')
+				: el instanceof HTMLUListElement
+					? [...el.children].map((li) => `- ${clean(li)}`).join('\n')
+					: clean(el),
+		)
+		.join('\n\n');
+}
+
+// A sub-criterion as a quote: ID and title, BSI's text, source and link. Rich
+// text for Confluence, Word or Google Docs, plain text for Jira, Markdown or
+// a chat; the clipboard carries both and the target picks.
+async function copyQuote(button: HTMLButtonElement, url: string) {
+	const body = button.closest('.sub')?.querySelector('.text');
+	if (!body) return;
+	const html = body.cloneNode(true) as Element;
+	for (const a of html.querySelectorAll('a')) a.setAttribute('href', new URL(a.getAttribute('href') ?? '', location.href).href);
+	const title = button.dataset.quote ?? '';
+	const source = button.dataset.source ?? '';
+	const plain = `${title}\n\n${plainText(body)}\n\n${source}, ${url}`;
+	const rich = `<p><strong>${esc(title)}</strong></p><blockquote>${html.innerHTML}</blockquote><p>${esc(source)}, <a href="${esc(url)}">${esc(url)}</a></p>`;
+	try {
+		await navigator.clipboard.write([
+			new ClipboardItem({
+				'text/plain': new Blob([plain], { type: 'text/plain' }),
+				'text/html': new Blob([rich], { type: 'text/html' }),
+			}),
+		]);
+	} catch {
+		// Browsers without rich clipboard support still get the plain text.
+		await navigator.clipboard.writeText(plain);
+	}
+}
 
 document.addEventListener('click', async (e) => {
 	const button = (e.target as Element).closest<HTMLButtonElement>('.copy');
 	if (!button) return;
 	const url = `${location.origin}${location.pathname}#${button.dataset.anchor}`;
 	try {
-		await navigator.clipboard.writeText(url);
+		if (button.dataset.quote !== undefined) await copyQuote(button, url);
+		else await navigator.clipboard.writeText(url);
 	} catch {
 		location.hash = button.dataset.anchor ?? '';
 		return;

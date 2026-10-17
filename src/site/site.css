@@ -609,8 +609,13 @@ body:not([data-view='item']) .bar {
 	background: var(--complement-bg);
 	border-color: transparent;
 }
-.copy {
+/* Link and quote buttons wrap together and stay at the right. */
+.copy-actions {
+	display: flex;
+	gap: 0.25rem;
 	margin-left: auto;
+}
+.copy {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.4rem;
