@@ -725,6 +725,17 @@ p.changes {
 .changes-all {
 	font-size: 0.9375rem;
 }
+.more {
+	margin-top: 0.75rem !important;
+	font-size: 0.9375rem;
+}
+.customer-domain h2 a {
+	color: inherit;
+	text-decoration: none;
+}
+.customer-domain h2 a:hover {
+	color: var(--accent);
+}
 
 .customer-note {
 	margin-top: 0.4rem !important;
@@ -1132,6 +1143,35 @@ p.changes {
 	font-weight: 650;
 	letter-spacing: 0.02em;
 	color: var(--accent);
+}
+.crosscut {
+	padding-bottom: 1.5rem;
+}
+.crosscut-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-width: 44rem;
+}
+.crosscut-list li {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.15rem 1rem;
+	padding: 0.85rem 0;
+	border-top: 1px solid var(--line);
+}
+.crosscut-list a {
+	font-size: 1.0625rem;
+	font-weight: 500;
+	text-decoration: none;
+}
+.crosscut-list a:hover {
+	text-decoration: underline;
+}
+.crosscut-list span {
+	font-size: 0.9375rem;
+	color: var(--muted);
 }
 .index-title {
 	display: block;

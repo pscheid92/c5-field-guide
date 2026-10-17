@@ -12,6 +12,8 @@ const s = site(Astro.props.lang);
 const { t } = s;
 const subs = s.data.criteria.reduce((n, c) => n + c.subs.length, 0);
 const en = s.lang === 'en';
+const changed = (status: string) => s.data.criteria.filter((c) => c.changes.status === status).length;
+const withCustomer = s.data.criteria.filter((c) => c.customerHtml);
 ---
 
 <Layout
@@ -53,6 +55,20 @@ const en = s.lang === 'en';
 				)
 			}
 		</p>
+	</section>
+
+	<section class="index crosscut" aria-labelledby="crosscut">
+		<h2 id="crosscut">{t.crosscut}</h2>
+		<ul class="crosscut-list">
+			<li>
+				<a href={s.changes}>{t.changesTitle}</a>
+				<span>{t.changesSummary(changed('new'), changed('changed'), changed('unchanged'))}</span>
+			</li>
+			<li>
+				<a href={s.customers}>{t.customer}</a>
+				<span>{t.customersSummary(withCustomer.length, new Set(withCustomer.map((c) => c.domain)).size)}</span>
+			</li>
+		</ul>
 	</section>
 
 	<section class="index" aria-labelledby={t.domainsAnchor}>

@@ -29,6 +29,7 @@ BASE_PATH=/c5catalogue npx astro preview   # http://localhost:4321/c5catalogue/
 | Sub-criterion | `/iam-06/#iam-06-02b` | `/en/iam-06/#iam-06-02b` |
 | General condition | `/gc-01/` | `/en/gc-01/` |
 | Changes since C5:2020 | `/aenderungen/` | `/en/changes/` |
+| All customer criteria | `/kundenkriterien/` | `/en/customer-criteria/` |
 | About | `/info/` | `/en/info/` |
 
 ## How it fits together

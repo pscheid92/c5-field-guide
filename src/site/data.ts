@@ -46,6 +46,7 @@ export function site(lang: Lang) {
 		home: `${p}/`,
 		info: `${p}/info/`,
 		changes: `${p}/${strings[lang].changesPath}/`,
+		customers: `${p}/${strings[lang].customersPath}/`,
 		domainUrl: (code: string) => `${p}/${code.toLowerCase()}/`,
 		searchIndex: `${p}/search.json`,
 	};
@@ -136,6 +137,10 @@ const strings = {
 		byOldId: 'Von C5:2020 nach C5:2026',
 		byOldIdAnchor: 'c5-2020-ids',
 		byOldIdIntro: 'Jede ID aus C5:2020 und das Kriterium, in dem sie in C5:2026 aufgegangen ist.',
+		customersPath: 'kundenkriterien',
+		customersSummary: (n: number, d: number) => `${n} Kriterien in ${d} Bereichen`,
+		allCustomer: 'Alle Kundenkriterien im Überblick',
+		crosscut: 'Bereichsübergreifend',
 	},
 	en: {
 		langName: 'English',
@@ -213,6 +218,10 @@ const strings = {
 		byOldId: 'From C5:2020 to C5:2026',
 		byOldIdAnchor: 'c5-2020-ids',
 		byOldIdIntro: 'Every C5:2020 ID and the criterion it became part of in C5:2026.',
+		customersPath: 'customer-criteria',
+		customersSummary: (n: number, d: number) => `${n} criteria in ${d} domains`,
+		allCustomer: 'All customer criteria in one place',
+		crosscut: 'Across all domains',
 	},
 };
 

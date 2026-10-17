@@ -1,0 +1,59 @@
+---
+// Every complementary customer criterion on one page, by domain: what cloud
+// customers implement on their side, in BSI's words. Each entry links back to
+// its criterion; criterion pages link here at the matching anchor.
+import Layout from './Layout.astro';
+import { type Lang, site } from './data';
+
+interface Props {
+	lang: Lang;
+}
+
+const s = site(Astro.props.lang);
+const { t } = s;
+const other = site(s.lang === 'de' ? 'en' : 'de');
+const domains = s.domains
+	.map((d) => ({ ...d, criteria: s.criteriaIn(d.code).filter((c) => c.customerHtml) }))
+	.filter((d) => d.criteria.length);
+const total = domains.reduce((n, d) => n + d.criteria.length, 0);
+---
+
+<Layout lang={s.lang} view="page" title={t.customer} otherLangUrl={other.customers}>
+	<div class="page">
+		<article class="doc">
+			<h1>{t.customer}</h1>
+			<p class="doc-meta">{t.customersSummary(total, domains.length)}</p>
+			<p class="changes-intro">{t.customerNote}</p>
+			<nav class="jump" aria-label={t.domains}>
+				<div class="jump-group">
+					<span class="jump-label">{t.domains}</span>
+					{domains.map((d) => <a href={`#${d.code.toLowerCase()}`}>{d.code}</a>)}
+				</div>
+			</nav>
+
+			{
+				domains.map((d) => (
+					<section class="customer-domain">
+						<h2 id={d.code.toLowerCase()}>
+							<a href={s.domainUrl(d.code)}>{d.code}</a> · {d.title}
+						</h2>
+						{d.criteria.map((c) => (
+							<section class="sub">
+								<div class="sub-head">
+									<h3 id={c.id.toLowerCase()}>
+										<a href={`${c.url}#${t.customerAnchor}`}>
+											{c.id} {c.name}
+										</a>
+									</h3>
+								</div>
+								<div class="text" set:html={c.customerHtml} />
+							</section>
+						))}
+					</section>
+				))
+			}
+
+			<p class="attribution" set:html={s.data.attribution} />
+		</article>
+	</div>
+</Layout>
