@@ -24,9 +24,9 @@ const total = domains.reduce((n, d) => n + d.criteria.length, 0);
 			<h1>{t.customer}</h1>
 			<p class="doc-meta">{t.customersSummary(total, domains.length)}</p>
 			<p class="changes-intro">{t.customerNote}</p>
-			<nav class="jump" aria-label={t.domains}>
+			<nav class="jump jump-stacked" aria-label={t.domains}>
+				<span class="jump-label">{t.domains}</span>
 				<div class="jump-group">
-					<span class="jump-label">{t.domains}</span>
 					{domains.map((d) => <a href={`#${d.code.toLowerCase()}`}>{d.code}</a>)}
 				</div>
 			</nav>
@@ -35,7 +35,10 @@ const total = domains.reduce((n, d) => n + d.criteria.length, 0);
 				domains.map((d) => (
 					<section class="customer-domain">
 						<h2 id={d.code.toLowerCase()}>
-							<a href={s.domainUrl(d.code)}>{d.code}</a> · {d.title}
+							<a class="customer-domain-code" href={s.domainUrl(d.code)}>
+								{d.code}
+							</a>
+							<span>{d.title}</span>
 						</h2>
 						{d.criteria.map((c) => (
 							<section class="sub">

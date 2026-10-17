@@ -729,12 +729,32 @@ p.changes {
 	margin-top: 0.75rem !important;
 	font-size: 0.9375rem;
 }
-.customer-domain h2 a {
-	color: inherit;
+/* Customer criteria page: domain headings clearly above the criterion
+   headings (code as on the domain pages, larger title, more room). */
+.jump-stacked {
+	flex-direction: column;
+	gap: 0.35rem;
+}
+.customer-domain {
+	margin-top: 3.5rem;
+}
+.customer-domain h2 {
+	margin-top: 0;
+	font-size: 1.5rem;
+	line-height: 1.25;
+	letter-spacing: -0.01em;
+}
+.customer-domain-code {
+	display: block;
+	margin-bottom: 0.3rem;
+	font-size: 0.9375rem;
+	font-weight: 650;
+	letter-spacing: 0.02em;
+	color: var(--accent);
 	text-decoration: none;
 }
-.customer-domain h2 a:hover {
-	color: var(--accent);
+.customer-domain-code:hover {
+	text-decoration: underline;
 }
 
 .customer-note {
