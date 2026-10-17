@@ -66,7 +66,6 @@ const strings = {
 		unofficial: 'inoffiziell',
 		info: 'Info',
 		searchPlaceholder: 'ID, Titel oder Text suchen …',
-		heroPlaceholder: 'ID, Titel oder Begriff suchen',
 		skip: 'Zum Inhalt springen',
 		domainsAnchor: 'bereiche',
 		subMeta: (total: number, basic: number, additional: number) =>
@@ -151,7 +150,6 @@ const strings = {
 		unofficial: 'unofficial',
 		info: 'About',
 		searchPlaceholder: 'Search ID, title or text …',
-		heroPlaceholder: 'Search ID, title or term',
 		skip: 'Skip to content',
 		domainsAnchor: 'domains',
 		subMeta: (total: number, basic: number, additional: number) =>

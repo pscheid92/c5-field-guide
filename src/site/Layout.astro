@@ -63,7 +63,7 @@ const entries = groupByTheme(raw);
 				<span class="brand-name">C5 Field Guide</span>
 				<span class="brand-tag">{t.unofficial}</span>
 			</a>
-			{view === 'home' ? <span /> : <Search lang={lang} />}
+			<Search lang={lang} />
 			<nav class="bar-links">
 				<a href={s.changes} aria-current={Astro.url.pathname === s.changes ? 'page' : undefined}>{t.changes}</a>
 				<a href={s.info} aria-current={Astro.url.pathname === s.info ? 'page' : undefined}>{t.info}</a>

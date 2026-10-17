@@ -131,15 +131,14 @@ a {
 	z-index: 20;
 	height: var(--bar-h);
 	display: grid;
+	/* The same on every page, so the search never moves: the first column is as
+	   wide as the criteria list on criterion pages. */
 	grid-template-columns: minmax(var(--w-list), max-content) minmax(0, 1fr) auto;
 	align-items: center;
 	gap: 1.25rem;
 	padding: 0 1.25rem;
 	background: var(--bg);
 	border-bottom: 1px solid var(--line);
-}
-body:not([data-view='item']) .bar {
-	grid-template-columns: auto minmax(0, 1fr) auto;
 }
 
 .brand {
@@ -231,22 +230,6 @@ body:not([data-view='item']) .bar {
 }
 .search input:focus ~ .search-key {
 	display: none;
-}
-
-/* Large variant on the start page. */
-.search.hero-search {
-	max-width: 44rem;
-}
-.search.hero-search input {
-	height: 3.5rem;
-	padding-left: 3.25rem;
-	font-size: 1.125rem;
-	border-radius: 0.8rem;
-	background: var(--bg);
-	border-color: var(--line-strong);
-}
-.search.hero-search .search-icon {
-	left: 1.1rem;
 }
 
 .results {
@@ -1080,7 +1063,7 @@ p.changes {
 
 /* Hero and domain index share one container so their left edges align. */
 .hero {
-	padding: 4.5rem 1.5rem 3.5rem;
+	padding: 3rem 1.5rem 2rem;
 	max-width: 72rem;
 	margin: 0 auto;
 }
@@ -1096,14 +1079,14 @@ p.changes {
 	color: var(--text);
 }
 .hero-lead {
-	margin: 1rem 0 2rem;
+	margin: 0.75rem 0 0;
 	max-width: 38rem;
 	font-size: 1.1875rem;
 	line-height: 1.55;
 	color: var(--muted);
 }
 .hero-hint {
-	margin: 0.9rem 0 0;
+	margin: 0.6rem 0 0;
 	font-size: 0.9375rem;
 	color: var(--muted);
 }
@@ -1138,7 +1121,7 @@ p.changes {
 .index {
 	max-width: 72rem;
 	margin: 0 auto;
-	padding: 1rem 1.5rem 4rem;
+	padding: 0.5rem 1.5rem 3rem;
 }
 .index h2 {
 	margin: 0 0 1rem;
@@ -1180,7 +1163,7 @@ p.changes {
 	color: var(--accent);
 }
 .crosscut {
-	padding-bottom: 1.5rem;
+	padding-top: 0;
 }
 .crosscut-list {
 	list-style: none;
