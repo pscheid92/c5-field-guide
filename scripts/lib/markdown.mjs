@@ -2,9 +2,10 @@
 // https://llmstxt.org): one file per criterion and General Condition, the
 // whole catalogue per language, and the llms.txt index. BSI text is passed
 // through unchanged; only line structure becomes Markdown (paragraphs, "1."
-// and "-" lists). The whole-catalogue file ends with the site's AI
-// compilations (topics, values) as compact lists, in a section of their own
-// that says they are not BSI text.
+// and "-" lists). The whole-catalogue file starts with a table of contents
+// and ends with the site's AI compilations (topics, values) as compact lists,
+// in a section of their own that says they are not BSI text. Each area's full
+// text is also a file of its own (/iam/llms-full.txt), BSI text only.
 
 const LABELS = {
 	de: {
@@ -50,6 +51,12 @@ const LABELS = {
 		supplementNote: (topicsDate, valuesDate) =>
 			`Claude (KI, Anthropic) hat die Kriterien technischen Themen zugeordnet (Stand ${topicsDate}) und die konkreten Zeiten und Werte aus dem Kriterientext zusammengestellt (Stand ${valuesDate}). Beim Erstellen der Website wird geprüft, dass jede genannte Kriterien- und Unterkriterien-ID existiert und jeder Wert in einem wörtlichen Zitat aus dem genannten Unterkriterium oder seiner ergänzenden Information steht; die Zitate stehen auf der Werte-Seite. Bezeichnungen, Zuordnung und Einordnung stammen nicht vom BSI. Verbindlich ist allein der Kriterientext oben.`,
 		topicCriteria: 'Kriterien',
+		contents: 'Inhalt',
+		contentsNote: 'Jeder Bereich steht auch einzeln als Datei unter dem verlinkten Namen.',
+		supplementCount: (topics, values) => `${topics} Themen, ${values} Werte`,
+		inCatalogue: 'Katalog',
+		wholeCatalogue: 'Gesamter Katalog',
+		areaFile: (what, kb) => `${what} im Volltext (${kb} KB)`,
 		date: (iso) => iso.split('-').reverse().join('.'),
 		source: (version) =>
 			`Quelle: BSI C5:2026, maschinenlesbare Fassung v${version}, © Bundesamt für Sicherheit in der Informationstechnik (BSI) 2026, unverändert wiedergegeben unter CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/deed.de). Änderungshinweise: BSI C5:2026 Änderungshistorie, © BSI 2026, CC BY-ND 4.0. Inoffizielle Darstellung, ohne Verbindung zum BSI.`,
@@ -97,6 +104,12 @@ const LABELS = {
 		supplementNote: (topicsDate, valuesDate) =>
 			`Claude (AI, Anthropic) assigned the criteria to technical topics (as of ${topicsDate}) and compiled the concrete times and values from the criterion text (as of ${valuesDate}). Building the site checks that every criterion and sub-criterion ID named here exists and that every value appears in a verbatim quote from the cited sub-criterion or its supplementary information; the quotes are on the values page. Labels, assignment and grouping are not BSI's. Only the criterion text above is authoritative.`,
 		topicCriteria: 'Criteria',
+		contents: 'Contents',
+		contentsNote: 'Each area is also available as a file of its own at the linked name.',
+		supplementCount: (topics, values) => `${topics} topics, ${values} values`,
+		inCatalogue: 'Catalogue',
+		wholeCatalogue: 'Complete catalogue',
+		areaFile: (what, kb) => `${what}, full text (${kb} KB)`,
 		date: (iso) => iso,
 		source: (version) =>
 			`Source: BSI C5:2026, machine-readable edition v${version}, © Federal Office for Information Security (BSI) 2026, reproduced unchanged under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/). Change notes: BSI C5:2026 Changelog, © BSI 2026, CC BY-ND 4.0. Unofficial presentation, not affiliated with BSI.`,
@@ -302,7 +315,34 @@ export function buildMarkdown({ lang, version, criteria, conditions, domainTitle
 		]),
 	);
 
-	const parts = [heading(1, L.catalogue), source];
+	// One area's full text, for contexts too small for the whole file:
+	// /iam/llms-full.txt, /gc/llms-full.txt. BSI text only.
+	const areaPath = (code) => `${paths.domain(code)}llms-full.txt`;
+	const countIn = (code) => criteria.filter((c) => c.domain === code).length;
+	const areas = Object.fromEntries(
+		[...codes, 'GC'].map((code) => [
+			code,
+			`${[
+				heading(1, code === 'GC' ? L.conditions : domainLine(code)),
+				[`- ${L.inCatalogue}: ${L.catalogue}`, `- ${L.page}: ${abs(paths.domain(code))}`, `- ${L.wholeCatalogue}: ${abs(paths.full)}`].join('\n'),
+				source,
+				...(code === 'GC' ? conditions.map((g) => condition(g, 2)) : criteria.filter((c) => c.domain === code).map((c) => criterion(c, 2))),
+			].join('\n\n')}\n`,
+		]),
+	);
+
+	// The whole catalogue, with a table of contents so the file explains itself
+	// when it is used on its own.
+	const contents = [
+		heading(2, L.contents),
+		L.contentsNote,
+		[
+			...codes.map((code) => `- [${domainLine(code)}](${abs(areaPath(code))}): ${L.criteria(countIn(code))}`),
+			`- [${L.conditions}](${abs(areaPath('GC'))}): ${L.conditionsCount(conditions.length)}`,
+			`- ${L.supplement}: ${L.supplementCount(topics.topics.length, values.count)}`,
+		].join('\n'),
+	].join('\n\n');
+	const parts = [heading(1, L.catalogue), source, contents];
 	for (const code of codes) {
 		parts.push(heading(1, domainLine(code)), ...criteria.filter((c) => c.domain === code).map((c) => criterion(c, 2)));
 	}
@@ -342,8 +382,15 @@ export function buildMarkdown({ lang, version, criteria, conditions, domainTitle
 		),
 	);
 
-	const llms = buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, topics, abs });
-	return { items, changes, customers, values: valuesPage, topicsIndex, topicPages, full: `${parts.join('\n\n')}\n`, llms };
+	const kb = (text) => Math.max(1, Math.round(Buffer.byteLength(text) / 1024));
+	const areaList = [...codes, 'GC']
+		.map((code) => {
+			const what = code === 'GC' ? L.conditionsCount(conditions.length) : L.criteria(countIn(code));
+			return `- [${code === 'GC' ? L.conditions : domainLine(code)}](${abs(areaPath(code))}): ${L.areaFile(what, kb(areas[code]))}`;
+		})
+		.join('\n');
+	const llms = buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, topics, areaList, abs });
+	return { items, changes, customers, values: valuesPage, topicsIndex, topicPages, full: `${parts.join('\n\n')}\n`, areas, llms };
 }
 
 /**
@@ -351,7 +398,7 @@ export function buildMarkdown({ lang, version, criteria, conditions, domainTitle
  * with the detail behind the links. Each language has its own file covering
  * its path (/llms.txt, /en/llms.txt); they point to each other.
  */
-function buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, topics, abs }) {
+function buildLlmsTxt({ lang, version, criteria, conditions, codes, domainLine, paths, sourceUrl, topics, areaList, abs }) {
 	const topicList = topics.topics.map((t) => `- [${t.name}](${abs(md(`${paths.topics}${t.slug}/`))}): ${t.intro}`).join('\n');
 	const count = (code) => criteria.filter((c) => c.domain === code).length;
 	const domainList = codes
@@ -396,6 +443,7 @@ ${topicList}
 ## Optional
 
 - [Gesamter Katalog](${abs(paths.full)}): alle Kriterien, ergänzenden Informationen, Kundenkriterien und Rahmenbedingungen in einer Datei, am Ende die Themen und Werte dieser Website als gekennzeichnete KI-Zusammenstellung (rund 0,5 MB)
+${areaList}
 `;
 	}
 	return `# C5 Field Guide (English)
@@ -430,5 +478,6 @@ ${topicList}
 ## Optional
 
 - [Complete catalogue](${abs(paths.full)}): all criteria, supplementary information, customer criteria and General Conditions in one file, ending with this site's topics and values as a marked AI compilation (about 0.5 MB)
+${areaList}
 `;
 }
